@@ -3,6 +3,11 @@
     /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+html,
+body {
+    height: 100vh;
+}
+
 body {
     -webkit-touch-callout: none;
     /* prevent callout to copy image, etc when tap to hold */
@@ -10,7 +15,6 @@ body {
     /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;
     /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-attachment: fixed;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     height: 100%;
@@ -18,7 +22,7 @@ body {
     padding: 0px;
     text-transform: uppercase;
     width: 100%;
-    background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+    background: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
 }
 
 
