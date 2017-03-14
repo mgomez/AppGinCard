@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>GINCARD</title>
+</head>
+
+<body>
+    <div id="app" class="app">
+        <div class="app-loading blink">Cargando...</div>
+    </div>
+    <script src="cordova.js"></script>
+    <script>
+    var connectionStatus;
+    var pushNotification;
+    var networkState;
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+
+    function onDeviceReady() {
+        window.open = cordova.InAppBrowser.open;
+        document.addEventListener("offline", onOffline, false);
+        document.addEventListener("online", online, false);
+        networkState = navigator.connection.type;
+        if (navigator.notification) {
+            window.alert = function(message) {
+                navigator.notification.alert(
+                    message,
+                    null,
+                    "GINCARD",
+                    'OK'
+                );
+            };
+        }
+        if (networkState != 'none') {
+            var win = window.open("http://192.168.31.103/Extranet/AppGinCard/", '_self', 'location=yes');
+        } else {
+            navigator.notification.alert(
+                'No esta conectado a una red Wifi',
+                function() {
+                    navigator.app.exitApp();
+                },
+                'GINCARD',
+                'Ok'
+            );
+        }
+        if (device.platform != "Android") {
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 2000);
+        }
+        push = PushNotification.init({
+            "android": {
+                "senderID": "1018280000935"
+            },
+            "ios": {
+                "alert": "true",
+                "badge": "true",
+                "sound": "true",
+                "senderID": "1018280000935",
+                "gcmSandbox": true
+            },
+            "windows": {}
+        });
+
+        push.on('registration', function(data) {
+            console.debug("registration", data);
+        });
+
+        push.on('notification', function(data) {
+            console.debug("notification", data);
+            alert(data.message);
+        });
+
+        push.on('error', function(e) {
+            console.error(e);
+        });
+    }
+
+    function online() {
+        connectionStatus = true;
+    }
+
+    function onOffline() {
+        connectionStatus = false;
+        alert("Se perdio la conexion a internet.");
+    }
+    </script>
+</body>
+
+</html>
