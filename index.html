@@ -85,6 +85,17 @@
     FCMPlugin.subscribeToTopic('topicExample');
     //FCMPlugin.unsubscribeFromTopic( topic, successCallback(msg), errorCallback(err) );
     FCMPlugin.unsubscribeFromTopic('topicExample2');
+    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+    //Here you define your application behaviour based on the notification data.
+    FCMPlugin.onNotification(function(data){
+        if(data.wasTapped){
+          //Notification was received on device tray and tapped by the user.
+          alert( JSON.stringify(data) );
+        }else{
+          //Notification was received in foreground. Maybe the user needs to be notified.
+          alert( JSON.stringify(data) );
+        }
+    });
     </script>
 </body>
 
