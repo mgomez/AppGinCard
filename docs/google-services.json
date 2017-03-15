@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "1070674347053-b9n1f72nud19ier9ek31c7dj8al3k0cd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.oc.gincard",
-            "certificate_hash": "1802c94a8cd75dc096b03cf05493c0b13040af24"
-          }
-        },
-        {
           "client_id": "1070674347053-svkv01dkr03gdbfmf2vv2a6j95n8gr9a.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1070674347053-svkv01dkr03gdbfmf2vv2a6j95n8gr9a.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
