@@ -32,7 +32,6 @@
     <plugin name="cordova-plugin-vibration" spec="~2.1.2" source="npm" />
     <plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="cordova-plugin-fcm-config" spec="npm" />
     <plugin name="cordova-plugin-fcm" spec="~1.9" source="npm" />
     <access origin="*" />
     <allow-navigation href="http://192.168.31.103/Extranet/AppGinCard/*" />
