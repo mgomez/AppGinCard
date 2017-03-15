@@ -5,6 +5,7 @@
     <author email="00.13.zkr@gmail.com" href="http://192.168.31.103/Extranet/AppGinCard/">
         GinCard
     </author>
+    <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
