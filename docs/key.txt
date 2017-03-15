@@ -1,0 +1,3 @@
+keytool -genkey -v -keystore gincard.keystore -alias gincard -keyalg RSA -keysize 2048 -validity 10000
+
+Gincard1!
