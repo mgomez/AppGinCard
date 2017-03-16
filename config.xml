@@ -23,6 +23,7 @@
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <!-- Core plugins -->
+    <plugin name="cordova-plugin-firebase" spec="0.1.19" />
     <plugin name="cordova-plugin-device" source="npm" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" />
     <plugin name="cordova-plugin-network-information" source="npm" />
