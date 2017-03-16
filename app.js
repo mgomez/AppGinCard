@@ -37,7 +37,7 @@ function onDeviceReady() {
         // data.sound,
         // data.image,
         // data.additionalData
-        alert("notification " + data.title, );
+        alert("notification " + data.title);
     });
 
     push.on('error', function(e) {
