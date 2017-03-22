@@ -2,7 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.oc.gincard" version="0.1.0">
     <name>GinCard</name>
     <description>GinCard App</description>
-    <author email="00.13.zkr@gmail.com" href="http://192.168.31.103/Extranet/AppGinCard/">
+    <author email="00.13.zkr@gmail.com" href="https://gincard.onecardexternal.mx/App/">
         GinCard
     </author>
     <preference name="permissions" value="none" />
@@ -34,7 +34,7 @@
     <plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
-    <allow-navigation href="http://192.168.31.103/Extranet/AppGinCard/*" />
+    <allow-navigation href="https://gincard.onecardexternal.mx/App/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="mailto:*" />
     <platform name="android">
