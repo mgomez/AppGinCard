@@ -24,13 +24,10 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <!-- Core plugins -->
-    <plugin name="cordova-plugin-device" source="npm" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" />
     <plugin name="cordova-plugin-network-information" source="npm" />
     <plugin name="cordova-plugin-dialogs" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
-    <plugin name="cordova-plugin-file-transfer" source="npm" />
-    <plugin name="cordova-plugin-vibration" spec="~2.1.2" source="npm" />
     <plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />

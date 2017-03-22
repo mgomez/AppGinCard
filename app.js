@@ -31,12 +31,6 @@ function onDeviceReady() {
             'Ok'
         );
     }
-    if (device.platform != "Android") {
-        setTimeout(function() {
-            navigator.splashscreen.hide();
-        }, 2000);
-    }
-
 }
 
 function online() {
