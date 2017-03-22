@@ -1,7 +1,5 @@
 var connectionStatus;
-var pushNotification;
 var networkState;
-var push;
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -10,39 +8,6 @@ function onDeviceReady() {
     document.addEventListener("offline", onOffline, false);
     document.addEventListener("online", online, false);
     networkState = navigator.connection.type;
-
-    push = PushNotification.init({
-        android: {
-            senderID: "1070674347053"
-        },
-        browser: {
-            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-        },
-        ios: {
-            alert: "true",
-            badge: "true",
-            sound: "true"
-        },
-        windows: {}
-    });
-
-    push.on('registration', function(data) {
-        alert("registration " + data);
-    });
-
-    push.on('notification', function(data) {
-        // data.message,
-        // data.title,
-        // data.count,
-        // data.sound,
-        // data.image,
-        // data.additionalData
-        alert("notification " + data.title);
-    });
-
-    push.on('error', function(e) {
-        alert("error " + e.message);
-    });
 
     if (navigator.notification) {
         window.alert = function(message) {
@@ -55,7 +20,7 @@ function onDeviceReady() {
         };
     }
     if (networkState != 'none') {
-        var win = window.open("http://192.168.31.103/Extranet/AppGinCard/", '_self', 'location=yes');
+        var win = window.open("http://ocsi.mx/Extranet/AppGinCard/", '_self', 'location=yes');
     } else {
         navigator.notification.alert(
             'No esta conectado a una red Wifi',
