@@ -31,7 +31,7 @@
     <plugin name="cordova-plugin-camera" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
-    <allow-navigation href="https://gincard.onecardexternal.mx/App/*" />
+    <allow-navigation href="http://test.ocsi.mx/Extranet/AppGinCard/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="mailto:*" />
     <platform name="android">
