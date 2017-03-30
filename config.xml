@@ -34,7 +34,7 @@
     <plugin name="cordova-plugin-file-transfer" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
-    <allow-navigation href="https://gincard.onecardexternal.mx/App/*" />
+    <allow-navigation href="*" />
     <allow-intent href="tel:*" />
     <allow-intent href="mailto:*" />
     <platform name="android">
