@@ -20,7 +20,7 @@ function onDeviceReady() {
         };
     }
     if (networkState != 'none') {
-        var win = window.open("http://test.ocsi.mx/Extranet/AppGinCard/", '_self', 'location=yes');
+        var win = window.open("https://gincard.onecardexternal.mx/App", '_self', 'location=yes');
     } else {
         navigator.notification.alert(
             'No esta conectado a una red Wifi',
