@@ -9065,7 +9065,7 @@ body {
   /* iOS 11.0 */
   padding-top: env(safe-area-inset-top);
   /* iOS 11.2 */
-  background: #dcdcdc;
+  background: #dcdcdc url(732f15e9548c69e1297cce2d33abf733.jpg) repeat;
 }
 body.iOS #header {
   height: 66px;
@@ -9336,7 +9336,7 @@ input:focus {
   }
 }
 #layoutLogin {
-  background: #001a70 url(1573fa21b1189aaffd925dc6510063da.png) no-repeat bottom;
+  background: #8db000 url(1573fa21b1189aaffd925dc6510063da.png) no-repeat bottom;
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -9386,7 +9386,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   padding: 35px 35px 0 35px;
-  border-bottom: 2px solid #505558;
+  border-bottom: 2px solid #fafafa;
 }
 .navbar-avatar {
   display: inline-block;
@@ -9399,7 +9399,7 @@ input:focus {
 }
 .navbar-menu-item a,
 .navbar-menu-item a:not([href]):not([tabindex]) {
-  color: #e6ddb9;
+  color: #333;
 }
 .navbar-menu-item a i,
 .navbar-menu-item a:not([href]):not([tabindex]) i {
@@ -9423,6 +9423,9 @@ input:focus {
   display: inline-block;
   margin-right: 10px;
   width: 24px;
+  background: #a3a3a3;
+  padding: 5px;
+  border-radius: 5px;
 }
 .navbar-menu-item a span {
   vertical-align: middle;
@@ -9444,8 +9447,10 @@ input:focus {
 }
 .tss--open .tss-label {
   display: block !important;
-  background: #3f4d58 !important;
+  background: #fff !important;
   top: 0;
+  border-right: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
 }
 .tss--open .tss-label_pic {
   color: #b3cc2f !important;
@@ -9515,36 +9520,38 @@ input:focus {
   display: inline-block;
 }
 .cardTravex {
-  background: #e6e6e6;
+  background: #fafafa;
   margin: 15px 10px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   padding-bottom: 30px;
   position: relative;
 }
 .cardTravex-hgroup {
-  text-align: center;
-  padding: 10px 0;
+  position: relative;
+  margin-bottom: 10px;
 }
 .cardTravex-hgroup .cardTravex-title {
-  border-radius: 10px;
-  color: #677c01;
-  display: inline-block;
-  font-size: 20px;
+  background: linear-gradient(0deg, #e6e6e6, #ffffff);
+  border-bottom: 2px solid #e0d9d9;
+  color: #434343;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
   padding: 8px 16px;
-  background: #d8d8d8;
-  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 40px;
 }
 .cardTravex-partial {
   padding: 0 15px;
 }
 .floatButtonRight {
   position: absolute;
-  width: 32px;
-  top: 15px;
+  width: 24px;
+  top: 4px;
   right: 15px;
   background: transparent;
   border: 0;
+  z-index: 999;
 }
 .floatButtonRight img {
   display: inline-block;
@@ -9575,9 +9582,10 @@ input:focus {
 .travexForm .travexForm-group .travexForm-label {
   color: #595959;
   font-weight: 600;
+  font-size: 14px;
 }
 .travexForm .travexForm-group .travexForm-control {
-  background: #dcdcdc;
+  background: #ececec;
   border-radius: 9px;
   border: 0;
   width: 100%;
@@ -9604,12 +9612,13 @@ input:focus {
 }
 .files64-button {
   display: inline-block;
-  text-align: center;
-  border: 2px solid #677c01;
-  background: #677c01;
+  background: #ff2d3d;
+  border-radius: 5px;
+  border: 0;
   color: #fff;
   padding: 10px;
-  border-radius: 5px;
+  text-align: center;
+  width: 45%;
 }
 .files64-button-img {
   display: inline-block;
@@ -9721,8 +9730,13 @@ input:focus {
   margin: 20px;
 }
 .button.button-entrar {
-  background: #00bedf !important;
+  background: #f4313f !important;
   color: #fff !important;
+}
+#btn-olvideContra {
+  color: #f4313f !important;
+  font-weight: 600;
+  text-shadow: 1px 1px 0px #fff;
 }
 /**
  *
@@ -9733,7 +9747,7 @@ input:focus {
   position: relative;
 }
 .main-bar {
-  background: #00bee0;
+  background: linear-gradient(0deg, #ff2d3d, #da2836);
   text-align: center;
   color: #fff;
   font-size: 18px;
@@ -9746,7 +9760,8 @@ input:focus {
   padding: 40px 10px;
 }
 .mainMenu-item {
-  background: #7e7d7d;
+  background: #7e7d7d url(2e0c3e2f78f7f7e53c62a756386307e8.jpg) no-repeat;
+  background-size: cover;
   text-align: center;
   color: #ffF;
   padding: 5px;
@@ -9764,10 +9779,12 @@ input:focus {
           animation: fade-in-bck 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   display: inline-block;
   width: 52px;
+  margin-bottom: 5px;
 }
 .mainMenu-item span {
   display: block;
   line-height: 1.4;
+  background: #414141;
 }
 @-webkit-keyframes fade-in-bck {
   0% {
@@ -10114,24 +10131,25 @@ input:checked + .slider .off {
   background: linear-gradient(180deg, #f7f7f7, #e6e6e6);
   border: 1px solid #c7c7c7;
   color: #484848;
+  display: inline-block;
+  font-size: 12px;
   font-weight: 600;
-  padding: 10px;
+  margin: 0 10px 10px 0;
+  padding: 8px 16px;
   text-transform: uppercase;
-  width: 100%;
 }
 .btnTransaccionManual img {
   width: 24px;
 }
 .transacciones {
   position: relative;
-}
-.transacciones-container {
-  padding: 15px;
+  padding: 10px;
 }
 .transaccion {
-  background: #d2d2d2;
-  border-left: 30px solid #ccc;
-  border-radius: 10px;
+  background: #f1f1f1;
+  border-bottom: 2px solid #dadada;
+  border-left: 30px solid #ff2d3d;
+  border-radius: 5px;
   margin: 0 0 25px 0;
   padding: 5px 0;
   position: relative;
@@ -10492,36 +10510,9 @@ input:checked + .slider .off {
 }
 /**
  *
- * COMPROBAR
+ * POR FACTURAR
  *
  */
-.transacciones {
-  position: relative;
-}
-.transacciones-container {
-  padding: 15px;
-}
-.transaccion {
-  background: #d2d2d2;
-  border-left: 30px solid #ccc;
-  border-radius: 10px;
-  margin: 0 0 25px 0;
-  padding: 5px 0;
-  position: relative;
-  text-align: center;
-}
-.transaccion.ROJO {
-  border-left-color: #c00000;
-}
-.transaccion.VERDE {
-  border-left-color: #70ad47;
-}
-.transaccion.AZUL {
-  border-left-color: #001a70;
-}
-.transaccion.TARJETA .transaccion-eliminar {
-  display: none;
-}
 .transaccion-porFacturar {
   position: absolute;
   top: -16px;
@@ -10531,55 +10522,6 @@ input:checked + .slider .off {
 .transaccion-porFacturar img {
   display: inline-block;
   width: 100%;
-}
-.transaccion-id {
-  position: absolute;
-  top: 10px;
-  left: -22px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  font-size: 12px;
-  color: #fff;
-}
-.transaccion-comercio {
-  font-weight: 700;
-  color: #424242;
-  font-size: 14px;
-}
-.transaccion-fecha {
-  font-size: 13px;
-  color: #424242;
-  font-weight: 500;
-}
-.transaccion-detalle {
-  font-size: 10px;
-  color: #6b6b6b;
-  margin: 6px 0 0 0;
-}
-.factura {
-  align-items: center;
-  background: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px;
-  text-align: center;
-  border-left: 10px solid #ccc;
-  margin-bottom: 10px;
-}
-.factura-monto {
-  color: #214288;
-  font-size: 22px;
-}
-.factura.ROJO {
-  border-left-color: #c00000;
-}
-.factura.VERDE {
-  border-left-color: #70ad47;
-}
-.factura.AZUL {
-  border-left-color: #001a70;
 }
 /**
  *
@@ -11139,8 +11081,9 @@ input:checked + .slider:before {
         position: absolute;
         top: 0;
         left: 0;
-        background: #3f4d58;
+        background: #fff;
         background-size: cover;
+        border-right: 3px solid #ccc;
     }
     .tss-label {
         z-index: 99999;
