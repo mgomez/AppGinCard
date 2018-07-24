@@ -9707,7 +9707,7 @@ input:focus {
 .login-control:focus {
   background: rgba(255, 255, 255, 0.17);
   border-radius: 10px;
-  color: #fff;
+  color: #40452e;
   font-weight: 500;
   border: 0;
   width: 100%;
@@ -9734,9 +9734,9 @@ input:focus {
   color: #fff !important;
 }
 #btn-olvideContra {
-  color: #f4313f !important;
+  color: #6c6c6c;
   font-weight: 600;
-  text-shadow: 1px 1px 0px #fff;
+  text-decoration: none;
 }
 /**
  *
