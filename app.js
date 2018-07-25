@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9cbb25ed99cc301790d2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "472e192a89b43d680cf3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -728,7 +728,7 @@
 	        });
 
 	        push.on('error', function (e) {
-	            alert("Ocurrió un error: " + e.message);
+	            console.log("Ocurrió un error: " + e.message);
 	        });
 
 	        push.on('notification', function (data) {

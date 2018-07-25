@@ -10038,7 +10038,7 @@ input:checked + .slider .off {
   display: none;
 }
 .loadingSaldo-container {
-  background: #0d8aa5 url(1df207dfe293ff510bb8106b75670181.png) no-repeat center bottom;
+  background: #fff url(1df207dfe293ff510bb8106b75670181.png) no-repeat center bottom;
   background-size: contain;
   bottom: 0;
   left: 0;
@@ -10054,14 +10054,14 @@ input:checked + .slider .off {
 .loadingSaldo-container-text {
   font-size: 22px;
   padding: 35px;
-  color: #fff;
+  color: #000;
   text-align: center;
 }
 .loadingSaldo {
   align-items: center;
-  background: #fff;
+  background: #c6df19;
   border-radius: 100%;
-  border: 10px solid #19bee1;
+  border: 10px solid #8BC34A;
   display: flex;
   height: 100px;
   justify-content: center;
