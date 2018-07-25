@@ -10151,9 +10151,12 @@ input:checked + .slider .off {
 }
 .transaccion:hover,
 .transaccion.selected {
-  -webkit-animation: heartbeat 1.5s ease-in-out 4 both;
-          animation: heartbeat 1.5s ease-in-out 4 both;
+  -webkit-animation: borderItem 0.5s linear 4 both;
+          animation: borderItem 0.5s linear 4 both;
   background: #FFF;
+}
+.transaccion.GRIS {
+  border-left-color: #7a7a7a;
 }
 .transaccion.ROJO {
   border-left-color: #c00000;
@@ -10202,6 +10205,70 @@ input:checked + .slider .off {
   font-size: 10px;
   color: #6b6b6b;
   margin: 6px 0 0 0;
+}
+@-webkit-keyframes borderItem {
+  0% {
+    border-top: 5px solid #333333;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  25% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid #ee3442;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  50% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #c6df19;
+    border-left: 5px solid transparent;
+  }
+  75% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #333;
+  }
+  100% {
+    border-top: 5px solid #ee3442;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+}
+@keyframes borderItem {
+  0% {
+    border-top: 5px solid #333333;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  25% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid #ee3442;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  50% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #c6df19;
+    border-left: 5px solid transparent;
+  }
+  75% {
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #333;
+  }
+  100% {
+    border-top: 5px solid #ee3442;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
 }
 .facturas {
   padding: 0 10px;
@@ -10482,7 +10549,7 @@ input:checked + .slider .off {
 }
 .xml {
   position: relative;
-  background: #cacaca;
+  background: #fff;
   border-radius: 10px;
   padding: 8px 0;
   margin-bottom: 10px;
@@ -10531,9 +10598,8 @@ input:checked + .slider .off {
  */
 .resumen {
   padding: 10px;
-  background: #d2d2d2;
+  background: #e5e5e5;
   border-radius: 10px;
-  margin: 15px 0;
   position: relative;
 }
 .resumen-item {
