@@ -9056,7 +9056,7 @@ input:focus {
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9) url(944744247eee1a26c25036fadd584f37.gif) no-repeat center center;
   transition: all 0.7s cubic-bezier(0.62, 0.86, 0, 0.62);
   opacity: 0;
   z-index: -1;
@@ -9067,7 +9067,7 @@ input:focus {
 }
 #loading {
   align-items: center;
-  background: rgba(63, 77, 88, 0.92156863);
+  background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   display: flex;
   justify-content: center;
