@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.oc.gincard" version="2.0.2" ios-CFBundleVersion="202506099">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.oc.gincard" version="2.0.4" ios-CFBundleVersion="202506099">
     <name>GinCard</name>
     <description>GinCard App</description>
     <author email="00.13.zkr@gmail.com" href="https://gincard.onecardexternal.mx/App">
