@@ -5,6 +5,7 @@
     <author email="00.13.zkr@gmail.com" href="https://gincard.onecardexternal.mx/App">
         GinCard
     </author>
+    <preference name="phonegap-version" value="8.0.0" />
     <preference name="android-build-tool" value="gradle" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-minSdkVersion" value="21" />
@@ -35,9 +36,6 @@
     <plugin name="cordova-plugin-vibration" spec="~3.1.0" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <plugin name="cordova-plugin-x-toast" source="npm" />
-    <plugin name="phonegap-plugin-push" source="npm" spec="~1.9.1">
-        <param name="SENDER_ID" value="1070674347053" />
-    </plugin>
     <!--<plugin name="cordova-plugin-ionic-keyboard" />-->
     <!--ICONOS-->
     <icon src="icon.png" />
@@ -99,7 +97,7 @@
         <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
         <splash height="2436" src="res/screen/ios/Default-2436h.png" width="1125" />
         <preference name="StatusBarOverlaysWebView" value="true" />
-        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarBackgroundColor" value="#f3f3f3" />
         <preference name="StatusBarStyle" value="lightcontent" />
     </platform>
     <access origin="*" />

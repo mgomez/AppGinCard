@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f88b831195b3d0d28a63"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "06bae27d56a2fac51a53"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -703,7 +703,7 @@
 	            window.Connection = true;
 	        }, false);
 	        //obtengo el registrationId para los mensajes push
-	        app.setupPush();
+	        //app.setupPush();
 	        //oculto el footer si el teclado se muestra
 	        window.addEventListener('keyboardDidShow', function () {});
 	        window.addEventListener('keyboardDidHide', function () {});
