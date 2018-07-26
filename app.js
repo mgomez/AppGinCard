@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "06bae27d56a2fac51a53"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "18fdd32d4c85957f527d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -682,7 +682,7 @@
 	    },
 	    deviceReady: function deviceReady() {
 	        //agrega padding si es ios
-	        (0, _jquery2.default)("body").addClass(device.platform);
+	        (0, _jquery2.default)("body").addClass(device.platform + " " + device.model.replace(" ", ""));
 	        //reemplaza notificaciones por nativo
 	        if (navigator.notification) {
 	            window.alert = function (message) {

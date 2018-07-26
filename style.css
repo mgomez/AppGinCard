@@ -9025,16 +9025,16 @@ body {
   /* iOS 11.2 */
   background: #dcdcdc url(732f15e9548c69e1297cce2d33abf733.jpg) repeat;
 }
-body.iOS #header {
+body.iOS:not(.iPhoneX) #header {
   height: 66px;
 }
-body.iOS #header .header-icon {
+body.iOS:not(.iPhoneX) #header .header-icon {
   top: 20px;
 }
-body.iOS .tss {
+body.iOS:not(.iPhoneX) .tss {
   top: 20px;
 }
-body.iOS .section {
+body.iOS:not(.iPhoneX) .section {
   margin-top: 80px !important;
 }
 #app {
