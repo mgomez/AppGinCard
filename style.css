@@ -9020,20 +9020,10 @@ body {
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;
   padding-top: constant(safe-area-inset-top);
+  /* iOS 11.0 */
   padding-top: env(safe-area-inset-top);
+  /* iOS 11.2 */
   background: #dcdcdc url(732f15e9548c69e1297cce2d33abf733.jpg) repeat;
-}
-body.iOS #header {
-  height: 66px;
-}
-body.iOS #header .header-icon {
-  top: 20px;
-}
-body.iOS .tss {
-  top: 20px;
-}
-body.iOS .section {
-  margin-top: 80px !important;
 }
 #app {
   position: relative;
@@ -9295,8 +9285,12 @@ input:focus {
   background: #8db000 url(1573fa21b1189aaffd925dc6510063da.png) no-repeat bottom;
   background-size: cover;
   height: 100vh;
-  position: relative;
+  position: fixed;
   overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 #layoutLogin .layoutLogin-container {
   position: absolute;
