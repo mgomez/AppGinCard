@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "71525245ef036283b956"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "757ae97a91200d96b6c3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -39879,13 +39879,12 @@
 
 	            data.EmployeeId = _this.Data.Employee.EmployeeId;
 
-	            console.log(data);
-
 	            _store2.default.SetTransactionManual(data).then(function (r) {
 	                if (!r.Success) {
 	                    alert(r.Message);
 	                } else {
-	                    var TransactionId = r.Data.HeaderId;
+	                    var HeaderId = r.Data.HeaderId;
+	                    var TransactionId = r.Data.TransactionId;
 	                    var mensaje = "Se creo correctamente la transaccion manual\nTransaccion N°" + TransactionId;
 	                    if (!_this.Data.File) {
 	                        alert(mensaje);
@@ -39894,18 +39893,31 @@
 	                        var files64 = (0, _jquery2.default)("#files64").data("base");
 
 	                        var data = {
-	                            TransactionId: TransactionId,
+	                            TransactionId: HeaderId,
 	                            File: files64
 	                        };
-
+	                        //Guardo en ticket
 	                        _store2.default.SetFileTransaction(data).then(function (result) {
-	                            console.log(result);
 	                            if (!result) {
 	                                alert(mensaje + "\nOcurrio un error al guardar el archivo.");
 	                            } else {
-	                                alert(mensaje);
+	                                var copiarATicketManual = (0, _jquery2.default)("#ckTicketManual").is(":checked");
+	                                if (copiarATicketManual) {
+	                                    //Guardo en no deducibles
+	                                    data.TransactionId = TransactionId;
+	                                    _store2.default.SetFileManualTicket(data).then(function (result) {
+	                                        if (!result) {
+	                                            alert(mensaje + "\nOcurrio un error al guardar el archivo.");
+	                                        } else {
+	                                            alert(mensaje);
+	                                        }
+	                                        _comprobar2.default.goToTransactions(true);
+	                                    });
+	                                } else {
+	                                    alert(mensaje);
+	                                    _comprobar2.default.goToTransactions(true);
+	                                }
 	                            }
-	                            _comprobar2.default.goToTransactions(true);
 	                        });
 	                    }
 	                }
