@@ -9282,7 +9282,7 @@ input:focus {
   }
 }
 #layoutLogin {
-  background: #8db000 url(1573fa21b1189aaffd925dc6510063da.png) no-repeat bottom;
+  background: #8db000 url(807ba5b888b924414fcf61bff12f598d.png) no-repeat bottom;
   background-size: cover;
   height: 100vh;
   position: fixed;
@@ -9512,8 +9512,10 @@ a,
 button,
 button:focus,
 input,
-input:focus {
+input:focus,
+select {
   outline: none;
+  box-shadow: none;
 }
 .travexForm {
   text-align: center;
@@ -9729,7 +9731,7 @@ input:focus {
   padding: 40px 10px;
 }
 .mainMenu-item {
-  background: #7e7d7d url(2e0c3e2f78f7f7e53c62a756386307e8.jpg) no-repeat;
+  background: #7e7d7d url(c018b5995955806cf1355956b2a749fe.jpg) no-repeat;
   background-size: cover;
   text-align: center;
   color: #ffF;
@@ -10974,7 +10976,7 @@ input:checked + .slider:before {
 .accordionAutorizar-accordion-header {
   padding: 15px;
   color: #fff;
-  background-image: url(72e509327ebfdc1d87f928e164939e90.png);
+  background-image: url(6a08df1a8585cf509783aa3d465ca178.png);
   background-size: cover;
   border-radius: 6px;
   position: relative;
