@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "14a69a20071f40f56891"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "054c30b30fef6c2a356c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -39876,6 +39876,7 @@
 	                        var files64 = (0, _jquery2.default)("#files64").data("base");
 
 	                        var data = {
+	                            TicketId: HeaderId,
 	                            TransactionId: TransactionId,
 	                            File: files64
 	                        };
@@ -39887,7 +39888,6 @@
 	                                var copiarATicketManual = (0, _jquery2.default)("#ckTicketManual").is(":checked");
 	                                if (copiarATicketManual) {
 	                                    //Guardo en no deducibles
-	                                    data.TransactionId = HeaderId;
 	                                    _store2.default.SetFileManualTicket(data).then(function (result) {
 	                                        if (!result) {
 	                                            alert(mensaje + "\nOcurrio un error al guardar el archivo.");
