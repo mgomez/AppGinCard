@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b85180ec3428171348df"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "da02eba23f54a822456b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -42281,6 +42281,31 @@
 	   * Registro
 	   *
 	   */
+
+
+	function RestrictSpace() {
+	    var keyCode = event.keyCode;
+	    console.log(keyCode, event);
+	    if (keyCode == 32 || keyCode >= 123 && keyCode <= 125 || keyCode >= 49 && keyCode <= 58 || keyCode >= 186 && keyCode <= 191) {
+	        return false;
+	    }
+	}
+
+	function onlyAlphabets(e, t) {
+	    try {
+	        if (window.event) {
+	            var charCode = window.event.keyCode;
+	        } else if (e) {
+	            var charCode = e.which;
+	        } else {
+	            return true;
+	        }
+	        if (charCode > 64 && charCode < 91 || charCode > 96 && charCode < 123 || charCode >= 48 && charCode <= 57) return true;else return false;
+	    } catch (err) {
+	        alert(err.Description);
+	    }
+	}
+
 	exports.default = {
 	    init: function init() {
 	        this.render();
@@ -42294,6 +42319,9 @@
 	    },
 	    handleEvents: function handleEvents() {
 	        var _this = this;
+	        (0, _jquery2.default)("#Username").on("keypress", function (e) {
+	            return onlyAlphabets(e, this);
+	        });
 	        _jquery2.default.validator.addMethod("formatPassword", function (value, element, regexp) {
 	            return (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$/.test(value)
 	            );
@@ -49232,7 +49260,7 @@
 /* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==============================\r\n=            REGISTRO            =\r\n===============================-->\r\n<section id=\"registro\">\r\n    <div class=\"layoutLogin-data\">\r\n        <div class=\"login-logo\" onclick=\"app.View('login', true)\">\r\n            <img src=\"" + __webpack_require__(193) + "\" alt=\"GINcard\" class=\"login-logo-img\">\r\n        </div>\r\n            <div class=\"text-center m-3\">\r\n                <span class=\"text-info\">Ingresa los siguientes datos</span>\r\n            </div>\r\n            <form id=\"frm-register\" class=\"formRegistro\">\r\n                <input type=\"hidden\" name=\"grant_type\" value=\"password\">\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Usuario</label>\r\n                    <input type=\"text\" name=\"Username\" class=\"formRegistro-control\" required tabindex=\"1\">\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Email</label>\r\n                    <input type=\"email\" name=\"Email\" id=\"inputEmail\" class=\"formRegistro-control\" required tabindex=\"2\">\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"Password\" id=\"inputPassword\" class=\"formRegistro-control\" required tabindex=\"3\">\r\n                    </div>\r\n                    <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                        <span></span>\r\n                        <span></span>\r\n                        <span></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Confirmar Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\" required tabindex=\"4\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group text-center\">\r\n                    <label data-toggle=\"modal\" data-target=\"#exampleModal\" class=\"text-white\">Formato de contraseña <img src=\"" + __webpack_require__(331) + "\" alt=\"loginPassword.svg\" class=\"image-inline\" width=\"80px\"></label>\r\n                </div>\r\n                <div class=\"login-formGroup\">\r\n                    <label>Tarjeta</label>\r\n                    <input type=\"number\" name=\"Card\" id=\"inputCard\" class=\"form-control login-control\" required>\r\n                </div>\r\n                <div class=\"text-center mt-4\">\r\n                    <button type=\"submit\" class=\"button button-primary\">Registrar</button>\r\n                    <button type=\"button\" class=\"button button-danger routerView\" onclick=\"app.View('login', true)\">Volver</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n</section>\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h3>Formato de Contraseña</h3>\r\n                <ul class=\"list-group list-group-flush\">\r\n                    <li class=\"list-group-item\">La contraseña debe ser mínimo de 8 dígitos</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un caracter especial</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un número</li>\r\n                    <li class=\"list-group-item\">Debe tener al menos una letra mayúscula y una minúscula</li>\r\n                    <li class=\"list-group-item\"><b>Ejemplo:</b> Onecard1!</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<!--==============================\r\n=            REGISTRO            =\r\n===============================-->\r\n<section id=\"registro\">\r\n    <div class=\"layoutLogin-data\">\r\n        <div class=\"login-logo\" onclick=\"app.View('login', true)\">\r\n            <img src=\"" + __webpack_require__(193) + "\" alt=\"GINcard\" class=\"login-logo-img\">\r\n        </div>\r\n            <div class=\"text-center m-3\">\r\n                <span class=\"text-info\">Ingresa los siguientes datos</span>\r\n            </div>\r\n            <form id=\"frm-register\" class=\"formRegistro\">\r\n                <input type=\"hidden\" name=\"grant_type\" value=\"password\">\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Usuario</label>\r\n                    <input type=\"text\" id=\"Username\" name=\"Username\" class=\"formRegistro-control\" required tabindex=\"1\">\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Email</label>\r\n                    <input type=\"email\" name=\"Email\" id=\"inputEmail\" class=\"formRegistro-control\" required tabindex=\"2\">\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"Password\" id=\"inputPassword\" class=\"formRegistro-control\" required tabindex=\"3\">\r\n                    </div>\r\n                    <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                        <span></span>\r\n                        <span></span>\r\n                        <span></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Confirmar Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\" required tabindex=\"4\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group text-center\">\r\n                    <label data-toggle=\"modal\" data-target=\"#exampleModal\" class=\"text-white\">Formato de contraseña <img src=\"" + __webpack_require__(331) + "\" alt=\"loginPassword.svg\" class=\"image-inline\" width=\"80px\"></label>\r\n                </div>\r\n                <div class=\"login-formGroup\">\r\n                    <label>Tarjeta</label>\r\n                    <input type=\"number\" name=\"Card\" id=\"inputCard\" class=\"form-control login-control\" required>\r\n                </div>\r\n                <div class=\"text-center mt-4\">\r\n                    <button type=\"submit\" class=\"button button-primary\">Registrar</button>\r\n                    <button type=\"button\" class=\"button button-danger routerView\" onclick=\"app.View('login', true)\">Volver</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n</section>\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h3>Formato de Contraseña</h3>\r\n                <ul class=\"list-group list-group-flush\">\r\n                    <li class=\"list-group-item\">La contraseña debe ser mínimo de 8 dígitos</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un caracter especial</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un número</li>\r\n                    <li class=\"list-group-item\">Debe tener al menos una letra mayúscula y una minúscula</li>\r\n                    <li class=\"list-group-item\"><b>Ejemplo:</b> Onecard1!</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 311 */
