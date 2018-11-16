@@ -9504,6 +9504,18 @@ input:focus {
   display: inline-block;
   width: 100%;
 }
+.floatButtonLeft {
+  float: left;
+  margin-left: 15px;
+  background: transparent;
+  border: 0;
+  position: relative;
+  z-index: 9;
+}
+.floatButtonLeft img {
+  display: inline-block;
+  width: 24px;
+}
 a,
 button,
 button:focus,
@@ -9779,6 +9791,37 @@ select {
 .formRegistro-passwordCheck.heavy span {
   background: #8BC34A;
 }
+.formatoContra {
+  background: #ffffff;
+  padding: 10px 15px;
+  margin: 0 5px 30px 5px;
+  border-radius: 5px;
+}
+.formatoContra-title {
+  font-size: 15px;
+  color: #333;
+}
+.formatoContra-item {
+  font-size: 11px;
+  margin-bottom: 5px;
+  color: #555;
+}
+.formatoContra-item span {
+  display: inline-block;
+  background: #eaeaea;
+  padding: 3px;
+  margin-left: 5px;
+}
+.formatoContra-ejemplo {
+  font-weight: 600;
+  color: #154d67;
+  background: #f5f5f5;
+  padding: 4px;
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 0 0 0;
+  letter-spacing: 1px;
+}
 /**
  *
  * MAIN
@@ -9801,7 +9844,7 @@ select {
   padding: 40px 10px;
 }
 .mainMenu-item {
-  background: #7e7d7d url(c018b5995955806cf1355956b2a749fe.jpg) no-repeat;
+  background: linear-gradient(20deg, #4d6172, #467caa);
   background-size: cover;
   text-align: center;
   color: #ffF;
@@ -9810,8 +9853,6 @@ select {
   border: 0;
   flex: 0 0 45%;
   margin: 5px;
-  -webkit-animation: mainItemBackground 7s ease-out forwards;
-          animation: mainItemBackground 7s ease-out forwards;
 }
 .mainMenu-item:hover {
   box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.41);
@@ -9825,10 +9866,6 @@ select {
 }
 .mainMenu-item span {
   display: block;
-  background: #666666;
-  border-bottom: 3px solid #f12b3a;
-  border-radius: 5px;
-  box-shadow: inset 0px 0px 14px #262626;
   line-height: 1.4;
 }
 @-webkit-keyframes mainItemBackground {
@@ -10883,11 +10920,6 @@ input:checked + .slider:before {
   margin: 13px 0;
   text-align: left;
   font-weight: 500;
-}
-.form-control {
-  border-radius: 8px;
-  border: none;
-  background: rgba(0, 0, 0, 0.08);
 }
 .comentarios {
   width: 100%;
