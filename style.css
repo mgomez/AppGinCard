@@ -9841,7 +9841,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 40px 10px;
+  padding: 10px;
 }
 .mainMenu-item {
   background: linear-gradient(20deg, #4d6172, #467caa);
@@ -10970,7 +10970,7 @@ input:checked + .slider:before {
 }
 .formRegistro-group label {
   display: block;
-  color: #c7c7c7;
+  color: #383838;
   text-align: left;
   font-weight: 600;
 }
