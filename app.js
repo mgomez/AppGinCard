@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "34619aa1b4247fd83016"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "77c6608b32bab0db3ed0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -41843,8 +41843,10 @@
 	                                                    app.activeFingerPrint = true;
 	                                                    _localforage2.default.setItem("activeFingerPrint", true);
 	                                                    _localforage2.default.setItem("activeFingerPrintData", encripted);
+
 	                                                    alert("Listo, tu huella a quedado registrada correctamente.");
-	                                                    app.Exit();
+
+	                                                    app.LogOut();
 	                                                } else {
 	                                                    app.View("huellaDigital");
 	                                                }
@@ -41858,10 +41860,14 @@
 	                                    navigator.notification.confirm('¿Estas seguro que deseas desactivar la huella digital para acceder a tu app de GinCard?', function (r) {
 	                                        if (r === 1) {
 	                                            alert("Listo, tu huella a quedado desactivada.");
+
 	                                            (0, _jquery2.default)("#estadoHuella").html("Desactiva");
 	                                            (0, _jquery2.default)("#inputPassword").prop("disabled", true);
+
 	                                            app.activeFingerPrint = false;
+
 	                                            _localforage2.default.setItem("activeFingerPrint", false);
+
 	                                            app.View("huellaDigital");
 	                                        }
 	                                    }, 'Desactiva tu huella digital', ['SI', 'NO']);
