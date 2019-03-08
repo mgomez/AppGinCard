@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f8dbbd7bc7363f476880"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "34619aa1b4247fd83016"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -41782,15 +41782,11 @@
 	                    switch (_context.prev = _context.next) {
 	                        case 0:
 	                            _this = _this2;
-	                            //PullToRefresh
-
-	                            PullToRefresh.destroyAll();
-
 	                            activeFingerPrint = app.activeFingerPrint;
-	                            _context.next = 5;
+	                            _context.next = 4;
 	                            return _localforage2.default.getItem("User");
 
-	                        case 5:
+	                        case 4:
 	                            User = _context.sent;
 
 
@@ -41872,7 +41868,7 @@
 	                                }
 	                            });
 
-	                        case 12:
+	                        case 11:
 	                        case 'end':
 	                            return _context.stop();
 	                    }
@@ -53749,7 +53745,7 @@
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"section\" id=\"huellaDigital\">\r\n    <div class=\"container\">\r\n        <img src=\"" + __webpack_require__(366) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"form-group\">\r\n                <label>Ingresa tu contraseña de GinCard</label>\r\n                <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n</section>";
+	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"cardTravex\" id=\"huellaDigital\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <h3 class=\"cardTravex-title\">Huella Digital</h3>\r\n    </div>\r\n    <div class=\"text-center\">\r\n        <img src=\"" + __webpack_require__(366) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"p-4\">\r\n                <div class=\"form-group\">\r\n                    <label>Ingresa tu contraseña de GinCard</label>\r\n                    <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n                </div>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 330 */
