@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "40cdf32944183f4b2b30"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f8dbbd7bc7363f476880"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -26387,7 +26387,7 @@
 	        var _this2 = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-	            var _this, renderTpl, User;
+	            var _this, renderTpl, User, touchid, dataLayout;
 
 	            return _regenerator2.default.wrap(function _callee$(_context) {
 	                while (1) {
@@ -26400,6 +26400,21 @@
 
 	                        case 4:
 	                            User = _context.sent;
+	                            _context.next = 7;
+	                            return _localforage2.default.getItem("touchid");
+
+	                        case 7:
+	                            _context.t0 = _context.sent;
+
+	                            if (_context.t0) {
+	                                _context.next = 10;
+	                                break;
+	                            }
+
+	                            _context.t0 = false;
+
+	                        case 10:
+	                            touchid = _context.t0;
 
 
 	                            _localforage2.default.setItem("lastView", {
@@ -26409,7 +26424,7 @@
 	                            //valido que este conectado a una red
 
 	                            if (window.Connection) {
-	                                _context.next = 11;
+	                                _context.next = 17;
 	                                break;
 	                            }
 
@@ -26419,85 +26434,91 @@
 	                            (0, _jquery2.default)("#renderBody").html(_offlineTpl2.default);
 	                            return _context.abrupt('return');
 
-	                        case 11:
+	                        case 17:
 
 	                            //cargo el layout
 	                            renderTpl = !_default ? _layoutTpl2.default : _layoutLoginTpl2.default;
 
-	                            renderTpl = _tool2.default.renderTpl(renderTpl, User);
+	                            dataLayout = {
+	                                User: User,
+	                                touchid: touchid
+	                            };
+
+
+	                            renderTpl = _tool2.default.renderTpl(renderTpl, dataLayout);
 
 	                            (0, _jquery2.default)("#app").html(renderTpl);
 
 	                            _this.setActiveMenu(page);
 
-	                            _context.t0 = page;
-	                            _context.next = _context.t0 === 'login' ? 18 : _context.t0 === 'registro' ? 20 : _context.t0 === 'main' ? 22 : _context.t0 === 'saldo' ? 24 : _context.t0 === 'comprobar' ? 26 : _context.t0 === 'porFacturar' ? 28 : _context.t0 === 'presupuestoAlta' ? 30 : _context.t0 === 'agregarTarjeta' ? 32 : _context.t0 === 'configuracion' ? 35 : _context.t0 === 'autorizarPresupuesto' ? 37 : _context.t0 === 'estatus' ? 39 : _context.t0 === 'express' ? 41 : _context.t0 === 'notificaciones' ? 43 : _context.t0 === 'huellaDigital' ? 45 : 47;
+	                            _context.t1 = page;
+	                            _context.next = _context.t1 === 'login' ? 25 : _context.t1 === 'registro' ? 27 : _context.t1 === 'main' ? 29 : _context.t1 === 'saldo' ? 31 : _context.t1 === 'comprobar' ? 33 : _context.t1 === 'porFacturar' ? 35 : _context.t1 === 'presupuestoAlta' ? 37 : _context.t1 === 'agregarTarjeta' ? 39 : _context.t1 === 'configuracion' ? 42 : _context.t1 === 'autorizarPresupuesto' ? 44 : _context.t1 === 'estatus' ? 46 : _context.t1 === 'express' ? 48 : _context.t1 === 'notificaciones' ? 50 : _context.t1 === 'huellaDigital' ? 52 : 54;
 	                            break;
 
-	                        case 18:
+	                        case 25:
 	                            _login2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 20:
+	                        case 27:
 	                            _registro2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 22:
-	                            _main2.default.init(User);
-	                            return _context.abrupt('break', 51);
+	                        case 29:
+	                            _main2.default.init(dataLayout);
+	                            return _context.abrupt('break', 58);
 
-	                        case 24:
+	                        case 31:
 	                            _saldo2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 26:
+	                        case 33:
 	                            _comprobar2.default.init(page);
-	                            return _context.abrupt('break', 51);
-
-	                        case 28:
-	                            _porFacturar2.default.init(page);
-	                            return _context.abrupt('break', 51);
-
-	                        case 30:
-	                            _presupuestoAlta2.default.init(page);
-	                            return _context.abrupt('break', 51);
-
-	                        case 32:
-	                            _agregarTarjeta2.default.init(page);
-	                            _this.setActiveMenu("saldo");
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
 	                        case 35:
-	                            _configuracion2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            _porFacturar2.default.init(page);
+	                            return _context.abrupt('break', 58);
 
 	                        case 37:
-	                            _autorizarPresupuesto2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            _presupuestoAlta2.default.init(page);
+	                            return _context.abrupt('break', 58);
 
 	                        case 39:
+	                            _agregarTarjeta2.default.init(page);
+	                            _this.setActiveMenu("saldo");
+	                            return _context.abrupt('break', 58);
+
+	                        case 42:
+	                            _configuracion2.default.init(page);
+	                            return _context.abrupt('break', 58);
+
+	                        case 44:
+	                            _autorizarPresupuesto2.default.init(page);
+	                            return _context.abrupt('break', 58);
+
+	                        case 46:
 	                            _estatus2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 41:
+	                        case 48:
 	                            _express2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 43:
+	                        case 50:
 	                            _notificaciones2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 45:
+	                        case 52:
 	                            _huellaDigital2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 47:
+	                        case 54:
 	                            renderTpl = _tool2.default.renderTpl(_layoutLoginTpl2.default);
 	                            (0, _jquery2.default)("#app").html(renderTpl);
 	                            _login2.default.init(page);
-	                            return _context.abrupt('break', 51);
+	                            return _context.abrupt('break', 58);
 
-	                        case 51:
+	                        case 58:
 
 	                            if (!_default) {
 	                                setTimeout(function () {
@@ -26508,7 +26529,7 @@
 	                                }, 800);
 	                            }
 
-	                        case 52:
+	                        case 59:
 	                        case 'end':
 	                            return _context.stop();
 	                    }
@@ -42169,10 +42190,10 @@
 	 *
 	 */
 	exports.default = {
-	    init: function init(User) {
-	        this.render(User);
+	    init: function init(dataLayout) {
+	        this.render(dataLayout);
 	    },
-	    render: function render(User) {
+	    render: function render(dataLayout) {
 	        var _this = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
@@ -42181,7 +42202,7 @@
 	                while (1) {
 	                    switch (_context.prev = _context.next) {
 	                        case 0:
-	                            renderTpl = _tool2.default.renderTpl(_mainTpl2.default, User);
+	                            renderTpl = _tool2.default.renderTpl(_mainTpl2.default, dataLayout);
 
 
 	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
@@ -53746,7 +53767,7 @@
 /* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"main-bar\">\r\n            <span>BIENVENIDO <b>{{userName}}</b>!</span>\r\n        </div>\r\n        <div class=\"mainMenu\">\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('saldo')\">\r\n                <img src=\"" + __webpack_require__(211) + "\" alt=\"SALDO\">\r\n                <span>Saldo y<br>Movimientos</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('comprobar')\">\r\n                <img src=\"" + __webpack_require__(207) + "\" alt=\"COMPROBAR\">\r\n                <span>Comprobar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('porFacturar')\">\r\n                <img src=\"" + __webpack_require__(373) + "\" alt=\"POR FACTURAR\">\r\n                <span>Por Facturar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('presupuestoAlta')\">\r\n                <img src=\"" + __webpack_require__(210) + "\" alt=\"ALTA\">\r\n                <span>Alta<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('express')\">\r\n                <img src=\"" + __webpack_require__(208) + "\" alt=\"EXPRESS\">\r\n                <span>Presupuesto<br>Express</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('estatus')\">\r\n                <img src=\"" + __webpack_require__(370) + "\" alt=\"TRANSACCION\">\r\n                <span>Estado<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('configuracion')\">\r\n                <img src=\"" + __webpack_require__(369) + "\" alt=\"CONFIGURACION\">\r\n                <span>Configuración</span>\r\n            </button>\r\n            {{#if touchid}}\r\n                <button class=\"mainMenu-item\" onclick=\"app.View('huellaDigital')\">\r\n                    <img src=\"" + __webpack_require__(361) + "\" alt=\"CONFIGURACION\">\r\n                    <span>Huella Digital</span>\r\n                </button>\r\n            {{/if}}\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"main-bar\">\r\n            <span>BIENVENIDO <b>{{User.userName}}</b>!</span>\r\n        </div>\r\n        <div class=\"mainMenu\">\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('saldo')\">\r\n                <img src=\"" + __webpack_require__(211) + "\" alt=\"SALDO\">\r\n                <span>Saldo y<br>Movimientos</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('comprobar')\">\r\n                <img src=\"" + __webpack_require__(207) + "\" alt=\"COMPROBAR\">\r\n                <span>Comprobar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('porFacturar')\">\r\n                <img src=\"" + __webpack_require__(373) + "\" alt=\"POR FACTURAR\">\r\n                <span>Por Facturar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('presupuestoAlta')\">\r\n                <img src=\"" + __webpack_require__(210) + "\" alt=\"ALTA\">\r\n                <span>Alta<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('express')\">\r\n                <img src=\"" + __webpack_require__(208) + "\" alt=\"EXPRESS\">\r\n                <span>Presupuesto<br>Express</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('estatus')\">\r\n                <img src=\"" + __webpack_require__(370) + "\" alt=\"TRANSACCION\">\r\n                <span>Estado<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('configuracion')\">\r\n                <img src=\"" + __webpack_require__(369) + "\" alt=\"CONFIGURACION\">\r\n                <span>Configuración</span>\r\n            </button>\r\n            {{#if touchid}}\r\n                <button class=\"mainMenu-item\" onclick=\"app.View('huellaDigital')\">\r\n                    <img src=\"" + __webpack_require__(361) + "\" alt=\"CONFIGURACION\">\r\n                    <span>Huella Digital</span>\r\n                </button>\r\n            {{/if}}\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 333 */
