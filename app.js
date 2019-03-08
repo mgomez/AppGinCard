@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3015354470490744faa1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "40cdf32944183f4b2b30"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -41960,6 +41960,7 @@
 	}
 
 	exports.default = {
+	    cambioHuella: false,
 	    init: function init() {
 	        this.render();
 	    },
@@ -41994,6 +41995,62 @@
 	    },
 	    handleEvents: function handleEvents() {
 	        var _this = this;
+	        //BUG modal, sesion
+	        (0, _jquery2.default)("body").removeClass('modal-open');
+	        (0, _jquery2.default)(".modal-backdrop").remove();
+	        //Si tiene activo el login por huella
+	        if (app.activeFingerPrint) {
+	            setTimeout(function () {
+	                app.verifyFingerprint(true).then(function () {
+	                    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(r) {
+	                        var formData, decripted, data;
+	                        return _regenerator2.default.wrap(function _callee2$(_context2) {
+	                            while (1) {
+	                                switch (_context2.prev = _context2.next) {
+	                                    case 0:
+	                                        if (!r) {
+	                                            _context2.next = 7;
+	                                            break;
+	                                        }
+
+	                                        _context2.next = 3;
+	                                        return _localforage2.default.getItem("activeFingerPrintData");
+
+	                                    case 3:
+	                                        formData = _context2.sent;
+	                                        decripted = AesCtr.decrypt(formData, device.uuid, 256);
+	                                        data = JSON.parse(decripted);
+
+
+	                                        _jquery2.default.ajax({
+	                                            url: _constant2.default.SERVER_URL + '/token',
+	                                            type: 'POST',
+	                                            dataType: 'json',
+	                                            data: data
+	                                        }).done(function (r) {
+	                                            _localforage2.default.setItem('User', r);
+	                                            _localforage2.default.setItem('UserTemp', formData.userName);
+	                                            _router2.default.View('saldo');
+	                                        }).fail(function (err) {
+	                                            alert("Se detectó un cambio reciente de contraseña y no se configuró nuevamente la huella digital, favor de iniciar sesión con Usuario y Contraseña.");
+	                                            _this.cambioHuella = true;
+	                                            app.activeFingerPrint = false;
+	                                        });
+
+	                                    case 7:
+	                                    case 'end':
+	                                        return _context2.stop();
+	                                }
+	                            }
+	                        }, _callee2, this);
+	                    }));
+
+	                    return function (_x) {
+	                        return _ref.apply(this, arguments);
+	                    };
+	                }());
+	            }, 1000);
+	        }
 	        //Mostrar contraseña
 	        (0, _jquery2.default)("#mostrarContraseña").on("click", function () {
 	            var $el = (0, _jquery2.default)(this);
