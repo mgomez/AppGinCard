@@ -10619,7 +10619,7 @@ input:focus {
   }
 }
 .cardTravex {
-  background: #e6e6e6;
+  background: linear-gradient(45deg, #e6e6e6, #f4f4f4);
   margin: 15px 10px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   padding-bottom: 30px;
@@ -10629,7 +10629,7 @@ input:focus {
 }
 .cardTravex-hgroup {
   text-align: center;
-  padding: 3px 0;
+  padding: 5px 0;
   position: relative;
   background: linear-gradient(180deg, #fff, #ebebeb);
   box-shadow: 0px 3px 0px 1px #d3d3d3;
@@ -10648,8 +10648,8 @@ input:focus {
 .floatButtonLeft {
   position: absolute;
   width: 32px;
-  top: 15px;
-  left: 15px;
+  top: 3px;
+  left: 10px;
   background: transparent;
   border: 0;
 }
@@ -10660,8 +10660,8 @@ input:focus {
 .floatButtonRight {
   position: absolute;
   width: 32px;
-  top: 15px;
-  right: 15px;
+  top: 3px;
+  right: 10px;
   background: transparent;
   border: 0;
 }
@@ -10853,10 +10853,10 @@ input:focus {
   padding: 10px;
 }
 .mainMenu-item {
-  background: #0b97a4;
-  border-radius: 30px 30px 30px 0px;
-  border: 0;
-  box-shadow: inset 0px 0 10px 5px rgba(0, 0, 0, 0.2), 0px 10px 6px 0px rgba(0, 0, 0, 0.3);
+  background: #214a8d;
+  border-radius: 50%;
+  border: 3px solid #c1d62f;
+  box-shadow: inset 0px 0 10px 5px rgba(0, 0, 0, 0.2), 0px 10px 6px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 2px #dfff00;
   color: #fff;
   flex: 0 0 45%;
   margin: 10px 0;
@@ -10874,8 +10874,17 @@ input:focus {
   width: 34px;
 }
 .mainMenu-item span {
+  background: #1e4481;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   display: block;
   line-height: 1.1;
+  padding: 5px;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+  z-index: 99;
 }
 @-webkit-keyframes fade-in-bck {
   0% {
@@ -11026,16 +11035,17 @@ input:focus {
   color: #fff;
 }
 .add-card {
-  background-color: #ee3442;
-  border-radius: 0 0 0px 10px;
+  background-color: #d7d4d4;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 32px;
   font-weight: 900;
   height: 32px;
-  line-height: 25px;
+  line-height: 32px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5px;
+  top: 3px;
   width: 32px;
 }
 @-webkit-keyframes scale-in-ver-top {
@@ -12171,9 +12181,12 @@ input:checked + .slider:before {
 }
 .agregarTarjeta .imagenTarjetas {
   text-align: center;
+  background: #fff url(a0d973f3b4dee01b47b247ef1017dded.jpg) no-repeat center center;
+  padding: 20px;
+  border-bottom: 2px solid #d3d3d3;
 }
 .agregarTarjeta .imagenTarjetas img {
-  width: 65%;
+  width: 100%;
   -webkit-animation: pulsate-fwd 0.7s ease-in-out 1 both;
           animation: pulsate-fwd 0.7s ease-in-out 1 both;
   margin: 20px auto 5px auto;
