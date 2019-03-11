@@ -10400,14 +10400,6 @@ input:focus {
   margin-top: 10px;
   padding: 0px 1em;
 }
-.modal {
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 16, 33, 0.75);
-}
-.modal-open .modal {
-  display: flex !important;
-}
 .image-inline {
   display: inline-block;
 }
@@ -10925,7 +10917,9 @@ input:focus {
   margin-bottom: 15px;
 }
 .tarjetas-container .tarjeta.active .tarjeta-container {
-  border-color: #a6a6a6;
+  border-color: #ffa8af;
+  background: radial-gradient(#ffffff, #c8c8c8);
+  color: #000;
 }
 .tarjetas-container .tarjeta.active .tarjeta-img img {
   -webkit-animation: pulsate-fwd 0.5s ease-in-out 3 both;
@@ -10981,7 +10975,7 @@ input:focus {
   font-weight: 900;
 }
 .tarjetas-container .tarjeta-movimientos {
-  background: #a6a6a6;
+  background: #ececec;
   border-radius: 10px;
   color: #fff;
   padding-bottom: 10px;
@@ -10998,7 +10992,7 @@ input:focus {
 }
 .tarjetas-container .tarjeta-movimientos-movimiento {
   align-items: center;
-  border-bottom: 2px solid #b1b0b0;
+  border-bottom: 2px solid #e5e5e5;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
@@ -11022,17 +11016,17 @@ input:focus {
 }
 .tarjetas-container .tarjeta-movimientos-fecha {
   font-size: 10px;
-  color: #fff;
+  color: #343434;
 }
 .tarjetas-container .tarjeta-movimientos-concepto {
   font-size: 12px;
   font-weight: 600;
-  color: #e6e6e6;
+  color: #6a6a6a;
 }
 .tarjetas-container .tarjeta-movimientos-monto {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #3F51B5;
 }
 .add-card {
   background-color: #d7d4d4;
@@ -12181,7 +12175,7 @@ input:checked + .slider:before {
 }
 .agregarTarjeta .imagenTarjetas {
   text-align: center;
-  background: #fff url(a0d973f3b4dee01b47b247ef1017dded.jpg) no-repeat center center;
+  background: #fff url(051fa8e86f410ac8a73c2dc3997be7c0.jpg) no-repeat center center;
   padding: 20px;
   border-bottom: 2px solid #d3d3d3;
 }
