@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "77c6608b32bab0db3ed0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "582610f44b1ed03594f1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -762,7 +762,7 @@
 	        if (navigator.notification) {
 	            window.alert = function (message) {
 	                navigator.vibrate(100);
-	                navigator.notification.alert(message, null, "TRAVEX", 'OK');
+	                navigator.notification.alert(message, null, "GinCard", 'OK');
 	            };
 	        }
 	        //valida conexion
@@ -42053,11 +42053,13 @@
 	                                        }).done(function (r) {
 	                                            _localforage2.default.setItem('User', r);
 	                                            _localforage2.default.setItem('UserTemp', formData.userName);
-	                                            _router2.default.View('saldo');
+
+	                                            app.View('main');
 	                                        }).fail(function (err) {
-	                                            alert("Se detectó un cambio reciente de contraseña y no se configuró nuevamente la huella digital, favor de iniciar sesión con Usuario y Contraseña.");
 	                                            _this.cambioHuella = true;
 	                                            app.activeFingerPrint = false;
+
+	                                            alert("Se detectó un cambio reciente de contraseña y no se configuró nuevamente la huella digital, favor de iniciar sesión con Usuario y Contraseña.");
 	                                        });
 
 	                                    case 7:
@@ -42102,9 +42104,9 @@
 	                    _this.Login(formData).then(function (r) {
 	                        _localforage2.default.setItem('User', r);
 	                        _localforage2.default.setItem('UserTemp', formData.userName);
+	                        app.loading(false);
 
 	                        _router2.default.View('main');
-	                        app.loading(false);
 	                        (0, _jquery2.default)(".navbar-name").html(r.userName);
 	                    });
 	                }
@@ -43648,7 +43650,6 @@
 	 *
 	 */
 	function validaFormato(val) {
-	    console.log("validaFormato", val);
 	    var mensaje = "FORMATO INCORRECTO\n";
 	    var minuscula = /[a-z].*/.test(val);
 	    var mayuscula = /[A-Z].*/.test(val);
@@ -43709,7 +43710,7 @@
 	        (0, _jquery2.default)("#inputUsuario").on("keyup", function () {
 	            var val = (0, _jquery2.default)(this).val();
 	            var usuario = val.replace(/[|&;$%@"<>()! +,]/g, "");
-	            console.log(val, usuario);
+
 	            (0, _jquery2.default)(this).val(usuario);
 	        });
 	        //seguridad de contraseña
@@ -44079,6 +44080,9 @@
 	                mensaje = _linq2.default.from(responseJSON.ModelState).selectMany(function (el) {
 	                    return el.value;
 	                }).toArray().join("\n");
+	            } else if (responseJSON.Data) {
+	                mensaje = responseJSON.Data;
+	                mensaje = mensaje.length > 0 ? mensaje : responseJSON.Message;
 	            } else {
 	                mensaje = responseJSON.Message;
 	            }
@@ -53835,7 +53839,7 @@
 /* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==============================\r\n=            REGISTRO            =\r\n===============================-->\r\n<section id=\"registro\">\r\n    <div class=\"layoutLogin-data\">\r\n        <div class=\"login-logo\">\r\n            <img src=\"" + __webpack_require__(53) + "\" alt=\"ONE CARD\" class=\"login-logo-img\">\r\n        </div>\r\n        <form id=\"frm-register\" class=\"formRegistro\" autocomplete=\"off\">\r\n            <input type=\"hidden\" name=\"grant_type\" value=\"password\">\r\n            <div class=\"formRegistro-group\">\r\n                <label>Usuario</label>\r\n                <input type=\"text\" name=\"Username\" id=\"inputUsuario\" class=\"formRegistro-control\" required tabindex=\"1\">\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Email</label>\r\n                <input type=\"email\" name=\"Email\" id=\"inputEmail\" class=\"formRegistro-control\" required tabindex=\"2\">\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Contraseña</label>\r\n                <div class=\"formRegistro-btnAddon\">\r\n                    <button type=\"button\" class=\"togglePassword\"></button>\r\n                    <input type=\"password\" name=\"Password\" id=\"inputPassword\" class=\"formRegistro-control\" required tabindex=\"3\">\r\n                </div>\r\n                <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                    <span></span>\r\n                    <span></span>\r\n                    <span></span>\r\n                </div>\r\n            </div>\r\n            <div class=\"formatoContra\">\r\n                <h5 class=\"formatoContra-title\">Tu contraseña debe contener:</h5>\r\n                <div class=\"formatoContra-item\">8 o más caracteres</div>\r\n                <div class=\"formatoContra-item\">Al menos un caracter especial<span>#$^+=!*()@%&</span></div>\r\n                <div class=\"formatoContra-item\">Al menos un número</div>\r\n                <div class=\"formatoContra-item\">Al menos una letra mayúscula y una minúscula</div>\r\n                <div class=\"formatoContra-ejemplo\"><span>Ejemplo:</span> GinCard1!</div>\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Confirmar Contraseña</label>\r\n                <div class=\"formRegistro-btnAddon\">\r\n                    <button type=\"button\" class=\"togglePassword\"></button>\r\n                    <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\" required tabindex=\"4\">\r\n                </div>\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Tarjeta</label>\r\n                <input type=\"number\" name=\"Card\" id=\"inputCard\" class=\"formRegistro-control\" required>\r\n            </div>\r\n            <div class=\"mt-4 text-center\">\r\n                <button type=\"submit\" class=\"button button-primary btn-block\">Registrar</button>\r\n                <button type=\"button\" class=\"button button-danger btn-block\" onclick=\"app.View('login', true)\">Volver</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</section>";
+	module.exports = "<!--==============================\r\n=            REGISTRO            =\r\n===============================-->\r\n<section id=\"registro\">\r\n    <div class=\"layoutLogin-data\">\r\n        <div class=\"login-logo\">\r\n            <img src=\"" + __webpack_require__(53) + "\" alt=\"ONE CARD\" class=\"login-logo-img\" onclick=\"app.View('login', true)\">\r\n        </div>\r\n        <form id=\"frm-register\" class=\"formRegistro\" autocomplete=\"off\">\r\n            <input type=\"hidden\" name=\"grant_type\" value=\"password\">\r\n            <div class=\"formRegistro-group\">\r\n                <label>Usuario</label>\r\n                <input type=\"text\" name=\"Username\" id=\"inputUsuario\" class=\"formRegistro-control\" required tabindex=\"1\">\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Email</label>\r\n                <input type=\"email\" name=\"Email\" id=\"inputEmail\" class=\"formRegistro-control\" required tabindex=\"2\">\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Contraseña</label>\r\n                <div class=\"formRegistro-btnAddon\">\r\n                    <button type=\"button\" class=\"togglePassword\"></button>\r\n                    <input type=\"password\" name=\"Password\" id=\"inputPassword\" class=\"formRegistro-control\" required tabindex=\"3\">\r\n                </div>\r\n                <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                    <span></span>\r\n                    <span></span>\r\n                    <span></span>\r\n                </div>\r\n            </div>\r\n            <div class=\"formatoContra\">\r\n                <h5 class=\"formatoContra-title\">Tu contraseña debe contener:</h5>\r\n                <div class=\"formatoContra-item\">8 o más caracteres</div>\r\n                <div class=\"formatoContra-item\">Al menos un caracter especial<span>#$^+=!*()@%&</span></div>\r\n                <div class=\"formatoContra-item\">Al menos un número</div>\r\n                <div class=\"formatoContra-item\">Al menos una letra mayúscula y una minúscula</div>\r\n                <div class=\"formatoContra-ejemplo\"><span>Ejemplo:</span> GinCard1!</div>\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Confirmar Contraseña</label>\r\n                <div class=\"formRegistro-btnAddon\">\r\n                    <button type=\"button\" class=\"togglePassword\"></button>\r\n                    <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\" required tabindex=\"4\">\r\n                </div>\r\n            </div>\r\n            <div class=\"formRegistro-group\">\r\n                <label>Tarjeta</label>\r\n                <input type=\"number\" name=\"Card\" id=\"inputCard\" class=\"formRegistro-control\" tabindex=\"5\" required>\r\n            </div>\r\n            <div class=\"mt-4 text-center\">\r\n                <button type=\"submit\" class=\"button button-primary btn-block\">Registrar</button>\r\n                <button type=\"button\" class=\"button button-danger btn-block\" onclick=\"app.View('login', true)\">Volver</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 344 */
