@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "caee19523f0b899f94a2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4f2f586e3c556fdc8ef8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -26469,10 +26469,12 @@
 
 	                            if (!dataLayout.showTravex) {
 	                                //oculto del menu los elementos que no son de trabex
-	                                (0, _jquery2.default)("[data-travex=true]").remove();
+	                                (0, _jquery2.default)("[data-travex=true]").hide();
 	                                if (page === "main") {
 	                                    page = "saldo";
 	                                }
+	                            } else {
+	                                (0, _jquery2.default)("[data-travex=true]").show();
 	                            }
 
 	                            _context.t2 = page;
