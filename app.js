@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4f2f586e3c556fdc8ef8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "473625464def52d390e5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43796,7 +43796,9 @@
 	            var formData = $frm.serializeObject();
 
 	            if ($frm.valid()) {
+	                app.loading(true);
 	                _store2.default.Register(formData).then(function (r) {
+	                    app.loading(false);
 	                    alert("Listo, se ha creado correctamente tu usuario. Por favor Ingresa tus datos.");
 	                    app.View('login', true);
 	                }, function (err) {
