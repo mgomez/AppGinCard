@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "473625464def52d390e5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "215ac42c476fae767ab2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -42191,7 +42191,7 @@
 	    },
 	    SetIdentity: function SetIdentity(token) {
 	        var roles = token.roles ? token.roles.split(",") : [];
-	        var showTravex = roles.indexOf("GinCard_App_Travex") !== -1;
+	        var showTravex = true; //roles.indexOf("GinCard_App_Travex") !== -1;
 
 	        _localforage2.default.setItem('User', token);
 	        _localforage2.default.setItem('Roles', roles);
