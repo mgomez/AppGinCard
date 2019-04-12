@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "215ac42c476fae767ab2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "63ce0efcbb2f7a72bc15"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -16114,13 +16114,6 @@
 
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-	var _GetUser$GetDeviceId$; /**
-	                            *
-	                            * STORE
-	                            *
-	                            */
-
-
 	var _jquery = __webpack_require__(2);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
@@ -16143,7 +16136,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = (_GetUser$GetDeviceId$ = {
+	exports.default = (0, _defineProperty3.default)({
 	    //Datos del usuario de la guardaos en localforage
 	    GetUser: function GetUser() {
 	        return _localforage2.default.getItem("User");
@@ -17418,121 +17411,138 @@
 	                }
 	            }, _callee39, _this39);
 	        }))();
+	    },
+
+	    //GetCostCenterBySubcatalog
+	    GetCostCenterBySubcatalog: function GetCostCenterBySubcatalog(data) {
+	        var _this40 = this;
+
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee40() {
+	            var User;
+	            return _regenerator2.default.wrap(function _callee40$(_context40) {
+	                while (1) {
+	                    switch (_context40.prev = _context40.next) {
+	                        case 0:
+	                            _context40.next = 2;
+	                            return _this40.GetUser();
+
+	                        case 2:
+	                            User = _context40.sent;
+	                            return _context40.abrupt('return', _xhr2.default.ajax({
+	                                'path': '/api/Account/' + data.EmployeeId + '/SubCatalogs/' + data.SubCatalogId + '/CostCenters',
+	                                'type': 'GET',
+	                                'access_token': User.access_token,
+	                                'data': data
+	                            }));
+
+	                        case 4:
+	                        case 'end':
+	                            return _context40.stop();
+	                    }
+	                }
+	            }, _callee40, _this40);
+	        }))();
+	    },
+
+	    //Notificacion
+	    //History/Unread
+	    Notifications: function Notifications(data) {
+	        var _this41 = this;
+
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee41() {
+	            var User;
+	            return _regenerator2.default.wrap(function _callee41$(_context41) {
+	                while (1) {
+	                    switch (_context41.prev = _context41.next) {
+	                        case 0:
+	                            _context41.next = 2;
+	                            return _this41.GetUser();
+
+	                        case 2:
+	                            User = _context41.sent;
+	                            return _context41.abrupt('return', _xhr2.default.ajax({
+	                                'path': '/api/Notifications/App',
+	                                'type': 'GET',
+	                                'access_token': User.access_token,
+	                                'data': data,
+	                                'background': data.background
+	                            }));
+
+	                        case 4:
+	                        case 'end':
+	                            return _context41.stop();
+	                    }
+	                }
+	            }, _callee41, _this41);
+	        }))();
+	    },
+
+	    //SetPopUpRead
+	    //api/Notifications/App/{NotificationId}
+	    SetPopUpRead: function SetPopUpRead(NotificationId) {
+	        var _this42 = this;
+
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee42() {
+	            var User;
+	            return _regenerator2.default.wrap(function _callee42$(_context42) {
+	                while (1) {
+	                    switch (_context42.prev = _context42.next) {
+	                        case 0:
+	                            _context42.next = 2;
+	                            return _this42.GetUser();
+
+	                        case 2:
+	                            User = _context42.sent;
+	                            return _context42.abrupt('return', _xhr2.default.ajax({
+	                                'path': '/api/Notifications/App/' + NotificationId,
+	                                'type': 'POST',
+	                                'access_token': User.access_token,
+	                                'data': { NotificationId: NotificationId }
+	                            }));
+
+	                        case 4:
+	                        case 'end':
+	                            return _context42.stop();
+	                    }
+	                }
+	            }, _callee42, _this42);
+	        }))();
+	    },
+
+	    //SetFileMultiTicket
+	    //[InvoiceId]
+	    //[TransactionId]
+	    //[EmployeeId]
+	    SetFileMultiTicket: function SetFileMultiTicket(data) {
+	        var _this43 = this;
+
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee43() {
+	            var User;
+	            return _regenerator2.default.wrap(function _callee43$(_context43) {
+	                while (1) {
+	                    switch (_context43.prev = _context43.next) {
+	                        case 0:
+	                            _context43.next = 2;
+	                            return _this43.GetUser();
+
+	                        case 2:
+	                            User = _context43.sent;
+	                            return _context43.abrupt('return', _xhr2.default.ajax({
+	                                'path': '/api/Expenses/Assistant/Gincard/File',
+	                                'type': 'POST',
+	                                'access_token': User.access_token,
+	                                'data': data
+	                            }));
+
+	                        case 4:
+	                        case 'end':
+	                            return _context43.stop();
+	                    }
+	                }
+	            }, _callee43, _this43);
+	        }))();
 	    }
-	}, (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetFileManualTicket', function SetFileManualTicket(data) {
-	    var _this40 = this;
-
-	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee40() {
-	        var User;
-	        return _regenerator2.default.wrap(function _callee40$(_context40) {
-	            while (1) {
-	                switch (_context40.prev = _context40.next) {
-	                    case 0:
-	                        _context40.next = 2;
-	                        return _this40.GetUser();
-
-	                    case 2:
-	                        User = _context40.sent;
-	                        return _context40.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Expenses/Ticket/Manual/File',
-	                            'type': 'POST',
-	                            'access_token': User.access_token,
-	                            'data': data
-	                        }));
-
-	                    case 4:
-	                    case 'end':
-	                        return _context40.stop();
-	                }
-	            }
-	        }, _callee40, _this40);
-	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetCostCenterBySubcatalog', function GetCostCenterBySubcatalog(data) {
-	    var _this41 = this;
-
-	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee41() {
-	        var User;
-	        return _regenerator2.default.wrap(function _callee41$(_context41) {
-	            while (1) {
-	                switch (_context41.prev = _context41.next) {
-	                    case 0:
-	                        _context41.next = 2;
-	                        return _this41.GetUser();
-
-	                    case 2:
-	                        User = _context41.sent;
-	                        return _context41.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Account/' + data.EmployeeId + '/SubCatalogs/' + data.SubCatalogId + '/CostCenters',
-	                            'type': 'GET',
-	                            'access_token': User.access_token,
-	                            'data': data
-	                        }));
-
-	                    case 4:
-	                    case 'end':
-	                        return _context41.stop();
-	                }
-	            }
-	        }, _callee41, _this41);
-	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'Notifications', function Notifications(data) {
-	    var _this42 = this;
-
-	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee42() {
-	        var User;
-	        return _regenerator2.default.wrap(function _callee42$(_context42) {
-	            while (1) {
-	                switch (_context42.prev = _context42.next) {
-	                    case 0:
-	                        _context42.next = 2;
-	                        return _this42.GetUser();
-
-	                    case 2:
-	                        User = _context42.sent;
-	                        return _context42.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Notifications/App',
-	                            'type': 'GET',
-	                            'access_token': User.access_token,
-	                            'data': data,
-	                            'background': data.background
-	                        }));
-
-	                    case 4:
-	                    case 'end':
-	                        return _context42.stop();
-	                }
-	            }
-	        }, _callee42, _this42);
-	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetPopUpRead', function SetPopUpRead(NotificationId) {
-	    var _this43 = this;
-
-	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee43() {
-	        var User;
-	        return _regenerator2.default.wrap(function _callee43$(_context43) {
-	            while (1) {
-	                switch (_context43.prev = _context43.next) {
-	                    case 0:
-	                        _context43.next = 2;
-	                        return _this43.GetUser();
-
-	                    case 2:
-	                        User = _context43.sent;
-	                        return _context43.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Notifications/App/' + NotificationId,
-	                            'type': 'POST',
-	                            'access_token': User.access_token,
-	                            'data': { NotificationId: NotificationId }
-	                        }));
-
-	                    case 4:
-	                    case 'end':
-	                        return _context43.stop();
-	                }
-	            }
-	        }, _callee43, _this43);
-	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetFileMultiTicket', function SetFileMultiTicket(data) {
+	}, 'SetFileMultiTicket', function SetFileMultiTicket(data) {
 	    var _this44 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee44() {
@@ -17560,35 +17570,11 @@
 	            }
 	        }, _callee44, _this44);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetFileMultiTicket', function SetFileMultiTicket(data) {
-	    var _this45 = this;
-
-	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee45() {
-	        var User;
-	        return _regenerator2.default.wrap(function _callee45$(_context45) {
-	            while (1) {
-	                switch (_context45.prev = _context45.next) {
-	                    case 0:
-	                        _context45.next = 2;
-	                        return _this45.GetUser();
-
-	                    case 2:
-	                        User = _context45.sent;
-	                        return _context45.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Expenses/Assistant/Gincard/File',
-	                            'type': 'POST',
-	                            'access_token': User.access_token,
-	                            'data': data
-	                        }));
-
-	                    case 4:
-	                    case 'end':
-	                        return _context45.stop();
-	                }
-	            }
-	        }, _callee45, _this45);
-	    }))();
-	}), _GetUser$GetDeviceId$);
+	}); /**
+	     *
+	     * STORE
+	     *
+	     */
 
 /***/ }),
 /* 7 */
