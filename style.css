@@ -10539,7 +10539,6 @@ input:focus {
   border: 0;
   width: 38px;
   position: relative;
-  padding: 7px;
 }
 .menu-item.active:after {
   background: #fff;
