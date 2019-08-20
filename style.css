@@ -10746,33 +10746,36 @@ input:focus {
     opacity: 1;
   }
 }
+/*
 .cardTravex {
-  background: linear-gradient(45deg, #e6e6e6, #f4f4f4);
-  margin: 15px 10px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  padding-bottom: 30px;
-  position: relative;
-  -webkit-animation: fade-in-left 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-          animation: fade-in-left 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-.cardTravex-hgroup {
-  text-align: center;
-  padding: 5px 0;
-  position: relative;
-  background: linear-gradient(180deg, #fff, #ebebeb);
-  box-shadow: 0px 3px 0px 1px #d3d3d3;
-}
-.cardTravex-hgroup .cardTravex-title {
-  color: #323232;
-  display: inline-block;
-  font-size: 18px;
-  margin: 0;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.cardTravex-partial {
-  padding: 0 15px;
-}
+    background: linear-gradient(45deg, #e6e6e6, #f4f4f4);
+    margin: 15px 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+    padding-bottom: 30px;
+    position: relative;
+    .fade-in-left;
+
+    &-hgroup {
+        text-align: center;
+        padding: 5px 0;
+        position: relative;
+        background: linear-gradient(180deg, #fff, #ebebeb);
+        box-shadow: 0px 3px 0px 1px #d3d3d3;
+
+        & .cardTravex-title {
+            color: #323232;
+            display: inline-block;
+            font-size: 18px;
+            margin: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    &-partial {
+        padding: 0 15px;
+    }
+}*/
 .floatButtonLeft {
   position: absolute;
   width: 32px;
@@ -11198,11 +11201,12 @@ input:focus {
   font-size: 18px;
 }
 .cardTravex {
-  background: #e6e6e6;
+  background: linear-gradient(45deg, #e6e6e6, #f4f4f4);
   margin: 15px 10px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   padding-bottom: 30px;
   position: relative;
+  align-self: normal;
 }
 .cardTravex-hgroup {
   text-align: center;
@@ -11217,6 +11221,9 @@ input:focus {
   padding: 8px 16px;
   background: #d8d8d8;
   font-weight: 600;
+}
+.cardTravex-hgroup .cardTravex-title-border {
+  border: 1px solid darkgrey;
 }
 .cardTravex-partial {
   padding: 0 15px;
@@ -11240,7 +11247,7 @@ input:focus {
 }
 .overflowTravex {
   overflow-y: auto;
-  max-height: 100vh;
+  max-height: 120vh;
 }
 .dotTravex {
   width: 30px;
@@ -11305,6 +11312,7 @@ input:focus {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
+  height: auto;
   background-color: #DBDBDB !important;
   /* Center slide text vertically */
   display: flex;
