@@ -11303,7 +11303,28 @@ input:focus {
   max-height: fit-content !important;
 }
 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
   background-color: #DBDBDB !important;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-scrollbar,
+.swiper-pagination {
+  position: relative !important;
+  bottom: 0px !important;
+}
+.searchContainer {
+  width: 100%!important;
+}
+.Travex-slide {
+  width: 100%!important;
+  background-color: #dadada;
+}
+.noShadow {
+  box-shadow: none;
 }
 /**
  *
@@ -11641,28 +11662,6 @@ input:checked + .slider .off {
 .subtitle {
   margin: 15px 0;
   color: #636363;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-scrollbar {
-  position: relative !important;
-  bottom: 0px !important;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 /**
  *
