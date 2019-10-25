@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ecbf9981c8d0f7c34a6c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "721008759e2d49e0324f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -75373,7 +75373,7 @@
 /* 351 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3  m-auto\"></div>{{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}:</b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} {{#equal desc false}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\">{{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
+	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text text-nowrap w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal\r\n            desc true}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3  m-auto\"></div>{{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}:</b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} {{#equal desc false}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\">{{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
 
 /***/ }),
 /* 352 */

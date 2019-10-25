@@ -11215,6 +11215,19 @@ input:focus {
   max-height: -moz-fit-content !important;
   max-height: fit-content !important;
 }
+.Travex-divider {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  position: relative;
+  width: 100%;
+  background-color: #001a70;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.Travex-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
