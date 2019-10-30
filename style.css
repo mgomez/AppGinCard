@@ -11233,6 +11233,7 @@ input:focus {
   font-size: 18px;
   height: auto;
   background-color: #DBDBDB !important;
+  border-radius: 10px;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;

@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "721008759e2d49e0324f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "54e1999e39753fa82f44"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32571,7 +32571,7 @@
 	                        detail: {
 	                            empty: false,
 	                            title: config.detailTitle + " #" + el[config.idField],
-	                            labels: _this.getLabelData(Data, configDetail)
+	                            labels: _this.getLabelData(Data[increment - 1], configDetail)
 	                        }
 	                    };
 	                }).toArray();
@@ -59971,10 +59971,9 @@
 	var conceptsHtmlEdit = '';
 	var budgetFormHtml = '';
 
+	var scrollToConcepts = false;
 	var toggleBtn = false;
 	var isAgency = false;
-
-	var prevAction = '';
 
 	var current = {
 	    Agreement: 0,
@@ -59987,12 +59986,13 @@
 	    typeUser: '',
 	    users: '',
 	    conceptData: '',
+	    budgetData: '',
 	    catalogs: ''
 	};
 
 	//Mensajes
 	var messages = {
-	    error: 'Ha ocurrido un error ',
+	    error: 'Ha ocurrido un error, intente nuevamente. ',
 	    noData: 'No se encontraron registros'
 	};
 
@@ -60201,8 +60201,15 @@
 	                                valueField: 'Id'
 	                            });
 	                            $("#cbMunicipality").html(municipalities);
+	                            if (current.budgetData != '') {
+	                                if ($("#cbMunicipality option[value='" + current.budgetData.Municipality.Id + "']").length > 0) {
+	                                    $('#cbMunicipality').val(current.budgetData.Municipality.Id).trigger("change");
+	                                } else {
+	                                    $('#cbMunicipality').val($("#cbMunicipality option:first").val()).trigger("change");
+	                                }
+	                            }
 
-	                        case 6:
+	                        case 7:
 	                        case 'end':
 	                            return _context4.stop();
 	                    }
@@ -60256,7 +60263,8 @@
 	                                alert('¡Se ha eliminado el concepto correctamente!');
 	                                _tool2.default.closeModal('#mdl-editBudget');
 	                                _this.unbindEventsModals();
-	                                _this.loadEditModal(true, true);
+	                                scrollToConcepts = true;
+	                                _this.loadEditModal(true);
 	                            }
 
 	                        case 7:
@@ -60286,6 +60294,10 @@
 	                space: 30,
 	                navigation: true
 	            });
+	            if (scrollToConcepts) {
+	                _tool2.default.scrollToObj(500, '#body-report', '#conceptsContainer', 100);
+	                scrollToConcepts = false;
+	            }
 	        });
 	        $('#editBtn').on("click", function () {
 	            $(this).attr('hidden', true);
@@ -60297,6 +60309,7 @@
 	            $("#cbEmpleado").trigger('change');
 	            $('#btnAddConcept').attr('hidden', false);
 	            _tool2.default.scrollTo(0, '#body-report', 0);
+	            $('#cbState').find("option:selected").trigger('change');
 	            var conceptsHtml = _UI2.default.SliderLabelList(current.conceptData, {
 	                fields: 'Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill',
 	                sliderId: 'swiperConcepts',
@@ -60335,12 +60348,13 @@
 	                space: 30,
 	                navigation: true
 	            });
+	            swiperConcepts.slideTo(1);
 	            $('#budgetDetailContainer').show();
 	            _tool2.default.scrollTo(0, '#body-report', 0);
 	            _this.handleFormModals();
 	        });
 	        $('#saveBtn').on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
-	            var data, resp;
+	            var data, resp, loadResult;
 	            return _regenerator2.default.wrap(function _callee6$(_context6) {
 	                while (1) {
 	                    switch (_context6.prev = _context6.next) {
@@ -60350,12 +60364,12 @@
 	                            data.BudgetId = current.Budget;
 
 	                            if (!validateFormBudget(data)) {
-	                                _context6.next = 8;
+	                                _context6.next = 18;
 	                                break;
 	                            }
 
 	                            if (!confirm('¿El presupuesto será actualizado, desea continuar?')) {
-	                                _context6.next = 8;
+	                                _context6.next = 18;
 	                                break;
 	                            }
 
@@ -60365,13 +60379,42 @@
 	                        case 6:
 	                            resp = _context6.sent;
 
-	                            if (resp.Success) {
-	                                alert('¡Se ha actualizado la información del presupuesto con éxito!');
-	                                _tool2.default.closeModal('#mdl-editBudget');
-	                                _this.loadEditModal(false);
+	                            if (!resp.Success) {
+	                                _context6.next = 18;
+	                                break;
 	                            }
 
-	                        case 8:
+	                            alert('¡Se ha actualizado la información del presupuesto con éxito!');
+	                            //Cargar nuevamente el presupuesto
+	                            _context6.next = 11;
+	                            return _this.loadBudgets({
+	                                EmployeeId: current.Employee,
+	                                AgreementId: current.Agreement,
+	                                reload: true
+	                            });
+
+	                        case 11:
+	                            loadResult = _context6.sent;
+
+	                            if (loadResult) {
+	                                _context6.next = 16;
+	                                break;
+	                            }
+
+	                            _context6.next = 15;
+	                            return _this.loadEmployees({
+	                                AgreementId: current.Agreement,
+	                                AgreementName: current.AgreementName
+	                            });
+
+	                        case 15:
+	                            _tool2.default.scrollPageTo(0, 150);
+
+	                        case 16:
+	                            _tool2.default.closeModal('#mdl-editBudget');
+	                            _this.loadEditModal(false);
+
+	                        case 18:
 	                        case 'end':
 	                            return _context6.stop();
 	                    }
@@ -60433,9 +60476,10 @@
 	                            });
 
 	                            $('#formConceptsContainer').html(conceptFormHtml);
+	                            swiperConcepts.slideTo(1);
 	                            _this.handleEventsConceptModal();
 
-	                        case 9:
+	                        case 10:
 	                        case 'end':
 	                            return _context7.stop();
 	                    }
@@ -60493,7 +60537,8 @@
 	                                _tool2.default.closeModal('#mdl-editBudget');
 	                                _this.unbindEventsModals();
 	                                _this.unbindFormModals();
-	                                _this.loadEditModal(true, true);
+	                                scrollToConcepts = true;
+	                                _this.loadEditModal(true);
 	                            }
 
 	                        case 9:
@@ -60616,8 +60661,9 @@
 	                                }
 	                            });
 	                            _optionList3.default.handleEvents();
+	                            swiper.slideTo(1);
 
-	                        case 13:
+	                        case 14:
 	                        case 'end':
 	                            return _context11.stop();
 	                    }
@@ -60649,12 +60695,12 @@
 	                            budgets = _context12.sent;
 
 	                            if (!budgets.Success) {
-	                                _context12.next = 23;
+	                                _context12.next = 24;
 	                                break;
 	                            }
 
 	                            if (!(budgets.Data.length > 0)) {
-	                                _context12.next = 18;
+	                                _context12.next = 19;
 	                                break;
 	                            }
 
@@ -60711,10 +60757,11 @@
 	                            _this4.handleEventsBudget(_this4);
 	                            _optionList3.default.handleEvents();
 	                            _UI2.default.handleEvents('search');
+	                            swiper.slideTo(2);
 
 	                            return _context12.abrupt('return', true);
 
-	                        case 18:
+	                        case 19:
 	                            pageData.Presupuestos = "";
 	                            /*El  mensaje de noData solo aparece cuando se carga por primera vez
 	                              NO EN EL CASO donde esta haciendo una operación (solicitar, autorizar, rechazar)
@@ -60723,15 +60770,15 @@
 	                            if (!Data.reload) alert(messages.noData);
 	                            return _context12.abrupt('return', false);
 
-	                        case 21:
-	                            _context12.next = 25;
+	                        case 22:
+	                            _context12.next = 26;
 	                            break;
 
-	                        case 23:
+	                        case 24:
 	                            alert(messages.error);
 	                            return _context12.abrupt('return', false);
 
-	                        case 25:
+	                        case 26:
 	                        case 'end':
 	                            return _context12.stop();
 	                    }
@@ -60739,7 +60786,7 @@
 	            }, _callee12, _this4);
 	        }))();
 	    },
-	    loadEditModal: function loadEditModal(edit, scrollToConcepts) {
+	    loadEditModal: function loadEditModal(edit) {
 	        var _this5 = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
@@ -60753,23 +60800,23 @@
 
 	                            $('#mdlEditBudget-Title').html('Presupuesto: ' + current.Budget);
 	                            $('#btnAddConcept').attr('hidden', true);
-	                            scrollToConcepts = scrollToConcepts != undefined ? scrollToConcepts : false;
-	                            _context13.next = 6;
+
+	                            _context13.next = 5;
 	                            return _store2.default.GetBudgets({
 	                                Type: 'Budget',
 	                                BudgetId: current.Budget
 	                            });
 
-	                        case 6:
+	                        case 5:
 	                            budgetDetail = _context13.sent;
 
 	                            if (!budgetDetail.Success) {
-	                                _context13.next = 47;
+	                                _context13.next = 45;
 	                                break;
 	                            }
 
 	                            if (!(budgetDetail.Data.length > 0)) {
-	                                _context13.next = 44;
+	                                _context13.next = 42;
 	                                break;
 	                            }
 
@@ -60795,10 +60842,10 @@
 	                                    }
 	                                }
 	                            });
-	                            _context13.next = 12;
+	                            _context13.next = 11;
 	                            return _store2.default.Projects(current.Employee);
 
-	                        case 12:
+	                        case 11:
 	                            projects = _context13.sent;
 
 	                            projects = Enumerable.from(projects.Data).select(function (el) {
@@ -60809,10 +60856,10 @@
 	                            }).toArray();
 
 	                            //Obtenemos los Estados
-	                            _context13.next = 16;
+	                            _context13.next = 15;
 	                            return _store2.default.States();
 
-	                        case 16:
+	                        case 15:
 	                            states = _context13.sent;
 
 	                            states = Enumerable.from(states.Data).select(function (el) {
@@ -60830,9 +60877,11 @@
 	                                };
 	                            }).toArray();
 
-	                            //Determinamos si es un presupuesto de agencia
 
+	                            current.budgetData = budgetDetail.Data[0];
 	                            current.conceptData = budgetDetail.Data[0].Details;
+
+	                            //Determinamos si es un presupuesto de agencia
 	                            if (budgetDetail.Data[0].Agency != undefined) isAgency = budgetDetail.Data[0].Agency == '1' ? true : budgetDetail.Data[0].Agency == '0' ? false : false;
 
 	                            //Cargamos el slider con conceptos
@@ -60930,6 +60979,7 @@
 	                            if (edit) {
 	                                $('#budgetDetailContainer').hide();
 	                                $('#budgetFormContainer').removeAttr('hidden');
+	                                $('#cbState').find("option:selected").trigger('change');
 	                            } else {
 	                                $('#budgetDetailContainer').show();
 	                                $('#budgetFormContainer').attr('hidden', true);
@@ -60940,26 +60990,21 @@
 	                            $('#btnAddConcept').attr('hidden', !edit);
 	                            $('#editBtn').attr('hidden', edit);
 	                            $('#sendBtn').attr('hidden', edit);
-	                            $('#cbState').find("option:selected").trigger('change');
-	                            setTimeout(function () {
-	                                $('#cbMunicipality').val(budgetDetail.Data[0].Municipality.Id).trigger("change");
-	                                if (scrollToConcepts) _tool2.default.scrollToObj(500, '#body-report', '#conceptsContainer');
-	                            }, 500);
 
-	                            _context13.next = 45;
+	                            _context13.next = 43;
 	                            break;
 
-	                        case 44:
+	                        case 42:
 	                            alert(messages.noData);
 
-	                        case 45:
-	                            _context13.next = 48;
+	                        case 43:
+	                            _context13.next = 46;
 	                            break;
 
-	                        case 47:
+	                        case 45:
 	                            alert(messages.error);
 
-	                        case 48:
+	                        case 46:
 	                        case 'end':
 	                            return _context13.stop();
 	                    }
@@ -61025,7 +61070,8 @@
 	                            _tool2.default.scrollPageTo(0, 150);
 
 	                        case 14:
-	                            alert('Se ha solicitado exitosamente el presupuesto');
+	                            alert('¡Se ha solicitado exitosamente el presupuesto!');
+
 	                            _context14.next = 19;
 	                            break;
 
@@ -61050,9 +61096,9 @@
 	        alert("Seleccione un Catálogo");
 	    } else if (data.SubcatalogId == "" || data.SubcatalogId == undefined) {
 	        alert("Seleccione una Clasificación");
-	    } else if (data.Amount == "") {
+	    } else if (data.Amount == "" || data.Amount == undefined) {
 	        alert("Escriba un Monto");
-	    } else if (data.Description == "") {
+	    } else if (data.Description == "" || data.Description == undefined) {
 	        alert("Escriba una Descripción");
 	    } else {
 	        resp = true;
@@ -61069,15 +61115,15 @@
 	    } else if (data.State == "" || data.State == undefined) {
 	        alert("Seleccione un Estado");
 	    } else if (data.Municipality == "" || data.Municipality == undefined) {
-	        alert("Seleccione un municipio");
+	        alert("Seleccione un Municipio");
 	    } else if (data.Catalog == "" || data.Catalog == undefined) {
 	        alert("Seleccione un Catálogo");
-	    } else if (data.StartDate == "") {
+	    } else if (data.StartDate == "" || data.StartDate == undefined) {
 	        alert("Seleccione una Fecha inicial");
-	    } else if (data.EndDate == "") {
+	    } else if (data.EndDate == "" || data.EndDate == undefined) {
 	        alert("Seleccione una Fecha final");
-	    } else if (!(0, _moment2.default)(data.StartDate).isBefore(data.EndDate)) {
-	        alert("La fecha inicial debe ser menor que la fecha final");
+	    } else if ((0, _moment2.default)(data.StartDate) > (0, _moment2.default)(data.EndDate)) {
+	        alert("La fecha inicial debe ser menor o igual que la fecha final");
 	    } else {
 	        resp = true;
 	    }
