@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "54e1999e39753fa82f44"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "05434e10b3b07f93485b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -55522,6 +55522,7 @@
 
 	        (0, _jquery2.default)('#mdl-Trnx').on('hide.bs.modal', function () {
 	            _tool2.default.scrollToObj(5, '.modal-body', '#commentReport');
+	            swConcepts.slideTo(1);
 	            _this.unbindTrnxEventsModal();
 	        });
 	        (0, _jquery2.default)('#mdl-Report').on('shown.bs.modal', function () {
@@ -61373,7 +61374,7 @@
 	        config.time = config.time.toFixed(2);
 	        setTimeout(function () {
 	            updateReloj(config);
-	        }, 10);
+	        }, 5);
 	    } else {
 	        (0, _jquery2.default)("#loadingSaldo-container").removeClass('active');
 	        app.View("saldo");
@@ -61479,18 +61480,18 @@
 
 	            _store2.default.SetAppCardONOFF(data).then(function (r) {
 	                if (r.Success) {
-	                    var result = +r.Data.Value || false;
-	                    if (result) {
+
+	                    if (r.Data.Value !== '') {
 	                        //valida para 0s
+	                        var result = parseInt(r.Data.Value);
 	                        result = result === 0 ? 3 : result;
-	                        var timeout = (result + 6) * 1000;
 	                        (0, _jquery2.default)("#loadingSaldo-container").addClass('active');
 	                        updateReloj({
 	                            $span: (0, _jquery2.default)("#loadingSaldo-container span"),
-	                            time: Math.abs(result)
+	                            time: result
 	                        });
 	                    } else {
-	                        alert(r.Data.Value);
+	                        alert('Ha ocurrido un error favor de intentar más tarde');
 	                    }
 	                }
 	            });

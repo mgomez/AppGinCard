@@ -10105,6 +10105,9 @@ body.iOS:before {
   z-index: 99999;
   content: "";
 }
+.modal {
+  padding-top: env(safe-area-inset-top);
+}
 #app {
   position: relative;
   overflow: hidden;
