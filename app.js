@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "05434e10b3b07f93485b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4356f897fb02cd4ab162"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -589,7 +589,7 @@
 	    value: true
 	});
 
-	var _promise = __webpack_require__(48);
+	var _promise = __webpack_require__(47);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -605,7 +605,7 @@
 
 	__webpack_require__(321);
 
-	__webpack_require__(218);
+	__webpack_require__(219);
 
 	__webpack_require__(344);
 
@@ -631,7 +631,7 @@
 
 	__webpack_require__(322);
 
-	var _touchSideswipeMin = __webpack_require__(252);
+	var _touchSideswipeMin = __webpack_require__(253);
 
 	var _touchSideswipeMin2 = _interopRequireDefault(_touchSideswipeMin);
 
@@ -16070,11 +16070,11 @@
 
 	var _formItemsTpl2 = _interopRequireDefault(_formItemsTpl);
 
-	var _swiper = __webpack_require__(218);
+	var _swiper = __webpack_require__(219);
 
 	var _swiper2 = _interopRequireDefault(_swiper);
 
-	var _lottie = __webpack_require__(251);
+	var _lottie = __webpack_require__(252);
 
 	var _lottie2 = _interopRequireDefault(_lottie);
 
@@ -16354,7 +16354,7 @@
 
 	exports.__esModule = true;
 
-	var _promise = __webpack_require__(48);
+	var _promise = __webpack_require__(47);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -16406,7 +16406,7 @@
 	    value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(35);
+	var _defineProperty2 = __webpack_require__(48);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -16437,11 +16437,11 @@
 
 	var _linq2 = _interopRequireDefault(_linq);
 
-	var _constant = __webpack_require__(34);
+	var _constant = __webpack_require__(35);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
-	var _xhr = __webpack_require__(248);
+	var _xhr = __webpack_require__(249);
 
 	var _xhr2 = _interopRequireDefault(_xhr);
 
@@ -18073,7 +18073,7 @@
 	            }
 	        }, _callee51, _this51);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetAuthCost', function SetAuthCost(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetNotificationMail', function GetNotificationMail() {
 	    var _this52 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee52() {
@@ -18088,10 +18088,9 @@
 	                    case 2:
 	                        User = _context52.sent;
 	                        return _context52.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/CheckCosts/Authorize',
-	                            'type': 'POST',
-	                            'access_token': User.access_token,
-	                            'data': data
+	                            'path': '/api/Account/GetMail',
+	                            'type': 'GET',
+	                            'access_token': User.access_token
 	                        }));
 
 	                    case 4:
@@ -18101,7 +18100,7 @@
 	            }
 	        }, _callee52, _this52);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetEmployees', function GetEmployees(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetNotificationMail', function SetNotificationMail(Email) {
 	    var _this53 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee53() {
@@ -18116,10 +18115,12 @@
 	                    case 2:
 	                        User = _context53.sent;
 	                        return _context53.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/CheckCosts/GetEmployees',
-	                            'type': 'GET',
-	                            'data': data,
-	                            'access_token': User.access_token
+	                            'path': '/api/Account/ChangeMail',
+	                            'type': 'POST',
+	                            'access_token': User.access_token,
+	                            'data': {
+	                                Email: Email
+	                            }
 	                        }));
 
 	                    case 4:
@@ -18129,7 +18130,7 @@
 	            }
 	        }, _callee53, _this53);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetBudgetAuthorizers', function GetBudgetAuthorizers(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetAuthCost', function SetAuthCost(data) {
 	    var _this54 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee54() {
@@ -18144,10 +18145,10 @@
 	                    case 2:
 	                        User = _context54.sent;
 	                        return _context54.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Budgets/GetStatus',
-	                            'type': 'GET',
-	                            'data': data,
-	                            'access_token': User.access_token
+	                            'path': '/api/CheckCosts/Authorize',
+	                            'type': 'POST',
+	                            'access_token': User.access_token,
+	                            'data': data
 	                        }));
 
 	                    case 4:
@@ -18157,7 +18158,7 @@
 	            }
 	        }, _callee54, _this54);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'UpdateBudget', function UpdateBudget(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetEmployees', function GetEmployees(data) {
 	    var _this55 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee55() {
@@ -18172,8 +18173,8 @@
 	                    case 2:
 	                        User = _context55.sent;
 	                        return _context55.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Budgets/UpdateBudget',
-	                            'type': 'POST',
+	                            'path': '/api/CheckCosts/GetEmployees',
+	                            'type': 'GET',
 	                            'data': data,
 	                            'access_token': User.access_token
 	                        }));
@@ -18185,7 +18186,7 @@
 	            }
 	        }, _callee55, _this55);
 	    }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'UpdateBudgetDetail', function UpdateBudgetDetail(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetBudgetAuthorizers', function GetBudgetAuthorizers(data) {
 	    var _this56 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee56() {
@@ -18200,8 +18201,8 @@
 	                    case 2:
 	                        User = _context56.sent;
 	                        return _context56.abrupt('return', _xhr2.default.ajax({
-	                            'path': '/api/Budgets/UpdateDetail',
-	                            'type': 'POST',
+	                            'path': '/api/Budgets/GetStatus',
+	                            'type': 'GET',
 	                            'data': data,
 	                            'access_token': User.access_token
 	                        }));
@@ -18212,6 +18213,150 @@
 	                }
 	            }
 	        }, _callee56, _this56);
+	    }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'UpdateBudget', function UpdateBudget(data) {
+	    var _this57 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee57() {
+	        var User;
+	        return _regenerator2.default.wrap(function _callee57$(_context57) {
+	            while (1) {
+	                switch (_context57.prev = _context57.next) {
+	                    case 0:
+	                        _context57.next = 2;
+	                        return _this57.GetUser();
+
+	                    case 2:
+	                        User = _context57.sent;
+	                        return _context57.abrupt('return', _xhr2.default.ajax({
+	                            'path': '/api/Budgets/UpdateBudget',
+	                            'type': 'POST',
+	                            'data': data,
+	                            'access_token': User.access_token
+	                        }));
+
+	                    case 4:
+	                    case 'end':
+	                        return _context57.stop();
+	                }
+	            }
+	        }, _callee57, _this57);
+	    }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'UpdateBudgetDetail', function UpdateBudgetDetail(data) {
+	    var _this58 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee58() {
+	        var User;
+	        return _regenerator2.default.wrap(function _callee58$(_context58) {
+	            while (1) {
+	                switch (_context58.prev = _context58.next) {
+	                    case 0:
+	                        _context58.next = 2;
+	                        return _this58.GetUser();
+
+	                    case 2:
+	                        User = _context58.sent;
+	                        return _context58.abrupt('return', _xhr2.default.ajax({
+	                            'path': '/api/Budgets/UpdateDetail',
+	                            'type': 'POST',
+	                            'data': data,
+	                            'access_token': User.access_token
+	                        }));
+
+	                    case 4:
+	                    case 'end':
+	                        return _context58.stop();
+	                }
+	            }
+	        }, _callee58, _this58);
+	    }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'SetSpecialCatalogs', function SetSpecialCatalogs(data) {
+	    var _this59 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee59() {
+	        var User;
+	        return _regenerator2.default.wrap(function _callee59$(_context59) {
+	            while (1) {
+	                switch (_context59.prev = _context59.next) {
+	                    case 0:
+	                        _context59.next = 2;
+	                        return _this59.GetUser();
+
+	                    case 2:
+	                        User = _context59.sent;
+	                        return _context59.abrupt('return', _xhr2.default.ajax({
+	                            'path': '/api/Budgets/SetExtra',
+	                            'type': 'POST',
+	                            'data': data,
+	                            'access_token': User.access_token
+	                        }));
+
+	                    case 4:
+	                    case 'end':
+	                        return _context59.stop();
+	                }
+	            }
+	        }, _callee59, _this59);
+	    }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetSpecialCatalogs', function GetSpecialCatalogs(Agreement) {
+	    var _this60 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee60() {
+	        var User;
+	        return _regenerator2.default.wrap(function _callee60$(_context60) {
+	            while (1) {
+	                switch (_context60.prev = _context60.next) {
+	                    case 0:
+	                        _context60.next = 2;
+	                        return _this60.GetUser();
+
+	                    case 2:
+	                        User = _context60.sent;
+	                        return _context60.abrupt('return', _xhr2.default.ajax({
+	                            'path': '/api/Budgets/GetExtraCat',
+	                            'type': 'GET',
+	                            'data': {
+	                                Agreement: Agreement
+	                            },
+	                            'access_token': User.access_token
+	                        }));
+
+	                    case 4:
+	                    case 'end':
+	                        return _context60.stop();
+	                }
+	            }
+	        }, _callee60, _this60);
+	    }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetDeviceId$, 'GetRegisterCatalogs', function GetRegisterCatalogs(EmployeeId) {
+	    var _this61 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee61() {
+	        var User;
+	        return _regenerator2.default.wrap(function _callee61$(_context61) {
+	            while (1) {
+	                switch (_context61.prev = _context61.next) {
+	                    case 0:
+	                        _context61.next = 2;
+	                        return _this61.GetUser();
+
+	                    case 2:
+	                        User = _context61.sent;
+	                        return _context61.abrupt('return', _xhr2.default.ajax({
+	                            'path': '/api/Budgets/GetCatalog2',
+	                            'type': 'GET',
+	                            'data': {
+	                                EmployeeId: EmployeeId
+	                            },
+	                            'access_token': User.access_token
+	                        }));
+
+	                    case 4:
+	                    case 'end':
+	                        return _context61.stop();
+	                }
+	            }
+	        }, _callee61, _this61);
 	    }))();
 	}), _GetUser$GetDeviceId$);
 
@@ -24087,7 +24232,7 @@
 
 	var global = __webpack_require__(9);
 	var core = __webpack_require__(7);
-	var ctx = __webpack_require__(27);
+	var ctx = __webpack_require__(29);
 	var hide = __webpack_require__(20);
 	var has = __webpack_require__(19);
 	var PROTOTYPE = 'prototype';
@@ -24184,7 +24329,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(13);
-	var IE8_DOM_DEFINE = __webpack_require__(72);
+	var IE8_DOM_DEFINE = __webpack_require__(73);
 	var toPrimitive = __webpack_require__(60);
 	var dP = Object.defineProperty;
 
@@ -24206,7 +24351,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(73);
+	var IObject = __webpack_require__(74);
 	var defined = __webpack_require__(49);
 	module.exports = function (it) {
 	  return IObject(defined(it));
@@ -26238,77 +26383,6 @@
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports) {
-
-	var toString = {}.toString;
-
-	module.exports = function (it) {
-	  return toString.call(it).slice(8, -1);
-	};
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// optional / simple context binding
-	var aFunction = __webpack_require__(36);
-	module.exports = function (fn, that, length) {
-	  aFunction(fn);
-	  if (that === undefined) return fn;
-	  switch (length) {
-	    case 1: return function (a) {
-	      return fn.call(that, a);
-	    };
-	    case 2: return function (a, b) {
-	      return fn.call(that, a, b);
-	    };
-	    case 3: return function (a, b, c) {
-	      return fn.call(that, a, b, c);
-	    };
-	  }
-	  return function (/* ...args */) {
-	    return fn.apply(that, arguments);
-	  };
-	};
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-	module.exports = {};
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-	module.exports = true;
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys = __webpack_require__(78);
-	var enumBugKeys = __webpack_require__(51);
-
-	module.exports = Object.keys || function keys(O) {
-	  return $keys(O, enumBugKeys);
-	};
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-	exports.f = {}.propertyIsEnumerable;
-
-
-/***/ }),
-/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26316,10 +26390,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-
-	var _defineProperty2 = __webpack_require__(35);
-
-	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 	var _regenerator = __webpack_require__(5);
 
@@ -26333,6 +26403,10 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
+	var _defineProperty2 = __webpack_require__(48);
+
+	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 	var _linq = __webpack_require__(10);
 
 	var _linq2 = _interopRequireDefault(_linq);
@@ -26345,7 +26419,7 @@
 
 	var _voca2 = _interopRequireDefault(_voca);
 
-	var _dataUI = __webpack_require__(67);
+	var _dataUI = __webpack_require__(27);
 
 	var _dataUI2 = _interopRequireDefault(_dataUI);
 
@@ -26361,6 +26435,9 @@
 	    contentTag: '',
 	    searchTag: ''
 	};
+	var jetsSearch = '';
+
+	var jetsOptions = [];
 	exports.default = {
 	    bindEvents: function bindEvents(events) {
 	        for (var i = 0, l = events.length; i < l; i++) {
@@ -26381,20 +26458,126 @@
 	                desc = si lleva o no descripción 
 	                ej: TRUE= Comercio: OXXO, FALSE= OXXO }  */
 
-	    DropDownListFor: function DropDownListFor(Data, custom) {
-	        custom.textField = custom.textField != undefined ? custom.textField : '';
-	        custom.valueField = custom.valueField != undefined ? custom.valueField : '';
-	        custom.selectFirst = custom.selectFirst != undefined ? custom.selectFirst : false;
+	    InfiniteDropDown: function InfiniteDropDown(Data, custom) {
+	        if (custom.container) {
+	            //Le damos el formato correcto a la data
+	            Data = _linq2.default.from(Data).select(function (el) {
+	                var idTxt = custom.idField != undefined ? "(" + el[custom.idField] + ")" : '';
+	                return {
+	                    text: el[custom.textField],
+	                    id: '' + el[custom.valueField]
+	                };
+	            }).toArray();
 
+	            $(custom.container).select2({
+	                data: Data,
+	                dropdownParent: $("#renderBody"),
+	                placeholder: custom.placeholder || 'Seleccione una opción',
+	                query: function query(q) {
+	                    var pageSize,
+	                        results,
+	                        that = this;
+	                    pageSize = 20; // or whatever pagesize
+	                    results = that.data;
+	                    if (q.term && q.term !== '') {
+	                        // HEADS UP; for the _.filter function i use underscore (actually lo-dash) here
+	                        results = $.grep(that.data, function (e) {
+	                            return e.text.toUpperCase().indexOf(q.term.toUpperCase()) >= 0;
+	                        });
+	                    }
+	                    q.callback({
+	                        results: results.slice((q.page - 1) * pageSize, q.page * pageSize),
+	                        more: results.length >= q.page * pageSize
+	                    });
+	                }
+	            });
+	        } else {
+	            console.log('Se requiere agregar el contenedor');
+	        }
+	    },
+	    DropDownList: function DropDownList(Data, custom) {
+	        var i = 0;
+	        var icons = custom.icons || [];
+	        //Seleccionamos solo los arreglos que queramos
+	        Data = _dataUI2.default.getArrayRows(Data, custom.fields || '');
+	        //Seleccionamos los campos que queramos para los detalles
+	        Data = _linq2.default.from(Data).select(function (el) {
+	            return (0, _defineProperty3.default)({}, el.key, _dataUI2.default.getRows(el.value, custom.detailFields || ''));
+	        }).toArray();
+
+	        var fieldNames = [];
+	        if (custom.fields != undefined) {
+	            $.each(custom.fields.split(','), function (k, v) {
+	                if (v.includes(':')) fieldNames.push(v.split(':')[1]);
+	            });
+	        }
+	        //Preparamos la data final con atributos custom
+	        custom.requiredFields = custom.requiredFields || '';
+	        jetsOptions = [];
+	        Data = _linq2.default.from(Data).select(function (el) {
+	            i += 1;
+	            el = _linq2.default.from(el).select().toArray()[0];
+	            jetsOptions.push({
+	                searchTag: '#selectSearch-' + i,
+	                contentTag: '#selectContent-' + i,
+	                callSearchManually: true
+	            });
+
+	            var requiredField = '';
+	            if (custom.requiredFields === 'all' && custom.requiredFields !== '') {
+	                requiredField = 'required';
+	            } else {
+	                var requiredFields = custom.requiredFields.split(',');
+	                if (requiredFields.length > 0) requiredField = requiredFields[i - 1] === el.key ? 'required' : '';
+	            }
+	            return {
+	                Id: i,
+	                withDetailIcons: custom.withDetailIcons || false,
+	                Icon: icons[i - 1] || '',
+	                smooth: custom.smooth || true,
+	                Class: custom.Class || '',
+	                Name: fieldNames[i - 1] || '',
+	                Type: _voca2.default.capitalize(el.key),
+	                required: requiredField,
+	                Placeholder: 'Buscar ' + _voca2.default.capitalize(el.key),
+	                Text: 'Seleccione ' + (_voca2.default.capitalize(el.key) || 'una Opción') + '...',
+	                Data: el.value
+	            };
+	        }).toArray();
+	        var data = {
+	            options: Data,
+	            dropDownId: custom.dropDownId || 'dropDownList',
+	            messageAlert: custom.messageAlert || 'No se necontraron registros'
+	        };
+	        return _tool2.default.renderTpl('{{>dropDownItems this}}', data);
+	    },
+	    DropDownListFor: function DropDownListFor(Data, custom) {
+	        custom.textField = custom.textField || '';
+	        custom.valueField = custom.valueField || '';
+	        custom.selectFirst = custom.selectFirst || false;
+	        custom.isNA = custom.isNA || false;
 	        var data = _linq2.default.from(Data).select(function (el) {
 	            var idTxt = custom.idField != undefined ? "(" + el[custom.idField] + ")" : '';
 	            return {
 	                Text: el[custom.textField] + idTxt,
-	                Value: el[custom.valueField]
+	                Value: el[custom.valueField],
+	                FullScreen: custom.fullScreen || ''
 	            };
 	        }).toArray();
-	        if (data.length > 0 && custom.selectFirst) data[0].Selected = 'selected';
-	        return _tool2.default.renderTpl('{{>dropDownList this}}', data);
+	        if (custom.isNA) {
+	            data.unshift({
+	                Text: 'N/A',
+	                Value: 1
+	            });
+	        }
+	        if (data.length > 0 && custom.selectFirst || custom.isNA) data[0].Selected = 'selected';
+	        if (custom.container) {
+	            $(custom.container).html(_tool2.default.renderTpl('{{>dropDownList this}}', data));
+	            if (custom.fullScreen) $(custom.container).select();
+	            return true;
+	        } else {
+	            return _tool2.default.renderTpl('{{>dropDownList this}}', data);
+	        }
 	    },
 	    Form: function Form(Data, custom) {
 	        var _this = this;
@@ -26406,7 +26589,7 @@
 	            var data = _dataUI2.default.getFields(Data, nFields);
 	            data = _linq2.default.from(data).select(function (el) {
 	                var rdata = [];
-	                if (custom.dataFields != undefined && (0, _typeof3.default)(custom.dataFields) === 'object') {
+	                if ((0, _typeof3.default)(custom.dataFields) === 'object') {
 	                    var dfield = custom.dataFields[el.key];
 	                    dfield = dfield != null && dfield != undefined ? dfield : {
 	                        type: 'text',
@@ -26417,27 +26600,27 @@
 	                        id: ""
 	                    };
 	                    var rdata = {
-	                        prefix: prefix(dfield.type),
-	                        name: dfield.name != undefined ? dfield.name : _voca2.default.capitalize(el.key.replace('_', ' ')),
+	                        prefix: prefixForm(dfield.type),
+	                        name: dfield.name || _voca2.default.capitalize(el.key.replace('_', ' ')),
 	                        text: _voca2.default.capitalize(el.key.replace('_', ' ')),
 	                        type: dfield.type,
-	                        isRadioCheck: custom.isRadioCheck != undefined ? custom.isRadioCheck : false
+	                        isRadioCheck: custom.isRadioCheck || false
 	                    };
 
-	                    rdata.maxlength = dfield.maxlength != undefined ? dfield.maxlength : '';
-	                    rdata.required = dfield.required != undefined ? dfield.required : '';
-	                    rdata.hidden = dfield.hidden != undefined ? dfield.hidden : '';
-	                    rdata.disabled = dfield.disabled != undefined ? dfield.disabled : '';
+	                    rdata.maxlength = dfield.maxlength || '';
+	                    rdata.required = dfield.required || '';
+	                    rdata.hidden = dfield.hidden || '';
+	                    rdata.disabled = dfield.disabled || '';
 
 	                    if (dfield.type == 'select') {
 	                        rdata.isSelect = true;
-	                        rdata.data = dfield.data != undefined ? dfield.data : [];
+	                        rdata.data = dfield.data || [];
 	                        if (rdata.data.length > 0) {
 	                            $.each(rdata.data, function (k) {
 	                                if (rdata.data[k]['Text'] == el.value && dfield.selected) {
 	                                    rdata.data[k].Selected = 'selected';
 	                                    return false;
-	                                } else if (el.value == 'N/A') {
+	                                } else if (el.value == 'N/A' && dfield.selected) {
 	                                    rdata.data.unshift({
 	                                        Text: 'N/A',
 	                                        Value: 1,
@@ -26467,10 +26650,10 @@
 	            }).toArray();
 	            return _tool2.default.renderTpl('{{>formItems this}}', {
 	                fields: data,
-	                idFrm: custom.idFrm != undefined ? custom.idFrm : 'frmMain'
+	                idFrm: custom.idFrm || 'frmMain'
 	            });
 	        } else {
-	            alert('añada los campos (fields)');
+	            alert('Añada los campos (fields)');
 	            return '';
 	        }
 	    },
@@ -26491,7 +26674,7 @@
 	            };
 	            if (count > 0) {
 	                resp.value = _linq2.default.from(el.value).sum('$.' + custom.sumField);
-	                resp.modal = custom.modalTarget != undefined ? custom.modalTarget : 'mdl-Main';
+	                resp.modal = custom.modalTarget || 'mdl-Main';
 	                return resp;
 	            } else {
 	                resp.active = 'disabled';
@@ -26503,18 +26686,18 @@
 
 	    //Formato de slider se creara un slide por cada registro
 	    SliderLabelList: function SliderLabelList(Data, custom) {
-	        custom = custom != undefined ? custom : '';
+	        custom = custom || '';
 	        var config = getAlignment(custom.alignment);
 	        config.changeCustomByRow = custom.changeCustomByRow;
 	        config.disabled = custom.disabled;
 	        config.fields = custom.fields;
 	        config.desc = custom.desc;
-	        custom.buttons = custom.buttons != undefined ? custom.buttons : '';
+	        custom.buttons = custom.buttons || '';
 	        var data = _dataUI2.default.getRowData(Data, config);
 	        return _tool2.default.renderTpl('{{>sliderLabelItems this}}', {
 	            data: data,
 	            buttons: custom.buttons,
-	            sliderId: custom.sliderId != undefined ? custom.sliderId : 'swiperContainer'
+	            sliderId: custom.sliderId || 'swiperContainer'
 	        });
 	    },
 
@@ -26561,8 +26744,8 @@
 	        var config = getConfigDetailRow(custom);
 	        config.changeCustomByRow = custom.changeCustomByRow;
 	        if (custom.detailType == "group") {
-	            custom.idGroup = custom.idGroup != undefined ? custom.idGroup : '';
-	            Data = _dataUI2.default.getGroups(Data, custom.idGroup, "", custom.detailFields);
+	            custom.idGroup = custom.idGroup || '';
+	            Data = _dataUI2.default.getGroups(Data, custom.idGroup, '', custom.detailFields);
 	        }
 	        var data = _dataUI2.default.getDetailRowData(Data, Detail, config);
 	        return _tool2.default.renderTpl('{{>rowDetails this}}', data);
@@ -26650,7 +26833,6 @@
 	        }))();
 	    },
 
-
 	    //Card con detalle de acciones(Botones)
 	    //config.headers = son los campos de la consulta que apareceran en el header
 	    //config.buttons = es un arreglo con el "name" del botón y la "class" de bootstrap
@@ -26713,7 +26895,12 @@
 	                $('.accordionTravex-collapse').unbind('shown.bs.collapse');
 	                $('.cardDetail').unbind('show.bs.collapse');
 	                break;
-
+	            case 'select':
+	                $('.option-select').unbind('click');
+	                break;
+	            case 'search':
+	                if (jetsData.searchTag !== '') $("#" + jetsData.searchTag).unbind('keyup');
+	                break;
 	            default:
 	                break;
 	        }
@@ -26723,8 +26910,40 @@
 	            case 'search':
 	                searchEvents();
 	                break;
+	            case 'select':
+	                $('.select2-dropdown').on('select2-opening', function () {
+	                    $('.select2-search input').prop('focus', false);
+	                });
+	                $('.option-select').on('click', function () {
+	                    var headingId = $(this).attr('data-header');
+	                    var collapseId = $(this).attr('data-collapse');
+	                    var parentId = $(this).attr('data-parent');
+	                    var searchId = $(this).attr('data-search');
+	                    var content = $(this).find('.select-content').html();
+	                    $(headingId + ' .row .accordionTravex-select-content').html(content);
+	                    $(collapseId).collapse('toggle');
+	                    var optionId = $(this).attr('data-id').replace('#', '');
+	                    $(headingId).parent().attr('data-value', optionId);
+	                    $(parentId).removeClass('bg-danger-light');
+	                    $(searchId).empty();
+	                });
+
+	                jetsOptions = jetsOptions.map(function (el) {
+	                    return new _jets2.default({
+	                        searchTag: el.searchTag,
+	                        contentTag: el.contentTag,
+	                        callSearchManually: el.callSearchManually
+	                    });
+	                });
+
+	                $('.selectSearch').on('keyup', function () {
+	                    var id = $(this).attr('data-id') || 1;
+	                    var q = $(this).val();
+	                    if (jetsOptions[id - 1] != undefined && jetsOptions[id - 1] != null) jetsOptions[id - 1].search(q);
+	                });
+
+	                break;
 	            case 'accordion':
-	                searchEvents();
 	                $('.accordionTravex-collapse').on('hidden.bs.collapse', function () {
 	                    var id = $(this).attr('data-id');
 	                    if (fnCollapseRow != "") //Si hay función de collapserow
@@ -26745,27 +26964,62 @@
 	                    //Animación suave
 	                    if (smooth) {
 	                        var container = $(this).attr('data-container');
+	                        var dataid = $(this).attr('data-id');
 	                        if (container != '' && container != undefined) {
-	                            var dataid = $(this).attr('data-id');
+	                            _tool2.default.scrollToObj(200, container, '#heading-' + dataid);
+	                        } else {
 	                            _tool2.default.scrollPageToObj(200, '#heading-' + dataid);
 	                        }
 	                    }
 	                });
 
-	                $('.cardDetail').on('show.bs.collapse', function () {
+	                $('.cardDetail, .selectDetail').on('show.bs.collapse', function () {
 	                    var id = '#collapse-' + $(this).attr('data-id');
-	                    $(".cardDetail").not(id).collapse('hide');
+	                    $(".cardDetail, .selectDetail").not(id).collapse('hide');
 	                });
 	                break;
 	            default:
 	                break;
 	        }
+	    },
+	    getDropDownListValues: function getDropDownListValues(idDropDown, fields) {
+	        var fieldNames = [];
+	        if (fields != undefined) {
+	            $.each(fields.split(','), function (k, v) {
+	                if (v.includes(':')) fieldNames.push(v.split(':')[0]);
+	            });
+	        }
+	        var dropdowns = $(idDropDown).find('.accordionTravex-select');
+	        var data = {};
+	        var requiredFields = [];
+	        var Success = true;
+	        var i = 0;
+	        $.each(dropdowns, function (k, v) {
+	            i += 1;
+	            var currentFieldName = fieldNames[i - 1];
+	            if ($(v).attr('required') !== undefined) {
+	                var fieldValue = $(v).attr('data-value');
+	                var fieldName = $(v).attr('data-name');
+	                if (fieldValue === "") {
+	                    $(v).addClass('bg-danger-light');
+	                    requiredFields.push(currentFieldName);
+	                    Success = false;
+	                } else {
+	                    data[fieldName] = fieldValue;
+	                }
+	            }
+	        });
+	        if (requiredFields.length > 0) alert('Los siguientes campos son requeridos:\n' + requiredFields.join(',\n'));
+	        return {
+	            Success: Success,
+	            Data: data
+	        };
 	    }
 	};
 
 
 	function searchEvents() {
-	    var jetsSearch = new _jets2.default({
+	    jetsSearch = new _jets2.default({
 	        searchTag: "#" + jetsData.searchTag,
 	        contentTag: jetsData.contentTag,
 	        callSearchManually: true
@@ -26792,12 +27046,12 @@
 	        changeDetailByRow: custom.changeDetailByRow,
 	        changeHeaderByRow: custom.changeHeaderByRow,
 	        typeCard: custom.typeCard,
-	        smooth: true, //Indica si el despliegue estará animado
-	        container: custom.container,
-	        idParent: custom.idParent != undefined ? custom.idParent : 1,
+	        smooth: custom.smooth || true, //Indica si el despliegue estará animado
+	        container: custom.container || '',
+	        idParent: custom.idParent || 1,
 	        desc: custom.desc,
 	        btnDetailText: custom.btnDetailText,
-	        idField: custom.idField != undefined ? custom.idField : "Id",
+	        idField: custom.idField || "Id",
 	        valueField: custom.valueField,
 	        fields: custom.fields,
 	        detailFields: custom.detailFields,
@@ -26805,29 +27059,29 @@
 	        subalign: config.subalign,
 	        detailTitle: custom.detailTitle,
 	        textSize: custom.textSize,
-	        class: custom.class != undefined ? custom.class : '',
-	        message: custom.message != undefined ? custom.message : '',
+	        class: custom.class || '',
+	        message: custom.message || '',
 	        searchId: searchId,
-	        type: custom.type != undefined ? custom.type : 'Opción',
-	        title: custom.title != undefined ? custom.title : ''
+	        type: custom.type || 'Opción',
+	        title: custom.title || ''
 	    };
 	}
 	//Establece los prefijos para el form
-	function prefix(type) {
+	function prefixForm(type) {
 	    return type == 'date' ? 'dt' : type == 'text' ? 'txt' : type == 'select' ? 'cb' : type == 'textarea' ? 'ta' : '';
 	}
 	//Establece las carácteristicas principales de los detailrows
 	function getConfigDetailRow(custom) {
-	    var _ref;
+	    var _ref2;
 
 	    var config = getAlignment(custom.alignment);
 	    var _this = this;
 
-	    return _ref = {
+	    return _ref2 = {
 	        alignLeft: custom.alignLeft,
 	        alignRight: custom.alignRight,
 	        smooth: true
-	    }, (0, _defineProperty3.default)(_ref, 'alignLeft', custom.alignLeft != undefined ? custom.alignLeft : ''), (0, _defineProperty3.default)(_ref, 'alignRight', custom.alignRight != undefined ? custom.alignRight : ''), (0, _defineProperty3.default)(_ref, 'desc', custom.desc != undefined ? custom.desc : true), (0, _defineProperty3.default)(_ref, 'subdesc', custom.subdesc != undefined ? custom.subdesc : true), (0, _defineProperty3.default)(_ref, 'idField', custom.idGroup != undefined ? custom.idGroup : 'Id'), (0, _defineProperty3.default)(_ref, 'subAlignment', custom.subAlignment != undefined ? custom.subAlignment : "vv"), (0, _defineProperty3.default)(_ref, 'match', custom.idMatch != undefined ? custom.idMatch.split("=") : ['', '']), (0, _defineProperty3.default)(_ref, 'iconClass', custom.iconClass), (0, _defineProperty3.default)(_ref, 'detailType', custom.detailType != undefined ? custom.detailType : "list"), (0, _defineProperty3.default)(_ref, 'container', custom.container), (0, _defineProperty3.default)(_ref, 'idParent', custom.idParent != undefined ? custom.idParent : 1), (0, _defineProperty3.default)(_ref, 'desc', custom.desc), (0, _defineProperty3.default)(_ref, 'fields', custom.fields), (0, _defineProperty3.default)(_ref, 'detailFields', custom.detailFields), (0, _defineProperty3.default)(_ref, 'align', config.align), (0, _defineProperty3.default)(_ref, 'subalign', config.subalign), _ref;
+	    }, (0, _defineProperty3.default)(_ref2, 'alignLeft', custom.alignLeft || ''), (0, _defineProperty3.default)(_ref2, 'alignRight', custom.alignRight || ''), (0, _defineProperty3.default)(_ref2, 'desc', custom.desc != undefined ? custom.desc : true), (0, _defineProperty3.default)(_ref2, 'subdesc', custom.subdesc != undefined ? custom.subdesc : true), (0, _defineProperty3.default)(_ref2, 'idField', custom.idGroup || 'Id'), (0, _defineProperty3.default)(_ref2, 'subAlignment', custom.subAlignment || "vv"), (0, _defineProperty3.default)(_ref2, 'match', custom.idMatch != undefined ? custom.idMatch.split("=") : ['', '']), (0, _defineProperty3.default)(_ref2, 'iconClass', custom.iconClass), (0, _defineProperty3.default)(_ref2, 'detailType', custom.detailType || "list"), (0, _defineProperty3.default)(_ref2, 'container', custom.container), (0, _defineProperty3.default)(_ref2, 'idParent', custom.idParent || 1), (0, _defineProperty3.default)(_ref2, 'desc', custom.desc), (0, _defineProperty3.default)(_ref2, 'fields', custom.fields), (0, _defineProperty3.default)(_ref2, 'detailFields', custom.detailFields), (0, _defineProperty3.default)(_ref2, 'align', config.align), (0, _defineProperty3.default)(_ref2, 'subalign', config.subalign), _ref2;
 	}
 	//Establece la alineación y subalineación de la lista de elementos del tipo title/value
 	/**/
@@ -26878,9 +27132,750 @@
 	            break;
 	    }
 	}
+	//Select2 Contains
+	function contains(str1, str2) {
+	    return new RegExp(str2, "i").test(str1);
+	}
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _entries = __webpack_require__(256);
+
+	var _entries2 = _interopRequireDefault(_entries);
+
+	var _typeof2 = __webpack_require__(18);
+
+	var _typeof3 = _interopRequireDefault(_typeof2);
+
+	var _stringify = __webpack_require__(45);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	var _promise = __webpack_require__(47);
+
+	var _promise2 = _interopRequireDefault(_promise);
+
+	var _linq = __webpack_require__(10);
+
+	var _linq2 = _interopRequireDefault(_linq);
+
+	var _tool = __webpack_require__(3);
+
+	var _tool2 = _interopRequireDefault(_tool);
+
+	var _voca = __webpack_require__(66);
+
+	var _voca2 = _interopRequireDefault(_voca);
+
+	var _moment = __webpack_require__(1);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _UI = __webpack_require__(26);
+
+	var _UI2 = _interopRequireDefault(_UI);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    bindEvents: function bindEvents(events) {
+	        for (var i = 0, l = events.length; i < l; i++) {
+	            if (!events[i].element) {
+	                $(events[i].target).on(events[i].event, events[i].handler);
+	            } else {
+	                $(events[i].element).on(events[i].event, events[i].target, events[i].handler);
+	            }
+	        }
+	    },
+
+
+	    ///////////////////////////////////////////////
+	    /////////// ESTRUCTURA DE INFORMACIÓN /////////
+	    ///////////////////////////////////////////////
+
+	    getCardRowData: function getCardRowData(type, Data, config) {
+	        var increment = 0;
+	        var rowData = '';
+	        var _this = this;
+	        var typeCard = config.typeCard || 'header';
+	        switch (type) {
+	            case 'detailHeader':
+	                //Se divide la data en dos partes una para header y otra para detalle
+	                //Si existe una selección, se parte la data en los componentes que se necesitarán
+	                var report = config.btnDetailText != '' ? {
+	                    class: 'btn-secondary',
+	                    classReport: 'detailBtn',
+	                    name: config.btnDetailText
+	                } : '';
+	                var fields = _this.getRows(Data, config.fields) || Data;
+	                //config para el detalle y el header
+	                var configDetail = [];
+	                var configHeader = [];
+	                configHeader.changeCustomByRow = config.changeHeaderByRow;
+	                configHeader.desc = config.desc;
+
+	                configDetail.changeCustomByRow = config.changeDetailByRow;
+	                configDetail.fields = config.detailFields || '';
+	                configDetail.desc = config.subdesc;
+
+	                rowData = _linq2.default.from(fields).select(function (el) {
+	                    increment += 1;
+	                    return {
+	                        id: el[config.idField],
+	                        idField: el[config.idField],
+	                        valueField: el[config.valueField],
+	                        fields: _this.getItemsDescription(fields[increment - 1], configHeader),
+	                        config: {
+	                            typeCard: typeCard,
+	                            smooth: config.smooth,
+	                            report: report,
+	                            subcardClass: 'cardDetail',
+	                            class: config.class,
+	                            idParent: config.idParent,
+	                            container: config.container
+	                        },
+	                        detail: {
+	                            empty: false,
+	                            title: config.detailTitle + " #" + el[config.idField],
+	                            labels: _this.getLabelData(Data[increment - 1], configDetail)
+	                        }
+	                    };
+	                }).toArray();
+	                rowData.idParent = config.idParent;
+	                rowData.message = config.message;
+	                rowData.searchId = config.searchId;
+	                rowData.title = config.title;
+	                rowData.type = config.type;
+	                break;
+	            case 'detailExpand':
+	                //Esta solo tiene los headers ID Y VALUE junto con los fields pero el detalle esta vacio
+	                var report = config.btnDetailText != '' ? {
+	                    class: 'btn-secondary',
+	                    classReport: 'detailBtn',
+	                    name: config.btnDetailText
+	                } : '';
+	                var fields = _this.getRows(Data, config.fields) || Data;
+	                rowData = _linq2.default.from(Data).select(function (el) {
+	                    increment += 1;
+	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+	                    return {
+	                        id: el[config.idField],
+	                        idField: el[config.idField],
+	                        valueField: el[config.valueField],
+	                        fields: _this.getItemsDescription(fields[increment - 1], config),
+	                        config: {
+	                            typeCard: typeCard,
+	                            smooth: config.smooth,
+	                            report: report,
+	                            subcardClass: 'cardDetail',
+	                            class: config.class,
+	                            idParent: config.idParent,
+	                            container: config.container
+	                        },
+	                        detail: {
+	                            empty: true,
+	                            title: config.detailTitle + " #" + el[config.idField]
+	                        }
+	                    };
+	                }).toArray();
+	                rowData.idParent = config.idParent;
+	                rowData.message = config.message;
+	                rowData.searchId = config.searchId;
+	                rowData.title = config.title;
+	                rowData.type = config.type;
+	                break;
+	            case 'info':
+	                // Card con headers, al hacer click activa un modal
+	                var fields = _this.getRows(Data, config.fields) || Data;
+	                rowData = _linq2.default.from(Data).select(function (el) {
+	                    increment += 1;
+	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+	                    return {
+	                        id: el[config.idField],
+	                        idField: el[config.idField],
+	                        valueField: el[config.valueField],
+	                        fields: _this.getItemsDescription(fields[increment - 1], config),
+	                        config: {
+	                            typeCard: typeCard,
+	                            class: config.class,
+	                            idParent: config.idParent
+	                        }
+	                    };
+	                }).toArray();
+	                rowData.idParent = config.idParent;
+	                rowData.message = config.message;
+	                rowData.searchId = config.searchId;
+	                rowData.title = config.title;
+	                rowData.type = config.type;
+	                break;
+
+	            case 'accordion':
+	                // Tipo de Card Desplegable con rows dentro
+	                //Se convierte el arreglo en un arreglo de key value para obtener el nombre de la variable como string y
+	                //tener los rows en un array
+	                rowData = _linq2.default.from(_this.getItemsDescription(Data, {
+	                    desc: desc
+	                })).select(function (el) {
+	                    increment += 1;
+	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+	                    return {
+	                        id: increment,
+	                        title: el.title,
+	                        content: el.content.length,
+	                        config: {
+	                            typeCard: typeCard,
+	                            parent: increment,
+	                            subcardClass: 'cardDetail',
+	                            dot: true,
+	                            class: config.class,
+	                            idParent: config.idParent,
+	                            container: config.container
+	                        },
+	                        detail: {
+	                            title: el.title,
+	                            rows: _this.getRowData(el.content, config)
+	                        }
+	                    };
+	                }).toArray();
+	                rowData.idParent = config.idParent;
+	                rowData.message = config.message;
+	                rowData.searchId = config.searchId;
+	                rowData.title = config.title;
+	                rowData.type = config.type;
+	                break;
+
+	            case 'action':
+	                // Card con headers y detalle con acciones
+	                var report = config.btnDetailText != '' ? {
+	                    class: 'btn-secondary',
+	                    classReport: 'detailBtn',
+	                    name: config.btnDetailText
+	                } : '';
+	                var headers = _this.getRows(Data, config.headers) || Data;
+	                var fields = _this.getRows(Data, config.fields) || Data;
+	                rowData = _linq2.default.from(Data).select(function (el) {
+	                    increment += 1;
+	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+	                    return {
+	                        id: el[config.idField],
+	                        idField: el[config.idField],
+	                        valueField: el[config.valueField],
+	                        headers: _this.getItemsDescription(headers[increment - 1], config),
+	                        config: {
+	                            typeCard: typeCard,
+	                            smooth: config.smooth,
+	                            subcardClass: 'cardDetail',
+	                            report: report,
+	                            class: config.class,
+	                            idParent: config.idParent,
+	                            container: config.container
+	                        },
+	                        detail: {
+	                            title: 'Detalle del Presupuesto #' + el[config.idField],
+	                            action: {
+	                                comment: config.comment,
+	                                buttons: config.buttons
+	                            }
+	                        }
+	                    };
+	                }).toArray();
+	                rowData.idParent = config.idParent;
+	                rowData.message = config.message;
+	                rowData.searchId = config.searchId;
+	                rowData.title = config.title;
+	                rowData.type = config.type;
+	                break;
+
+	            default:
+	                break;
+	        }
+
+	        return _promise2.default.resolve(rowData);
+	    },
+
+	    //Obtiene la data a partir de una selcción especifica de campos,
+	    //Recibe un arreglo y devuelve un arreglo de objetos (title/value)
+	    getLabelData: function getLabelData(Data, config) {
+	        var data = this.getFields(Data, config.fields); //Selección de campos
+	        return this.getItemsDescription(data, config);
+	    },
+
+	    //Obtiene la data a partir de una selcción especifica de campos,
+	    //Recibe un arreglo y devuelve un arreglo de arreglos de objetos (title/value)
+	    getRowData: function getRowData(Data, config) {
+	        var data = this.getRows(Data, config.fields);
+	        return this.getRowsDescription(data, config);
+	    },
+	    getDetailRowData: function getDetailRowData(Data, Detail, config) {
+	        var _this = this;
+	        var data = _linq2.default.from(Data).select(function (el) {
+
+	            //Podemos agregar una condición via callback para cambiar la configuración del config para un row especifico
+	            if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+
+	            //Obtenemos los datos del header
+	            var header = _this.getLabelData(el, config);
+	            //Obtenemos los datos del detalle
+	            if (config.detailType == "group") {
+	                //Creamos una lista de elementos
+	                detail = _UI2.default.RowList(el.detail, {
+	                    alignment: config.subAlignment,
+	                    desc: config.subdesc,
+	                    iconClass: config.iconClass
+	                });
+	            } else {
+	                var detail = _linq2.default.from(Detail).where('$.' + config.match[0] + '==' + el[config.match[1]]).select().toArray();
+	                if (config.detailType == "slider") {
+	                    //Creamos los sliders horizontales
+	                    var idSwiper = "swTrnx-" + el[config.match[1]];
+	                    detail = _UI2.default.SliderLabelList(detail, {
+	                        alignment: config.subAlignment,
+	                        fields: config.detailFields,
+	                        desc: config.subdesc,
+	                        sliderId: idSwiper
+	                    });
+	                } else if (config.detailType == "list") {
+	                    //Creamos una lista de elementos
+	                    detail = _UI2.default.RowList(detail, {
+	                        alignment: config.subAlignment,
+	                        desc: config.subdesc,
+	                        fields: config.detailFields
+	                    });
+	                }
+	            }
+	            return {
+	                id: el[config.idField],
+	                idParent: config.idParent,
+	                header: header,
+	                detail: detail,
+	                smooth: true,
+	                bgColorClass: config.bgColorClass,
+	                container: config.container
+	            };
+	        }).toArray();
+	        data.idParent = config.idParent;
+	        return data;
+	    },
+
+
+	    ///////////////////////////////////////////////
+	    /////////// DATA FORMATO TITLE/VALUE //////////
+	    ///////////////////////////////////////////////
+
+	    //Recibe un Arreglo y Devuelve un arreglo de arreglos tipo title, value
+	    /* el arreglo tiene este formato 
+	        [
+	            0: [ 0:{title:"Monto":value:"$43.00"},  1:{title:"IdFactura":value:"45435"} ...]  
+	            1: [ 0:{title:"Monto":value:"$43.00"},  1:{title:"IdFactura":value:"45435"} ...]  
+	        ]
+	    */
+	    getRowsDescription: function getRowsDescription(Data, config) {
+	        var _this = this;
+	        return _linq2.default.from(Data).select(function (el) {
+	            return _this.getItemsDescription(el, config);
+	        }).toArray();
+	    },
+
+	    //Recibe un Objeto y Devuelve un arreglo de objetos tipo title, value
+	    /* el arreglo tiene este formato 
+	        [
+	            0:{title:"Monto":value:"$43.00"},
+	            1:{title:"IdFactura":value:"45435"}
+	            ...
+	        ]
+	    */
+	    getItemsDescription: function getItemsDescription(Data, config) {
+	        Data = Data || "";
+	        Data = Data.constructor == Array ? Data[0] : Data;
+	        return _linq2.default.from(Data).select(function (el) {
+
+	            if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
+	            var obj = {
+	                alignLeft: config.alignLeft || '',
+	                alignRight: config.alignRight || '',
+	                disabled: config.disabled || '',
+	                title: _voca2.default.capitalize(el.key.replace(/_/g, ' ')),
+	                content: el.value,
+	                desc: config.desc != undefined ? config.desc : true,
+	                iconClass: config.iconClass || '',
+	                textSize: config.textSize || '',
+	                hidden: config.hidden || '',
+	                colorTextClass: config.colorTextClass || '',
+	                bgColorClass: config.bgColorClass || '',
+	                align: config.align || '',
+	                subalign: config.subalign || ''
+	            };
+	            if (Array.isArray(config.fieldAsButtons)) {
+	                obj.isButton = config.fieldAsButtons.includes(obj.title);
+	                if (obj.isButton) obj.classBtn = config.classBtn || 'btnDefault';
+	            }
+
+	            return obj;
+	        }).toArray();
+	    },
+
+
+	    ///////////////////////////////////////////////
+	    /////////// SELECCIÓN DE INFORMACIÓN //////////
+	    ///////////////////////////////////////////////
+
+	    //Recibe un Objeto de Arrays y Devuelve un Objeto de arrays con los atributos seleccionados
+	    getArrayRows: function getArrayRows(Data, fields) {
+	        if (fields != undefined) {
+	            if (fields != undefined) {
+	                var _this = this;
+	                var name = "";
+	                var field = "";
+	                var str = "{";
+	                fields = fields.split(",");
+	                $.each(fields, function (k, v) {
+	                    if (_voca2.default.countSubstrings(v, ":") > 0) {
+	                        v = v.split(":");
+	                        name = _voca2.default.capitalize(_voca2.default.snakeCase(v[0]));
+	                        field = v[1];
+	                    } else {
+	                        name = field = v;
+	                    }
+	                    field = (0, _stringify2.default)(_linq2.default.from([Data]).select("$." + field).toArray()[0]);
+	                    str += '"' + name + '":' + field + '';
+	                    if (k < fields.length - 1) str += ",";
+	                });
+	                str += "}";
+	                return JSON.parse(str);
+	            } else {
+	                return Data;
+	            }
+	        } else {
+	            return Data;
+	        }
+	    },
+	    getJoin: function getJoin(Data1, Data2, idMatch, fields) {
+	        var match = idMatch.split('=');
+	        var fields2 = [];
+	        $.each(fields.split(','), function (k, v) {
+	            fields2.push("$." + v);
+	        });
+	        fields2.join(',');
+	        var description = "Id=>" + match + ",g=>g.Key(), detail => {" + fields2 + "}";
+	        return _linq2.default.from(Data1).join(Data2, description).toArray();
+	    },
+	    getGroups: function getGroups(Data, idMatch, fields, detailFields) {
+	        var _this = this;
+	        return _linq2.default.from(Data).groupBy("$." + idMatch).select(function (el) {
+	            var source = el.getSource();
+	            var dData = _this.getRowsDistinct(source, idMatch, fields)[0];
+	            dData.id = el.key();
+	            dData.detail = _this.getRows(source, detailFields) || '';
+	            return dData;
+	        }).toArray();
+	    },
+	    getRowsDistinct: function getRowsDistinct(Data, idMatch, fields) {
+	        var _this = this;
+	        fields = fields || '';
+	        if (fields != '') {
+	            return _linq2.default.from(Data).distinct("$." + idMatch).select(function (el) {
+	                return _this.getFields(el, fields);
+	            }).toArray();
+	        } else {
+	            return Data;
+	        }
+	    },
+
+	    //Recibe un array de objetos y Devuelve un array de objetos con los atributos seleccionados
+	    getRows: function getRows(Data, fields) {
+	        var _this = this;
+	        if (fields != '' && fields != undefined) {
+	            return _linq2.default.from(Data).select(function (el) {
+	                return _this.getFields(el, fields);
+	            }).toArray();
+	        } else {
+	            return Data;
+	        }
+	    },
+
+	    //Recibe un Objeto y Devuelve un Objeto con los atributos seleccionados
+	    getFields: function getFields(Data, fields) {
+	        var _this = this;
+	        Data = Data || "";
+	        //Si se detectan descriptores especiales 
+	        // # operaciones con fecha
+	        // . acceder a hijo
+	        // { seleccionar grupo de hijos
+	        // [ seleccionar una posición de un arreglo,
+	        //[0]Field.subField|Field.subField tambien se puede seleccionar un grupo de campos en esa posición y sus hijos
+	        //> Tambien se puede tener acceso a subhijos :Field1.Field2>Field3
+
+	        //Si recibimos un arreglo en lugar de un objeto obtenemos la primera posición para obtener el objeto
+	        Data = Data.constructor == Array ? Data[0] : Data;
+	        if (fields != undefined && fields != "" && Data != "") {
+	            var fields = fields.split(",");
+	            var str = "{";
+	            $.each(fields, function (k, v) {
+	                var name = "";
+	                var sfield = "";
+	                var faux = "";
+	                var dfield = "";
+	                //Si hay redescripción de nombres has split 
+	                //si no pasa directo la variable  
+	                //':' <- esto determina si se redefinirán los nombres
+	                if (_voca2.default.countSubstrings(v, ":") > 0) {
+	                    v = v.split(":");
+	                    name = v[0].replace(' ', '_');
+	                    sfield = faux = v[1];
+	                    if (sfield.includes('this')) console.log(sfield);
+	                } else {
+	                    var f = faux = v;
+	                    name = sfield = f;
+	                }
+	                dfield = sfield == 'empty' ? '' : _this.assignFieldValue(Data, sfield, faux);
+
+	                //Eliminamos las comillas que pudiera tener
+	                if (typeof dfield === 'string') dfield = dfield.replace(/["]/g, '');
+
+	                //Concatenamos nuestro par de valores
+	                str += '"' + name + '":"' + dfield + '"';
+	                if (k < fields.length - 1) str += ",";
+	            });
+	            str += "}";
+	            return JSON.parse(str);
+	        } else {
+	            return Data;
+	        }
+	    },
+	    assignFieldValue: function assignFieldValue(Data, sfield, ofield) {
+	        var dfield = '';
+	        var _this = this;
+	        sfield = _voca2.default.replace(sfield, '$', '');
+	        Data = Data || '';
+	        if (sfield != "" && Data != '') {
+	            if (sfield.includes("#")) {
+	                dfield = dateOperations(sfield, Data);
+	            } else if (sfield.includes("[")) {
+
+	                if (sfield.includes('this')) {
+	                    sfield = sfield.replace('this', '');
+	                    var index = sfield.substring(sfield.lastIndexOf("[") + 1, sfield.lastIndexOf("]"));
+	                    index = parseInt(index);
+	                    var value = sfield.split(']')[1].replace('|', ',');
+	                    if (value.includes('{')) {
+	                        value = value.substring(value.lastIndexOf("{") + 1, value.lastIndexOf("}"));
+	                        if (value.includes(',')) {
+	                            dfield = _this.getFields(Data[index], value);
+	                        } else {
+	                            dfield = Data[index][value];
+	                        }
+	                    } else if (Data.length > 0) {
+	                        dfield = Data[index];
+	                    }
+	                } else {
+	                    var index = sfield.substring(sfield.lastIndexOf("[") + 1, sfield.lastIndexOf("]"));
+	                    index = parseInt(index);
+	                    var value = sfield.split(']')[1].replace('|', ',');
+
+	                    var firstField = sfield.substring(0, sfield.lastIndexOf("["));
+	                    if (value.includes('{')) {
+	                        value = value.substring(value.lastIndexOf("{") + 1, value.lastIndexOf("}"));
+	                        if (value.includes(',')) {
+	                            dfield = _this.isSecondLevel(Data, firstField, value, index);
+	                            if (dfield == '' && Data[firstField].length > 0) dfield = _this.getFields(Data[firstField][index], value);
+	                        } else {
+	                            dfield = _this.isSecondLevel(Data, firstField, value, index);
+	                            if (dfield == '' && Data[firstField].length > 0) dfield = Data[firstField][index][value];
+	                        }
+	                    } else if (Data[firstField].length > 0) {
+	                        dfield = Data[firstField][index];
+	                    }
+	                }
+	            } else if (sfield.includes("{")) {
+	                if (sfield.includes('this')) {
+	                    sfield = sfield.replace('this', '');
+	                    var f2 = sfield.substring(sfield.lastIndexOf("{") + 1, sfield.lastIndexOf("}"));
+	                    f2 = f2.replace("|", ",");
+	                    dfield = _linq2.default.from(_this.getFields(Data, f2)).select(function (r) {
+	                        return r.value;
+	                    }).toArray();
+	                } else {
+	                    var f1 = sfield.split("{")[0];
+	                    var f2 = sfield.substring(sfield.lastIndexOf("{") + 1, sfield.lastIndexOf("}"));
+	                    f2 = f2.replace("|", ",");
+	                    dfield = _linq2.default.from(_this.getFields(Data[f1], f2)).select(function (r) {
+	                        return r.value;
+	                    }).toArray();
+	                }
+	            } else if (sfield.includes(".")) {
+	                var f = sfield.split(".");
+	                dfield = _this.isSecondLevel(Data, f[0], f[1]);
+	                if (dfield == '') dfield = Data[f[0]][f[1]];
+	            } else {
+	                dfield = Data[sfield];
+	            }
+	        } else {
+	            dfield = Data;
+	        }
+	        //Si el campo es un objeto o un arreglo lo concatenamos en un string y lo dividimos con |
+	        dfield = fieldFormatting(dfield, ofield);
+	        //Verificamos si se indicó que debia tener currency el campo para mostrarlo con $
+	        dfield = ofield.includes("$") && dfield != "..." ? _tool2.default.formatCurrency(dfield) : dfield;
+	        //Verificamos si hay un booleano              
+	        dfield = _tool2.default.SiNo(dfield);
+	        return dfield;
+	    },
+	    isSecondLevel: function isSecondLevel(Data, pfield, sfield, indexRow) {
+	        var _this = this;
+	        var sData = Data[pfield] || '';
+	        //Evaluamos 2do nivel
+	        var dfield = '';
+	        if ((typeof sfield === 'undefined' ? 'undefined' : (0, _typeof3.default)(sfield)) !== "object" && !Array.isArray(sfield) && sData != '') {
+	            var char = sfield.includes(">") ? ">" : ".";
+	            if (sfield.includes(char) && !sfield.includes(":")) {
+	                var s = '';
+	                if (sfield.includes(',')) {
+	                    s = sfield.split(',');
+	                    var values = [];
+	                    $.each(s, function (k, v) {
+	                        var ss = v.split(char);
+	                        var val = [ss[0]][ss[1]];
+	                        if (indexRow != undefined) {
+	                            val = sData[indexRow][ss[0]][ss[1]];
+	                        } else {
+	                            val = sData[ss[0]][ss[1]];
+	                        }
+	                        values.push(val);
+	                    });
+	                    dfield = values.join('|');
+	                } else {
+	                    s = sfield.split(char);
+	                    if (indexRow != undefined) {
+	                        dfield = sData[indexRow][s[0]][s[1]];
+	                    } else {
+	                        dfield = sData[s[0]][s[1]];
+	                    }
+	                }
+	            }
+	        }
+	        return dfield;
+	    }
+	};
+
+
+	function fieldFormatting(dfield, ofield) {
+	    if ((typeof dfield === 'undefined' ? 'undefined' : (0, _typeof3.default)(dfield)) === 'object' && dfield != null) {
+	        dfield = (0, _entries2.default)(dfield);
+	        dfield = _linq2.default.from(dfield).select(function (r) {
+	            return r[1];
+	        }).toArray();
+	        dfield = $.grep(dfield, function (a) {
+	            return a !== '' && a !== null;
+	        }).join('|');
+	    } else if (typeof dfield === 'array') {
+	        dfield = $.grep(dfield, function (a) {
+	            return a !== '' && a !== null;
+	        }).join('|');
+	    }
+	    //Si el campo esta vacio lo reemplazamos con ...
+	    return dfield !== undefined && dfield !== '' && dfield !== null ? dfield : '...';
+	}
+
+	function dateOperations(sfield, Data) {
+	    var type = sfield.includes("#d") ? "days" : sfield.includes("#m") ? "months" : sfield.includes("#a") ? "years" : sfield.includes("#") ? "period" : "";
+	    var f1 = "";
+	    var f2 = "";
+	    sfield = sfield.replace(/#| |#m|#d|#a/g, '');
+	    var dates = sfield.includes(">") ? sfield.split(">") : "";
+	    var resp = "";
+	    if (dates != "") {
+	        f1 = (0, _moment2.default)(Data[dates[0]]);
+	        f2 = (0, _moment2.default)(Data[dates[1]]);
+	        if (type != "period" && type != "") {
+	            return f1.diff(f2, type);
+	        } else {
+	            resp = "Del " + f1.format('YYYY-MM-DD') + " al " + f2.format('YYYY-MM-DD');
+	        }
+	    }
+	    return resp;
+	}
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+	var toString = {}.toString;
+
+	module.exports = function (it) {
+	  return toString.call(it).slice(8, -1);
+	};
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(36);
+	module.exports = function (fn, that, length) {
+	  aFunction(fn);
+	  if (that === undefined) return fn;
+	  switch (length) {
+	    case 1: return function (a) {
+	      return fn.call(that, a);
+	    };
+	    case 2: return function (a, b) {
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function (a, b, c) {
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function (/* ...args */) {
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+	module.exports = {};
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+	module.exports = true;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+	var $keys = __webpack_require__(79);
+	var enumBugKeys = __webpack_require__(51);
+
+	module.exports = Object.keys || function keys(O) {
+	  return $keys(O, enumBugKeys);
+	};
+
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports) {
+
+	exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26935,7 +27930,7 @@
 
 	var _optionsTpl2 = _interopRequireDefault(_optionsTpl);
 
-	var _empleados2 = __webpack_require__(45);
+	var _empleados2 = __webpack_require__(67);
 
 	var _empleados3 = _interopRequireDefault(_empleados2);
 
@@ -26955,15 +27950,15 @@
 
 	var _editarClasificacionTpl2 = _interopRequireDefault(_editarClasificacionTpl);
 
-	var _transaccionManual = __webpack_require__(234);
+	var _transaccionManual = __webpack_require__(235);
 
 	var _transaccionManual2 = _interopRequireDefault(_transaccionManual);
 
-	var _ticketManual = __webpack_require__(233);
+	var _ticketManual = __webpack_require__(234);
 
 	var _ticketManual2 = _interopRequireDefault(_ticketManual);
 
-	var _xml = __webpack_require__(235);
+	var _xml = __webpack_require__(236);
 
 	var _xml2 = _interopRequireDefault(_xml);
 
@@ -27560,7 +28555,7 @@
 	};
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27575,35 +28570,6 @@
 	    STATUS: {
 	        SUCCESS: 0
 	    }
-	};
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	var _defineProperty = __webpack_require__(47);
-
-	var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (obj, key, value) {
-	  if (key in obj) {
-	    (0, _defineProperty2.default)(obj, key, {
-	      value: value,
-	      enumerable: true,
-	      configurable: true,
-	      writable: true
-	    });
-	  } else {
-	    obj[key] = value;
-	  }
-
-	  return obj;
 	};
 
 /***/ }),
@@ -27720,7 +28686,7 @@
 	 *
 	 */
 	exports.default = {
-	    render: function render(Data, Name, Title) {
+	    render: function render(Data, Name, Title, isNA) {
 	        var _this = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
@@ -27729,24 +28695,36 @@
 	                while (1) {
 	                    switch (_context.prev = _context.next) {
 	                        case 0:
+	                            isNA = isNA || false;
+	                            if (isNA) {
+	                                Data.unshift({
+	                                    Id: 1,
+	                                    Name: 'N/A'
+	                                });
+	                            }
 	                            data = {
 	                                Message: 'Seleccionar ' + _voca2.default.capitalize(Name),
-	                                Title: Title != undefined ? Title : "",
+	                                Title: Title || "",
 	                                MessageAlert: 'No se encontró ningún(a) ' + Name,
 	                                Placeholder: 'Buscar ' + _voca2.default.capitalize(Name) + '...',
 	                                Type: Name,
+	                                Icon: getIcon(Name),
+	                                Class: getClass(Name),
 	                                Options: Data
 	                            };
 	                            renderTpl = _tool2.default.renderTpl(_optionListTpl2.default, data);
 	                            return _context.abrupt('return', renderTpl);
 
-	                        case 3:
+	                        case 5:
 	                        case 'end':
 	                            return _context.stop();
 	                    }
 	                }
 	            }, _callee, _this);
 	        }))();
+	    },
+	    unbindEvents: function unbindEvents() {
+	        (0, _jquery2.default)('#jetsSearch').unbind('keyup');
 	    },
 	    handleEvents: function handleEvents() {
 	        (0, _jquery2.default)('style').remove();
@@ -27769,6 +28747,15 @@
 	        }
 	    }
 	};
+
+
+	function getIcon(Name) {
+	    return Name === 'empleado' ? 'employee-icon' : Name === 'empresa' ? 'agreement-icon' : Name === 'proyecto' ? 'project-icon' : Name === 'proyecto' ? 'budget-icon' : 'employee-icon';
+	}
+
+	function getClass(Name) {
+	    return Name === 'empleado' ? 'opt-employee' : Name === 'empresa' ? 'opt-agreement' : Name === 'proyecto' ? 'opt-project' : Name === 'presupuesto' ? 'opt-budget' : 'opt-employee';
+	}
 
 /***/ }),
 /* 44 */
@@ -27816,67 +28803,67 @@
 
 	var _offlineTpl2 = _interopRequireDefault(_offlineTpl);
 
-	var _login = __webpack_require__(240);
+	var _login = __webpack_require__(241);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _main = __webpack_require__(241);
+	var _main = __webpack_require__(242);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _saldo = __webpack_require__(247);
+	var _saldo = __webpack_require__(248);
 
 	var _saldo2 = _interopRequireDefault(_saldo);
 
-	var _autorizarComprobacion = __webpack_require__(231);
+	var _autorizarComprobacion = __webpack_require__(232);
 
 	var _autorizarComprobacion2 = _interopRequireDefault(_autorizarComprobacion);
 
-	var _comprobar = __webpack_require__(33);
+	var _comprobar = __webpack_require__(34);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
-	var _porFacturar = __webpack_require__(243);
+	var _porFacturar = __webpack_require__(244);
 
 	var _porFacturar2 = _interopRequireDefault(_porFacturar);
 
-	var _presupuestoAlta = __webpack_require__(244);
+	var _presupuestoAlta = __webpack_require__(245);
 
 	var _presupuestoAlta2 = _interopRequireDefault(_presupuestoAlta);
 
-	var _presupuestosRechazados = __webpack_require__(245);
+	var _presupuestosRechazados = __webpack_require__(246);
 
 	var _presupuestosRechazados2 = _interopRequireDefault(_presupuestosRechazados);
 
-	var _express = __webpack_require__(238);
+	var _express = __webpack_require__(239);
 
 	var _express2 = _interopRequireDefault(_express);
 
-	var _configuracion = __webpack_require__(236);
+	var _configuracion = __webpack_require__(237);
 
 	var _configuracion2 = _interopRequireDefault(_configuracion);
 
-	var _autorizarPresupuesto = __webpack_require__(232);
+	var _autorizarPresupuesto = __webpack_require__(233);
 
 	var _autorizarPresupuesto2 = _interopRequireDefault(_autorizarPresupuesto);
 
-	var _estatus = __webpack_require__(237);
+	var _estatus = __webpack_require__(238);
 
 	var _estatus2 = _interopRequireDefault(_estatus);
 
-	var _agregarTarjeta = __webpack_require__(230);
+	var _agregarTarjeta = __webpack_require__(231);
 
 	var _agregarTarjeta2 = _interopRequireDefault(_agregarTarjeta);
 
-	var _notificaciones = __webpack_require__(242);
+	var _notificaciones = __webpack_require__(243);
 
 	var _notificaciones2 = _interopRequireDefault(_notificaciones);
 
-	var _registro = __webpack_require__(246);
+	var _registro = __webpack_require__(247);
 
 	var _registro2 = _interopRequireDefault(_registro);
 
-	var _huellaDigital = __webpack_require__(239);
+	var _huellaDigital = __webpack_require__(240);
 
 	var _huellaDigital2 = _interopRequireDefault(_huellaDigital);
 
@@ -27928,10 +28915,11 @@
 	                                page: page,
 	                                layout: _layoutTpl2.default
 	                            });
+	                            (0, _jquery2.default)("style").remove();
 	                            //valido que este conectado a una red
 
 	                            if (window.Connection) {
-	                                _context.next = 17;
+	                                _context.next = 18;
 	                                break;
 	                            }
 
@@ -27941,7 +28929,7 @@
 	                            (0, _jquery2.default)("#renderBody").html(_offlineTpl2.default);
 	                            return _context.abrupt('return');
 
-	                        case 17:
+	                        case 18:
 
 	                            //cargo el layout
 	                            renderTpl = !_default ? _layoutTpl2.default : _layoutLoginTpl2.default;
@@ -27959,95 +28947,95 @@
 	                            _this.setActiveMenu(page);
 
 	                            _context.t1 = page;
-	                            _context.next = _context.t1 === 'login' ? 25 : _context.t1 === 'registro' ? 27 : _context.t1 === 'main' ? 29 : _context.t1 === 'saldo' ? 31 : _context.t1 === 'comprobar' ? 33 : _context.t1 === 'autorizarComprobacion' ? 35 : _context.t1 === 'solicitarAutorizacion' ? 38 : _context.t1 === 'porFacturar' ? 41 : _context.t1 === 'presupuestoAlta' ? 43 : _context.t1 === 'presupuestosRechazados' ? 45 : _context.t1 === 'agregarTarjeta' ? 47 : _context.t1 === 'configuracion' ? 50 : _context.t1 === 'autorizarPresupuesto' ? 52 : _context.t1 === 'estatus' ? 54 : _context.t1 === 'express' ? 56 : _context.t1 === 'notificaciones' ? 58 : _context.t1 === 'huellaDigital' ? 60 : 62;
+	                            _context.next = _context.t1 === 'login' ? 26 : _context.t1 === 'registro' ? 28 : _context.t1 === 'main' ? 30 : _context.t1 === 'saldo' ? 32 : _context.t1 === 'comprobar' ? 34 : _context.t1 === 'autorizarComprobacion' ? 36 : _context.t1 === 'solicitarAutorizacion' ? 39 : _context.t1 === 'porFacturar' ? 42 : _context.t1 === 'presupuestoAlta' ? 44 : _context.t1 === 'presupuestosRechazados' ? 46 : _context.t1 === 'agregarTarjeta' ? 48 : _context.t1 === 'configuracion' ? 51 : _context.t1 === 'autorizarPresupuesto' ? 53 : _context.t1 === 'estatus' ? 55 : _context.t1 === 'express' ? 57 : _context.t1 === 'notificaciones' ? 59 : _context.t1 === 'huellaDigital' ? 61 : 63;
 	                            break;
 
-	                        case 25:
+	                        case 26:
 	                            _login2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 27:
+	                        case 28:
 	                            _registro2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 29:
+	                        case 30:
 	                            _main2.default.init(dataLayout);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 31:
+	                        case 32:
 	                            _saldo2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 33:
+	                        case 34:
 	                            _comprobar2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 35:
+	                        case 36:
 	                            data = {
 	                                page: page,
 	                                solicitar: false
 	                            };
 
 	                            _autorizarComprobacion2.default.init(data);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 38:
+	                        case 39:
 	                            data = {
 	                                page: page,
 	                                solicitar: true
 	                            };
 
 	                            _autorizarComprobacion2.default.init(data);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 41:
+	                        case 42:
 	                            _porFacturar2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 43:
+	                        case 44:
 	                            _presupuestoAlta2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 45:
+	                        case 46:
 	                            _presupuestosRechazados2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 47:
+	                        case 48:
 	                            _agregarTarjeta2.default.init(page);
 	                            _this.setActiveMenu("saldo");
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 50:
+	                        case 51:
 	                            _configuracion2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 52:
+	                        case 53:
 	                            _autorizarPresupuesto2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 54:
+	                        case 55:
 	                            _estatus2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 56:
+	                        case 57:
 	                            _express2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 58:
+	                        case 59:
 	                            _notificaciones2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 60:
+	                        case 61:
 	                            _huellaDigital2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 62:
+	                        case 63:
 	                            renderTpl = _tool2.default.renderTpl(_layoutLoginTpl2.default);
 	                            (0, _jquery2.default)("#app").html(renderTpl);
 	                            _login2.default.init(page);
-	                            return _context.abrupt('break', 66);
+	                            return _context.abrupt('break', 67);
 
-	                        case 66:
+	                        case 67:
 
 	                            if (!_default) {
 	                                setTimeout(function () {
@@ -28058,7 +29046,7 @@
 	                                }, 800);
 	                            }
 
-	                        case 67:
+	                        case 68:
 	                        case 'end':
 	                            return _context.stop();
 	                    }
@@ -28113,112 +29101,48 @@
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _regenerator = __webpack_require__(5);
-
-	var _regenerator2 = _interopRequireDefault(_regenerator);
-
-	var _asyncToGenerator2 = __webpack_require__(4);
-
-	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-
-	__webpack_require__(343);
-
-	var _empleadosTpl = __webpack_require__(390);
-
-	var _empleadosTpl2 = _interopRequireDefault(_empleadosTpl);
-
-	var _jquery = __webpack_require__(2);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _jets = __webpack_require__(22);
-
-	var _jets2 = _interopRequireDefault(_jets);
-
-	var _tool = __webpack_require__(3);
-
-	var _tool2 = _interopRequireDefault(_tool);
-
-	var _store = __webpack_require__(6);
-
-	var _store2 = _interopRequireDefault(_store);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 *
-	 * _empleados
-	 *
-	 */
-	exports.default = {
-	    render: function render(Type) {
-	        var _this = this;
-
-	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-	            var empleados, renderTpl;
-	            return _regenerator2.default.wrap(function _callee$(_context) {
-	                while (1) {
-	                    switch (_context.prev = _context.next) {
-	                        case 0:
-	                            _context.next = 2;
-	                            return _store2.default.Users({
-	                                Type: Type
-	                            });
-
-	                        case 2:
-	                            empleados = _context.sent;
-	                            renderTpl = _tool2.default.renderTpl(_empleadosTpl2.default, {
-	                                Empleados: empleados.Data
-	                            });
-	                            return _context.abrupt("return", renderTpl);
-
-	                        case 5:
-	                        case "end":
-	                            return _context.stop();
-	                    }
-	                }
-	            }, _callee, _this);
-	        }))();
-	    },
-	    handleEvents: function handleEvents() {
-	        (0, _jquery2.default)("style").remove();
-
-	        var jets = new _jets2.default({
-	            searchTag: '#jetsSearch',
-	            contentTag: '#empleadosContainer'
-	        });
-	    },
-	    empleadoDefault: function empleadoDefault() {
-	        var empleadoDefault = (0, _jquery2.default)(".empleado").length === 1;
-	        if (empleadoDefault) {
-	            (0, _jquery2.default)(".empleado:first").trigger("click");
-	        }
-	    }
-	};
+	module.exports = { "default": __webpack_require__(267), __esModule: true };
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(267), __esModule: true };
+	module.exports = { "default": __webpack_require__(271), __esModule: true };
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(271), __esModule: true };
+	module.exports = { "default": __webpack_require__(276), __esModule: true };
 
 /***/ }),
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(276), __esModule: true };
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _defineProperty = __webpack_require__(46);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (obj, key, value) {
+	  if (key in obj) {
+	    (0, _defineProperty2.default)(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	};
 
 /***/ }),
 /* 49 */
@@ -28284,7 +29208,7 @@
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 	var anObject = __webpack_require__(13);
-	var dPs = __webpack_require__(75);
+	var dPs = __webpack_require__(76);
 	var enumBugKeys = __webpack_require__(51);
 	var IE_PROTO = __webpack_require__(56)('IE_PROTO');
 	var Empty = function () { /* empty */ };
@@ -28299,7 +29223,7 @@
 	  var gt = '>';
 	  var iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(71).appendChild(iframe);
+	  __webpack_require__(72).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -28329,12 +29253,12 @@
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var pIE = __webpack_require__(31);
+	var pIE = __webpack_require__(33);
 	var createDesc = __webpack_require__(37);
 	var toIObject = __webpack_require__(17);
 	var toPrimitive = __webpack_require__(60);
 	var has = __webpack_require__(19);
-	var IE8_DOM_DEFINE = __webpack_require__(72);
+	var IE8_DOM_DEFINE = __webpack_require__(73);
 	var gOPD = Object.getOwnPropertyDescriptor;
 
 	exports.f = __webpack_require__(14) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -28378,7 +29302,7 @@
 	  return store[key] || (store[key] = value !== undefined ? value : {});
 	})('versions', []).push({
 	  version: core.version,
-	  mode: __webpack_require__(29) ? 'pure' : 'global',
+	  mode: __webpack_require__(31) ? 'pure' : 'global',
 	  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 	});
 
@@ -28430,7 +29354,7 @@
 
 	var global = __webpack_require__(9);
 	var core = __webpack_require__(7);
-	var LIBRARY = __webpack_require__(29);
+	var LIBRARY = __webpack_require__(31);
 	var wksExt = __webpack_require__(62);
 	var defineProperty = __webpack_require__(16).f;
 	module.exports = function (name) {
@@ -32466,668 +33390,103 @@
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _entries = __webpack_require__(256);
+	var _regenerator = __webpack_require__(5);
 
-	var _entries2 = _interopRequireDefault(_entries);
+	var _regenerator2 = _interopRequireDefault(_regenerator);
 
-	var _typeof2 = __webpack_require__(18);
+	var _asyncToGenerator2 = __webpack_require__(4);
 
-	var _typeof3 = _interopRequireDefault(_typeof2);
+	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-	var _stringify = __webpack_require__(46);
+	__webpack_require__(343);
 
-	var _stringify2 = _interopRequireDefault(_stringify);
+	var _empleadosTpl = __webpack_require__(390);
 
-	var _promise = __webpack_require__(48);
+	var _empleadosTpl2 = _interopRequireDefault(_empleadosTpl);
 
-	var _promise2 = _interopRequireDefault(_promise);
+	var _jquery = __webpack_require__(2);
 
-	var _linq = __webpack_require__(10);
+	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _linq2 = _interopRequireDefault(_linq);
+	var _jets = __webpack_require__(22);
+
+	var _jets2 = _interopRequireDefault(_jets);
 
 	var _tool = __webpack_require__(3);
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _voca = __webpack_require__(66);
+	var _store = __webpack_require__(6);
 
-	var _voca2 = _interopRequireDefault(_voca);
-
-	var _moment = __webpack_require__(1);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	var _UI = __webpack_require__(32);
-
-	var _UI2 = _interopRequireDefault(_UI);
+	var _store2 = _interopRequireDefault(_store);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	/**
+	 *
+	 * _empleados
+	 *
+	 */
 	exports.default = {
-	    bindEvents: function bindEvents(events) {
-	        for (var i = 0, l = events.length; i < l; i++) {
-	            if (!events[i].element) {
-	                $(events[i].target).on(events[i].event, events[i].handler);
-	            } else {
-	                $(events[i].element).on(events[i].event, events[i].target, events[i].handler);
-	            }
-	        }
-	    },
-
-
-	    ///////////////////////////////////////////////
-	    /////////// ESTRUCTURA DE INFORMACIÓN /////////
-	    ///////////////////////////////////////////////
-
-	    getCardRowData: function getCardRowData(type, Data, config) {
-	        var increment = 0;
-	        var rowData = '';
+	    render: function render(Type) {
 	        var _this = this;
-	        var typeCard = config.typeCard != undefined ? config.typeCard : 'header';
-	        switch (type) {
-	            case 'detailHeader':
-	                //Se divide la data en dos partes una para header y otra para detalle
-	                //Si existe una selección, se parte la data en los componentes que se necesitarán
-	                var report = config.btnDetailText != '' ? {
-	                    class: 'btn-secondary',
-	                    classReport: 'detailBtn',
-	                    name: config.btnDetailText
-	                } : '';
-	                var fields = config.fields != undefined ? _this.getRows(Data, config.fields) : Data;
-	                //config para el detalle y el header
-	                var configDetail = [];
-	                var configHeader = [];
-	                configHeader.changeCustomByRow = config.changeHeaderByRow;
-	                configDetail.desc = config.desc;
 
-	                configDetail.changeCustomByRow = config.changeDetailByRow;
-	                configDetail.fields = config.detailFields != undefined ? config.detailFields : '';
-	                configDetail.desc = config.subdesc;
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+	            var empleados, renderTpl;
+	            return _regenerator2.default.wrap(function _callee$(_context) {
+	                while (1) {
+	                    switch (_context.prev = _context.next) {
+	                        case 0:
+	                            _context.next = 2;
+	                            return _store2.default.Users({
+	                                Type: Type
+	                            });
 
-	                rowData = _linq2.default.from(fields).select(function (el) {
-	                    increment += 1;
+	                        case 2:
+	                            empleados = _context.sent;
+	                            renderTpl = _tool2.default.renderTpl(_empleadosTpl2.default, {
+	                                Empleados: empleados.Data
+	                            });
+	                            return _context.abrupt("return", renderTpl);
 
-	                    return {
-	                        id: el[config.idField],
-	                        idField: el[config.idField],
-	                        valueField: el[config.valueField],
-	                        fields: _this.getItemsDescription(fields[increment - 1], configHeader),
-	                        config: {
-	                            typeCard: typeCard,
-	                            smooth: config.smooth,
-	                            report: report,
-	                            subcardClass: 'cardDetail',
-	                            class: config.class,
-	                            idParent: config.idParent,
-	                            container: config.container != undefined ? config.container : "#accordion-" + config.idParent
-	                        },
-	                        detail: {
-	                            empty: false,
-	                            title: config.detailTitle + " #" + el[config.idField],
-	                            labels: _this.getLabelData(Data[increment - 1], configDetail)
-	                        }
-	                    };
-	                }).toArray();
-	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
-	                rowData.searchId = config.searchId;
-	                rowData.title = config.title;
-	                rowData.type = config.type;
-	                break;
-	            case 'detailExpand':
-	                //Esta solo tiene los headers ID Y VALUE junto con los fields pero el detalle esta vacio
-	                var report = config.btnDetailText != '' ? {
-	                    class: 'btn-secondary',
-	                    classReport: 'detailBtn',
-	                    name: config.btnDetailText
-	                } : '';
-	                var fields = config.fields != undefined ? _this.getRows(Data, config.fields) : Data;
-	                rowData = _linq2.default.from(Data).select(function (el) {
-	                    increment += 1;
-	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-	                    return {
-	                        id: el[config.idField],
-	                        idField: el[config.idField],
-	                        valueField: el[config.valueField],
-	                        fields: _this.getItemsDescription(fields[increment - 1], config),
-	                        config: {
-	                            typeCard: typeCard,
-	                            smooth: config.smooth,
-	                            report: report,
-	                            subcardClass: 'cardDetail',
-	                            class: config.class,
-	                            idParent: config.idParent,
-	                            container: config.container != undefined ? config.container : "#accordion-" + config.idParent
-	                        },
-	                        detail: {
-	                            empty: true,
-	                            title: config.detailTitle + " #" + el[config.idField]
-	                        }
-	                    };
-	                }).toArray();
-	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
-	                rowData.searchId = config.searchId;
-	                rowData.title = config.title;
-	                rowData.type = config.type;
-	                break;
-	            case 'info':
-	                // Card con headers, al hacer click activa un modal
-	                var fields = config.fields != undefined ? _this.getRows(Data, config.fields) : Data;
-	                rowData = _linq2.default.from(Data).select(function (el) {
-	                    increment += 1;
-	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-	                    return {
-	                        id: el[config.idField],
-	                        idField: el[config.idField],
-	                        valueField: el[config.valueField],
-	                        fields: _this.getItemsDescription(fields[increment - 1], config),
-	                        config: {
-	                            typeCard: typeCard,
-	                            class: config.class,
-	                            idParent: config.idParent
-	                        }
-	                    };
-	                }).toArray();
-	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
-	                rowData.searchId = config.searchId;
-	                rowData.title = config.title;
-	                rowData.type = config.type;
-	                break;
-
-	            case 'accordion':
-	                // Tipo de Card Desplegable con rows dentro
-	                //Se convierte el arreglo en un arreglo de key value para obtener el nombre de la variable como string y
-	                //tener los rows en un array
-	                rowData = _linq2.default.from(_this.getItemsDescription(Data, {
-	                    desc: desc
-	                })).select(function (el) {
-	                    increment += 1;
-	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-	                    return {
-	                        id: increment,
-	                        title: el.title,
-	                        content: el.content.length,
-	                        config: {
-	                            typeCard: typeCard,
-	                            parent: increment,
-	                            subcardClass: 'cardDetail',
-	                            dot: true,
-	                            class: config.class,
-	                            idParent: config.idParent,
-	                            container: config.container != undefined ? config.container : "#accordion-" + config.idParent
-	                        },
-	                        detail: {
-	                            title: el.title,
-	                            rows: _this.getRowData(el.content, config)
-	                        }
-	                    };
-	                }).toArray();
-	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
-	                rowData.searchId = config.searchId;
-	                rowData.title = config.title;
-	                rowData.type = config.type;
-	                break;
-
-	            case 'action':
-	                // Card con headers y detalle con acciones
-	                var report = config.btnDetailText != '' ? {
-	                    class: 'btn-secondary',
-	                    classReport: 'detailBtn',
-	                    name: config.btnDetailText
-	                } : '';
-	                var headers = config.headers != undefined ? _this.getRows(Data, config.headers) : Data;
-	                var fields = config.fields != undefined ? _this.getRows(Data, config.fields) : Data;
-	                rowData = _linq2.default.from(Data).select(function (el) {
-	                    increment += 1;
-	                    if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-	                    return {
-	                        id: el[config.idField],
-	                        idField: el[config.idField],
-	                        valueField: el[config.valueField],
-	                        headers: _this.getItemsDescription(headers[increment - 1], config),
-	                        config: {
-	                            typeCard: typeCard,
-	                            smooth: config.smooth,
-	                            subcardClass: 'cardDetail',
-	                            report: report,
-	                            class: config.class,
-	                            idParent: config.idParent,
-	                            container: config.container != undefined ? config.container : "#accordion-" + config.idParent
-	                        },
-	                        detail: {
-	                            title: 'Detalle del Presupuesto #' + el[config.idField],
-	                            action: {
-	                                comment: config.comment,
-	                                buttons: config.buttons
-	                            }
-	                        }
-	                    };
-	                }).toArray();
-	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
-	                rowData.searchId = config.searchId;
-	                rowData.title = config.title;
-	                rowData.type = config.type;
-	                break;
-
-	            default:
-	                break;
-	        }
-
-	        return _promise2.default.resolve(rowData);
-	    },
-
-
-	    //Obtiene la data a partir de una selcción especifica de campos,
-	    //Recibe un arreglo y devuelve un arreglo de objetos (title/value)
-	    getLabelData: function getLabelData(Data, config) {
-	        var data = this.getFields(Data, config.fields); //Selección de campos
-	        return this.getItemsDescription(data, config);
-	    },
-
-	    //Obtiene la data a partir de una selcción especifica de campos,
-	    //Recibe un arreglo y devuelve un arreglo de arreglos de objetos (title/value)
-	    getRowData: function getRowData(Data, config) {
-	        var data = this.getRows(Data, config.fields);
-	        return this.getRowsDescription(data, config);
-	    },
-	    getDetailRowData: function getDetailRowData(Data, Detail, config) {
-	        var _this = this;
-	        var data = _linq2.default.from(Data).select(function (el) {
-
-	            //Podemos agregar una condición via callback para cambiar la configuración del config para un row especifico
-	            if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-
-	            //Obtenemos los datos del header
-	            var header = _this.getLabelData(el, config);
-	            //Obtenemos los datos del detalle
-	            if (config.detailType == "group") {
-	                //Creamos una lista de elementos
-	                detail = _UI2.default.RowList(el.detail, {
-	                    alignment: config.subAlignment,
-	                    desc: config.subdesc,
-	                    iconClass: config.iconClass
-	                });
-	            } else {
-	                var detail = _linq2.default.from(Detail).where('$.' + config.match[0] + '==' + el[config.match[1]]).select().toArray();
-	                if (config.detailType == "slider") {
-	                    //Creamos los sliders horizontales
-	                    var idSwiper = "swTrnx-" + el[config.match[1]];
-	                    detail = _UI2.default.SliderLabelList(detail, {
-	                        alignment: config.subAlignment,
-	                        fields: config.detailFields,
-	                        desc: config.subdesc,
-	                        sliderId: idSwiper
-	                    });
-	                } else if (config.detailType == "list") {
-	                    //Creamos una lista de elementos
-	                    detail = _UI2.default.RowList(detail, {
-	                        alignment: config.subAlignment,
-	                        desc: config.subdesc,
-	                        fields: config.detailFields
-	                    });
-	                }
-	            }
-	            return {
-	                id: el[config.idField],
-	                idParent: config.idParent,
-	                header: header,
-	                detail: detail,
-	                smooth: true,
-	                bgColorClass: config.bgColorClass,
-	                container: config.container != undefined ? config.container : '#detRowList-' + config.idParent
-	            };
-	        }).toArray();
-	        data.idParent = config.idParent;
-	        return data;
-	    },
-
-
-	    ///////////////////////////////////////////////
-	    /////////// DATA FORMATO TITLE/VALUE //////////
-	    ///////////////////////////////////////////////
-
-	    //Recibe un Arreglo y Devuelve un arreglo de arreglos tipo title, value
-	    /* el arreglo tiene este formato 
-	        [
-	            0: [ 0:{title:"Monto":value:"$43.00"},  1:{title:"IdFactura":value:"45435"} ...]  
-	            1: [ 0:{title:"Monto":value:"$43.00"},  1:{title:"IdFactura":value:"45435"} ...]  
-	        ]
-	    */
-	    getRowsDescription: function getRowsDescription(Data, config) {
-	        var _this = this;
-	        return _linq2.default.from(Data).select(function (el) {
-	            return _this.getItemsDescription(el, config);
-	        }).toArray();
-	    },
-
-	    //Recibe un Objeto y Devuelve un arreglo de objetos tipo title, value
-	    /* el arreglo tiene este formato 
-	        [
-	            0:{title:"Monto":value:"$43.00"},
-	            1:{title:"IdFactura":value:"45435"}
-	            ...
-	        ]
-	    */
-	    getItemsDescription: function getItemsDescription(Data, config) {
-	        Data = Data != undefined ? Data : "";
-	        Data = Data.constructor == Array ? Data[0] : Data;
-	        return _linq2.default.from(Data).select(function (el) {
-
-	            if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
-	            var obj = {
-	                alignLeft: config.alignLeft != undefined ? config.alignLeft : '',
-	                alignRight: config.alignRight != undefined ? config.alignRight : '',
-	                disabled: config.disabled != undefined ? config.disabled : '',
-	                title: _voca2.default.capitalize(el.key.replace(/_/g, ' ')),
-	                content: el.value,
-	                desc: config.desc != undefined ? config.desc : true,
-	                iconClass: config.iconClass != undefined ? config.iconClass : '',
-	                textSize: config.textSize != undefined ? config.textSize : '',
-	                hidden: config.hidden != undefined ? config.hidden : '',
-	                colorTextClass: config.colorTextClass != undefined ? config.colorTextClass : '',
-	                bgColorClass: config.bgColorClass != undefined ? config.bgColorClass : '',
-	                align: config.align != undefined && config.align != '' ? config.align : '',
-	                subalign: config.subalign != undefined && config.subalign != '' ? config.subalign : ''
-	            };
-	            if (Array.isArray(config.fieldAsButtons)) {
-	                obj.isButton = config.fieldAsButtons.includes(obj.title);
-	                if (obj.isButton) obj.classBtn = config.classBtn != undefined ? config.classBtn : 'btnDefault';
-	            }
-
-	            return obj;
-	        }).toArray();
-	    },
-
-
-	    ///////////////////////////////////////////////
-	    /////////// SELECCIÓN DE INFORMACIÓN //////////
-	    ///////////////////////////////////////////////
-
-	    //Recibe un Objeto de Arrays y Devuelve un Objeto de arrays con los atributos seleccionados
-	    getArrayRows: function getArrayRows(Data, fields) {
-	        if (fields != undefined) {
-	            if (fields != undefined) {
-	                var _this = this;
-	                var name = "";
-	                var field = "";
-	                var str = "{";
-	                fields = fields.split(",");
-	                $.each(fields, function (k, v) {
-	                    if (_voca2.default.countSubstrings(v, ":") > 0) {
-	                        v = v.split(":");
-	                        name = _voca2.default.capitalize(_voca2.default.snakeCase(v[0]));
-	                        field = v[1];
-	                    } else {
-	                        name = field = v;
+	                        case 5:
+	                        case "end":
+	                            return _context.stop();
 	                    }
-	                    field = (0, _stringify2.default)(_linq2.default.from([Data]).select("$." + field).toArray()[0]);
-	                    str += '"' + name + '":' + field + '';
-	                    if (k < fields.length - 1) str += ",";
-	                });
-	                str += "}";
-	                return JSON.parse(str);
-	            } else {
-	                return Data;
-	            }
-	        } else {
-	            return Data;
-	        }
+	                }
+	            }, _callee, _this);
+	        }))();
 	    },
-	    getJoin: function getJoin(Data1, Data2, idMatch, fields) {
-	        var match = idMatch.split('=');
-	        var fields2 = [];
-	        $.each(fields.split(','), function (k, v) {
-	            fields2.push("$." + v);
+	    handleEvents: function handleEvents() {
+	        (0, _jquery2.default)("style").remove();
+
+	        var jets = new _jets2.default({
+	            searchTag: '#jetsSearch',
+	            contentTag: '#empleadosContainer'
 	        });
-	        fields2.join(',');
-	        var description = "Id=>" + match + ",g=>g.Key(), detail => {" + fields2 + "}";
-	        return _linq2.default.from(Data1).join(Data2, description).toArray();
 	    },
-	    getGroups: function getGroups(Data, idMatch, fields, detailFields) {
-	        var _this = this;
-	        return _linq2.default.from(Data).groupBy("$." + idMatch).select(function (el) {
-	            var source = el.getSource();
-	            var dData = _this.getRowsDistinct(source, idMatch, fields)[0];
-	            dData.id = el.key();
-	            dData.detail = detailFields != undefined ? _this.getRows(source, detailFields) : '';
-	            return dData;
-	        }).toArray();
-	    },
-	    getRowsDistinct: function getRowsDistinct(Data, idMatch, fields) {
-	        var _this = this;
-	        fields = fields != undefined ? fields : "";
-	        if (fields != "") {
-	            return _linq2.default.from(Data).distinct("$." + idMatch).select(function (el) {
-	                return _this.getFields(el, fields);
-	            }).toArray();
-	        } else {
-	            return Data;
+	    empleadoDefault: function empleadoDefault() {
+	        var empleadoDefault = (0, _jquery2.default)(".empleado").length === 1;
+	        if (empleadoDefault) {
+	            (0, _jquery2.default)(".empleado:first").trigger("click");
 	        }
-	    },
-
-	    //Recibe un array de objetos y Devuelve un array de objetos con los atributos seleccionados
-	    getRows: function getRows(Data, fields) {
-	        var _this = this;
-	        if (fields != "" && fields != undefined) {
-	            return _linq2.default.from(Data).select(function (el) {
-	                return _this.getFields(el, fields);
-	            }).toArray();
-	        } else {
-	            return Data;
-	        }
-	    },
-
-	    //Recibe un Objeto y Devuelve un Objeto con los atributos seleccionados
-	    getFields: function getFields(Data, fields) {
-	        var _this = this;
-	        Data = Data != undefined ? Data : "";
-	        //Si se detectan descriptores especiales 
-	        // # operaciones con fecha
-	        // . acceder a hijo
-	        // { seleccionar grupo de hijos
-	        // [ seleccionar una posición de un arreglo,
-	        //[0]Field.subField|Field.subField tambien se puede seleccionar un grupo de campos en esa posición y sus hijos
-	        //> Tambien se puede tener acceso a subhijos :Field1.Field2>Field3
-
-	        //Si recibimos un arreglo en lugar de un objeto obtenemos la primera posición para obtener el objeto
-	        Data = Data.constructor == Array ? Data[0] : Data;
-	        if (fields != undefined && fields != "" && Data != "") {
-	            var fields = fields.split(",");
-	            var str = "{";
-	            $.each(fields, function (k, v) {
-	                var name = "";
-	                var sfield = "";
-	                var faux = "";
-	                var dfield = "";
-	                //Si hay redescripción de nombres has split 
-	                //si no pasa directo la variable  
-	                //':' <- esto determina si se redefinirán los nombres
-	                if (_voca2.default.countSubstrings(v, ":") > 0) {
-	                    v = v.split(":");
-	                    name = _voca2.default.snakeCase(v[0]);
-	                    sfield = faux = v[1];
-	                    if (sfield.includes('this')) console.log(sfield);
-	                } else {
-	                    var f = faux = v;
-	                    name = sfield = f;
-	                }
-	                dfield = sfield == 'empty' ? '' : _this.assignFieldValue(Data, sfield, faux);
-	                //Concatenamos nuestro par de valores
-	                str += '"' + name + '":"' + dfield + '"';
-	                if (k < fields.length - 1) str += ",";
-	            });
-	            str += "}";
-	            return JSON.parse(str);
-	        } else {
-	            return Data;
-	        }
-	    },
-	    assignFieldValue: function assignFieldValue(Data, sfield, ofield) {
-	        var dfield = '';
-	        var _this = this;
-	        sfield = _voca2.default.replace(sfield, '$', '');
-	        Data = Data != undefined ? Data : '';
-	        if (sfield != "" && Data != '') {
-	            if (sfield.includes("#")) {
-	                dfield = dateOperations(sfield, Data);
-	            } else if (sfield.includes("[")) {
-
-	                if (sfield.includes('this')) {
-	                    sfield = sfield.replace('this', '');
-	                    var index = sfield.substring(sfield.lastIndexOf("[") + 1, sfield.lastIndexOf("]"));
-	                    index = parseInt(index);
-	                    var value = sfield.split(']')[1].replace('|', ',');
-	                    if (value.includes('{')) {
-	                        value = value.substring(value.lastIndexOf("{") + 1, value.lastIndexOf("}"));
-	                        if (value.includes(',')) {
-	                            dfield = _this.getFields(Data[index], value);
-	                        } else {
-	                            dfield = Data[index][value];
-	                        }
-	                    } else if (Data.length > 0) {
-	                        dfield = Data[index];
-	                    }
-	                } else {
-	                    var index = sfield.substring(sfield.lastIndexOf("[") + 1, sfield.lastIndexOf("]"));
-	                    index = parseInt(index);
-	                    var value = sfield.split(']')[1].replace('|', ',');
-
-	                    var firstField = sfield.substring(0, sfield.lastIndexOf("["));
-	                    if (value.includes('{')) {
-	                        value = value.substring(value.lastIndexOf("{") + 1, value.lastIndexOf("}"));
-	                        if (value.includes(',')) {
-	                            dfield = _this.isSecondLevel(Data, firstField, value, index);
-	                            if (dfield == '' && Data[firstField].length > 0) dfield = _this.getFields(Data[firstField][index], value);
-	                        } else {
-	                            dfield = _this.isSecondLevel(Data, firstField, value, index);
-	                            if (dfield == '' && Data[firstField].length > 0) dfield = Data[firstField][index][value];
-	                        }
-	                    } else if (Data[firstField].length > 0) {
-	                        dfield = Data[firstField][index];
-	                    }
-	                }
-	            } else if (sfield.includes("{")) {
-	                if (sfield.includes('this')) {
-	                    sfield = sfield.replace('this', '');
-	                    var f2 = sfield.substring(sfield.lastIndexOf("{") + 1, sfield.lastIndexOf("}"));
-	                    f2 = f2.replace("|", ",");
-	                    dfield = _linq2.default.from(_this.getFields(Data, f2)).select(function (r) {
-	                        return r.value;
-	                    }).toArray();
-	                } else {
-	                    var f1 = sfield.split("{")[0];
-	                    var f2 = sfield.substring(sfield.lastIndexOf("{") + 1, sfield.lastIndexOf("}"));
-	                    f2 = f2.replace("|", ",");
-	                    dfield = _linq2.default.from(_this.getFields(Data[f1], f2)).select(function (r) {
-	                        return r.value;
-	                    }).toArray();
-	                }
-	            } else if (sfield.includes(".")) {
-	                var f = sfield.split(".");
-	                dfield = _this.isSecondLevel(Data, f[0], f[1]);
-	                if (dfield == '') dfield = Data[f[0]][f[1]];
-	            } else {
-	                dfield = Data[sfield];
-	            }
-	        } else {
-	            dfield = Data;
-	        }
-	        //Si el campo es un objeto o un arreglo lo concatenamos en un string y lo dividimos con |
-	        dfield = fieldFormatting(dfield, ofield);
-	        //Verificamos si se indicó que debia tener currency el campo para mostrarlo con $
-	        dfield = ofield.includes("$") && dfield != "..." ? _tool2.default.formatCurrency(dfield) : dfield;
-	        //Verificamos si hay un booleano              
-	        dfield = _tool2.default.SiNo(dfield);
-	        return dfield;
-	    },
-	    isSecondLevel: function isSecondLevel(Data, pfield, sfield, indexRow) {
-	        var _this = this;
-	        var sData = Data != undefined ? Data[pfield] : '';
-	        //Evaluamos 2do nivel
-	        var dfield = '';
-	        if ((typeof sfield === 'undefined' ? 'undefined' : (0, _typeof3.default)(sfield)) !== "object" && !Array.isArray(sfield) && sData != '') {
-	            var char = sfield.includes(">") ? ">" : ".";
-	            if (sfield.includes(char) && !sfield.includes(":")) {
-	                var s = '';
-	                if (sfield.includes(',')) {
-	                    s = sfield.split(',');
-	                    var values = [];
-	                    $.each(s, function (k, v) {
-	                        var ss = v.split(char);
-	                        var val = [ss[0]][ss[1]];
-	                        if (indexRow != undefined) {
-	                            val = sData[indexRow][ss[0]][ss[1]];
-	                        } else {
-	                            val = sData[ss[0]][ss[1]];
-	                        }
-	                        values.push(val);
-	                    });
-	                    dfield = values.join('|');
-	                } else {
-	                    s = sfield.split(char);
-	                    if (indexRow != undefined) {
-	                        dfield = sData[indexRow][s[0]][s[1]];
-	                    } else {
-	                        dfield = sData[s[0]][s[1]];
-	                    }
-	                }
-	            }
-	        }
-	        return dfield;
 	    }
 	};
 
-
-	function fieldFormatting(dfield, ofield) {
-	    if ((typeof dfield === 'undefined' ? 'undefined' : (0, _typeof3.default)(dfield)) === "object" && dfield != null) {
-	        dfield = (0, _entries2.default)(dfield);
-	        dfield = _linq2.default.from(dfield).select(function (r) {
-	            return r[1];
-	        }).toArray();
-	        dfield = $.grep(dfield, function (a) {
-	            return a !== "" && a !== null;
-	        }).join("|");
-	    } else if (typeof dfield === "array") {
-	        dfield = $.grep(dfield, function (a) {
-	            return a !== "" && a !== null;
-	        }).join("|");
-	    }
-	    //Si el campo esta vacio lo reemplazamos con ...
-	    return dfield != undefined && dfield !== "" && dfield !== null ? dfield : "...";
-	}
-
-	function dateOperations(sfield, Data) {
-	    var type = sfield.includes("#d") ? "days" : sfield.includes("#m") ? "months" : sfield.includes("#a") ? "years" : sfield.includes("#") ? "period" : "";
-	    var f1 = "";
-	    var f2 = "";
-	    sfield = sfield.replace(/#| |#m|#d|#a/g, '');
-	    var dates = sfield.includes(">") ? sfield.split(">") : "";
-	    var resp = "";
-	    if (dates != "") {
-	        f1 = (0, _moment2.default)(Data[dates[0]]);
-	        f2 = (0, _moment2.default)(Data[dates[1]]);
-	        if (type != "period" && type != "") {
-	            return f1.diff(f2, type);
-	        } else {
-	            resp = "Del " + f1.format('YYYY-MM-DD') + " al " + f2.format('YYYY-MM-DD');
-	        }
-	    }
-	    return resp;
-	}
-
 /***/ }),
 /* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(268), __esModule: true };
+
+/***/ }),
+/* 69 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -33141,14 +33500,14 @@
 	};
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(47);
+	var _defineProperty = __webpack_require__(46);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -33173,11 +33532,11 @@
 	}();
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(26);
+	var cof = __webpack_require__(28);
 	var TAG = __webpack_require__(11)('toStringTag');
 	// ES3 wrong here
 	var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -33202,7 +33561,7 @@
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var document = __webpack_require__(9).document;
@@ -33210,7 +33569,7 @@
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = !__webpack_require__(14) && !__webpack_require__(23)(function () {
@@ -33219,11 +33578,11 @@
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(26);
+	var cof = __webpack_require__(28);
 	// eslint-disable-next-line no-prototype-builtins
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 	  return cof(it) == 'String' ? it.split('') : Object(it);
@@ -33231,18 +33590,18 @@
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY = __webpack_require__(29);
+	var LIBRARY = __webpack_require__(31);
 	var $export = __webpack_require__(12);
-	var redefine = __webpack_require__(82);
+	var redefine = __webpack_require__(83);
 	var hide = __webpack_require__(20);
-	var Iterators = __webpack_require__(28);
+	var Iterators = __webpack_require__(30);
 	var $iterCreate = __webpack_require__(288);
 	var setToStringTag = __webpack_require__(38);
-	var getPrototypeOf = __webpack_require__(77);
+	var getPrototypeOf = __webpack_require__(78);
 	var ITERATOR = __webpack_require__(11)('iterator');
 	var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 	var FF_ITERATOR = '@@iterator';
@@ -33306,12 +33665,12 @@
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var dP = __webpack_require__(16);
 	var anObject = __webpack_require__(13);
-	var getKeys = __webpack_require__(30);
+	var getKeys = __webpack_require__(32);
 
 	module.exports = __webpack_require__(14) ? Object.defineProperties : function defineProperties(O, Properties) {
 	  anObject(O);
@@ -33325,11 +33684,11 @@
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-	var $keys = __webpack_require__(78);
+	var $keys = __webpack_require__(79);
 	var hiddenKeys = __webpack_require__(51).concat('length', 'prototype');
 
 	exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -33338,7 +33697,7 @@
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -33357,7 +33716,7 @@
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var has = __webpack_require__(19);
@@ -33380,7 +33739,7 @@
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
@@ -33396,7 +33755,7 @@
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 	module.exports = function (exec) {
@@ -33409,7 +33768,7 @@
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(13);
@@ -33427,14 +33786,14 @@
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(20);
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -33449,12 +33808,12 @@
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var ctx = __webpack_require__(27);
+	var ctx = __webpack_require__(29);
 	var invoke = __webpack_require__(284);
-	var html = __webpack_require__(71);
+	var html = __webpack_require__(72);
 	var cel = __webpack_require__(50);
 	var global = __webpack_require__(9);
 	var process = global.process;
@@ -33495,7 +33854,7 @@
 	    delete queue[id];
 	  };
 	  // Node.js 0.8-
-	  if (__webpack_require__(26)(process) == 'process') {
+	  if (__webpack_require__(28)(process) == 'process') {
 	    defer = function (id) {
 	      process.nextTick(ctx(run, id, 1));
 	    };
@@ -33539,7 +33898,7 @@
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
@@ -33551,20 +33910,20 @@
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 	
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $at = __webpack_require__(299)(true);
 
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(74)(String, 'String', function (iterated) {
+	__webpack_require__(75)(String, 'String', function (iterated) {
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -33580,13 +33939,13 @@
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(303);
 	var global = __webpack_require__(9);
 	var hide = __webpack_require__(20);
-	var Iterators = __webpack_require__(28);
+	var Iterators = __webpack_require__(30);
 	var TO_STRING_TAG = __webpack_require__(11)('toStringTag');
 
 	var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
@@ -33605,13 +33964,13 @@
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -33688,7 +34047,7 @@
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -33751,7 +34110,7 @@
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -33814,7 +34173,7 @@
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -33940,7 +34299,7 @@
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34003,7 +34362,7 @@
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34111,7 +34470,7 @@
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34174,7 +34533,7 @@
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34313,7 +34672,7 @@
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34422,7 +34781,7 @@
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34558,7 +34917,7 @@
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34652,7 +35011,7 @@
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34714,7 +35073,7 @@
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34837,7 +35196,7 @@
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -34960,7 +35319,7 @@
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35072,7 +35431,7 @@
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35227,7 +35586,7 @@
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35319,7 +35678,7 @@
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35495,7 +35854,7 @@
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35562,7 +35921,7 @@
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35646,7 +36005,7 @@
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35710,7 +36069,7 @@
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35790,7 +36149,7 @@
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35870,7 +36229,7 @@
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -35950,7 +36309,7 @@
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36053,7 +36412,7 @@
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36157,7 +36516,7 @@
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36228,7 +36587,7 @@
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36299,7 +36658,7 @@
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36366,7 +36725,7 @@
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36437,7 +36796,7 @@
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36508,7 +36867,7 @@
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36574,7 +36933,7 @@
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36645,7 +37004,7 @@
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36720,7 +37079,7 @@
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36816,7 +37175,7 @@
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -36912,7 +37271,7 @@
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37008,7 +37367,7 @@
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37092,7 +37451,7 @@
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37162,7 +37521,7 @@
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37272,7 +37631,7 @@
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37385,7 +37744,7 @@
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37449,7 +37808,7 @@
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37527,7 +37886,7 @@
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37609,7 +37968,7 @@
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37696,7 +38055,7 @@
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37775,7 +38134,7 @@
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37856,7 +38215,7 @@
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -37936,7 +38295,7 @@
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38017,7 +38376,7 @@
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38144,7 +38503,7 @@
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38272,7 +38631,7 @@
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38373,7 +38732,7 @@
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38501,7 +38860,7 @@
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38659,7 +39018,7 @@
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38773,7 +39132,7 @@
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38872,7 +39231,7 @@
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -38958,7 +39317,7 @@
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39094,7 +39453,7 @@
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39167,7 +39526,7 @@
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39240,7 +39599,7 @@
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39336,7 +39695,7 @@
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39422,7 +39781,7 @@
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39515,7 +39874,7 @@
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39606,7 +39965,7 @@
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39720,7 +40079,7 @@
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39850,7 +40209,7 @@
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -39935,7 +40294,7 @@
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40058,7 +40417,7 @@
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40149,7 +40508,7 @@
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40289,7 +40648,7 @@
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40363,7 +40722,7 @@
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40485,7 +40844,7 @@
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40586,7 +40945,7 @@
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40702,7 +41061,7 @@
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40770,7 +41129,7 @@
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40864,7 +41223,7 @@
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -40949,7 +41308,7 @@
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41057,7 +41416,7 @@
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41221,7 +41580,7 @@
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41307,7 +41666,7 @@
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41393,7 +41752,7 @@
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41457,7 +41816,7 @@
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41554,7 +41913,7 @@
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41620,7 +41979,7 @@
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41747,7 +42106,7 @@
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41838,7 +42197,7 @@
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41929,7 +42288,7 @@
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41993,7 +42352,7 @@
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42121,7 +42480,7 @@
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42251,7 +42610,7 @@
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42316,7 +42675,7 @@
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42385,7 +42744,7 @@
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42464,7 +42823,7 @@
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42650,7 +43009,7 @@
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42752,7 +43111,7 @@
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42816,7 +43175,7 @@
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42891,7 +43250,7 @@
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43051,7 +43410,7 @@
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43228,7 +43587,7 @@
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43300,7 +43659,7 @@
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43415,7 +43774,7 @@
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43530,7 +43889,7 @@
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43622,7 +43981,7 @@
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43695,7 +44054,7 @@
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43758,7 +44117,7 @@
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43891,7 +44250,7 @@
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43984,7 +44343,7 @@
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44055,7 +44414,7 @@
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44175,7 +44534,7 @@
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44246,7 +44605,7 @@
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44312,7 +44671,7 @@
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44438,7 +44797,7 @@
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
@@ -44536,7 +44895,7 @@
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44631,7 +44990,7 @@
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44693,7 +45052,7 @@
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44755,7 +45114,7 @@
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js language configuration
@@ -44878,7 +45237,7 @@
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45036,7 +45395,7 @@
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45138,7 +45497,7 @@
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45200,7 +45559,7 @@
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45262,7 +45621,7 @@
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45345,7 +45704,7 @@
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45417,7 +45776,7 @@
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45481,7 +45840,7 @@
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45595,7 +45954,7 @@
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45702,7 +46061,7 @@
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45809,7 +46168,7 @@
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -46119,7 +46478,7 @@
 	}));
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
@@ -54550,67 +54909,67 @@
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS42OTUgNDkxLjY5NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjY5NSA0OTEuNjk1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4NCjxnPg0KCTxwYXRoIGQ9Ik00MzYuNzE0LDBIMTQ5LjQ3MWMtMTYuNDM4LDAtMjkuODEyLDEzLjM3NC0yOS44MTIsMjkuODEydjY2LjcxNGMtNTQuNDksMTUuNTk0LTk0LjQ4OSw2NS44NTctOTQuNDg5LDEyNS4yODggICBjMCw1OS40MzEsMzkuOTk4LDEwOS42OTQsOTQuNDg5LDEyNS4yODh2MTE0Ljc4M2MwLDE2LjQzOCwxMy4zNzQsMjkuODEyLDI5LjgxMiwyOS44MTJoMjM0LjczM2MyLjc4NSwwLDUuNDU1LTEuMTA2LDcuNDI1LTMuMDc1ICAgbDcxLjgyMS03MS44MjJjMS45NjktMS45NjksMy4wNzUtNC42NCwzLjA3NS03LjQyNVYyOS44MTJDNDY2LjUyNSwxMy4zNzQsNDUzLjE1MiwwLDQzNi43MTQsMHogTTE0OS40NzEsMjFoMjg3LjI0MyAgIGM0Ljg1OCwwLDguODExLDMuOTUzLDguODExLDguODEydjMxLjY4OUgxNDAuNjU5VjI5LjgxMkMxNDAuNjU5LDI0Ljk1MywxNDQuNjEyLDIxLDE0OS40NzEsMjF6IE00Ni4xNywyMjEuODEzICAgYzAtNjAuMjYzLDQ5LjAyNy0xMDkuMjksMTA5LjI5LTEwOS4yOWM2MC4yNjMsMCwxMDkuMjksNDkuMDI3LDEwOS4yOSwxMDkuMjlzLTQ5LjAyNywxMDkuMjkxLTEwOS4yOSwxMDkuMjkxICAgQzk1LjE5NywzMzEuMTA0LDQ2LjE3LDI4Mi4wNzYsNDYuMTcsMjIxLjgxM3ogTTE0MC42NTksNDYxLjg4NFYzNTEuMjU4YzQuODYsMC41NTIsOS43OTcsMC44NDYsMTQuODAyLDAuODQ2ICAgYzM5LjEzNSwwLDc0LjI5Mi0xNy4zNDcsOTguMTk1LTQ0Ljc1Mmg2NC4zMzZjNS43OTksMCwxMC41LTQuNzAxLDEwLjUtMTAuNXMtNC43MDEtMTAuNS0xMC41LTEwLjVoLTQ5LjM4MSAgIGM5LjEzMy0xNS45NSwxNC45ODQtMzQuMDA1LDE2LjY0NC01My4yNDJoMzIuNzM2YzUuNzk5LDAsMTAuNS00LjcwMSwxMC41LTEwLjVjMC01Ljc5OS00LjcwMS0xMC41LTEwLjUtMTAuNWgtMzIuNjAzICAgYy0xLjQyLTE5LjE5NC03LjAyLTM3LjI0Mi0xNS44ODYtNTMuMjQxaDQ4LjQ4OGM1Ljc5OSwwLDEwLjUtNC43MDEsMTAuNS0xMC41YzAtNS43OTktNC43MDEtMTAuNS0xMC41LTEwLjVoLTYyLjk3NCAgIGMtMjMuOTE4LTI4LjMyMy01OS42Ny00Ni4zNDctOTkuNTU4LTQ2LjM0N2MtNS4wMDUsMC05Ljk0MiwwLjI5NC0xNC44MDIsMC44NDZ2LTkuODY3aDMwNC44NjZ2MzE2LjM3MmgtNDIuMDA5ICAgYy0xNi40MzksMC0yOS44MTEsMTMuMzc0LTI5LjgxMSwyOS44MTF2NDIuMDExSDE0OS40NzFDMTQ0LjYxMiw0NzAuNjk1LDE0MC42NTksNDY2Ljc0MywxNDAuNjU5LDQ2MS44ODR6IE0zOTQuNzA1LDQ1NS44NDV2LTI3LjE2ICAgYzAtNC44NTksMy45NTMtOC44MTEsOC44MTEtOC44MTFoMjcuMTZMMzk0LjcwNSw0NTUuODQ1eiIgZmlsbD0iIzM0OGZhMiIvPg0KCTxwYXRoIGQ9Ik0zNTkuMjQ2LDE1OC44NjloMzQuODdjNS43OTksMCwxMC41LTQuNzAxLDEwLjUtMTAuNWMwLTUuNzk5LTQuNzAxLTEwLjUtMTAuNS0xMC41aC0zNC44N2MtNS43OTksMC0xMC41LDQuNzAxLTEwLjUsMTAuNSAgIEMzNDguNzQ2LDE1NC4xNjgsMzUzLjQ0NywxNTguODY5LDM1OS4yNDYsMTU4Ljg2OXoiIGZpbGw9IiMzNDhmYTIiLz4NCgk8cGF0aCBkPSJNMzU5LjI0NiwyMzMuMTFoMzQuODdjNS43OTksMCwxMC41LTQuNzAxLDEwLjUtMTAuNWMwLTUuNzk5LTQuNzAxLTEwLjUtMTAuNS0xMC41aC0zNC44N2MtNS43OTksMC0xMC41LDQuNzAxLTEwLjUsMTAuNSAgIEMzNDguNzQ2LDIyOC40MDksMzUzLjQ0NywyMzMuMTEsMzU5LjI0NiwyMzMuMTF6IiBmaWxsPSIjMzQ4ZmEyIi8+DQoJPHBhdGggZD0iTTM1OS4yNDYsMzA3LjM1MmgzNC44N2M1Ljc5OSwwLDEwLjUtNC43MDEsMTAuNS0xMC41cy00LjcwMS0xMC41LTEwLjUtMTAuNWgtMzQuODdjLTUuNzk5LDAtMTAuNSw0LjcwMS0xMC41LDEwLjUgICBTMzUzLjQ0NywzMDcuMzUyLDM1OS4yNDYsMzA3LjM1MnoiIGZpbGw9IiMzNDhmYTIiLz4NCgk8cGF0aCBkPSJNMzk0LjExNiwzODEuNTkzYzUuNzk5LDAsMTAuNS00LjcwMSwxMC41LTEwLjVzLTQuNzAxLTEwLjUtMTAuNS0xMC41aC05OC4yMjVjLTUuNzk5LDAtMTAuNSw0LjcwMS0xMC41LDEwLjUgICBzNC43MDEsMTAuNSwxMC41LDEwLjVIMzk0LjExNnoiIGZpbGw9IiMzNDhmYTIiLz4NCgk8cGF0aCBkPSJNMjM2Ljk4MiwxNjguODQ1bC0xMi44MS0xMi44MWMtMy40NS0zLjQ0OS04LjAzNi01LjM0OS0xMi45MTUtNS4zNDlzLTkuNDY1LDEuOS0xMi45MTUsNS4zNDlsLTY3LjE5LDY3LjE5bC0xOC41NzMtMTguNTczICAgYy0zLjQ0OS0zLjQ0OC04LjAzNi01LjM0OC0xMi45MTQtNS4zNDhjLTQuODc4LDAtOS40NjUsMS45LTEyLjkxNCw1LjM0OWwtMTIuODEzLDEyLjgxMmMtNy4xMiw3LjEyMS03LjEyLDE4LjcwOCwwLjAwMSwyNS44MjkgICBsNDQuMjk3LDQ0LjI5NmMzLjQ1LDMuNDUxLDguMDM3LDUuMzUxLDEyLjkxNiw1LjM1MWMwLDAsMC4wMDEsMCwwLjAwMSwwYzQuODc4LDAsOS40NjUtMS45LDEyLjkxMy01LjM0OWw5Mi45MTctOTIuOTE3ICAgQzI0NC4xMDMsMTg3LjU1NCwyNDQuMTAzLDE3NS45NjYsMjM2Ljk4MiwxNjguODQ1eiBNMTMxLjE1MSwyNzAuODA3bC00MC40MjktNDAuNDI4bDguOTQyLTguOTQybDI0LjA2MiwyNC4wNjIgICBjNC4xMDEsNC4xMDEsMTAuNzQ5LDQuMTAxLDE0Ljg1LDBsNzIuNjgxLTcyLjY4MWw4Ljk0Miw4Ljk0MkwxMzEuMTUxLDI3MC44MDd6IiBmaWxsPSIjMzQ4ZmEyIi8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiID8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB3aWR0aD0iODVwdCIgaGVpZ2h0PSI2M3B0IiB2aWV3Qm94PSIwIDAgODUgNjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGlkPSIjZmZmZmZmZmYiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMjcuMDMgOC4wNyBDIDM3LjYwIDMuMDIgNTAuMzkgMy4wMyA2MC45NSA4LjEzIEMgNjYuNTQgMTAuOTQgNzEuNjcgMTQuNTQgNzYuMzQgMTguNzAgQyA3Ny41MSAxOS43OCA3OC42NCAyMC44OCA3OS43OCAyMS45OSBDIDc5LjgxIDIzLjQ2IDc5LjIzIDI0LjU5IDc4LjAyIDI1LjM4IEMgNzUuODUgMjQuNjEgNzQuMzkgMjIuNzQgNzIuNzAgMjEuMjcgQyA3MC4wNyAxOC43OCA2Ny4wMiAxNi44MCA2NC4wOSAxNC42NiBDIDYxLjU2IDEzLjIxIDU4Ljk0IDExLjkyIDU2LjIxIDEwLjg2IEMgNTUuMTggMTAuNTAgNTQuMTYgMTAuMTEgNTMuMTYgOS42OCBDIDUxLjg3IDkuNTQgNTAuNTggOS40MCA0OS4zMCA5LjI3IEwgNDkuNjQgOC42MCBDIDQ1Ljg4IDguNDYgNDIuMTEgOC40NSAzOC4zNSA4LjU5IEMgMzguNDAgOC43NSAzOC41MCA5LjA2IDM4LjU1IDkuMjEgQyAzMy4yNSA5LjU4IDI4LjQ2IDEyLjE1IDIzLjg2IDE0LjYxIEMgMTkuNzMgMTcuNTUgMTUuNTUgMjAuNDkgMTIuMDUgMjQuMjAgQyAxMS41NCAyNC41MSAxMC41MSAyNS4xMyAxMC4wMCAyNS40NCBDIDkuMTcgMjQuNjUgOC4zNiAyMy44NCA3LjUzIDIzLjA0IEMgMTIuNzcgMTYuNjQgMTkuNzUgMTEuODkgMjcuMDMgOC4wNyBaIiAvPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMzUuMTggMTQuMDcgQyA0Mi43MiAxMS42MSA1MS4wMiAxMi42NSA1OC4wMCAxNi4zMCBDIDYwLjQ5IDE3LjY0IDYyLjkyIDE5LjA5IDY1LjMwIDIwLjYyIEMgNzAuOTEgMjUuMzAgNzYuNzAgMzAuMTMgODAuMzggMzYuNTQgQyA3NS41MCA0My41NiA2OS4xNCA0OS41NSA2Mi4wMSA1NC4yNCBDIDU4LjYzIDU2LjQ2IDU0LjgyIDU3LjgzIDUxLjAzIDU5LjE2IEMgNDYuMzcgNTkuOTEgNDEuNjIgNTkuOTEgMzYuOTUgNTkuMTggQyAzMy41MyA1Ny45NiAzMC4wOCA1Ni43OSAyNi45NSA1NC45MiBDIDE5LjM2IDUwLjAwIDEyLjIzIDQzLjg3IDcuNDcgMzYuMTAgQyAxMy41NiAyNy42MiAyMS41MSAyMC4zOCAzMC45MiAxNS43NiBDIDMyLjM0IDE1LjIwIDMzLjc1IDE0LjYyIDM1LjE4IDE0LjA3IE0gNDEuNzYgMjUuNjQgQyAzOC41NSAyNi44MiAzNS4zNiAyOC44MSAzNC4yMCAzMi4yMiBDIDMxLjQ2IDM4LjMyIDM1LjcyIDQ2LjM3IDQyLjU2IDQ2Ljg3IEwgNDIuNDggNDcuMzcgQyA0My4yMyA0Ny4zNiA0NC43NCA0Ny4zNCA0NS40OSA0Ny4zMyBMIDQ1LjQ4IDQ2Ljg0IEMgNTAuNzMgNDYuMzIgNTQuOTMgNDEuMjEgNTQuNDkgMzUuOTYgQyA1NC41NiAzMS4wNiA1MC43MSAyNy4xMCA0Ni4yNSAyNS42NiBDIDQ0Ljc1IDI1LjY0IDQzLjI2IDI1LjYzIDQxLjc2IDI1LjY0IE0gMTMuNjEgMzQuOTYgQyAxMy40NiAzNS40NiAxMy4xNSAzNi40NSAxMy4wMCAzNi45NSBDIDE2LjEyIDQwLjQwIDE5LjM0IDQzLjc3IDIyLjg5IDQ2Ljc5IEMgMjIuMTYgNDQuNTggMjEuNDggNDIuMzUgMjAuNzkgNDAuMTMgQyAyMC4xMCAzNS4yMCAyMS4zMSAzMC40MiAyMi43NiAyNS43NiBDIDE5LjY4IDI4LjgwIDE2LjUzIDMxLjc3IDEzLjYxIDM0Ljk2IE0gNjUuMjQgMjUuODAgQyA2Ni40NSAzMC40NiA2OC4wNSAzNS4yNyA2Ni45NSA0MC4xNCBDIDY2LjM5IDQyLjI1IDY2LjQwIDQ1LjA2IDY0LjI2IDQ2LjI1IEMgNjQuNjEgNDYuMjYgNjUuMzEgNDYuMjkgNjUuNjYgNDYuMzAgQyA2OS4xMSA0My4xMSA3Mi40NSAzOS43OCA3NS41MSAzNi4yMiBDIDcyLjA4IDMyLjc2IDY4LjY4IDI5LjI1IDY1LjI0IDI1LjgwIFoiIC8+DQo8cGF0aCBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIxLjAwIiBkPSIgTSAzOC4wNCAzNC4yNyBDIDM4Ljc2IDMxLjQ0IDQxLjU4IDMwLjQ5IDQ0LjAxIDI5LjU2IEMgNDYuNDQgMzAuNTAgNDkuMTMgMzEuNTYgNDkuOTAgMzQuMzMgTCA1MC41MCAzNC40NiBDIDUwLjM3IDM1Ljk4IDUwLjI4IDM3LjUxIDQ5Ljk0IDM5LjAxIEMgNDguMTMgNDEuOTUgNDUuMTAgNDMuNDIgNDEuNjYgNDIuNjQgQyA0MC42MSA0MS43NiAzOS41NSA0MC44OSAzOC40OCA0MC4wMyBDIDM4LjUwIDM5LjY4IDM4LjU2IDM4Ljk3IDM4LjU4IDM4LjYyIEwgMzcuNTYgMzguNTcgQyAzNy41NSAzNy4xOSAzNy41NCAzNS44MCAzNy41MiAzNC40MiBMIDM4LjA0IDM0LjI3IFoiIC8+DQo8L2c+DQo8L3N2Zz4NCg=="
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8Zz4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjM3LjEsMzYuOGM3LjMsNS41LDE0LjYsMTEuMiwyMi4xLDE2LjRjMS45LDEuMyw0LjYsMS44LDcsMS45YzguOCwwLjIsMTcuNy0wLjEsMjYuNSwwLjINCgkJYzE1LjcsMC41LDI2LjUsMTEuNCwyNi45LDI3LjJjMC4xLDQuOCwwLjEsOS43LDAuMSwxNC41Yy0wLjEsMTAuMi0yLjksMTMtMTMuNCwxM2MtNTEuOSwwLTEwMy43LDAtMTU1LjYsMA0KCQljLTEwLjcsMC0xMi44LTIuNi0xMy41LTEyLjljLTIuMS0zMS42LDguMS00NC4zLDQxLjYtNDEuOWMzLjcsMC4zLDcuNSwwLjYsMTEuMS0wLjFjMy41LTAuOCw3LTIuNSwxMC00LjUNCgkJYzYuOC00LjQsMTMuMy05LjIsMjAtMTMuOEMyMjUuNywzNi44LDIzMS40LDM2LjgsMjM3LjEsMzYuOHoiLz4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzkyLjksMTAzLjljMC0xOS42LTExLjEtMzAuNi0zMC44LTMwLjhjLTI0LTAuMi0yNC0wLjItMjQsMjMuOGMwLDIwLjQtMTAuNSwzMS0zMS4xLDMxDQoJCWMtNTEuOSwwLjEtMTAzLjgsMC4xLTE1NS43LDBjLTIyLjQsMC0zMi4zLTEwLTMyLjMtMzIuNEMxMTguOSw3MywxMTguOSw3Myw5Ni4xLDczLjFjLTIxLjUsMC4xLTMxLjksMTAuNi0zMS45LDMyLjINCgkJYzAsNTUuOSwwLDExMS44LDAsMTY3LjdjMCw1Ny42LTAuMSwxMTUuMiwwLDE3Mi44YzAsMTcuMywxMS4xLDI5LjEsMjcuOSwyOS4yYzQxLjYsMC4yLDgzLjMsMCwxMjQuOSwwLjFjNy44LDAsMTEuNi0zLjUsMTEuNi0xMS40DQoJCWMtMC4xLTkuMSwwLjQtMTguMy0wLjEtMjcuNGMtMC44LTEyLjYsMy43LTIyLjMsMTIuNy0zMS4yYzQ2LTQ1LjUsOTEuNy05MS40LDEzNy41LTEzNy4yYzIuMi0yLjIsNC4zLTQuOCw3LTYuMw0KCQljNi4xLTMuNCw3LjYtOC40LDcuNS0xNUMzOTIuOSwxOTkuMiwzOTMsMTUxLjUsMzkyLjksMTAzLjl6IE0xMzUuOSwzMjQuOWMtMTEuNCwwLTIwLjctOS4yLTIwLjctMjAuN2MwLTExLjQsOS4zLTIwLjcsMjAuNy0yMC43DQoJCWMxMS40LDAsMjAuNyw5LjMsMjAuNywyMC43QzE1Ni42LDMxNS42LDE0Ny4zLDMyNC45LDEzNS45LDMyNC45eiBNMTM1LjksMjY1LjVjLTExLjQsMC0yMC43LTkuMy0yMC43LTIwLjcNCgkJYzAtMTEuNCw5LjMtMjAuNywyMC43LTIwLjdjMTEuNCwwLDIwLjcsOS4yLDIwLjcsMjAuN0MxNTYuNiwyNTYuMiwxNDcuMywyNjUuNSwxMzUuOSwyNjUuNXogTTEzNS45LDIxMC45DQoJCWMtMTEuNCwwLTIwLjctOS4zLTIwLjctMjAuN2MwLTExLjQsOS4zLTIwLjcsMjAuNy0yMC43YzExLjQsMCwyMC43LDkuMiwyMC43LDIwLjdDMTU2LjYsMjAxLjcsMTQ3LjMsMjEwLjksMTM1LjksMjEwLjl6DQoJCSBNMzA4LjcsMzE0LjdjLTMsMy03LjIsNC45LTExLjgsNC45SDE4My42Yy05LjIsMC0xNi43LTcuNS0xNi43LTE2LjdjMC00LjYsMS45LTguNyw0LjktMTEuOGMzLTMsNy4yLTQuOSwxMS44LTQuOWgxMTMuMw0KCQljOS4yLDAsMTYuNyw3LjUsMTYuNywxNi43QzMxMy42LDMwNy42LDMxMS43LDMxMS43LDMwOC43LDMxNC43eiBNMzA4LjcsMjU1LjRjLTMsMy03LjIsNC45LTExLjgsNC45SDE4My42DQoJCWMtOS4yLDAtMTYuNy03LjUtMTYuNy0xNi43YzAtNC42LDEuOS04LjcsNC45LTExLjhjMy0zLDcuMi00LjksMTEuOC00LjloMTEzLjNjOS4yLDAsMTYuNyw3LjUsMTYuNywxNi43DQoJCUMzMTMuNiwyNDguMiwzMTEuNywyNTIuNCwzMDguNywyNTUuNHogTTMwOC43LDIwMC44Yy0zLDMtNy4yLDQuOS0xMS44LDQuOUgxODMuNmMtOS4yLDAtMTYuNy03LjUtMTYuNy0xNi43DQoJCWMwLTQuNiwxLjktOC43LDQuOS0xMS44YzMtMyw3LjItNC45LDExLjgtNC45aDExMy4zYzkuMiwwLDE2LjcsNy41LDE2LjcsMTYuN0MzMTMuNiwxOTMuNiwzMTEuNywxOTcuOCwzMDguNywyMDAuOHoiLz4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzUyLjIsMzIxYzE2LjEsMTYuMiwzMiwzMi40LDQ5LjQsNTBjLTMuNCwzLjEtOCw2LjktMTIuMSwxMWMtMjguOSwyOC44LTU3LjgsNTcuNS04Ni40LDg2LjUNCgkJYy00LjgsNC45LTkuOCw3LTE2LjYsNi43Yy05LjQtMC41LTE4LjgtMC4yLTI4LjItMC4xYy03LjMsMC4xLTExLjMtMy4xLTExLjMtMTAuN2MwLTExLjEtMC4zLTIyLjIsMC4yLTMzLjNjMC4xLTMuMSwxLjQtNywzLjUtOS4xDQoJCWMzMy4zLTMzLjYsNjYuOC02NywxMDAuMy0xMDAuNEMzNTEuNCwzMjEuMywzNTIsMzIxLjEsMzUyLjIsMzIxeiIvPg0KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MTYsMzU1LjZjLTE3LTE2LjktMzMuMS0zMy01MC00OS44YzkuNS05LjMsMTkuMi0xOC45LDI5LTI4LjRjNC4zLTQuMiw5LjMtNC42LDEzLjctMC4zDQoJCWMxMi4yLDEyLDI0LjMsMjQuMSwzNi4zLDM2LjNjNCw0LjEsMy43LDguOS0wLjMsMTNDNDM1LjIsMzM2LjMsNDI1LjUsMzQ2LDQxNiwzNTUuNnoiLz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCgkuc3Qxe2ZpbGw6IzQyQTU0Mjt9DQo8L3N0eWxlPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTEzMi42LDMzNC40Yy03LDAtMTMuMiw1LjYtMTMuMiwxMy4yYzAsNyw1LjYsMTMuMiwxMy4yLDEzLjJIMjI0YzAtMC4zLDAtMC42LDAtMC45YzAtOC44LDAuOS0xNy4zLDIuNi0yNS42DQoJTDEzMi42LDMzNC40TDEzMi42LDMzNC40eiBNMjUxLjUsNDM5LjZIOTMuNmMtMTUuNCwwLTI3LjgtMTIuNS0yNy45LTI3LjlWMTAwLjNjMC0xNS4zLDEyLjUtMjcuOSwyNy4yLTI3LjkNCgljMS40LDAsMTQ3LjUsMCwxODUuMiwwLjdsMi44LDIuMXY1My43YzAsMTcuMywxNCwzMS40LDMxLjQsMzEuNGg1NC40bDIuMSwyLjF2NjguNmM4LjMsMC45LDE2LjQsMi42LDI0LjQsNS4xdi02Ny4zDQoJYzAtMTAuMy00LjEtMjAuMy0xMS40LTI3LjZsLTgxLTgxYy03LjMtNy4zLTE3LjEtMTEuNC0yNy40LTExLjRMOTMuNiw0OEM2NSw0OC43LDQyLDcxLjcsNDIsMTAwLjN2MzExLjUNCgljMCwyOC44LDIzLjMsNTIuMiw1Mi4xLDUyLjNoMTgyLjJDMjY3LDQ1NywyNTguNiw0NDguOCwyNTEuNSw0MzkuNkwyNTEuNSw0MzkuNnogTTI2OC4yLDI2Mi42SDEzMi42Yy03LDAtMTMuMiw1LjYtMTMuMiwxMy4yDQoJczUuNiwxMy4yLDEzLjIsMTMuMmgxMTIuNkMyNTEuNiwyNzkuMywyNTkuNCwyNzAuNCwyNjguMiwyNjIuNkwyNjguMiwyNjIuNnogTTMxNS43LDIwNC4xYy0wLjctNy02LjMtMTMuMi0xMy45LTEzLjJIMTMyLjYNCgljLTcsMC0xMy4yLDUuNi0xMy4yLDEzLjJjMCw3LDUuNiwxMy4yLDEzLjIsMTMuMmgxNjkuOEMzMDkuNCwyMTcuMywzMTUuNywyMTEuOCwzMTUuNywyMDQuMXoiLz4NCjxnPg0KCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zNjYsMjU0Yy01Ny40LDAtMTA0LDQ2LjYtMTA0LDEwNHM0Ni42LDEwNCwxMDQsMTA0czEwNC00Ni42LDEwNC0xMDRTNDIzLjQsMjU0LDM2NiwyNTR6IE0zNDUuNyw0MTYuNw0KCQlMMjkyLDM0OC4xbDI4LjctMTRsMjkuNywzNi43bDczLjMtNjcuM2wxOS4zLDQ2LjdMMzQ1LjcsNDE2Ljd6Ii8+DQo8L2c+DQo8L3N2Zz4NCg=="
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiID8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB3aWR0aD0iNTZwdCIgaGVpZ2h0PSI2NnB0IiB2aWV3Qm94PSIwIDAgNTYgNjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGlkPSIjZmZmZmZmZmYiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMjcuMjEgOC4zMiBDIDI3LjcxIDYuOTEgMjYuNzEgMy45MCAyOS40NiA0LjQ2IEMgMjkuNTYgNS43MiAyOS42NCA2Ljk4IDI5LjcxIDguMjMgQyAzMy42NiA4LjU5IDM3LjM0IDEwLjk2IDM4LjM5IDE0LjkzIEMgMzcuOTMgMTUuNzQgMzcuNDggMTYuNTYgMzcuMDUgMTcuMzggQyAzMi43OCAxOC40MCAzMy4yOSAxMi41OSAyOS42NyAxMS45NCBDIDI5LjY0IDE0LjY5IDI5LjY1IDE3LjQ0IDI5LjY2IDIwLjE5IEMgMzAuNzMgMjAuNTIgMzEuNzkgMjAuODUgMzIuODYgMjEuMTkgQyAzNi45OCAyMi4yMiA0MC4xNSAyNi42MCAzOC44MiAzMC44NSBDIDM4LjE2IDM0LjE2IDM1LjExIDM2LjEyIDMyLjIxIDM3LjMwIEMgMzEuNTggMzcuMzggMzAuMzEgMzcuNTMgMjkuNjggMzcuNjEgQyAyOS42NSAzOS4wMSAyOS42MCA0MC40MiAyOS41NSA0MS44MyBDIDI2LjMxIDQyLjczIDI3Ljc1IDM5LjE2IDI3LjI5IDM3LjU0IEMgMjYuNjggMzcuNDYgMjUuNDUgMzcuMzEgMjQuODMgMzcuMjQgQyAyMS4yMyAzNi4xMiAxOS4xMSAzMy4wNyAxNy4zOSAyOS45NyBDIDE4LjM1IDI3Ljk2IDIwLjEyIDI2LjY1IDIyLjQxIDI3LjM2IEMgMjMuMzcgMjkuOTcgMjQuNDMgMzIuODYgMjcuMzMgMzMuODcgQyAyNy40MCAzMC44MSAyNy4zNiAyNy43NSAyNy4zOSAyNC42OSBDIDI2LjgxIDI0LjQ5IDI1LjY0IDI0LjA3IDI1LjA2IDIzLjg3IEMgMjIuNTAgMjMuMTEgMjAuMTggMjEuNDggMTkuMTkgMTguOTIgQyAxOC43MyAxNy42MCAxOC42NSAxNi4yMiAxOC42NiAxNC44NCBDIDE5Ljg4IDExLjA1IDIzLjI2IDguNTcgMjcuMjEgOC4zMiBNIDI0LjUxIDE4LjIxIEMgMjUuMjEgMTguNjEgMjYuNjIgMTkuNDAgMjcuMzMgMTkuNzkgQyAyNy4zOCAxNy4xNCAyNy40MCAxNC40OCAyNy4zMiAxMS44MyBDIDI0LjMwIDEyLjUwIDIyLjU3IDE1LjUyIDI0LjUxIDE4LjIxIE0gMjkuNjUgMjUuMjMgQyAyOS42NSAyOC4xMSAyOS42NSAzMC45OCAyOS42NCAzMy44NiBDIDMxLjcyIDMzLjQ5IDMzLjY3IDMyLjI1IDM0LjQwIDMwLjE4IEMgMzQuOTIgMjcuMzkgMzEuOTAgMjUuNzkgMjkuNjUgMjUuMjMgWiIgLz4NCjxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEuMDAiIGQ9IiBNIDYuNzUgMzkuNTEgQyA3LjM3IDM5LjUxIDguNjIgMzkuNTEgOS4yNCAzOS41MSBDIDEyLjQyIDQyLjM0IDE1LjA4IDQ1LjY3IDE3LjkxIDQ4LjgzIEMgMTcuOTcgNDYuMDggMjEuMjAgNDYuOTggMjIuOTQgNDYuODYgQyAyNS4zMCA0Ni45OSAyNy42OCA0Ny41MCAzMC4wNCA0Ny4xNCBDIDMyLjgyIDQ2LjQxIDM1LjE5IDQ0LjY1IDM3LjkwIDQzLjczIEMgNDEuNzEgNDMuMDQgNDUuMzQgNDQuOTYgNDguNjggNDYuNTUgQyA0OC43MyA1MC40OSA0OC43NyA1NC40NCA0OC42MyA1OC4zOCBDIDQ3LjM5IDU4LjUxIDQ2LjE1IDU4LjY2IDQ0LjkxIDU4LjgzIEMgNDMuMzAgNTkuMzYgNDEuNjMgNTkuNjMgMzkuOTYgNTkuOTQgQyAzNC45OSA2MC45NiAzMC4wNyA2Mi42NyAyNC45OCA2Mi44MCBDIDIxLjIwIDYxLjg5IDE3Ljc0IDU5Ljk4IDE0LjAyIDU4Ljg2IEMgMTEuMDggNTYuMDggOS4zMyA1Mi4zNCA2Ljg3IDQ5LjE3IEMgNS4yMSA0Ni40MCAyLjE5IDQ0LjA4IDIuNDYgNDAuNTQgQyA5LjgxIDQxLjQzIDExLjQyIDUwLjYwIDE3Ljg2IDUzLjIxIEMgMjEuMjMgNTMuMzkgMjQuNjYgNTMuMjggMjcuOTQgNTQuMTcgQyAzMC4zMyA1NC4zMyAzMy4xMCA1NC45MiAzNC44NyA1Mi44NiBDIDI4Ljk1IDUwLjA0IDIxLjE5IDUyLjY5IDE1Ljk3IDQ4LjI2IEwgMTUuMjUgNDkuNTUgQyAxMi43MSA0NS45NSA5LjQ1IDQyLjk2IDYuNzUgMzkuNTEgWiIgLz4NCjxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEuMDAiIGQ9IiBNIDEyLjE5IDM5LjMzIEMgMTUuMzUgMzkuNjkgMTcuNDAgNDIuNDMgMTkuNTYgNDQuNDcgQyAyMC4yMiA0Ni4xMyAxNy45NyA0NS4zNiAxNy4wNSA0NS42MiBDIDE1Ljc2IDQzLjg5IDE0LjIzIDQyLjM3IDEyLjUyIDQxLjA2IEMgMTIuNDMgNDAuNjMgMTIuMjcgMzkuNzYgMTIuMTkgMzkuMzMgWiIgLz4NCjxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEuMDAiIGQ9IiBNIDUwLjc0IDQ0LjQ3IEMgNTIuNDkgNDQuNDAgNTQuMjUgNDQuMzYgNTYuMDAgNDQuMzMgTCA1Ni4wMCA2MS44NyBDIDU0LjI0IDYxLjgzIDUyLjQ4IDYxLjc4IDUwLjcyIDYxLjcwIEMgNTAuODMgNTUuOTYgNTAuODEgNTAuMjEgNTAuNzQgNDQuNDcgWiIgLz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSItMTkgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQ0OS43NSAxMjMuNjY3OTY5Yy0xLjcwNzAzMS0zLjgzOTg0NC01LjUyNzM0NC02LjMzNTkzOC05Ljc1LTYuMzM1OTM4aC00MDUuMzMyMDMxYy00LjIyNjU2MyAwLTguMDQyOTY5IDIuNDk2MDk0LTkuNzUgNi4zMzU5MzgtMS43MDcwMzEgMy44Mzk4NDMtLjk4MDQ2OSA4LjM2MzI4MSAxLjgzNTkzNyAxMS40ODA0NjlsMTY3LjkxNDA2MyAxODUuNTk3NjU2djE4MC41ODU5MzdjMCA0LjMxMjUgMi42MDE1NjIgOC4yMTQ4NDQgNi41ODk4NDMgOS44NTU0NjkgMS4zMjQyMTkuNTU0Njg4IDIuNzEwOTM4LjgxMjUgNC4wNzQyMTkuODEyNSAyLjc3MzQzOCAwIDUuNTAzOTA3LTEuMDg5ODQ0IDcuNTU0Njg4LTMuMTEzMjgxbDY0LTY0YzEuOTg0Mzc1LTIuMDA3ODEzIDMuMTEzMjgxLTQuNzE0ODQ0IDMuMTEzMjgxLTcuNTU0Njg4di0xMTYuNTg1OTM3bDE2Ny45MTQwNjItMTg1LjU3ODEyNWMyLjgxNjQwNy0zLjEzNjcxOSAzLjU0Mjk2OS03LjYzNjcxOSAxLjgzNTkzOC0xMS41em0wIDAiIGZpbGw9IiM0NTVhNjQiLz48cGF0aCBkPSJtNDY0IDkwLjY2Nzk2OWMwLTQ0LjE4MzU5NC0xMDEuNDgwNDY5LTgwLTIyNi42Njc5NjktODAtMTI1LjE4MzU5MyAwLTIyNi42NjQwNjIgMzUuODE2NDA2LTIyNi42NjQwNjIgODAgMCA0NC4xNzk2ODcgMTAxLjQ4MDQ2OSA4MCAyMjYuNjY0MDYyIDgwIDEyNS4xODc1IDAgMjI2LjY2Nzk2OS0zNS44MjAzMTMgMjI2LjY2Nzk2OS04MHptMCAwIiBmaWxsPSIjNjA3ZDhiIi8+PHBhdGggZD0ibTIzNy4zMzIwMzEgMTgxLjMzMjAzMWMtMTE1LjA1MDc4MSAwLTIzNy4zMzIwMzEtMzEuNzY1NjI1LTIzNy4zMzIwMzEtOTAuNjY0MDYyIDAtNTguOTAyMzQ0IDEyMi4yODEyNS05MC42Njc5NjkgMjM3LjMzMjAzMS05MC42Njc5NjlzMjM3LjMzNTkzOCAzMS43NjU2MjUgMjM3LjMzNTkzOCA5MC42Njc5NjljMCA1OC44OTg0MzctMTIyLjI4NTE1NyA5MC42NjQwNjItMjM3LjMzNTkzOCA5MC42NjQwNjJ6bTAtMTYwYy0xMjcuMjkyOTY5IDAtMjE2IDM2LjU0Njg3NS0yMTYgNjkuMzM1OTM4IDAgMzIuNzg5MDYyIDg4LjcwNzAzMSA2OS4zMzIwMzEgMjE2IDY5LjMzMjAzMSAxMjcuMjk2ODc1IDAgMjE2LTM2LjU0Mjk2OSAyMTYtNjkuMzMyMDMxIDAtMzIuNzg5MDYzLTg4LjcwMzEyNS02OS4zMzU5MzgtMjE2LTY5LjMzNTkzOHptMCAwIi8+PHBhdGggZD0ibTIwNS4zMzIwMzEgNTEyYy0xLjM2MzI4MSAwLTIuNzUtLjI3NzM0NC00LjA3NDIxOS0uODEyNS0zLjk4ODI4MS0xLjY0MDYyNS02LjU4OTg0My01LjU0Mjk2OS02LjU4OTg0My05Ljg1NTQ2OXYtMTgwLjYwNTQ2OWwtMTY3LjkxNDA2My0xODUuNTU4NTkzYy0zLjk0OTIxOC00LjM3NS0zLjYwNTQ2OC0xMS4xMzY3MTkuNzY1NjI1LTE1LjA4MjAzMSA0LjM3NS0zLjkyNTc4MiAxMS4xMTMyODEtMy41ODU5MzggMTUuMDYyNS43NDYwOTNsMTcwLjY2NDA2MyAxODguNjI4OTA3YzEuNzczNDM3IDEuOTg0Mzc0IDIuNzUzOTA2IDQuNTIzNDM3IDIuNzUzOTA2IDcuMTY3OTY4djE1OC45NTcwMzJsNDIuNjY3OTY5LTQyLjY2Nzk2OXYtMTE2LjI4OTA2M2MwLTIuNjQ0NTMxLjk4MDQ2OS01LjE4MzU5NCAyLjc1LTcuMTY3OTY4bDE3MC42Njc5NjktMTg4LjYyODkwN2MzLjk2ODc1LTQuMzMyMDMxIDEwLjY4NzUtNC42NzE4NzUgMTUuMDYyNS0uNzQ2MDkzIDQuMzcxMDkzIDMuOTY4NzUgNC43MTQ4NDMgMTAuNzA3MDMxLjc0NjA5MyAxNS4wODIwMzFsLTE2Ny44OTQ1MzEgMTg1LjU1ODU5M3YxMTYuNjA1NDY5YzAgMi44Mzk4NDQtMS4xMjg5MDYgNS41NDY4NzUtMy4xMTMyODEgNy41NTQ2ODhsLTY0IDY0Yy0yLjA1MDc4MSAyLjAyMzQzNy00Ljc4MTI1IDMuMTEzMjgxLTcuNTU0Njg4IDMuMTEzMjgxem0wIDAiLz48L3N2Zz4="
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiID8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB3aWR0aD0iNzFwdCIgaGVpZ2h0PSI3MXB0IiB2aWV3Qm94PSIwIDAgNzEgNzEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGlkPSIjZmZmZmZmZmYiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMzQuMDQgMC4wMCBMIDM2LjkyIDAuMDAgQyAzOC41MSAwLjc2IDM5LjczIDIuMDMgNDAuOTYgMy4yNiBDIDQ0LjQ2IDMuMTggNDcuNDcgNS41MSA1MS4wMCA1LjE2IEMgNTMuODYgNS4yNSA1Ny4wMiA0LjgzIDU5LjU1IDYuNDYgQyA2Mi44NiA4LjMyIDY0LjQyIDEyLjI1IDY0LjIwIDE1LjkzIEMgNjQuMTMgMzEuMzEgNjQuMjYgNDYuNjkgNjQuMTQgNjIuMDcgQyA2NC4wOCA2Ni4zMCA2MS4wMSA2OS44OCA1Ny4wMSA3MS4wMCBMIDE0LjAwIDcxLjAwIEMgOS45NSA2OS45NiA2LjkyIDY2LjI2IDYuODUgNjIuMDYgQyA2Ljc2IDQ2LjMzIDYuODMgMzAuNjAgNi44MiAxNC44OCBDIDYuNzEgMTEuMDIgOS4wNSA3LjIzIDEyLjY2IDUuNzkgQyAxNi43NSA0LjQyIDIxLjMxIDYuMDYgMjUuMjkgNC4xNyBDIDI2Ljc3IDMuNTEgMjguNDEgMy40MyAzMC4wMCAzLjIzIEMgMzEuMjEgMS45OSAzMi40NiAwLjc2IDM0LjA0IDAuMDAgTSAzNC45NyAzLjQzIEMgMzQuNjQgMy44MyAzMy45NiA0LjYzIDMzLjYzIDUuMDMgQyAzMy44NCA1LjQ5IDM0LjI2IDYuNDIgMzQuNDggNi44OCBDIDM1LjkwIDYuOTQgMzYuOTggNi4yNyAzNy42NiA1LjAxIEMgMzYuNzMgNC41MyAzNS44MCA0LjA2IDM0Ljk3IDMuNDMgTSAyNi43NiA3LjM3IEMgMjYuNzQgOS40NSAyNi43MiAxMS41MiAyNi42MyAxMy41OSBDIDMxLjk2IDE1LjEwIDM3Ljc0IDEzLjk5IDQzLjI1IDE0LjI1IEMgNDUuMzUgMTIuNzEgNDMuNzggOS41OCA0NC4yNiA3LjM5IEMgNDMuMzggNy4zNCA0MS42MyA3LjI1IDQwLjc1IDcuMjAgQyAzOS41NSA4Ljc5IDM4LjIxIDEwLjkwIDM1LjkxIDEwLjY3IEMgMzMuMjkgMTEuMjIgMzEuNTIgOS4xMiAzMC4yMSA3LjIxIEMgMjkuMzUgNy4yNSAyNy42MiA3LjMzIDI2Ljc2IDcuMzcgTSAyNC4zMCAyOS43MyBDIDIyLjg4IDI5LjE4IDE5LjkwIDI3LjI1IDE5LjUxIDMwLjAwIEMgMjAuMTAgMzIuMjkgMjMuMjQgMzIuNzcgMjUuMTkgMzMuNjIgQyAyNy4yNCAzMi4wOSAyOC4zOCAyOS42NiAyOS42NiAyNy41MSBDIDMwLjQ5IDI2LjIwIDI5LjQ4IDI0Ljg0IDI4LjA2IDI0LjczIEMgMjYuNTUgMjYuMTkgMjUuNDkgMjguMDIgMjQuMzAgMjkuNzMgTSAzNS40MiAyOC41MCBDIDMzLjc5IDI4LjcxIDMyLjk1IDMwLjUyIDM0LjUzIDMxLjU3IEMgMzkuNjQgMzEuOTMgNDQuODEgMzEuNzkgNDkuOTQgMzEuNjcgQyA1Mi4zNSAzMS42NiA1MS41MiAyOC4zNCA0OS41NSAyOC40NCBDIDQ0Ljg1IDI4LjM1IDQwLjEyIDI4LjI0IDM1LjQyIDI4LjUwIE0gMjcuNTggMzcuMzcgQyAyNi40NyAzOC45NiAyNS40NSA0MC42MiAyNC4yOSA0Mi4xNyBDIDIyLjg1IDQxLjI4IDE5LjMyIDQwLjEwIDE5LjU1IDQzLjA1IEMgMjEuMTIgNDQuNTUgMjMuMTggNDUuMzMgMjUuMDcgNDYuMzMgQyAyNy4wNiA0NC4xMCAyOC44NyA0MS42NyAzMC4xMyAzOC45NCBDIDI5LjgzIDM3LjY2IDI4LjY3IDM3LjUwIDI3LjU4IDM3LjM3IE0gMzQuMzQgNDEuNDYgQyAzMi44NyA0Mi41NyAzNC41MCA0NC40NyAzNS45MiA0NC4yNCBDIDQwLjY1IDQ0LjI1IDQ1LjQwIDQ0LjM1IDUwLjEzIDQ0LjE5IEMgNTEuNzggNDMuNzEgNTEuOTIgNDEuMDUgNDkuOTEgNDEuMTggQyA0NC43NSA0MS4yMSAzOS40MSA0MC42OCAzNC4zNCA0MS40NiBNIDI2LjkxIDUwLjUzIEMgMjYuMDUgNTEuOTMgMjUuMTYgNTMuMzEgMjQuMzAgNTQuNzAgQyAyMy40OSA1NC4zNCAyMS44OCA1My42MCAyMS4wNyA1My4yMyBDIDE2Ljc3IDU1LjUyIDIzLjQ3IDU4Ljg1IDI1Ljg1IDU4LjE2IEMgMjcuMzAgNTUuNDYgMzEuMTAgNTIuNzkgMjkuMjggNDkuNDcgQyAyOC42OSA0OS43MyAyNy41MSA1MC4yNiAyNi45MSA1MC41MyBNIDM1LjMxIDUzLjM5IEMgMzMuNzYgNTMuNjEgMzIuOTkgNTUuNTYgMzQuNTUgNTYuNDggQyAzOS42MyA1Ni45MSA0NC43OCA1Ni43NCA0OS44OCA1Ni41OCBDIDUyLjEyIDU2LjgwIDUxLjg1IDUzLjMzIDQ5LjgxIDUzLjM5IEMgNDQuOTggNTMuMjQgNDAuMTMgNTMuMjUgMzUuMzEgNTMuMzkgWiIgLz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiID8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB3aWR0aD0iODRwdCIgaGVpZ2h0PSI4MnB0IiB2aWV3Qm94PSIwIDAgODQgODIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGlkPSIjZmZmZmZmZmYiPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gMC4wMCAxOC4yOCBDIDAuNzcgMTUuMDMgMy40OCAxMi4wMyA3LjA1IDEyLjI4IEMgMjguNzIgMTIuMTggNTAuNDAgMTIuMzAgNzIuMDcgMTIuMjIgQyA3NC4yNCAxMi4yOSA3Ni42NyAxMi4wOCA3OC40OSAxMy41MiBDIDgwLjk0IDE1LjQwIDgxLjUyIDE4LjY1IDgxLjYwIDIxLjU1IEMgNTQuNDAgMjEuNjUgMjcuMjAgMjEuNTkgMC4wMCAyMS41OCBMIDAuMDAgMTguMjggWiIgLz4NCjxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEuMDAiIGQ9IiBNIDAuMDAgMzEuNTAgQyAyNy4xNCAzMS41MCA1NC4yNyAzMS41MCA4MS40MSAzMS41MCBDIDgxLjQxIDQxLjY5IDgxLjQyIDUxLjg3IDgxLjQyIDYyLjA1IEMgODEuNjAgNjYuMDQgNzguMzEgNzAuMTkgNzQuMDYgNjkuNzMgQyA1MS43OCA2OS43NiAyOS41MCA2OS43NiA3LjIzIDY5LjczIEMgMy42NCA3MC4wMyAwLjg2IDY3LjA4IDAuMDAgNjMuODMgTCAwLjAwIDMxLjUwIE0gNDkuMzggNDEuNTUgQyA0NS43MCA0My4wOSA0Mi45MyA0Ni45MiA0My4zNSA1MS4wMSBDIDQzLjIxIDU1LjU4IDQ3LjE0IDU5LjIzIDUxLjMxIDYwLjI5IEMgNTQuMTYgNjAuNzggNTYuOTIgNTguNDUgNTkuNzYgNTkuNzUgQyA2NC4yOSA2MS43NSA2OS4xOCA1OC4zMiA3MS4yMiA1NC4zNCBDIDcyLjUwIDUwLjYxIDcxLjg3IDQ1Ljk1IDY4LjU3IDQzLjQ1IEMgNjUuOTEgNDAuMzYgNjEuNTIgNDEuMTAgNTcuOTggNDEuNjkgQyA1NS4xMiA0MS42MCA1Mi4yMCA0MC42MSA0OS4zOCA0MS41NSBNIDEwLjg2IDU1LjQ4IEMgMTMuMjUgNTUuNDUgMTUuNjMgNTUuNDUgMTguMDEgNTUuNDIgQyAxOC40MSA1NC44MSAxOS4xOSA1My42MSAxOS41OSA1My4wMCBDIDE5LjE4IDUyLjQwIDE4LjM4IDUxLjE4IDE3Ljk3IDUwLjU3IEMgMTUuNjEgNTAuNTEgMTMuMjUgNTAuNTAgMTAuODggNTAuNDggQyA5LjIzIDUyLjA4IDkuMTEgNTMuOTEgMTAuODYgNTUuNDggTSAyNS4xNCA1MC44OCBDIDIzLjM5IDUxLjg5IDIzLjgyIDU1LjIzIDI1Ljk3IDU1LjQyIEMgMjguNDcgNTUuMjcgMzEuNzYgNTYuNDIgMzMuNDUgNTMuOTkgQyAzNC4zMCA0OS40MCAyNy45MiA1MC4xNyAyNS4xNCA1MC44OCBaIiAvPg0KPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMS4wMCIgZD0iIE0gNjEuNTYgNDUuNzggQyA2Ni41MSA0NC42NiA2OS4xOCA1Mi43OCA2NC41MiA1NC43NyBDIDYwLjkyIDU3LjU0IDU1LjM5IDUyLjAwIDU4LjE0IDQ4LjQwIEMgNTguODggNDcuMDggNjAuMDggNDYuMTQgNjEuNTYgNDUuNzggWiIgLz4NCjxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEuMDAiIGQ9IiBNIDQ4LjE1IDUwLjA3IEMgNDguMTIgNDcuMjIgNTEuMTYgNDUuOTUgNTMuNTUgNDUuNjMgQyA1Mi42NyA0OC45OSA1Mi42MCA1Mi4zNCA1My42NCA1NS42OCBDIDUwLjc4IDU1LjU1IDQ3LjQ5IDUzLjMwIDQ4LjE1IDUwLjA3IFoiIC8+DQo8L2c+DQo8L3N2Zz4NCg=="
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyLjAwNCA1MTIuMDA0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDA0IDUxMi4wMDQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiM0ODk5RDI7IiBkPSJNNDc1LjIxMSw3OS44MTFMMzg2LjQzLDQuOTk2Yy05LjAxNS03LjU4MS0yMi40Ny02LjM5Ny0zMC4wNTEsMi42MTlzLTYuMzk3LDIyLjQ3LDIuNjE5LDMwLjA1MQ0KCWw0NC4wMTYsMzcuNDA4SDE5Mi4xNTlDMTI1LjMyNCw3NS4xNDgsNzEuMTU4LDEyOS4zMTQsNzEuMDgzLDE5Ni4xNXYzOC4yODFjMCwxMS43NzEsOS41NTEsMjEuMzIyLDIxLjMyMiwyMS4zMjINCglzMjEuMzIyLTkuNTUxLDIxLjMyMi0yMS4zMjJ2LTM4LjY1NWMwLjA3NS00My4yOTMsMzUuMTM4LTc4LjM1Nyw3OC40MzItNzguNDMyaDIxMC45OGwtNDQuMDE2LDM3LjQwOA0KCWMtOS4wMTUsNy41ODEtMTAuMiwyMS4wMzYtMi42MTksMzAuMDUxYzcuNTgxLDkuMDE1LDIxLjAzNiwxMC4yLDMwLjA1MSwyLjYxOWw4OC43ODEtNzQuODE2YzkuMDE1LTcuNTY5LDEwLjItMjEuMDIzLDIuNjMxLTMwLjAzOA0KCWMtMC43OTgtMC45NDgtMS42ODMtMS44MzMtMi42MzEtMi42MzFMNDc1LjIxMSw3OS44MTF6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojMjkzQzdEOyIgZD0iTTQxOC45NzUsMjU1Ljg3N2MtMTEuNzcxLDAtMjEuMzIyLDkuNTUxLTIxLjMyMiwyMS4zMjJ2MzguNjU1DQoJYy0wLjA3NSw0My4yOTMtMzUuMTM4LDc4LjM1Ny03OC40MzIsNzguNDMyaC0yMTAuOThsNDQuMDE2LTM3LjQwOGMxMC4zMTItNS42OTgsMTQuMDUzLTE4LjY2Niw4LjM1NC0yOC45NzkNCgljLTUuNjk4LTEwLjMxMi0xOC42NjYtMTQuMDUzLTI4Ljk3OS04LjM1NGMtMi4zNjksMS4zMDktNC40NzYsMy4wNTUtNi4xODUsNS4xNjJsLTg4Ljc4MSw3NC44MTYNCgljLTkuMDE1LDcuNTY5LTEwLjIsMjEuMDIzLTIuNjMxLDMwLjAzOGMwLjc5OCwwLjk0OCwxLjY4MywxLjgzMywyLjYzMSwyLjYzMWw4OC43ODEsNzQuODE1YzkuMDE1LDcuNTgxLDIyLjQ3LDYuMzk3LDMwLjA1MS0yLjYxOQ0KCXM2LjM5Ny0yMi40Ny0yLjYxOS0zMC4wNTFsLTQ0LjAxNi0zNy40MDhoMjEwLjM1NmM2Ni44MzUtMC4wNzUsMTIxLjAwMi01NC4yNDEsMTIxLjA3Ni0xMjEuMDc2VjI3Ny4yDQoJQzQ0MC4yOTgsMjY1LjQxNiw0MzAuNzQ2LDI1NS44NzcsNDE4Ljk3NSwyNTUuODc3eiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTUwLjgwMSA1NTAuODAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1NTAuODAxIDU1MC44MDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik00ODguNDI2LDE5Ny4wMTlINDc1LjJ2LTYzLjgxNmMwLTAuNDAxLTAuMDYzLTAuNzk5LTAuMTE2LTEuMjA1Yy0wLjAyMS0yLjUzNC0wLjgyNy01LjAyMy0yLjU2Mi02Ljk5MkwzNjYuMzI1LDMuNjkxICAgYy0wLjAzMi0wLjAzMS0wLjA2My0wLjA0Mi0wLjA4NS0wLjA3M2MtMC42MzMtMC43MDctMS4zNzEtMS4yOTgtMi4xNTEtMS44MDRjLTAuMjMxLTAuMTU4LTAuNDY0LTAuMjg3LTAuNzA2LTAuNDIyICAgYy0wLjY3Ni0wLjM2Ni0xLjM5My0wLjY3NS0yLjEzMS0wLjg5NmMtMC4yLTAuMDUzLTAuMzgtMC4xMzUtMC41OC0wLjE5QzM1OS44NywwLjExOSwzNTkuMDM3LDAsMzU4LjE5MywwSDk3LjIgICBjLTExLjkxOCwwLTIxLjYsOS42OTMtMjEuNiwyMS42MDF2MTc1LjQxM0g2Mi4zNzdjLTE3LjA0OSwwLTMwLjg3MywxMy44MTgtMzAuODczLDMwLjg3djE2MC41NDIgICBjMCwxNy4wNDQsMTMuODI0LDMwLjg3NiwzMC44NzMsMzAuODc2aDEzLjIyNFY1MjkuMmMwLDExLjkwNyw5LjY4MiwyMS42MDEsMjEuNiwyMS42MDFoMzU2LjRjMTEuOTA3LDAsMjEuNi05LjY5MywyMS42LTIxLjYwMSAgIFY0MTkuMzAyaDEzLjIyNmMxNy4wNDQsMCwzMC44NzEtMTMuODI3LDMwLjg3MS0zMC44N1YyMjcuODlDNTE5LjI5NywyMTAuODM4LDUwNS40NywxOTcuMDE5LDQ4OC40MjYsMTk3LjAxOXogTTk3LjIsMjEuNjA1ICAgaDI1MC4xOTN2MTEwLjUxYzAsNS45NjcsNC44NDEsMTAuOCwxMC44LDEwLjhoOTUuNDA3djU0LjEwOEg5Ny4yVjIxLjYwNXogTTM2OS41MzEsMzc0LjUzaC0zMi4wNThsLTIuMTU2LTU1LjUxOSAgIGMtMC42NDQtMTcuNDM0LTEuMjk4LTM4LjUxOC0xLjI5OC01OS42MTFoLTAuNjMzYy00LjUxNCwxOC41MTYtMTAuNTQ3LDM5LjE2Ni0xNi4xMzcsNTYuMTYybC0xNy42NDUsNTYuNjAxaC0yNS42MTggICBsLTE1LjQ5NC01Ni4xNTdjLTQuNzI1LTE2Ljk5Ni05LjY3MS0zNy42NTgtMTMuMTIzLTU2LjZoLTAuNDNjLTAuODU0LDE5LjU4NS0xLjUwOCw0MS45NjEtMi41ODYsNjAuMDM4bC0yLjU3Niw1NS4wODZoLTMwLjM0MyAgIGw5LjI2LTE0NS4wMzVoNDMuNjc3bDE0LjIwNyw0OC40MjFjNC41MTcsMTYuNzc0LDkuMDQxLDM0Ljg0NywxMi4yNTgsNTEuODQzaDAuNjU0YzQuMDgxLTE2Ljc3LDkuMDM4LTM1LjkyMywxMy43NzQtNTIuMDY0ICAgbDE1LjQ5My00OC4xOTloNDIuODJMMzY5LjUzMSwzNzQuNTN6IE02OS45OTIsMzc0LjUzbDQxLjk1NS03My4zODVsLTQwLjQ0NC03MS42NWgzNy42NTVsMTIuNjg4LDI2LjQ2NSAgIGM0LjMxNiw4LjgyOCw3LjUzMywxNS45MjgsMTAuOTksMjQuMDkyaDAuNDIyYzMuNDM4LTkuMjQyLDYuMjMtMTUuNjk0LDkuODkzLTI0LjA5MmwxMi4yNzQtMjYuNDY1aDM3LjQzNGwtNDAuODksNzAuNzk2ICAgbDQzLjA0NCw3NC4yMzloLTM3Ljg2NmwtMTMuMTM0LTI2LjI1N2MtNS4zNzYtMTAuMTA4LTguODE3LTE3LjYzOS0xMi45MDktMjYuMDRoLTAuNDMzYy0zLjAwOSw4LjQwMS02LjY3NCwxNS45MzItMTEuMTksMjYuMDQgICBsLTEyLjA0MiwyNi4yNTdINjkuOTkyeiBNNDUzLjYwMSw1MjMuMzUzSDk3LjJWNDE5LjMwMmgzNTYuNFY1MjMuMzUzeiBNNDg1LjMyNSwzNzQuNTNoLTkwLjYwOFYyMjkuNDk1aDMyLjkzM3YxMTcuNDk3aDU3LjY4MiAgIHYyNy41MzhINDg1LjMyNXoiIGZpbGw9IiM1NDU0NTQiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -55029,7 +55388,7 @@
 
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55117,7 +55476,7 @@
 	    */
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55162,9 +55521,13 @@
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _UI = __webpack_require__(32);
+	var _UI = __webpack_require__(26);
 
 	var _UI2 = _interopRequireDefault(_UI);
+
+	var _dataUI = __webpack_require__(27);
+
+	var _dataUI2 = _interopRequireDefault(_dataUI);
 
 	var _store = __webpack_require__(6);
 
@@ -55172,12 +55535,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/**
-	 *
-	 * COMPROBAR - Ticket Manual
-	 *
-	 */
-	var pageData = {};
+	var pageData = {}; /**
+	                    *
+	                    * COMPROBAR - Ticket Manual
+	                    *
+	                    */
+
 	var swiper = '';
 	var swConcepts = '';
 	var swiperTrnx = '';
@@ -55205,7 +55568,7 @@
 	//Mensajes
 	var messages = {
 	    escriba_comentario: 'Escriba un comentario',
-	    error: 'Ha ocurrido un error ',
+	    error: 'Ha ocurrido un error, intente nuevamente. ',
 	    success: 'Listo',
 	    noData: 'No se encontraron registros'
 	};
@@ -55248,20 +55611,14 @@
 	                                    second: false
 	                                }
 	                            };
+	                            //Si tenemos almenos 2 convenios se muestran
 
 	                            if (!(agreements.Data.length > 1)) {
 	                                _context.next = 16;
 	                                break;
 	                            }
 
-	                            options = _linq2.default.from(agreements.Data).select(function (el) {
-	                                return {
-	                                    Icon: 'company-icon',
-	                                    Id: el.iAgreement,
-	                                    Name: el.vcDisplay,
-	                                    Class: 'opt-agreement'
-	                                };
-	                            }).toArray();
+	                            options = _dataUI2.default.getRows(agreements.Data, 'Id:iAgreement,Name:vcDisplay');
 	                            /* Cargamos la data de la pagina que se cargara en el template general */
 
 	                            _context.next = 11;
@@ -55585,15 +55942,7 @@
 	                            //Cargamos la data de empleados en el partial de opciones
 	                            pageData.pages.first = true;
 	                            pageData.pages.second = false;
-	                            options = _linq2.default.from(users.Data).select(function (el) {
-	                                return {
-	                                    Icon: 'employee-icon',
-	                                    Id: el.iEmployeeId,
-	                                    Name: el.vcNames,
-	                                    Description: el.vcCard,
-	                                    Class: 'opt-employee'
-	                                };
-	                            }).toArray();
+	                            options = _dataUI2.default.getRows(users.Data, 'Id:iEmployeeId,Name:vcNames,Description:vcCard');
 	                            _context10.next = 8;
 	                            return _optionList3.default.render(options, 'empleado', Data.AgreementName);
 
@@ -55974,7 +56323,7 @@
 	};
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56249,7 +56598,7 @@
 	};
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56296,7 +56645,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(33);
+	var _comprobar = __webpack_require__(34);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -56466,7 +56815,7 @@
 	    */
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56513,7 +56862,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(33);
+	var _comprobar = __webpack_require__(34);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -56897,7 +57246,7 @@
 	    */
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -56952,7 +57301,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(33);
+	var _comprobar = __webpack_require__(34);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -57213,7 +57562,7 @@
 	    */
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57370,7 +57719,7 @@
 	};
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57378,10 +57727,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-
-	var _defineProperty2 = __webpack_require__(35);
-
-	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 	var _regenerator = __webpack_require__(5);
 
@@ -57392,28 +57737,32 @@
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 	var getStatusAuth = function () {
-	    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(dataId) {
-	        var authorizers, _UI$DetailRowList, authorizersHtml;
-
-	        return _regenerator2.default.wrap(function _callee7$(_context7) {
+	    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(dataId) {
+	        var authorizers, authorizersHtml;
+	        return _regenerator2.default.wrap(function _callee8$(_context8) {
 	            while (1) {
-	                switch (_context7.prev = _context7.next) {
+	                switch (_context8.prev = _context8.next) {
 	                    case 0:
-	                        _context7.next = 2;
+	                        _context8.next = 2;
 	                        return _store2.default.GetBudgetAuthorizers({
 	                            BudgetId: dataId
 	                        });
 
 	                    case 2:
-	                        authorizers = _context7.sent;
+	                        authorizers = _context8.sent;
 
-	                        if (!(authorizers.Data !== "")) {
-	                            _context7.next = 12;
+	                        if (!authorizers.Success) {
+	                            _context8.next = 18;
 	                            break;
 	                        }
 
-	                        _context7.next = 6;
-	                        return _UI2.default.DetailRowList(authorizers.Data, authorizers.Data, (_UI$DetailRowList = {
+	                        if (!(authorizers.Data !== "" && authorizers.Data !== "N/A")) {
+	                            _context8.next = 15;
+	                            break;
+	                        }
+
+	                        _context8.next = 7;
+	                        return _UI2.default.DetailRowList(authorizers.Data, authorizers.Data, {
 	                            alignment: 'vh',
 	                            fields: 'Secuencia:iSequence,Estatus:vcStatus,Fecha:dtAuth',
 	                            detailFields: 'vcUser',
@@ -57421,44 +57770,54 @@
 	                            idGroup: 'iSequence',
 	                            subdesc: false,
 	                            container: '#body-auth',
-	                            iconClass: "employee-icon"
-	                        }, (0, _defineProperty3.default)(_UI$DetailRowList, "container", "#accordion-1"), (0, _defineProperty3.default)(_UI$DetailRowList, "changeCustomByRow", function changeCustomByRow(row, config) {
-	                            if (row.dtAuth != undefined) config.bgColorClass = row.dtAuth == "N/A" ? "" : "bg-success";
-	                            row.vcStatus = row.vcStatus == "0" ? "Pendiente" : row.vcStatus == "1" ? "Autorizado" : "";
-	                            switch (row.key) {
-	                                case 'fecha':
-	                                    config.align = 'col-12';
-	                                    config.subalign = 'col-12';
-	                                    config.alignLeft = '';
-	                                    config.alignRight = '';
-	                                    break;
-	                                default:
-	                                    config.alignLeft = 'text-left';
-	                                    config.alignRight = 'text-right';
-	                                    config.align = 'col-12';
-	                                    config.subalign = 'col-6';
-	                                    break;
+	                            iconClass: "employee-icon",
+	                            changeCustomByRow: function changeCustomByRow(row, config) {
+	                                if (row.dtAuth != undefined) config.bgColorClass = row.dtAuth == "N/A" ? "" : "bg-success";
+	                                row.vcStatus = row.vcStatus == "0" ? "Pendiente" : row.vcStatus == "1" ? "Autorizado" : "";
+	                                switch (row.key) {
+	                                    case 'Fecha':
+	                                        config.align = 'col-12';
+	                                        config.subalign = 'col-12';
+	                                        config.alignLeft = '';
+	                                        config.alignRight = '';
+	                                        break;
+	                                    default:
+	                                        config.alignLeft = 'text-left';
+	                                        config.alignRight = 'text-right';
+	                                        config.align = 'col-12';
+	                                        config.subalign = 'col-6';
+	                                        break;
+	                                }
 	                            }
-	                        }), _UI$DetailRowList));
+	                        });
 
-	                    case 6:
-	                        authorizersHtml = _context7.sent;
+	                    case 7:
+	                        authorizersHtml = _context8.sent;
 
+	                        (0, _jquery2.default)("#authorizersContainer").empty();
 	                        (0, _jquery2.default)("#authorizersContainer").html(authorizersHtml);
 	                        _tool2.default.openModal("#mdl-Authorizers");
+	                        (0, _jquery2.default)("#titleModal").empty();
 	                        (0, _jquery2.default)("#titleModal").html("Presupuesto #" + dataId);
-	                        _context7.next = 13;
+	                        _context8.next = 16;
 	                        break;
 
-	                    case 12:
-	                        alert('No hay registros');
+	                    case 15:
+	                        alert(messages.noData);
 
-	                    case 13:
+	                    case 16:
+	                        _context8.next = 19;
+	                        break;
+
+	                    case 18:
+	                        alert(messages.error);
+
+	                    case 19:
 	                    case "end":
-	                        return _context7.stop();
+	                        return _context8.stop();
 	                }
 	            }
-	        }, _callee7, this);
+	        }, _callee8, this);
 	    }));
 
 	    return function getStatusAuth(_x) {
@@ -57482,11 +57841,11 @@
 
 	__webpack_require__(63);
 
-	var _UI = __webpack_require__(32);
+	var _UI = __webpack_require__(26);
 
 	var _UI2 = _interopRequireDefault(_UI);
 
-	var _dataUI = __webpack_require__(67);
+	var _dataUI = __webpack_require__(27);
 
 	var _dataUI2 = _interopRequireDefault(_dataUI);
 
@@ -57515,7 +57874,7 @@
 	                  */
 
 	var messages = {
-	    error: 'Ha ocurrido un error ',
+	    error: 'Ha ocurrido un error, intente nuevamente. ',
 	    noData: 'No se encontraron registros'
 	};
 	exports.default = {
@@ -57536,32 +57895,35 @@
 	                            renderTpl = _tool2.default.renderTpl(_estatusTpl2.default);
 
 	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
+	                            (0, _jquery2.default)("#estatusContainer").empty();
+	                            _UI2.default.undbindEvents('accordion');
+	                            _UI2.default.undbindEvents('search');
 	                            swiper = _tool2.default.swiperScroll('.swiper-container1');
 	                            _this2.handleEvents();
 	                            date = (0, _moment2.default)().format('YYYY-MM-DD');
-	                            _context.next = 8;
+	                            _context.next = 11;
 	                            return _store2.default.GetAllBudgets({
 	                                Type: 5
 	                            });
 
-	                        case 8:
+	                        case 11:
 	                            budgets = _context.sent;
 
 	                            if (!budgets.Success) {
-	                                _context.next = 19;
+	                                _context.next = 22;
 	                                break;
 	                            }
 
 	                            if (!(budgets.Data.length > 0)) {
-	                                _context.next = 16;
+	                                _context.next = 19;
 	                                break;
 	                            }
 
-	                            _context.next = 13;
+	                            _context.next = 16;
 	                            return _UI2.default.DetailCardHeader(budgets.Data, {
-	                                idField: 'presupuesto',
-	                                alignment: "vv",
 	                                typeCard: 'noheader',
+	                                idField: 'Presupuesto',
+	                                alignment: "vv",
 	                                fields: 'Estatus:Status,Empleado:Name,Presupuesto:Id,Monto:$Amount',
 	                                detailFields: "Empleado:this{Employee|Name},Tarjeta:Card,Producto:Product,Objetivo:Description," + "Periodo:#StartDate>EndDate,Creación:CreateDate",
 	                                class: 'opt-budget',
@@ -57571,25 +57933,24 @@
 	                                message: 'Solo se muestran los últimos 10 presupuestos.',
 	                                title: 'Estado Presupuesto',
 	                                detailTitle: 'Presupuesto',
-	                                container: "#accordion-1",
 	                                changeHeaderByRow: function changeHeaderByRow(row, config) {
 	                                    switch (row.key) {
-	                                        case 'presupuesto':
-	                                        case 'monto':
+	                                        case 'Presupuesto':
+	                                        case 'Monto':
 	                                            config.alignLeft = 'text-left';
 	                                            config.alignRight = 'text-right';
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-6';
 	                                            config.textSize = '';
 	                                            break;
-	                                        case 'empleado':
+	                                        case 'Empleado':
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-12';
 	                                            config.textSize = '';
 	                                            config.alignLeft = '';
 	                                            config.alignRight = '';
 	                                            break;
-	                                        case 'estatus':
+	                                        case 'Estatus':
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-12';
 	                                            config.textSize = 'h3';
@@ -57600,18 +57961,17 @@
 	                                },
 	                                changeDetailByRow: function changeDetailByRow(row, config) {
 	                                    switch (row.key) {
-	                                        case 'empleado':
-	                                        case 'periodo':
-	                                        case 'creación':
+	                                        case 'Empleado':
+	                                        case 'Periodo':
+	                                        case 'Creación':
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-12';
 	                                            break;
-	                                        case 'tarjeta':
+	                                        case 'Tarjeta':
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-6';
 	                                            row.value = "***" + row.value;
 	                                            break;
-
 	                                        default:
 	                                            config.align = 'col-12';
 	                                            config.subalign = 'col-12';
@@ -57621,28 +57981,30 @@
 	                                }
 	                            });
 
-	                        case 13:
-	                            budgetsHtml = _context.sent;
-	                            _context.next = 17;
-	                            break;
-
 	                        case 16:
-	                            alert(messages.noData);
-
-	                        case 17:
+	                            budgetsHtml = _context.sent;
 	                            _context.next = 20;
 	                            break;
 
 	                        case 19:
-	                            alert(messages.error);
+	                            alert(messages.noData);
 
 	                        case 20:
+	                            _context.next = 23;
+	                            break;
+
+	                        case 22:
+	                            alert(messages.error);
+
+	                        case 23:
+
 	                            (0, _jquery2.default)(".cardTravex").removeAttr('hidden');
 	                            (0, _jquery2.default)("#estatusContainer").html(budgetsHtml);
 	                            _UI2.default.handleEvents('accordion');
+	                            _UI2.default.handleEvents('search');
 	                            _this.handleEventsAuth();
 
-	                        case 24:
+	                        case 28:
 	                        case "end":
 	                            return _context.stop();
 	                    }
@@ -57673,6 +58035,7 @@
 	                                        var renderTpl = _tool2.default.renderTpl(_estatusPresupuestoTpl2.default, {
 	                                            Presupuesto: r.Data
 	                                        });
+	                                        (0, _jquery2.default)("#estatusContainer2").empty();
 	                                        (0, _jquery2.default)("#estatusContainer2").html(renderTpl);
 	                                        (0, _jquery2.default)('[data-toggle="popover"]').popover({
 	                                            placement: 'top'
@@ -57692,72 +58055,105 @@
 	            }, _callee2, _this3);
 	        }))();
 	    },
-	    handleEventsAuth: function handleEventsAuth() {
+	    handleEventsSwiper: function handleEventsSwiper() {
 	        var _this4 = this;
 
-	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
-	            return _regenerator2.default.wrap(function _callee4$(_context4) {
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+	            return _regenerator2.default.wrap(function _callee3$(_context3) {
 	                while (1) {
-	                    switch (_context4.prev = _context4.next) {
+	                    switch (_context3.prev = _context3.next) {
 	                        case 0:
-	                            (0, _jquery2.default)(".detailBtn").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
-	                                return _regenerator2.default.wrap(function _callee3$(_context3) {
+	                            (0, _jquery2.default)('.cardDetail').on('shown.bs.collapse', function () {
+	                                //Evitamos que con el autoheight se quede cortado el contenedor
+	                                //esto permite que al abrirse la última card el collapse  muestre su contenido
+	                                swiper.slideTo(0);
+	                            });
+	                            (0, _jquery2.default)('.cardDetail').on('hidden.bs.collapse', function () {
+	                                //Evitamos que con el autoheight se quede cortado el contenedor
+	                                //esto permite que al abrirse la última card el collapse  muestre su contenido
+	                                swiper.slideTo(0);
+	                            });
+	                            (0, _jquery2.default)('.jetsSearch').on('keyup', function () {
+	                                //Evitamos que con el autoheight se quede cortado el contenedor
+	                                //esto permite que al abrirse la última card el collapse  muestre su contenido
+	                                swiper.slideTo(0);
+	                            });
+
+	                        case 3:
+	                        case "end":
+	                            return _context3.stop();
+	                    }
+	                }
+	            }, _callee3, _this4);
+	        }))();
+	    },
+	    handleEventsAuth: function handleEventsAuth() {
+	        var _this5 = this;
+
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
+	            return _regenerator2.default.wrap(function _callee5$(_context5) {
+	                while (1) {
+	                    switch (_context5.prev = _context5.next) {
+	                        case 0:
+	                            (0, _jquery2.default)(".detailBtn").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
+	                                return _regenerator2.default.wrap(function _callee4$(_context4) {
 	                                    while (1) {
-	                                        switch (_context3.prev = _context3.next) {
+	                                        switch (_context4.prev = _context4.next) {
 	                                            case 0:
 	                                                getStatusAuth((0, _jquery2.default)(this).attr('data-id'));
 
 	                                            case 1:
 	                                            case "end":
-	                                                return _context3.stop();
+	                                                return _context4.stop();
 	                                        }
 	                                    }
-	                                }, _callee3, this);
+	                                }, _callee4, this);
 	                            })));
+	                            _this5.handleEventsSwiper();
 
-	                        case 1:
+	                        case 2:
 	                        case "end":
-	                            return _context4.stop();
+	                            return _context5.stop();
 	                    }
 	                }
-	            }, _callee4, _this4);
+	            }, _callee5, _this5);
 	        }))();
 	    },
 	    handleEventsAuth2: function handleEventsAuth2() {
-	        var _this5 = this;
+	        var _this6 = this;
 
-	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
-	            return _regenerator2.default.wrap(function _callee6$(_context6) {
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
+	            return _regenerator2.default.wrap(function _callee7$(_context7) {
 	                while (1) {
-	                    switch (_context6.prev = _context6.next) {
+	                    switch (_context7.prev = _context7.next) {
 	                        case 0:
-	                            (0, _jquery2.default)('#btnAuth').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
-	                                return _regenerator2.default.wrap(function _callee5$(_context5) {
+	                            (0, _jquery2.default)('#btnAuth').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
+	                                return _regenerator2.default.wrap(function _callee6$(_context6) {
 	                                    while (1) {
-	                                        switch (_context5.prev = _context5.next) {
+	                                        switch (_context6.prev = _context6.next) {
 	                                            case 0:
 	                                                getStatusAuth((0, _jquery2.default)(this).attr('data-id'));
 
 	                                            case 1:
 	                                            case "end":
-	                                                return _context5.stop();
+	                                                return _context6.stop();
 	                                        }
 	                                    }
-	                                }, _callee5, this);
+	                                }, _callee6, this);
 	                            })));
 
 	                        case 1:
 	                        case "end":
-	                            return _context6.stop();
+	                            return _context7.stop();
 	                    }
 	                }
-	            }, _callee6, _this5);
+	            }, _callee7, _this6);
 	        }))();
 	    }
 	};
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57780,7 +58176,7 @@
 
 	var _expressTpl2 = _interopRequireDefault(_expressTpl);
 
-	__webpack_require__(89);
+	__webpack_require__(90);
 
 	var _jquery = __webpack_require__(2);
 
@@ -57928,7 +58324,7 @@
 	};
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57941,7 +58337,7 @@
 
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 
-	var _stringify = __webpack_require__(46);
+	var _stringify = __webpack_require__(45);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -57963,11 +58359,11 @@
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _aesCtr = __webpack_require__(249);
+	var _aesCtr = __webpack_require__(250);
 
 	var _aesCtr2 = _interopRequireDefault(_aesCtr);
 
-	var _constant = __webpack_require__(34);
+	var _constant = __webpack_require__(35);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -58128,7 +58524,7 @@
 	};
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58171,7 +58567,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _constant = __webpack_require__(34);
+	var _constant = __webpack_require__(35);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -58385,7 +58781,7 @@
 	};
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58455,7 +58851,7 @@
 	};
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58557,7 +58953,7 @@
 	};
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -58612,7 +59008,7 @@
 
 	var _optionsTpl2 = _interopRequireDefault(_optionsTpl);
 
-	var _empleados2 = __webpack_require__(45);
+	var _empleados2 = __webpack_require__(67);
 
 	var _empleados3 = _interopRequireDefault(_empleados2);
 
@@ -59147,7 +59543,7 @@
 	};
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59156,6 +59552,10 @@
 	    value: true
 	});
 
+	var _assign = __webpack_require__(68);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
 	var _regenerator = __webpack_require__(5);
 
 	var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -59163,6 +59563,113 @@
 	var _asyncToGenerator2 = __webpack_require__(4);
 
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+	var SetFileBudget = function () {
+	    var _ref11 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15(_this) {
+	        var files64, data;
+	        return _regenerator2.default.wrap(function _callee15$(_context15) {
+	            while (1) {
+	                switch (_context15.prev = _context15.next) {
+	                    case 0:
+	                        if (!_this.Data.File) {
+	                            alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId);
+	                            app.View("main");
+	                        } else {
+	                            files64 = (0, _jquery2.default)("#files64").data("base");
+	                            data = {
+	                                BudgetId: _this.Data.BudgetId,
+	                                File: files64
+	                            };
+
+
+	                            _store2.default.FileBudget(data).then(function (result) {
+	                                console.log(result);
+	                                if (!result) {
+	                                    alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId + "\nOcurrio un error al guardar el archivo.");
+	                                } else {
+	                                    alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId);
+	                                }
+	                                app.View("main");
+	                            });
+	                        }
+
+	                    case 1:
+	                    case "end":
+	                        return _context15.stop();
+	                }
+	            }
+	        }, _callee15, this);
+	    }));
+
+	    return function SetFileBudget(_x4) {
+	        return _ref11.apply(this, arguments);
+	    };
+	}();
+
+	var renderConcepts = function () {
+	    var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee16(_this) {
+	        var Conceptos, Conceptos2, periodoDefault, template;
+	        return _regenerator2.default.wrap(function _callee16$(_context16) {
+	            while (1) {
+	                switch (_context16.prev = _context16.next) {
+	                    case 0:
+	                        _context16.next = 2;
+	                        return _store2.default.Catalogs(_this.Data.Employee.EmployeeId);
+
+	                    case 2:
+	                        Conceptos = _context16.sent;
+	                        _context16.next = 5;
+	                        return _store2.default.GetRegisterCatalogs(_this.Data.Employee.EmployeeId);
+
+	                    case 5:
+	                        Conceptos2 = _context16.sent;
+
+	                        if (Conceptos.Success && Conceptos2.Success) {
+	                            _this.Data.Catalogs = _linq2.default.from(Conceptos.Data).select(function (el) {
+	                                return {
+	                                    Text: el.Name,
+	                                    Value: el.Id
+	                                };
+	                            }).toArray();
+	                            _this.Data.Catalogs2 = Conceptos2.Data;
+	                            //fechas periodo
+	                            periodoDefault = (0, _moment2.default)().format("YYYY-MM-DD");
+
+	                            _this.Data.periodoDefault = periodoDefault;
+	                            _this.Data.StartDate = periodoDefault;
+	                            _this.Data.EndDate = periodoDefault;
+
+	                            template = _tool2.default.renderTpl(_presupuestoAlta_resumenTpl2.default, _this.Data);
+
+
+	                            (0, _jquery2.default)("#presupuestoAltaPartial").html(template);
+	                            if (_this.Data.isSpecial) {
+	                                (0, _jquery2.default)('#CatalogField').hide();
+	                            } else {
+	                                (0, _jquery2.default)('#cbCatalog').html(_UI2.default.DropDownListFor(_this.Data.Catalogs2, {
+	                                    textField: 'vcCatalog',
+	                                    valueField: '       ',
+	                                    isNA: true
+	                                }));
+	                            }
+	                            _tool2.default.scrollPageTo(0, 200);
+	                            _this.renderPartialResumen();
+	                        } else {
+	                            alert('Ha ocurrido un error favor de intentarlo despues.');
+	                        }
+
+	                    case 7:
+	                    case "end":
+	                        return _context16.stop();
+	                }
+	            }
+	        }, _callee16, this);
+	    }));
+
+	    return function renderConcepts(_x5) {
+	        return _ref12.apply(this, arguments);
+	    };
+	}();
 
 	__webpack_require__(339);
 
@@ -59181,10 +59688,6 @@
 	var _resumenConceptosTpl = __webpack_require__(385);
 
 	var _resumenConceptosTpl2 = _interopRequireDefault(_resumenConceptosTpl);
-
-	var _empleados2 = __webpack_require__(45);
-
-	var _empleados3 = _interopRequireDefault(_empleados2);
 
 	var _optionList2 = __webpack_require__(43);
 
@@ -59222,8 +59725,22 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
+	var _UI = __webpack_require__(26);
+
+	var _UI2 = _interopRequireDefault(_UI);
+
+	var _dataUI = __webpack_require__(27);
+
+	var _dataUI2 = _interopRequireDefault(_dataUI);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//Parciales
+	/**
+	 *
+	 * PRESUPUESTO - ALTA
+	 *
+	 */
 	exports.default = {
 	    Data: {},
 	    init: function init() {
@@ -59266,28 +59783,55 @@
 	        var _this3 = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
-	            var empleados, renderTpl;
+	            var _this, users, employees, renderTpl;
+
 	            return _regenerator2.default.wrap(function _callee2$(_context2) {
 	                while (1) {
 	                    switch (_context2.prev = _context2.next) {
 	                        case 0:
 	                            _this3.Data = {};
 	                            _this3.Data.Details = [];
-	                            _context2.next = 4;
-	                            return _empleados3.default.render("Budget");
-
-	                        case 4:
-	                            empleados = _context2.sent;
-	                            renderTpl = _tool2.default.renderTpl(_presupuestoAltaTpl2.default, {
-	                                Partial: empleados
+	                            _this = _this3;
+	                            _context2.next = 5;
+	                            return _store2.default.Users({
+	                                Type: 'Budget'
 	                            });
 
+	                        case 5:
+	                            users = _context2.sent;
+
+	                            if (!users.Success) {
+	                                _context2.next = 20;
+	                                break;
+	                            }
+
+	                            _this.Data.Employees = users.Data;
+	                            employees = _dataUI2.default.getRows(users.Data, 'Id:EmployeeId,Name:FullName,Description:CardNumber');
+	                            _context2.t0 = _tool2.default;
+	                            _context2.t1 = _presupuestoAltaTpl2.default;
+	                            _context2.next = 13;
+	                            return _optionList3.default.render(employees, "empleado");
+
+	                        case 13:
+	                            _context2.t2 = _context2.sent;
+	                            _context2.t3 = {
+	                                Partial: _context2.t2
+	                            };
+	                            renderTpl = _context2.t0.renderTpl.call(_context2.t0, _context2.t1, _context2.t3);
 
 	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
+	                            _optionList3.default.handleEvents();
+	                            _context2.next = 21;
+	                            break;
+
+	                        case 20:
+	                            alert('Ha ocurrido un error favor de intentar mas tarde');
+
+	                        case 21:
 
 	                            _this3.handleEvents();
 
-	                        case 8:
+	                        case 22:
 	                        case "end":
 	                            return _context2.stop();
 	                    }
@@ -59317,7 +59861,8 @@
 	                                        Name: Name
 	                                    };
 	                                    renderTpl = _tool2.default.renderTpl(_presupuestoAlta_datosTpl2.default, {
-	                                        Estados: Estados.Data
+	                                        Estados: Estados.Data,
+	                                        type: 'datos'
 	                                    });
 
 	                                    (0, _jquery2.default)("#presupuestoAltaPartial").html(renderTpl);
@@ -59344,10 +59889,7 @@
 	                        case 0:
 	                            _this = _this4;
 
-
-	                            _empleados3.default.handleEvents();
-
-	                            (0, _jquery2.default)(".empleado").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
+	                            (0, _jquery2.default)(".opt-employee").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
 	                                var EmployeeId, Employee, Proyectos, renderTpl;
 	                                return _regenerator2.default.wrap(function _callee4$(_context4) {
 	                                    while (1) {
@@ -59355,7 +59897,11 @@
 	                                            case 0:
 	                                                EmployeeId = (0, _jquery2.default)(this).data("id");
 	                                                Employee = (0, _jquery2.default)(this).data("name");
+	                                                //Determinamos si es especial
 
+	                                                _this.Data.isSpecial = _this.Data.Employees.find(function (e) {
+	                                                    return e.EmployeeId == EmployeeId && e.FullName == Employee;
+	                                                }).Special;
 
 	                                                _this.Data.Employee = {
 	                                                    EmployeeId: EmployeeId,
@@ -59365,49 +59911,38 @@
 	                                                console.log("EMPLEADO", _this.Data);
 
 	                                                //cargo los datos de los combos...
-	                                                _context4.next = 6;
+	                                                _context4.next = 7;
 	                                                return _store2.default.Projects(EmployeeId);
 
-	                                            case 6:
+	                                            case 7:
 	                                                Proyectos = _context4.sent;
 
-	                                                Proyectos = _linq2.default.from(Proyectos.Data).select(function (el) {
-	                                                    return {
-	                                                        Icon: "budget-icon",
-	                                                        Id: el.Id,
-	                                                        Name: el.Name,
-	                                                        Class: "proyecto"
-	                                                    };
-	                                                }).toArray();
-	                                                Proyectos.unshift({
-	                                                    Icon: "budget-icon",
-	                                                    Id: 1,
-	                                                    Name: 'N/A',
-	                                                    Class: "proyecto"
-	                                                });
+	                                                Proyectos = _dataUI2.default.getRows(Proyectos.Data, 'Id:Id,Name:Name');
+	                                                //Si no hay proyectos definimos N/A Com default
 
-	                                                if (!(Proyectos.length <= 1)) {
+	                                                if (!(Proyectos.length < 1)) {
 	                                                    _context4.next = 13;
 	                                                    break;
 	                                                }
 
 	                                                renderStates(1, "N/A");
-	                                                _context4.next = 17;
+	                                                _context4.next = 18;
 	                                                break;
 
 	                                            case 13:
 	                                                _context4.next = 15;
-	                                                return _optionList3.default.render(Proyectos, "proyecto");
+	                                                return _optionList3.default.render(Proyectos, "proyecto", null, true);
 
 	                                            case 15:
 	                                                renderTpl = _context4.sent;
 
 	                                                (0, _jquery2.default)("#presupuestoAltaPartial").html(renderTpl);
+	                                                _optionList3.default.handleEvents();
 
-	                                            case 17:
+	                                            case 18:
 
 	                                                //seleccion de proyecto...
-	                                                (0, _jquery2.default)(".proyecto").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+	                                                (0, _jquery2.default)(".opt-project").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
 	                                                    var Id, Name;
 	                                                    return _regenerator2.default.wrap(function _callee3$(_context3) {
 	                                                        while (1) {
@@ -59427,7 +59962,7 @@
 	                                                    }, _callee3, this);
 	                                                })));
 
-	                                            case 18:
+	                                            case 19:
 	                                            case "end":
 	                                                return _context4.stop();
 	                                        }
@@ -59435,9 +59970,7 @@
 	                                }, _callee4, this);
 	                            })));
 
-	                            _empleados3.default.empleadoDefault();
-
-	                        case 4:
+	                        case 2:
 	                        case "end":
 	                            return _context6.stop();
 	                    }
@@ -59448,12 +59981,12 @@
 	    renderPartialResumen: function renderPartialResumen() {
 	        var _this5 = this;
 
-	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
 	            var _this, collapseId, nuevoConceptoInit;
 
-	            return _regenerator2.default.wrap(function _callee7$(_context7) {
+	            return _regenerator2.default.wrap(function _callee8$(_context8) {
 	                while (1) {
-	                    switch (_context7.prev = _context7.next) {
+	                    switch (_context8.prev = _context8.next) {
 	                        case 0:
 	                            _this = _this5;
 	                            collapseId = _this5.Data.Details.length + 1;
@@ -59487,7 +60020,6 @@
 	                            (0, _jquery2.default)(".datepicker").on("change", function () {
 	                                var $this = (0, _jquery2.default)(this);
 	                                var name = $this.prop("name");
-
 	                                _this.Data[name] = $this.val();
 	                            });
 
@@ -59512,110 +60044,185 @@
 	                                    var template = _tool2.default.renderTpl(_nuevoConceptoTpl2.default, _this.Data);
 	                                    //colapsa todos los conceptos
 	                                    (0, _jquery2.default)('.collapse').removeClass('show');
-
 	                                    (0, _jquery2.default)("#Details-container").append(template);
 	                                    _this.handleEventsNuevoConcepto();
 	                                }
 	                            });
 
 	                            //Guardar presupesto en base
-	                            (0, _jquery2.default)("#btnGuardarPrespuesto").on("click", function (e) {
-	                                var $btn = (0, _jquery2.default)(this);
-	                                var formData = (0, _jquery2.default)("#frm-budget").serializeObject();
+	                            (0, _jquery2.default)("#btnGuardarPrespuesto").on("click", function () {
+	                                var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(e) {
+	                                    var $btn, formData, valid, resultSpecial;
+	                                    return _regenerator2.default.wrap(function _callee7$(_context7) {
+	                                        while (1) {
+	                                            switch (_context7.prev = _context7.next) {
+	                                                case 0:
+	                                                    $btn = (0, _jquery2.default)(this);
+	                                                    formData = (0, _jquery2.default)("#frm-budget").serializeObject();
 
-	                                if (!formData.Description) {
-	                                    alert("Ingresa un objetivo.");
-	                                    (0, _jquery2.default)("#iDescription").focus();
-	                                    return false;
-	                                }
-
-	                                _this.Data.Details = [];
-	                                var valid = true;
-
-	                                (0, _jquery2.default)(".accordion").each(function (index, el) {
-	                                    var $frm = (0, _jquery2.default)(el).find(".Details");
-	                                    var data = $frm.serializeObject();
-
-	                                    var valido = _this.validarConcepto(data);
-
-	                                    if (!valido.Success) {
-	                                        alert("Valide la información\n\n" + valido.Mensaje);
-	                                        valid = false;
-	                                    } else {
-	                                        _this.Data.Details.push({
-	                                            "Catalog": {
-	                                                "Id": data.CatalogId
-	                                            },
-	                                            "Subcatalog": {
-	                                                "Id": data.SubcatalogId
-	                                            },
-	                                            "Amount": data.Amount,
-	                                            "Description": data.Description
-	                                        });
-	                                    }
-	                                });
-	                                if (valid) {
-	                                    _jquery2.default.extend(_this.Data, formData);
-
-	                                    console.log("BUDGETS", _this.Data, _this.Data.Description);
-
-	                                    $btn.attr("disabled", true);
-
-	                                    _store2.default.Budgets(_this.Data).then(function (r) {
-	                                        console.log(r);
-	                                        var BudgetId = r.Data.Id;
-
-	                                        if (r.Success) {
-	                                            if (!_this.Data.File) {
-	                                                alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + BudgetId);
-	                                                app.View("main");
-	                                            } else {
-	                                                var files64 = (0, _jquery2.default)("#files64").data("base");
-
-	                                                var data = {
-	                                                    BudgetId: BudgetId,
-	                                                    File: files64
-	                                                };
-
-	                                                _store2.default.FileBudget(data).then(function (result) {
-	                                                    console.log(result);
-	                                                    if (!result) {
-	                                                        alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + BudgetId + "\nOcurrio un error al guardar el archivo.");
-	                                                    } else {
-	                                                        alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + BudgetId);
+	                                                    if (formData.Description) {
+	                                                        _context7.next = 6;
+	                                                        break;
 	                                                    }
-	                                                    app.View("main");
-	                                                });
+
+	                                                    alert("Ingresa un objetivo.");
+	                                                    (0, _jquery2.default)("#iDescription").focus();
+	                                                    return _context7.abrupt("return", false);
+
+	                                                case 6:
+
+	                                                    _this.Data.Details = [];
+	                                                    valid = true;
+
+
+	                                                    (0, _jquery2.default)(".accordion").each(function (index, el) {
+	                                                        var $frm = (0, _jquery2.default)(el).find(".Details");
+	                                                        var data = $frm.serializeObject();
+	                                                        var valido = _this.validarConcepto(data);
+	                                                        if (!valido.Success) {
+	                                                            alert("Valide la información\n\n" + valido.Mensaje);
+	                                                            valid = false;
+	                                                        } else {
+	                                                            _this.Data.Details.push({
+	                                                                "Catalog": {
+	                                                                    "Id": data.CatalogId
+	                                                                },
+	                                                                "Subcatalog": {
+	                                                                    "Id": data.SubcatalogId
+	                                                                },
+	                                                                "Amount": data.Amount,
+	                                                                "Description": data.Description
+	                                                            });
+	                                                        }
+	                                                    });
+
+	                                                    if (!valid) {
+	                                                        _context7.next = 22;
+	                                                        break;
+	                                                    }
+
+	                                                    _jquery2.default.extend(_this.Data, formData);
+	                                                    console.log("BUDGETS", _this.Data, _this.Data.Description);
+	                                                    $btn.attr("disabled", true);
+
+	                                                    if (!_this.Data.isSpecial) {
+	                                                        _context7.next = 21;
+	                                                        break;
+	                                                    }
+
+	                                                    _context7.next = 16;
+	                                                    return _store2.default.SetSpecialCatalogs(_this.Data);
+
+	                                                case 16:
+	                                                    resultSpecial = _context7.sent;
+
+	                                                    if (resultSpecial.Success) {
+	                                                        _this.Data.BudgetId = resultSpecial.Data.Id;
+	                                                        SetFileBudget(_this);
+	                                                    }
+	                                                    $btn.attr("disabled", true);
+	                                                    _context7.next = 22;
+	                                                    break;
+
+	                                                case 21:
+
+	                                                    _store2.default.Budgets(_this.Data).then(function (r) {
+	                                                        console.log(r);
+	                                                        if (r.Success) {
+	                                                            _this.Data.BudgetId = r.Data.Id;
+	                                                            SetFileBudget(_this);
+	                                                        }
+	                                                        $btn.attr("disabled", true);
+	                                                    });
+
+	                                                case 22:
+	                                                case "end":
+	                                                    return _context7.stop();
 	                                            }
 	                                        }
-	                                        $btn.attr("disabled", true);
-	                                    });
-	                                }
-	                            });
+	                                    }, _callee7, this);
+	                                }));
+
+	                                return function (_x3) {
+	                                    return _ref4.apply(this, arguments);
+	                                };
+	                            }());
 
 	                        case 10:
 	                        case "end":
-	                            return _context7.stop();
+	                            return _context8.stop();
 	                    }
 	                }
-	            }, _callee7, _this5);
+	            }, _callee8, _this5);
 	        }))();
 	    },
 	    handleEventsEstado: function handleEventsEstado(_this) {
+	        var renderSpecial = function () {
+	            var _ref7 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	                var catalogs, renderTpl, fields;
+	                return _regenerator2.default.wrap(function _callee11$(_context11) {
+	                    while (1) {
+	                        switch (_context11.prev = _context11.next) {
+	                            case 0:
+	                                _context11.next = 2;
+	                                return _store2.default.GetSpecialCatalogs(0);
+
+	                            case 2:
+	                                catalogs = _context11.sent;
+	                                renderTpl = _tool2.default.renderTpl(_presupuestoAlta_datosTpl2.default, {
+	                                    type: 'especial'
+	                                });
+
+	                                (0, _jquery2.default)('#presupuestoAltaPartial').html(renderTpl);
+	                                fields = {
+	                                    textField: 'vcDescription',
+	                                    valueField: 'iExtraCatId'
+	                                };
+
+	                                fields.container = '#cbOrganizacion';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Organizacion, fields);
+	                                fields.container = '#cbFuncion';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Funcion, fields);
+	                                fields.container = '#cbPrograma';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Programa, fields);
+	                                fields.container = '#cbGeografico';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Geografico, fields);
+	                                fields.container = '#cbTipologia';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Tipologia, fields);
+	                                fields.container = '#cbFuente';
+	                                _UI2.default.InfiniteDropDown(catalogs.Data[0].Fuente, fields);
+
+	                                _this.handleEventsSpecialCats(_this);
+	                                _UI2.default.handleEvents('accordion');
+	                                _UI2.default.handleEvents('select');
+
+	                            case 21:
+	                            case "end":
+	                                return _context11.stop();
+	                        }
+	                    }
+	                }, _callee11, this);
+	            }));
+
+	            return function renderSpecial() {
+	                return _ref7.apply(this, arguments);
+	            };
+	        }();
+
 	        //Seleccion de estado...
-	        (0, _jquery2.default)("#cbEstado").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
+	        (0, _jquery2.default)("#cbEstado").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
 	            var StateId, Name, Municipios, options;
-	            return _regenerator2.default.wrap(function _callee8$(_context8) {
+	            return _regenerator2.default.wrap(function _callee9$(_context9) {
 	                while (1) {
-	                    switch (_context8.prev = _context8.next) {
+	                    switch (_context9.prev = _context9.next) {
 	                        case 0:
 	                            StateId = (0, _jquery2.default)(this).val();
 	                            Name = (0, _jquery2.default)(this).find("option:selected").text();
-	                            _context8.next = 4;
+	                            _context9.next = 4;
 	                            return _store2.default.Municipalities(StateId);
 
 	                        case 4:
-	                            Municipios = _context8.sent;
+	                            Municipios = _context9.sent;
 
 
 	                            _this.Data.State = {
@@ -59645,10 +60252,10 @@
 
 	                        case 11:
 	                        case "end":
-	                            return _context8.stop();
+	                            return _context9.stop();
 	                    }
 	                }
-	            }, _callee8, this);
+	            }, _callee9, this);
 	        })));
 	        //seleccion de municipio...            
 	        (0, _jquery2.default)("#cbMunicipio").on("change", function () {
@@ -59661,66 +60268,54 @@
 	            };
 	            console.log("MUNICIPIO", _this.Data);
 	        });
-
-	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
-	            var Conceptos, periodoDefault, template;
-	            return _regenerator2.default.wrap(function _callee9$(_context9) {
+	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
+	            return _regenerator2.default.wrap(function _callee10$(_context10) {
 	                while (1) {
-	                    switch (_context9.prev = _context9.next) {
+	                    switch (_context10.prev = _context10.next) {
 	                        case 0:
-	                            if (_this.Data.State) {
-	                                _context9.next = 5;
-	                                break;
+	                            if (!_this.Data.State) {
+	                                alert("Seleccione un Estado para continuar.");
+	                                (0, _jquery2.default)("#cbEstado").focus();
+	                            } else if (_this.Data.State.Id !== 2 && !_this.Data.Municipality) {
+	                                alert("Seleccione un Municipio para continuar.");
+	                                (0, _jquery2.default)("#cbMunicipio").focus();
+	                            } else {
+	                                if (_this.Data.isSpecial) {
+	                                    renderSpecial();
+	                                } else {
+	                                    renderConcepts(_this);
+	                                }
 	                            }
 
-	                            alert("Seleccione un estado para continuar.");
-	                            (0, _jquery2.default)("#cbEstado").focus();
-	                            _context9.next = 19;
-	                            break;
-
-	                        case 5:
-	                            if (!(_this.Data.State.Id !== 2 && !_this.Data.Municipality)) {
-	                                _context9.next = 8;
-	                                break;
-	                            }
-
-	                            alert("Selecciona un municipio para continuar.");
-	                            return _context9.abrupt("return", false);
-
-	                        case 8:
-	                            _context9.next = 10;
-	                            return _store2.default.Catalogs(_this.Data.Employee.EmployeeId);
-
-	                        case 10:
-	                            Conceptos = _context9.sent;
-
-
-	                            _this.Data.Catalogs = _linq2.default.from(Conceptos.Data).select(function (el) {
-	                                return {
-	                                    Value: el.Id,
-	                                    Text: el.Name
-	                                };
-	                            }).toArray();
-	                            //fechas periodo
-	                            periodoDefault = (0, _moment2.default)().format("YYYY-MM-DD");
-
-
-	                            _this.Data.periodoDefault = periodoDefault;
-	                            _this.Data.StartDate = periodoDefault;
-	                            _this.Data.EndDate = periodoDefault;
-
-	                            template = _tool2.default.renderTpl(_presupuestoAlta_resumenTpl2.default, _this.Data);
-
-
-	                            (0, _jquery2.default)("#presupuestoAltaPartial").html(template);
-	                            _this.renderPartialResumen();
-
-	                        case 19:
+	                        case 1:
 	                        case "end":
-	                            return _context9.stop();
+	                            return _context10.stop();
 	                    }
 	                }
-	            }, _callee9, this);
+	            }, _callee10, this);
+	        })));
+	    },
+	    handleEventsSpecialCats: function handleEventsSpecialCats(_this) {
+	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12() {
+	            var frmData;
+	            return _regenerator2.default.wrap(function _callee12$(_context12) {
+	                while (1) {
+	                    switch (_context12.prev = _context12.next) {
+	                        case 0:
+	                            frmData = (0, _jquery2.default)('#frm-Special').serializeObject();
+	                            ;
+	                            if (validateForm(frmData)) {
+	                                _this.Data = (0, _assign2.default)(_this.Data, frmData);
+	                                renderConcepts(_this);
+	                            }
+	                            return _context12.abrupt("return", false);
+
+	                        case 4:
+	                        case "end":
+	                            return _context12.stop();
+	                    }
+	                }
+	            }, _callee12, this);
 	        })));
 	    },
 	    handleEventsNuevoConcepto: function handleEventsNuevoConcepto() {
@@ -59730,11 +60325,11 @@
 	        var $cbClasificacion = $accordionActual.find(".cbClasificacion");
 	        var $btnEliminarConcepto = $accordionActual.find(".btnEliminarConcepto");
 	        //cambio en el combo de concepto, carga clasificaciones y cambia el header
-	        $cbConceptos.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
+	        $cbConceptos.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
 	            var $this, $parent, accordion, $accordion, CadalogId, vcCatalog, Clasificaciones, renderOptions, template;
-	            return _regenerator2.default.wrap(function _callee10$(_context10) {
+	            return _regenerator2.default.wrap(function _callee13$(_context13) {
 	                while (1) {
-	                    switch (_context10.prev = _context10.next) {
+	                    switch (_context13.prev = _context13.next) {
 	                        case 0:
 	                            $this = (0, _jquery2.default)(this);
 	                            $parent = $this.parent().parent();
@@ -59752,35 +60347,34 @@
 
 	                            $accordionActual.find(".AmountPolicy").val(0);
 
-	                            _context10.next = 12;
+	                            _context13.next = 12;
 	                            return _store2.default.SubCatalogs(CadalogId);
 
 	                        case 12:
-	                            Clasificaciones = _context10.sent;
+	                            Clasificaciones = _context13.sent;
 	                            renderOptions = _linq2.default.from(Clasificaciones.Data).select(function (el) {
 	                                return {
-	                                    Value: el.Id,
-	                                    Text: el.Name
+	                                    Text: el.Name,
+	                                    Value: el.Id
 	                                };
 	                            }).toArray();
 	                            template = _tool2.default.renderTpl(_optionsTpl2.default, renderOptions);
-
 
 	                            $cbClasificacion.html(template);
 
 	                        case 16:
 	                        case "end":
-	                            return _context10.stop();
+	                            return _context13.stop();
 	                    }
 	                }
-	            }, _callee10, this);
+	            }, _callee13, this);
 	        })));
 	        //cambio en combo de clasificacion, carga el monto por politica
-	        $cbClasificacion.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	        $cbClasificacion.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
 	            var $cb, SubCatalogId, vcSubcatalog, data;
-	            return _regenerator2.default.wrap(function _callee11$(_context11) {
+	            return _regenerator2.default.wrap(function _callee14$(_context14) {
 	                while (1) {
-	                    switch (_context11.prev = _context11.next) {
+	                    switch (_context14.prev = _context14.next) {
 	                        case 0:
 	                            $cb = (0, _jquery2.default)(this);
 	                            SubCatalogId = $cb.val();
@@ -59811,10 +60405,10 @@
 
 	                        case 7:
 	                        case "end":
-	                            return _context11.stop();
+	                            return _context14.stop();
 	                    }
 	                }
-	            }, _callee11, this);
+	            }, _callee14, this);
 	        })));
 	        //Elimina concepto...
 	        $btnEliminarConcepto.on("click", function () {
@@ -59882,12 +60476,12 @@
 
 	        if (!info.CatalogId) {
 	            result.Success = false;
-	            result.Mensaje = "✋ Selecciona un Concepto";
+	            result.Mensaje = "✋ Seleccione un Concepto";
 	            return result;
 	        }
 	        if (!info.SubcatalogId) {
 	            result.Success = false;
-	            result.Mensaje = "✋ Selecciona una Clasificacion";
+	            result.Mensaje = "✋ Seleccione una Clasificación";
 	            return result;
 	        }
 
@@ -59906,15 +60500,34 @@
 	        return result;
 	    }
 	};
-	//Parciales
-	/**
-	 *
-	 * PRESUPUESTO - ALTA
-	 *
-	 */
+
+
+	function validateForm(frmData) {
+	    if (frmData.Organizacion === '') {
+	        alert('Favor de ingresar Organización');
+	        return false;
+	    } else if (frmData.Funcion === '') {
+	        alert('Favor de ingresar Función');
+	        return false;
+	    } else if (frmData.Programa === '') {
+	        alert('Favor de ingresar Programa');
+	        return false;
+	    } else if (frmData.Geografico === '') {
+	        alert('Favor de ingresar Geográfico');
+	        return false;
+	    } else if (frmData.Tipologia === '') {
+	        alert('Favor de ingresar Tipología');
+	        return false;
+	    } else if (frmData.Fuente === '') {
+	        alert('Favor de ingresar Fuente');
+	        return false;
+	    } else {
+	        return true;
+	    }
+	}
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59923,7 +60536,7 @@
 	    value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(35);
+	var _defineProperty2 = __webpack_require__(48);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -59955,9 +60568,13 @@
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _UI = __webpack_require__(32);
+	var _UI = __webpack_require__(26);
 
 	var _UI2 = _interopRequireDefault(_UI);
+
+	var _dataUI = __webpack_require__(27);
+
+	var _dataUI2 = _interopRequireDefault(_dataUI);
 
 	var _store = __webpack_require__(6);
 
@@ -60039,14 +60656,7 @@
 	                                break;
 	                            }
 
-	                            options = Enumerable.from(agreements.Data).select(function (el) {
-	                                return {
-	                                    Icon: 'company-icon',
-	                                    Id: el.iAgreement,
-	                                    Name: el.vcDisplay,
-	                                    Class: 'opt-agreement'
-	                                };
-	                            }).toArray();
+	                            options = _dataUI2.default.getRows(agreements.Data, 'Id:iAgreement,Name:vcDisplay');
 	                            /* Cargamos la data de la pagina que se cargara en el template general */
 
 	                            _context.next = 10;
@@ -60321,8 +60931,8 @@
 	                    id: current.Budget
 	                }],
 	                changeCustomByRow: function changeCustomByRow(row, config) {
-	                    config.hidden = row.key == 'id' ? config.hidden = 'd-none' : '';
-	                    config.disabled = isAgency && row.key == 'concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
+	                    config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
+	                    config.disabled = isAgency && row.key == 'Concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
 	                }
 	            });
 	            $("#conceptsContainer").html(conceptsHtml);
@@ -60446,7 +61056,7 @@
 	                                idFrm: 'frm-Concepts',
 	                                fields: 'Catálogo:Catalog.Name,' + 'Clasificación:Subcatalog.CatalogName,' + 'Monto:empty,Descripción:empty',
 	                                dataFields: {
-	                                    'catálogo': {
+	                                    'Catálogo': {
 	                                        required: 'required',
 	                                        type: 'select',
 	                                        name: 'CatalogId',
@@ -60457,17 +61067,17 @@
 	                                            };
 	                                        }).toArray()
 	                                    },
-	                                    'clasificación': {
+	                                    'Clasificación': {
 	                                        name: 'SubcatalogId',
 	                                        required: 'required',
 	                                        type: 'select'
 	                                    },
-	                                    'monto': {
+	                                    'Monto': {
 	                                        name: 'Amount',
 	                                        type: 'number',
 	                                        required: 'required'
 	                                    },
-	                                    'descripción': {
+	                                    'Descripción': {
 	                                        name: 'Description',
 	                                        type: 'textarea',
 	                                        maxlength: 256,
@@ -60635,15 +61245,7 @@
 	                            //Cargamos la data de empleados en el partial de opciones
 	                            pageData.pages.first = true;
 	                            pageData.pages.second = false;
-	                            options = Enumerable.from(current.users.Data).select(function (el) {
-	                                return {
-	                                    Icon: 'employee-icon',
-	                                    Id: el.iEmployeeId,
-	                                    Name: el.vcNames,
-	                                    Description: el.vcCard,
-	                                    Class: 'opt-employee'
-	                                };
-	                            }).toArray();
+	                            options = _dataUI2.default.getRows(current.users.Data, 'Id:iEmployeeId,Name:vcNames,Description:vcCard');
 	                            _context11.next = 8;
 	                            return _optionList3.default.render(options, 'empleado', Data.AgreementName);
 
@@ -60791,7 +61393,7 @@
 	        var _this5 = this;
 
 	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
-	            var _this, budgetDetail, _estado, budgetDetailHtml, projects, states, employees, conceptshtml;
+	            var _this, budgetDetail, _Estado, budgetDetailHtml, projects, states, employees, conceptshtml;
 
 	            return _regenerator2.default.wrap(function _callee13$(_context13) {
 	                while (1) {
@@ -60896,8 +61498,8 @@
 	                                    id: current.Budget
 	                                }],
 	                                changeCustomByRow: function changeCustomByRow(row, config) {
-	                                    config.hidden = row.key == 'id' ? config.hidden = 'd-none' : '';
-	                                    config.disabled = isAgency && row.key == 'concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
+	                                    config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
+	                                    config.disabled = isAgency && row.key == 'Concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
 	                                }
 	                            });
 
@@ -60905,7 +61507,7 @@
 	                                fields: 'Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill',
 	                                sliderId: 'swiperConcepts',
 	                                changeCustomByRow: function changeCustomByRow(row, config) {
-	                                    config.hidden = row.key == 'id' ? config.hidden = 'd-none' : '';
+	                                    config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
 	                                }
 	                            });
 	                            conceptshtml = edit ? conceptsHtmlEdit : conceptsHtmlMain;
@@ -60915,49 +61517,49 @@
 	                                idFrm: 'frm-Budget',
 	                                fields: 'Empleado:Employee.FullName,' + 'Objetivo:Description,Proyecto:Project.Name,' + 'Fecha Inicial:StartDate,Fecha Final:EndDate,' + 'Estado:State.Name,Municipio:Municipality.Name,' + 'Catálogo:Catalog,Información adicional:Additional',
 	                                dataFields: {
-	                                    'información_adicional': {
+	                                    'Información_adicional': {
 	                                        name: 'Additional',
 	                                        type: 'textarea'
 	                                    },
-	                                    'objetivo': {
+	                                    'Objetivo': {
 	                                        name: 'Target'
 	                                    },
-	                                    'proyecto': {
+	                                    'Proyecto': {
 	                                        required: 'required',
 	                                        name: 'Project',
 	                                        type: 'select',
 	                                        data: projects,
 	                                        selected: true
 	                                    },
-	                                    'municipio': {
+	                                    'Municipio': {
 	                                        required: 'required',
 	                                        name: 'Municipality',
 	                                        type: 'select'
 	                                    },
-	                                    'fecha_inicial': {
+	                                    'Fecha_Inicial': {
 	                                        required: 'required',
 	                                        name: 'StartDate',
 	                                        type: 'date'
 	                                    },
-	                                    'fecha_final': {
+	                                    'Fecha_Final': {
 	                                        required: 'required',
 	                                        name: 'EndDate',
 	                                        type: 'date'
 	                                    },
-	                                    'empleado': {
+	                                    'Empleado': {
 	                                        required: 'required',
 	                                        disabled: 'disabled',
 	                                        type: 'select',
 	                                        selected: true,
 	                                        data: employees
 	                                    },
-	                                    'estado': (_estado = {
+	                                    'Estado': (_Estado = {
 	                                        required: true,
 	                                        type: 'select',
 	                                        name: 'State',
 	                                        selected: true
-	                                    }, (0, _defineProperty3.default)(_estado, 'required', 'required'), (0, _defineProperty3.default)(_estado, 'data', states), _estado),
-	                                    'catálogo': {
+	                                    }, (0, _defineProperty3.default)(_Estado, 'required', 'required'), (0, _defineProperty3.default)(_Estado, 'data', states), _Estado),
+	                                    'Catálogo': {
 	                                        required: 'required',
 	                                        name: 'Catalog',
 	                                        type: 'select',
@@ -61132,7 +61734,7 @@
 	}
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61315,7 +61917,7 @@
 	};
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -61338,7 +61940,7 @@
 
 	var _saldoTpl2 = _interopRequireDefault(_saldoTpl);
 
-	__webpack_require__(89);
+	__webpack_require__(90);
 
 	var _jquery = __webpack_require__(2);
 
@@ -61368,6 +61970,7 @@
 	 *
 	 */
 	function updateReloj(config) {
+	    config.time = !isNaN(config.time) ? config.time : 3;
 	    if (config.time != 0) {
 	        config.$span.html(config.time + 's');
 	        config.time -= 0.01;
@@ -61394,48 +61997,33 @@
 	                while (1) {
 	                    switch (_context.prev = _context.next) {
 	                        case 0:
-	                            Tarjetas = [];
-	                            _context.prev = 1;
-	                            _context.next = 4;
+	                            _context.next = 2;
 	                            return _store2.default.Cards();
 
-	                        case 4:
+	                        case 2:
 	                            Tarjetas = _context.sent;
-
 
 	                            Tarjetas = _linq2.default.from(Tarjetas).select(function (el) {
 	                                if (el.Transactions.length === 1 && el.Transactions[0].Amount === 0 && el.Transactions[0].Concept === "") {
 	                                    el.Transactions = null;
 	                                }
-
 	                                return el;
 	                            }).toArray();
-
-	                            _context.next = 11;
-	                            break;
-
-	                        case 8:
-	                            _context.prev = 8;
-	                            _context.t0 = _context["catch"](1);
-
-	                            console.log(_context.t0);
-
-	                        case 11:
+	                            console.log(Tarjetas);
 	                            renderTpl = _tool2.default.renderTpl(_saldoTpl2.default, {
 	                                Tarjetas: Tarjetas
 	                            });
 
 
 	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
-
 	                            _this.handleEvents();
 
-	                        case 14:
+	                        case 8:
 	                        case "end":
 	                            return _context.stop();
 	                    }
 	                }
-	            }, _callee, _this, [[1, 8]]);
+	            }, _callee, _this);
 	        }))();
 	    },
 	    handleEvents: function handleEvents() {
@@ -61480,7 +62068,6 @@
 
 	            _store2.default.SetAppCardONOFF(data).then(function (r) {
 	                if (r.Success) {
-
 	                    if (r.Data.Value !== '') {
 	                        //valida para 0s
 	                        var result = parseInt(r.Data.Value);
@@ -61491,7 +62078,7 @@
 	                            time: result
 	                        });
 	                    } else {
-	                        alert('Ha ocurrido un error favor de intentar más tarde');
+	                        alert('Ha ocurrido un error favor de intentar mas tarde');
 	                    }
 	                }
 	            });
@@ -61500,7 +62087,7 @@
 	};
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61517,7 +62104,7 @@
 
 	var _linq2 = _interopRequireDefault(_linq);
 
-	var _constant = __webpack_require__(34);
+	var _constant = __webpack_require__(35);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -61615,7 +62202,7 @@
 	};
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
@@ -61632,11 +62219,11 @@
 
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-	var _classCallCheck2 = __webpack_require__(68);
+	var _classCallCheck2 = __webpack_require__(69);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-	var _createClass2 = __webpack_require__(69);
+	var _createClass2 = __webpack_require__(70);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -61648,7 +62235,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _aes = __webpack_require__(250);
+	var _aes = __webpack_require__(251);
 
 	var _aes2 = _interopRequireDefault(_aes);
 
@@ -61912,7 +62499,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(266).Buffer))
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
@@ -61940,11 +62527,11 @@
 	    value: true
 	});
 
-	var _classCallCheck2 = __webpack_require__(68);
+	var _classCallCheck2 = __webpack_require__(69);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-	var _createClass2 = __webpack_require__(69);
+	var _createClass2 = __webpack_require__(70);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -62168,16 +62755,16 @@
 	exports.default = Aes;
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
 
-	var _assign = __webpack_require__(253);
+	var _assign = __webpack_require__(68);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
-	var _defineProperty = __webpack_require__(47);
+	var _defineProperty = __webpack_require__(46);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -62185,7 +62772,7 @@
 
 	var _defineProperties2 = _interopRequireDefault(_defineProperties);
 
-	var _stringify = __webpack_require__(46);
+	var _stringify = __webpack_require__(45);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -66252,7 +66839,7 @@
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof module === "undefined" ? "undefined" : (0, _typeof3.default)(module)) && module.exports ? module.exports = b(a) : (a.lottie = b(a), a.bodymovin = a.lottie));
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
@@ -66311,12 +66898,6 @@
 	        M = !1;return h(), { tssOpen: r, tssClose: l };
 	  };return t;
 	});
-
-/***/ }),
-/* 253 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(268), __esModule: true };
 
 /***/ }),
 /* 254 */
@@ -72911,9 +73492,9 @@
 /* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(86);
 	__webpack_require__(87);
 	__webpack_require__(88);
+	__webpack_require__(89);
 	__webpack_require__(311);
 	__webpack_require__(314);
 	__webpack_require__(315);
@@ -72925,7 +73506,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(312);
-	__webpack_require__(86);
+	__webpack_require__(87);
 	__webpack_require__(316);
 	__webpack_require__(317);
 	module.exports = __webpack_require__(7).Symbol;
@@ -72935,8 +73516,8 @@
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(87);
 	__webpack_require__(88);
+	__webpack_require__(89);
 	module.exports = __webpack_require__(62).f('iterator');
 
 
@@ -72965,7 +73546,7 @@
 	// false -> Array#indexOf
 	// true  -> Array#includes
 	var toIObject = __webpack_require__(17);
-	var toLength = __webpack_require__(85);
+	var toLength = __webpack_require__(86);
 	var toAbsoluteIndex = __webpack_require__(300);
 	module.exports = function (IS_INCLUDES) {
 	  return function ($this, el, fromIndex) {
@@ -72992,9 +73573,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
-	var getKeys = __webpack_require__(30);
+	var getKeys = __webpack_require__(32);
 	var gOPS = __webpack_require__(55);
-	var pIE = __webpack_require__(31);
+	var pIE = __webpack_require__(33);
 	module.exports = function (it) {
 	  var result = getKeys(it);
 	  var getSymbols = gOPS.f;
@@ -73012,11 +73593,11 @@
 /* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var ctx = __webpack_require__(27);
+	var ctx = __webpack_require__(29);
 	var call = __webpack_require__(287);
 	var isArrayIter = __webpack_require__(285);
 	var anObject = __webpack_require__(13);
-	var toLength = __webpack_require__(85);
+	var toLength = __webpack_require__(86);
 	var getIterFn = __webpack_require__(302);
 	var BREAK = {};
 	var RETURN = {};
@@ -73066,7 +73647,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators = __webpack_require__(28);
+	var Iterators = __webpack_require__(30);
 	var ITERATOR = __webpack_require__(11)('iterator');
 	var ArrayProto = Array.prototype;
 
@@ -73080,7 +73661,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
-	var cof = __webpack_require__(26);
+	var cof = __webpack_require__(28);
 	module.exports = Array.isArray || function isArray(arg) {
 	  return cof(arg) == 'Array';
 	};
@@ -73224,11 +73805,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(9);
-	var macrotask = __webpack_require__(84).set;
+	var macrotask = __webpack_require__(85).set;
 	var Observer = global.MutationObserver || global.WebKitMutationObserver;
 	var process = global.process;
 	var Promise = global.Promise;
-	var isNode = __webpack_require__(26)(process) == 'process';
+	var isNode = __webpack_require__(28)(process) == 'process';
 
 	module.exports = function () {
 	  var head, last, notify;
@@ -73300,11 +73881,11 @@
 
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys = __webpack_require__(30);
+	var getKeys = __webpack_require__(32);
 	var gOPS = __webpack_require__(55);
-	var pIE = __webpack_require__(31);
+	var pIE = __webpack_require__(33);
 	var toObject = __webpack_require__(59);
-	var IObject = __webpack_require__(73);
+	var IObject = __webpack_require__(74);
 	var $assign = Object.assign;
 
 	// should work with symbols and should have deterministic property order (V8 bug)
@@ -73340,7 +73921,7 @@
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(17);
-	var gOPN = __webpack_require__(76).f;
+	var gOPN = __webpack_require__(77).f;
 	var toString = {}.toString;
 
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -73363,9 +73944,9 @@
 /* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getKeys = __webpack_require__(30);
+	var getKeys = __webpack_require__(32);
 	var toIObject = __webpack_require__(17);
-	var isEnum = __webpack_require__(31).f;
+	var isEnum = __webpack_require__(33).f;
 	module.exports = function (isEntries) {
 	  return function (it) {
 	    var O = toIObject(it);
@@ -73410,7 +73991,7 @@
 	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
 	    function (test, buggy, set) {
 	      try {
-	        set = __webpack_require__(27)(Function.call, __webpack_require__(54).f(Object.prototype, '__proto__').set, 2);
+	        set = __webpack_require__(29)(Function.call, __webpack_require__(54).f(Object.prototype, '__proto__').set, 2);
 	        set(test, []);
 	        buggy = !(test instanceof Array);
 	      } catch (e) { buggy = true; }
@@ -73495,9 +74076,9 @@
 /* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(70);
+	var classof = __webpack_require__(71);
 	var ITERATOR = __webpack_require__(11)('iterator');
-	var Iterators = __webpack_require__(28);
+	var Iterators = __webpack_require__(30);
 	module.exports = __webpack_require__(7).getIteratorMethod = function (it) {
 	  if (it != undefined) return it[ITERATOR]
 	    || it['@@iterator']
@@ -73512,14 +74093,14 @@
 	'use strict';
 	var addToUnscopables = __webpack_require__(279);
 	var step = __webpack_require__(290);
-	var Iterators = __webpack_require__(28);
+	var Iterators = __webpack_require__(30);
 	var toIObject = __webpack_require__(17);
 
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(74)(Array, 'Array', function (iterated, kind) {
+	module.exports = __webpack_require__(75)(Array, 'Array', function (iterated, kind) {
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -73570,7 +74151,7 @@
 
 	var $export = __webpack_require__(12);
 	// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-	$export($export.S + $export.F * !__webpack_require__(14), 'Object', { defineProperties: __webpack_require__(75) });
+	$export($export.S + $export.F * !__webpack_require__(14), 'Object', { defineProperties: __webpack_require__(76) });
 
 
 /***/ }),
@@ -73590,7 +74171,7 @@
 	var toIObject = __webpack_require__(17);
 	var $getOwnPropertyDescriptor = __webpack_require__(54).f;
 
-	__webpack_require__(79)('getOwnPropertyDescriptor', function () {
+	__webpack_require__(80)('getOwnPropertyDescriptor', function () {
 	  return function getOwnPropertyDescriptor(it, key) {
 	    return $getOwnPropertyDescriptor(toIObject(it), key);
 	  };
@@ -73603,9 +74184,9 @@
 
 	// 19.1.2.9 Object.getPrototypeOf(O)
 	var toObject = __webpack_require__(59);
-	var $getPrototypeOf = __webpack_require__(77);
+	var $getPrototypeOf = __webpack_require__(78);
 
-	__webpack_require__(79)('getPrototypeOf', function () {
+	__webpack_require__(80)('getPrototypeOf', function () {
 	  return function getPrototypeOf(it) {
 	    return $getPrototypeOf(toObject(it));
 	  };
@@ -73626,22 +74207,22 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY = __webpack_require__(29);
+	var LIBRARY = __webpack_require__(31);
 	var global = __webpack_require__(9);
-	var ctx = __webpack_require__(27);
-	var classof = __webpack_require__(70);
+	var ctx = __webpack_require__(29);
+	var classof = __webpack_require__(71);
 	var $export = __webpack_require__(12);
 	var isObject = __webpack_require__(15);
 	var aFunction = __webpack_require__(36);
 	var anInstance = __webpack_require__(280);
 	var forOf = __webpack_require__(283);
-	var speciesConstructor = __webpack_require__(83);
-	var task = __webpack_require__(84).set;
+	var speciesConstructor = __webpack_require__(84);
+	var task = __webpack_require__(85).set;
 	var microtask = __webpack_require__(292)();
 	var newPromiseCapabilityModule = __webpack_require__(52);
-	var perform = __webpack_require__(80);
+	var perform = __webpack_require__(81);
 	var userAgent = __webpack_require__(301);
-	var promiseResolve = __webpack_require__(81);
+	var promiseResolve = __webpack_require__(82);
 	var PROMISE = 'Promise';
 	var TypeError = global.TypeError;
 	var process = global.process;
@@ -73923,7 +74504,7 @@
 	var has = __webpack_require__(19);
 	var DESCRIPTORS = __webpack_require__(14);
 	var $export = __webpack_require__(12);
-	var redefine = __webpack_require__(82);
+	var redefine = __webpack_require__(83);
 	var META = __webpack_require__(291).KEY;
 	var $fails = __webpack_require__(23);
 	var shared = __webpack_require__(57);
@@ -73943,7 +74524,7 @@
 	var gOPNExt = __webpack_require__(294);
 	var $GOPD = __webpack_require__(54);
 	var $DP = __webpack_require__(16);
-	var $keys = __webpack_require__(30);
+	var $keys = __webpack_require__(32);
 	var gOPD = $GOPD.f;
 	var dP = $DP.f;
 	var gOPN = gOPNExt.f;
@@ -74066,11 +74647,11 @@
 
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f = $defineProperty;
-	  __webpack_require__(76).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(31).f = $propertyIsEnumerable;
+	  __webpack_require__(77).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(33).f = $propertyIsEnumerable;
 	  __webpack_require__(55).f = $getOwnPropertySymbols;
 
-	  if (DESCRIPTORS && !__webpack_require__(29)) {
+	  if (DESCRIPTORS && !__webpack_require__(31)) {
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
 	  }
 
@@ -74177,8 +74758,8 @@
 	var $export = __webpack_require__(12);
 	var core = __webpack_require__(7);
 	var global = __webpack_require__(9);
-	var speciesConstructor = __webpack_require__(83);
-	var promiseResolve = __webpack_require__(81);
+	var speciesConstructor = __webpack_require__(84);
+	var promiseResolve = __webpack_require__(82);
 
 	$export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 	  var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -74202,7 +74783,7 @@
 	// https://github.com/tc39/proposal-promise-try
 	var $export = __webpack_require__(12);
 	var newPromiseCapability = __webpack_require__(52);
-	var perform = __webpack_require__(80);
+	var perform = __webpack_require__(81);
 
 	$export($export.S, 'Promise', { 'try': function (callbackfn) {
 	  var promiseCapability = newPromiseCapability.f(this);
@@ -74230,7 +74811,7 @@
 /* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var accounting = __webpack_require__(229)
+	var accounting = __webpack_require__(230)
 	var assign = __webpack_require__(403)
 	var localeCurrency = __webpack_require__(400)
 	var currencies = __webpack_require__(396)
@@ -75396,7 +75977,7 @@
 /* 347 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"cardTravex-hgroup noShadow\">\r\n    <div class=\"cardTravex-partial\">\r\n        {{#if Title}}\r\n        <div class=\"cardTravex-title\">{{Title}}</div>\r\n        {{/if}}\r\n        <h4 class=\"options-container-title\">{{Message}}</h4>\r\n        <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 {{Placeholder}}\" spellcheck=\"false\" autocomplete=\"off\">\r\n        <div id=\"jetsContent\" class=\"options-container\">\r\n            {{#each Options}}\r\n            <div class=\"option p-2 {{Class}}\" data-id=\"{{Id}}\" data-name=\"{{Name}}\">\r\n                <div class=\"option-avatar {{Icon}} col-3 m-auto\">\r\n                </div>\r\n                <div class=\"option-data col-9 m-auto\">\r\n                    <div class=\"option-data-name text-muted\" \">{{Name}}</div>\r\n                    <div class=\"option-data-descripton text-muted \">{{Description}}</div>\r\n                </div>\r\n            </div>\r\n            {{else}}\r\n            <div class=\"card text-center \">\r\n                <div class=\"card-body \">\r\n                    <div class=\"card-title \">{{MessageAlert}}</div>\r\n                </div>\r\n            </div>\r\n            {{/each}}\r\n        </div>\r\n    </div>";
+	module.exports = "<div class=\"cardTravex-hgroup noShadow\">\r\n    <div class=\"cardTravex-partial\">\r\n        {{#if Title}}\r\n        <div class=\"cardTravex-title\">{{Title}}</div>\r\n        {{/if}}\r\n        <h4 class=\"options-container-title\">{{Message}}</h4>\r\n        <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 {{Placeholder}}\" spellcheck=\"false\" autocomplete=\"off\">\r\n        <div id=\"jetsContent\" class=\"options-container\">\r\n            {{#each Options}}\r\n            <div class=\"option p-2 {{../Class}}\" data-id=\"{{Id}}\" data-name=\"{{Name}}\">\r\n                <div class=\"option-avatar {{../Icon}} col-3 m-auto\">\r\n                </div>\r\n                <div class=\"option-data col-9 m-auto\">\r\n                    <div class=\"option-data-name text-muted\">{{Name}}</div>\r\n                    <div class=\"option-data-descripton text-muted\">{{Description}}</div>\r\n                </div>\r\n            </div>\r\n            {{else}}\r\n            <div class=\"card text-center\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"card-title\">{{MessageAlert}}</div>\r\n                </div>\r\n            </div>\r\n            {{/each}}\r\n        </div>\r\n    </div>";
 
 /***/ }),
 /* 348 */
@@ -75420,7 +76001,7 @@
 /* 351 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text text-nowrap w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal\r\n            desc true}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3  m-auto\"></div>{{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}:</b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} {{#equal desc false}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\">{{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
+	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3  m-auto\"></div>{{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}:</b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} {{#equal desc false}} {{#if iconClass}}\r\n            <div class=\"Travex-icon {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\">{{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
 
 /***/ }),
 /* 352 */
@@ -75486,13 +76067,13 @@
 /* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==========================================\r\n=            COMPROBAR - DETALLLE            =\r\n===========================================-->\r\n<section class=\"facturas\">\r\n    <div class=\"facturas-transaccion\">\r\n        <h4>Transacción #{{Transaccion.Id}}</h4>\r\n        <small class=\"text-muted\">{{Transaccion.Vendor}}</small>\r\n    </div>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar factura...\" class=\"{{showJets}}\">\r\n    <div id=\"facturasContainer\" class=\"facturas-container\">\r\n        {{#each Facturas}}\r\n        <div class=\"factura {{Color.Name}}\" data-id=\"{{Id}}\" data-toggle=\"collapse\" href=\"#factura-{{Id}}\" role=\"button\" aria-expanded=\"false\" aria-controls=\"factura-{{Id}}\" data-disabled=\"{{../isDisableCollapsButtons}}\">\r\n            <div class=\"factura-tipo\">{{Type}}</div>\r\n            <div class=\"factura-emisor\">{{Name_Emisor}}</div>\r\n            {{#if ../IsVirtual}}\r\n            <div class=\"text-muted\">{{SAT_Name}}</div>\r\n            {{else}}\r\n            <div class=\"factura-fecha\">{{Date}}</div>\r\n            {{/if}}\r\n            <div class=\"factura-monto\">{{currency AmountConsumed}}</div>\r\n        </div>\r\n        <div id=\"factura-{{Id}}\" class=\"collapse collapsed\"></div>\r\n        {{/each}}\r\n    </div>\r\n    <div class=\"p-4 text-center\">\r\n        {{#if showOptions}}\r\n        <h3>BALANCE <span class=\"text-blue\">{{currency Transaccion.Balance}}</span></h3>\r\n        <div class=\"options\">\r\n            <button class=\"btnXML\">\r\n                    <img src=\"" + __webpack_require__(228) + "\" width=\"24px\">\r\n                    <span>XML</span>\r\n                </button>\r\n            <button class=\"btnTicketManual\" data-amount=\"{{Transaccion.Balance}}\">\r\n                    <img src=\"" + __webpack_require__(429) + "\" width=\"24px\">\r\n                    <span>Ticket Manual</span>\r\n                </button>\r\n        </div>\r\n        {{/if}}\r\n        <button class=\"btnGoToTransactions btn btn-block btn-secondary mt-4\">Volver</button>\r\n    </div>\r\n</section>";
+	module.exports = "<!--==========================================\r\n=            COMPROBAR - DETALLLE            =\r\n===========================================-->\r\n<section class=\"facturas\">\r\n    <div class=\"facturas-transaccion\">\r\n        <h4>Transacción #{{Transaccion.Id}}</h4>\r\n        <small class=\"text-muted\">{{Transaccion.Vendor}}</small>\r\n    </div>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar factura...\" class=\"{{showJets}}\">\r\n    <div id=\"facturasContainer\" class=\"facturas-container\">\r\n        {{#each Facturas}}\r\n        <div class=\"factura {{Color.Name}}\" data-id=\"{{Id}}\" data-toggle=\"collapse\" href=\"#factura-{{Id}}\" role=\"button\" aria-expanded=\"false\" aria-controls=\"factura-{{Id}}\" data-disabled=\"{{../isDisableCollapsButtons}}\">\r\n            <div class=\"factura-tipo\">{{Type}}</div>\r\n            <div class=\"factura-emisor\">{{Name_Emisor}}</div>\r\n            {{#if ../IsVirtual}}\r\n            <div class=\"text-muted\">{{SAT_Name}}</div>\r\n            {{else}}\r\n            <div class=\"factura-fecha\">{{Date}}</div>\r\n            {{/if}}\r\n            <div class=\"factura-monto\">{{currency AmountConsumed}}</div>\r\n        </div>\r\n        <div id=\"factura-{{Id}}\" class=\"collapse collapsed\"></div>\r\n        {{/each}}\r\n    </div>\r\n    <div class=\"p-4 text-center\">\r\n        {{#if showOptions}}\r\n        <h3>BALANCE <span class=\"text-blue\">{{currency Transaccion.Balance}}</span></h3>\r\n        <div class=\"options\">\r\n            <button class=\"btnXML\">\r\n                    <img src=\"" + __webpack_require__(229) + "\" width=\"24px\">\r\n                    <span>XML</span>\r\n                </button>\r\n            <button class=\"btnTicketManual\" data-amount=\"{{Transaccion.Balance}}\">\r\n                    <img src=\"" + __webpack_require__(429) + "\" width=\"24px\">\r\n                    <span>Ticket Manual</span>\r\n                </button>\r\n        </div>\r\n        {{/if}}\r\n        <button class=\"btnGoToTransactions btn btn-block btn-secondary mt-4\">Volver</button>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===============================================\r\n=            COMPROBAT - TRANSACCIONES            =\r\n================================================-->\r\n<button class=\"floatButtonLeft\" data-toggle=\"modal\" data-target=\"#modalFiltros\">\r\n    <img src=\"" + __webpack_require__(224) + "\" alt=\"filtros\">\r\n</button>\r\n<button id=\"btnUpdate\" class=\"floatButtonRight\">\r\n    <img src=\"" + __webpack_require__(227) + "\" alt=\"update\">\r\n</button>\r\n<section class=\"transacciones\">\r\n    <button id=\"btnTransaccionManual\" class=\"btnTransaccionManual\">\r\n        <img src=\"" + __webpack_require__(219) + "\">\r\n        <span>Transaccion Manual</span>\r\n    </button>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar transaccion...\" data-transaction=\"{{TransactionId}}\">\r\n    <div class=\"transacciones-filtros\">\r\n        <div class=\"transacciones-filtros-item active\" data-filter=\"\"></div>\r\n        <div class=\"transacciones-filtros-item verde\" data-filter=\"verde\"></div>\r\n        <div class=\"transacciones-filtros-item azul\" data-filter=\"azul\"></div>\r\n        <div class=\"transacciones-filtros-item rojo\" data-filter=\"rojo\"></div>\r\n        <div class=\"transacciones-filtros-item manual\" data-filter=\"transaccion manual\">\r\n            <img src=\"" + __webpack_require__(219) + "\">\r\n        </div>\r\n    </div>\r\n    <div class=\"transacciones-filtrosDetalle\">\r\n        <span class=\"na active\">Total de transacciones</span>\r\n        <span class=\"verde\">La comprobación contiene todos los elementos para que sea validada, significa todo clasificado y balance 0.</span>\r\n        <span class=\"azul\">Existe algo pendiente por clasificar ó el balance no se encuentra en 0.</span>\r\n        <span class=\"rojo\">Este color representa una clasificación pendiente y un balance diferente a 0.</span>\r\n        <span class=\"manual\">Transacción Manual</span>\r\n    </div>\r\n    <div id=\"transaccionesContainer\" class=\"transacciones-container\">\r\n        {{#each Transacciones}}\r\n            <div id=\"trnx-{{Id}}\" class=\"transaccion {{Color.Name}} {{Tipo}}\" data-id=\"{{Id}}\" data-relation=\"{{RelationId}}\">\r\n                <div class=\"transaccion-color hide\">{{Color.Name}} {{Tipo}}</div>\r\n                <div class=\"transaccion-eliminar\" data-id=\"{{Id}}\">⛔</div>\r\n                <div class=\"transaccion-id\">{{Id}}</div>\r\n                <div class=\"transaccion-comercio\">{{Vendor}}</div>\r\n                <div class=\"transaccion-fecha\">{{Date}}</div>\r\n                <div class=\"row transaccion-detalle\">\r\n                    <div class=\"col-6\">\r\n                        <div class=\"text-success\"><b>{{currency Amount}}</b></div>\r\n                        <div>TOTAL</div>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                        <div>POR COMPROBAR</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        {{/each}}\r\n    </div>\r\n    <div id=\"mensajeFiltros\" class=\"transacciones-count\"></div>\r\n</section>";
+	module.exports = "<!--===============================================\r\n=            COMPROBAT - TRANSACCIONES            =\r\n================================================-->\r\n<button class=\"floatButtonLeft\" data-toggle=\"modal\" data-target=\"#modalFiltros\">\r\n    <img src=\"" + __webpack_require__(225) + "\" alt=\"filtros\">\r\n</button>\r\n<button id=\"btnUpdate\" class=\"floatButtonRight\">\r\n    <img src=\"" + __webpack_require__(228) + "\" alt=\"update\">\r\n</button>\r\n<section class=\"transacciones\">\r\n    <button id=\"btnTransaccionManual\" class=\"btnTransaccionManual\">\r\n        <img src=\"" + __webpack_require__(220) + "\">\r\n        <span>Transaccion Manual</span>\r\n    </button>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar transaccion...\" data-transaction=\"{{TransactionId}}\">\r\n    <div class=\"transacciones-filtros\">\r\n        <div class=\"transacciones-filtros-item active\" data-filter=\"\"></div>\r\n        <div class=\"transacciones-filtros-item verde\" data-filter=\"verde\"></div>\r\n        <div class=\"transacciones-filtros-item azul\" data-filter=\"azul\"></div>\r\n        <div class=\"transacciones-filtros-item rojo\" data-filter=\"rojo\"></div>\r\n        <div class=\"transacciones-filtros-item manual\" data-filter=\"transaccion manual\">\r\n            <img src=\"" + __webpack_require__(220) + "\">\r\n        </div>\r\n    </div>\r\n    <div class=\"transacciones-filtrosDetalle\">\r\n        <span class=\"na active\">Total de transacciones</span>\r\n        <span class=\"verde\">La comprobación contiene todos los elementos para que sea validada, significa todo clasificado y balance 0.</span>\r\n        <span class=\"azul\">Existe algo pendiente por clasificar ó el balance no se encuentra en 0.</span>\r\n        <span class=\"rojo\">Este color representa una clasificación pendiente y un balance diferente a 0.</span>\r\n        <span class=\"manual\">Transacción Manual</span>\r\n    </div>\r\n    <div id=\"transaccionesContainer\" class=\"transacciones-container\">\r\n        {{#each Transacciones}}\r\n            <div id=\"trnx-{{Id}}\" class=\"transaccion {{Color.Name}} {{Tipo}}\" data-id=\"{{Id}}\" data-relation=\"{{RelationId}}\">\r\n                <div class=\"transaccion-color hide\">{{Color.Name}} {{Tipo}}</div>\r\n                <div class=\"transaccion-eliminar\" data-id=\"{{Id}}\">⛔</div>\r\n                <div class=\"transaccion-id\">{{Id}}</div>\r\n                <div class=\"transaccion-comercio\">{{Vendor}}</div>\r\n                <div class=\"transaccion-fecha\">{{Date}}</div>\r\n                <div class=\"row transaccion-detalle\">\r\n                    <div class=\"col-6\">\r\n                        <div class=\"text-success\"><b>{{currency Amount}}</b></div>\r\n                        <div>TOTAL</div>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                        <div>POR COMPROBAR</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        {{/each}}\r\n    </div>\r\n    <div id=\"mensajeFiltros\" class=\"transacciones-count\"></div>\r\n</section>";
 
 /***/ }),
 /* 364 */
@@ -75522,7 +76103,7 @@
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"cardTravex-partial\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <div class=\"cardTravex-title\">Selecciona una factura</div>\r\n    </div>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar factura...\">\r\n    <div id=\"facturasContainer\" class=\"facturas-container\">\r\n        {{#each Facturas}}\r\n            <div class=\"xml\" data-id=\"{{Id}}\">\r\n                <div class=\"row align-items-center\">\r\n                    <div class=\"col-4\">\r\n                        <img src=\"" + __webpack_require__(228) + "\" width=\"100%\">\r\n                    </div>\r\n                    <div class=\"col-8\">\r\n                        <div class=\"xml-datos\">\r\n                            <div class=\"xml-datos-amountConsumed\">{{currency Total}}</div>\r\n                            <div class=\"xml-datos-emisor\">{{Name_Emisor}}</div>\r\n                            <div class=\"xml-datos-rfc\">{{RFC_Emisor}}</div>\r\n                            <div class=\"xml-datos-date\">{{Date}}</div>\r\n                            <div class=\"xml-datos-montos row\">\r\n                                <div class=\"col-6\">\r\n                                    <div class=\"text-success\"><b>{{currency Total}}</b></div>\r\n                                    <div>TOTAL</div>\r\n                                </div>\r\n                                <div class=\"col-6\">\r\n                                    <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                                    <div>POR COMPROBAR</div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            {{else}}\r\n                <div class=\"card text-center\">\r\n                    <div class=\"card-body\">\r\n                        <div class=\"card-title\">No se encontraron resultados</div>\r\n                    </div>\r\n                </div>\r\n        {{/each}}\r\n    </div>\r\n    <div class=\"mt-4 p-4\">\r\n        <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"cardTravex-partial\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <div class=\"cardTravex-title\">Selecciona una factura</div>\r\n    </div>\r\n    <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar factura...\">\r\n    <div id=\"facturasContainer\" class=\"facturas-container\">\r\n        {{#each Facturas}}\r\n            <div class=\"xml\" data-id=\"{{Id}}\">\r\n                <div class=\"row align-items-center\">\r\n                    <div class=\"col-4\">\r\n                        <img src=\"" + __webpack_require__(229) + "\" width=\"100%\">\r\n                    </div>\r\n                    <div class=\"col-8\">\r\n                        <div class=\"xml-datos\">\r\n                            <div class=\"xml-datos-amountConsumed\">{{currency Total}}</div>\r\n                            <div class=\"xml-datos-emisor\">{{Name_Emisor}}</div>\r\n                            <div class=\"xml-datos-rfc\">{{RFC_Emisor}}</div>\r\n                            <div class=\"xml-datos-date\">{{Date}}</div>\r\n                            <div class=\"xml-datos-montos row\">\r\n                                <div class=\"col-6\">\r\n                                    <div class=\"text-success\"><b>{{currency Total}}</b></div>\r\n                                    <div>TOTAL</div>\r\n                                </div>\r\n                                <div class=\"col-6\">\r\n                                    <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                                    <div>POR COMPROBAR</div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            {{else}}\r\n                <div class=\"card text-center\">\r\n                    <div class=\"card-body\">\r\n                        <div class=\"card-title\">No se encontraron resultados</div>\r\n                    </div>\r\n                </div>\r\n        {{/each}}\r\n    </div>\r\n    <div class=\"mt-4 p-4\">\r\n        <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 369 */
@@ -75570,7 +76151,7 @@
 /* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"main\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"main-bar\">\r\n            <span>{{User.userName}}</span>\r\n        </div>\r\n        <div class=\"mainMenu\">\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('saldo')\">\r\n                <img src=\"" + __webpack_require__(226) + "\" alt=\"SALDO\">\r\n                <span>Saldo y<br>Movimientos</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('comprobar')\">\r\n                <img src=\"" + __webpack_require__(220) + "\" alt=\"COMPROBAR\">\r\n                <span>Comprobar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('solicitarAutorizacion')\">\r\n                <img src=\"" + __webpack_require__(221) + "\" alt=\"AUTORiZAR COMPROBACIÓN\">\r\n                <span>Solicitar Autorización</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('autorizarComprobacion')\">\r\n                <img src=\"" + __webpack_require__(222) + "\" alt=\"AUTORiZAR COMPROBACIÓN\">\r\n                <span>Autorizar Comprobación</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('porFacturar')\">\r\n                <img src=\"" + __webpack_require__(428) + "\" alt=\"POR FACTURAR\">\r\n                <span>Por Facturar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('presupuestoAlta')\">\r\n                <img src=\"" + __webpack_require__(225) + "\" alt=\"ALTA\">\r\n                <span>Alta<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('express')\">\r\n                <img src=\"" + __webpack_require__(223) + "\" alt=\"EXPRESS\">\r\n                <span>Presupuesto<br>Express</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('estatus')\">\r\n                <img src=\"" + __webpack_require__(425) + "\" alt=\"TRANSACCION\">\r\n                <span>Estado<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('configuracion')\">\r\n                <img src=\"" + __webpack_require__(424) + "\" alt=\"CONFIGURACION\">\r\n                <span>Configuración</span>\r\n            </button> {{#if touchid}}\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('huellaDigital')\">\r\n                    <img src=\"" + __webpack_require__(416) + "\" alt=\"CONFIGURACION\">\r\n                    <span>Huella Digital</span>\r\n                </button> {{/if}}\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"main\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"main-bar\">\r\n            <span>{{User.userName}}</span>\r\n        </div>\r\n        <div class=\"mainMenu\">\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('saldo')\">\r\n                <img src=\"" + __webpack_require__(227) + "\" alt=\"SALDO\">\r\n                <span>Saldo y<br>Movimientos</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('comprobar')\">\r\n                <img src=\"" + __webpack_require__(221) + "\" alt=\"COMPROBAR\">\r\n                <span>Comprobar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('solicitarAutorizacion')\">\r\n                <img src=\"" + __webpack_require__(222) + "\" alt=\"AUTORiZAR COMPROBACIÓN\">\r\n                <span>Solicitar Autorización</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('autorizarComprobacion')\">\r\n                <img src=\"" + __webpack_require__(223) + "\" alt=\"AUTORiZAR COMPROBACIÓN\">\r\n                <span>Autorizar Comprobación</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('porFacturar')\">\r\n                <img src=\"" + __webpack_require__(428) + "\" alt=\"POR FACTURAR\">\r\n                <span>Por Facturar</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('presupuestoAlta')\">\r\n                <img src=\"" + __webpack_require__(226) + "\" alt=\"ALTA\">\r\n                <span>Alta<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('express')\">\r\n                <img src=\"" + __webpack_require__(224) + "\" alt=\"EXPRESS\">\r\n                <span>Presupuesto<br>Express</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('estatus')\">\r\n                <img src=\"" + __webpack_require__(425) + "\" alt=\"TRANSACCION\">\r\n                <span>Estado<br>Presupuesto</span>\r\n            </button>\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('configuracion')\">\r\n                <img src=\"" + __webpack_require__(424) + "\" alt=\"CONFIGURACION\">\r\n                <span>Configuración</span>\r\n            </button> {{#if touchid}}\r\n            <button class=\"mainMenu-item\" onclick=\"app.View('huellaDigital')\">\r\n                    <img src=\"" + __webpack_require__(416) + "\" alt=\"CONFIGURACION\">\r\n                    <span>Huella Digital</span>\r\n                </button> {{/if}}\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 377 */
@@ -75594,7 +76175,7 @@
 /* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==================================================\r\n=            POR FACTURAR - TRANSACCIONES            =\r\n===================================================-->\r\n<button class=\"floatButtonLeft\" data-toggle=\"modal\" data-target=\"#modalFiltros\">\r\n    <img src=\"" + __webpack_require__(224) + "\" alt=\"filtros\">\r\n</button>\r\n    <button id=\"btnUpdate\" class=\"floatButtonRight\">\r\n        <img src=\"" + __webpack_require__(227) + "\" alt=\"update\">\r\n</button>\r\n        <section class=\"transacciones\">\r\n            <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar transaccion...\">\r\n            <div id=\"transaccionesContainer\" class=\"transacciones-container\">\r\n                {{#each Transacciones}}\r\n                    <div class=\"transaccion {{Color.Name}}\" data-id=\"{{Id}}\" data-relation=\"{{RelationId}}\">\r\n                        {{#if IsVirtual}}\r\n                            <div class=\"transaccion-porFacturar\" data-relation=\"{{RelationId}}\">\r\n                                <img src=\"" + __webpack_require__(426) + "\">\r\n                    </div>\r\n                        {{/if}}\r\n                        <div class=\"transaccion-id\">{{Id}}</div>\r\n                        <div class=\"transaccion-comercio\">{{Vendor}}</div>\r\n                        <div class=\"transaccion-fecha\">{{Date}}</div>\r\n                        <div class=\"row transaccion-detalle\">\r\n                            <div class=\"col-6\">\r\n                                <div class=\"text-success\"><b>{{currency Amount}}</b></div>\r\n                                <div>TOTAL</div>\r\n                            </div>\r\n                            <div class=\"col-6\">\r\n                                <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                                <div>POR COMPROBAR</div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                {{/each}}\r\n            </div>\r\n            <div id=\"mensajeFiltros\" class=\"transacciones-count\"></div>\r\n        </section>\r\n        <div id=\"modalFiltros\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n                <div class=\"modal-content\">\r\n                    <div class=\"modal-body\">\r\n                        <h5 class=\"text-center\">Búsqueda Avanzada</h5>\r\n                        <div class=\"text-center\">\r\n                            <div class=\"dropdown\">\r\n                                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                    Predefinido\r\n                                </button>\r\n                                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"1\">Hoy</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"2\">Últimos 7 días</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"3\">Este mes</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"4\">Últimos 90 días</a>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <form id=\"frmFiltros\">\r\n                            <div class=\"form-group\">\r\n                                <label>Fecha Inicio <span class=\"required\">*</span></label>\r\n                                <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" required>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label>Fecha Fin</label>\r\n                                <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label>Cantidad de comprobaciones</label>\r\n                                <input type=\"hidden\" name=\"Limit\" id=\"iCantidad\" value=\"10\">\r\n                                <div id=\"btnCantidadComprobaciones\" class=\"text-center mb-4\">\r\n                                    <button type=\"button\" class=\"btn btn-secondary active\">10</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">20</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">30</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">40</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">50</button>\r\n                                </div>\r\n                            </div>\r\n                            <button type=\"submit\" class=\"btn btn-primary btn-block\">Aplicar</button>\r\n                        </form>\r\n                        <button type=\"button\" class=\"btn btn-danger btn-block\" data-dismiss=\"modal\">Cerrar</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>";
+	module.exports = "<!--==================================================\r\n=            POR FACTURAR - TRANSACCIONES            =\r\n===================================================-->\r\n<button class=\"floatButtonLeft\" data-toggle=\"modal\" data-target=\"#modalFiltros\">\r\n    <img src=\"" + __webpack_require__(225) + "\" alt=\"filtros\">\r\n</button>\r\n    <button id=\"btnUpdate\" class=\"floatButtonRight\">\r\n        <img src=\"" + __webpack_require__(228) + "\" alt=\"update\">\r\n</button>\r\n        <section class=\"transacciones\">\r\n            <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar transaccion...\">\r\n            <div id=\"transaccionesContainer\" class=\"transacciones-container\">\r\n                {{#each Transacciones}}\r\n                    <div class=\"transaccion {{Color.Name}}\" data-id=\"{{Id}}\" data-relation=\"{{RelationId}}\">\r\n                        {{#if IsVirtual}}\r\n                            <div class=\"transaccion-porFacturar\" data-relation=\"{{RelationId}}\">\r\n                                <img src=\"" + __webpack_require__(426) + "\">\r\n                    </div>\r\n                        {{/if}}\r\n                        <div class=\"transaccion-id\">{{Id}}</div>\r\n                        <div class=\"transaccion-comercio\">{{Vendor}}</div>\r\n                        <div class=\"transaccion-fecha\">{{Date}}</div>\r\n                        <div class=\"row transaccion-detalle\">\r\n                            <div class=\"col-6\">\r\n                                <div class=\"text-success\"><b>{{currency Amount}}</b></div>\r\n                                <div>TOTAL</div>\r\n                            </div>\r\n                            <div class=\"col-6\">\r\n                                <div class=\"text-danger\"><b>{{currency Balance}}</b></div>\r\n                                <div>POR COMPROBAR</div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                {{/each}}\r\n            </div>\r\n            <div id=\"mensajeFiltros\" class=\"transacciones-count\"></div>\r\n        </section>\r\n        <div id=\"modalFiltros\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n                <div class=\"modal-content\">\r\n                    <div class=\"modal-body\">\r\n                        <h5 class=\"text-center\">Búsqueda Avanzada</h5>\r\n                        <div class=\"text-center\">\r\n                            <div class=\"dropdown\">\r\n                                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                                    Predefinido\r\n                                </button>\r\n                                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"1\">Hoy</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"2\">Últimos 7 días</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"3\">Este mes</a>\r\n                                    <a class=\"dropdown-item\" href=\"#\" data-value=\"4\">Últimos 90 días</a>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <form id=\"frmFiltros\">\r\n                            <div class=\"form-group\">\r\n                                <label>Fecha Inicio <span class=\"required\">*</span></label>\r\n                                <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" required>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label>Fecha Fin</label>\r\n                                <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label>Cantidad de comprobaciones</label>\r\n                                <input type=\"hidden\" name=\"Limit\" id=\"iCantidad\" value=\"10\">\r\n                                <div id=\"btnCantidadComprobaciones\" class=\"text-center mb-4\">\r\n                                    <button type=\"button\" class=\"btn btn-secondary active\">10</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">20</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">30</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">40</button>\r\n                                    <button type=\"button\" class=\"btn btn-secondary\">50</button>\r\n                                </div>\r\n                            </div>\r\n                            <button type=\"submit\" class=\"btn btn-primary btn-block\">Aplicar</button>\r\n                        </form>\r\n                        <button type=\"button\" class=\"btn btn-danger btn-block\" data-dismiss=\"modal\">Cerrar</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>";
 
 /***/ }),
 /* 381 */
@@ -75612,19 +76193,19 @@
 /* 383 */
 /***/ (function(module, exports) {
 
-	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - DATOS            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <label class=\"travexForm-label\">Estado</label>\r\n            <select name=\"State\" id=\"cbEstado\" class=\"travexForm-control\">\r\n                <option value=\"\" disabled selected>Seleccione una opcion</option>\r\n                {{#each Estados}}\r\n                    <option value=\"{{Id}}\">{{Name}}</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <label class=\"travexForm-label\">Municipio</label>\r\n            <select name=\"Municipality\" id=\"cbMunicipio\" class=\"travexForm-control\">\r\n                <option value=\"\" disabled selected>Seleccione un estado</option>\r\n            </select>\r\n        </div>\r\n    </form>\r\n    <div class=\"text-center\">\r\n        <button class=\"btn btn-primary btnSiguiente\" data-view=\"guardar\">Siguiente</button>\r\n    </div>\r\n</div>";
+	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - DATOS            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    {{#equal type \"datos\"}}\r\n    <form class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <label class=\"travexForm-label\">Estado</label>\r\n            <select name=\"State\" id=\"cbEstado\" class=\"travexForm-control\">\r\n                <option value=\"\" disabled selected>Seleccione una opcion</option>\r\n                {{#each Estados}}\r\n                    <option value=\"{{Id}}\">{{Name}}</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <label class=\"travexForm-label\">Municipio</label>\r\n            <select name=\"Municipality\" id=\"cbMunicipio\" class=\"travexForm-control\">\r\n                <option value=\"\" disabled selected>Seleccione un estado</option>\r\n            </select>\r\n        </div>\r\n    </form>\r\n    <div class=\"text-center\">\r\n        <button class=\"btn btn-primary btnSiguiente\" data-view=\"guardar\">Siguiente</button>\r\n    </div>\r\n    {{/equal}} {{#equal type \"especial\"}}\r\n    <form id=\"frm-Special\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"row\">\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Organización</label></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Organizacion\" id=\"cbOrganizacion\" class=\"select2-dropdown\" /></span>\r\n\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Función</label></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Funcion\" id=\"cbFuncion\" class=\"select2-dropdown\" /></span>\r\n\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Programa</labe></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Programa\" id=\"cbPrograma\" class=\"select2-dropdown\" /></span>\r\n\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Geográfico</label></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Geografico\" id=\"cbGeografico\" class=\"select2-dropdown\" /></span>\r\n\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Tipología</label></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Tipologia\" id=\"cbTipologia\" class=\"select2-dropdown\" /></span>\r\n\r\n                <span class=\"col-12\"><label class=\"travexForm-label\">Fuente</label></span>\r\n                <span class=\"col-12\"><input tabindex=\"-1\" type='text' name=\"Fuente\" id=\"cbFuente\" class=\"select2-dropdown\" /></span>\r\n            </div>\r\n        </div>\r\n    </form>\r\n    <!--\r\n    <div id=\"dropDowns-special\"></div>\r\n    <hr>\r\n    -->\r\n    <div class=\"text-center\">\r\n        <button class=\"btn btn-primary btnSiguiente\" data-view=\"guardar\">Siguiente</button>\r\n    </div>{{/equal}}\r\n</div>";
 
 /***/ }),
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Periodo</div>\r\n            <div class=\"row\">\r\n                <div class=\"col-6\">\r\n                    <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                </div>\r\n                <div class=\"col-6\">\r\n                    <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Subir Imagen</div>\r\n        </div>\r\n        <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <div class=\"files64-prev\">\r\n                <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>\r\n<div class=\"p-3\" style=\"background: #f1f1f1\">\r\n    <h3 class=\"text-muted\">Conceptos</h3>\r\n    <div id=\"Details-container\"></div>\r\n    <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n</div>\r\n<section id=\"resumen\" class=\"m-4\">\r\n    <div class=\"resumen\">\r\n        <div class=\"resumen-item\">\r\n            <label>Empleado</label>\r\n            <span>{{Employee.FullName}}</span>\r\n        </div>\r\n        <div class=\"resumen-item\">\r\n            <label>Proyecto</label>\r\n            <span>{{Project.Name}}</span>\r\n        </div>\r\n        <div class=\"resumen-item\">\r\n            <label>Estado</label>\r\n            <span>{{State.Name}}</span>\r\n        </div>\r\n        <div class=\"resumen-item\">\r\n            <label>Municipio</label>\r\n            <span>{{Municipality.Name}}</span>\r\n        </div>\r\n        <div id=\"resumen-container\" class=\"text-right\"></div>\r\n    </div>\r\n</section>\r\n<div class=\"text-center\">\r\n    <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n</div>\r\n</div>";
+	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div id=\"CatalogField\">\r\n                <label class=\"travexForm-label\">Catálogo</label>\r\n                <select name=\"CatalogId\" id=\"cbCatalog\" class=\"travexForm-control\">            \r\n            </div>\r\n            </select>\r\n                <div class=\"travexForm-label\">Periodo</div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n    </form>\r\n    </div>\r\n    <div class=\"p-3\" style=\"background: #f1f1f1\">\r\n        <h3 class=\"text-muted\">Conceptos</h3>\r\n        <div id=\"Details-container\"></div>\r\n        <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n    </div>\r\n    <section id=\"resumen\" class=\"m-4\">\r\n        <div class=\"resumen\">\r\n            <div class=\"resumen-item\">\r\n                <label>Empleado</label>\r\n                <span>{{Employee.FullName}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Proyecto</label>\r\n                <span>{{Project.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Estado</label>\r\n                <span>{{State.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Municipio</label>\r\n                <span>{{Municipality.Name}}</span>\r\n            </div>\r\n            <div id=\"resumen-container\" class=\"text-right\"></div>\r\n        </div>\r\n    </section>\r\n    <div class=\"text-center\">\r\n        <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 385 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"resumenConceptos\">\r\n    <div class='resumenConceptos-title'>CONCEPTOS</div>\r\n    <div class='resumenConceptos-item'>\r\n        <table class=\"table table-bordered table-striped\">\r\n            <tbody>\r\n                {{#each Details}}\r\n                    <tr>\r\n                        <td>{{Catalog.vcCatalog}}</td>\r\n                        <td>{{Subcatalog.vcSubcatalog}}</td>\r\n                        <td>{{currency Amount}}</td>\r\n                    </tr>\r\n                {{/each}}\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class='resumenConceptos-total'>\r\n        <b>TOTAL</b>\r\n        <span>{{currency Total}}</span>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"resumenConceptos\">\r\n    <div class='resumenConceptos-title'>CONCEPTOS</div>\r\n    <div class='resumenConceptos-item'>\r\n        <table class=\"table table-bordered table-striped\">\r\n            <tbody>\r\n                {{#each Details}}\r\n                <tr>\r\n                    <td>{{Catalog.vcCatalog}}</td>\r\n                    <td>{{Subcatalog.vcSubcatalog}}</td>\r\n                    <td>{{currency Amount}}</td>\r\n                </tr>\r\n                {{/each}}\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class='resumenConceptos-total'>\r\n        <b>TOTAL</b>\r\n        <span>{{currency Total}}</span>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 386 */
@@ -75660,7 +76241,7 @@
 /* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<div id=\"header\" class=\"header\">\r\n    <div class=\"header-item\">\r\n        <button id=\"btn-touchSidewipe\">\r\n            <img src=\"" + __webpack_require__(422) + "\" alt=\"MENU\">\r\n        </button>\r\n    </div>\r\n    <div class=\"header-item\">\r\n        <button onclick=\"app.View('main')\">\r\n            <img class=\"\" src=\"" + __webpack_require__(64) + "\" alt=\"headerIcon.png\">\r\n        </button>\r\n    </div>\r\n    <div class=\"header-item\">\r\n        <button onclick=\"app.LogOut();\">\r\n            <img src=\"" + __webpack_require__(423) + "\" alt=\"headerIcon.png\">\r\n        </button>\r\n    </div>\r\n</div>\r\n<div id=\"menu\" class=\"menu\">\r\n    <button class=\"menu-item active\" onclick=\"app.View('saldo')\" data-view=\"saldo\">\r\n        <img src=\"" + __webpack_require__(226) + "\" alt=\"SALDO\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('comprobar')\" data-view=\"comprobar\">\r\n        <img src=\"" + __webpack_require__(220) + "\" alt=\"COMPROBAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('solicitarAutorizacion')\" data-view=\"solicitarAutorizacion\">\r\n        <img src=\"" + __webpack_require__(221) + "\" alt=\"SOLICITAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('autorizarComprobacion')\" data-view=\"autorizarComprobacion\">\r\n        <img src=\"" + __webpack_require__(222) + "\" alt=\"AUTORIZAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('presupuestoAlta')\" data-view=\"presupuestoAlta\">\r\n        <img src=\"" + __webpack_require__(225) + "\" alt=\"PRESUPUESTOALTA\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('express')\" data-view=\"express\">\r\n        <img src=\"" + __webpack_require__(223) + "\" alt=\"EXPRESS\">\r\n    </button>\r\n</div>\r\n<div class=\"u-bar\"></div>\r\n<div id=\"renderBody\"></div>\r\n<div id=\"modalFiltros\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h5 class=\"text-center\">Búsqueda Avanzada</h5>\r\n                <div class=\"text-center\">\r\n                    <div class=\"dropdown\">\r\n                        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                            Predefinido\r\n                        </button>\r\n                        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"1\">Hoy</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"2\">Últimos 7 días</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"3\">Este mes</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"4\">Últimos 90 días</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <form id=\"frmFiltros\">\r\n                    <div class=\"form-group\">\r\n                        <label>Fecha Inicio <span class=\"required\">*</span></label>\r\n                        <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" required>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Fecha Fin</label>\r\n                        <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Cantidad de comprobaciones</label>\r\n                        <input type=\"hidden\" name=\"Limit\" id=\"iCantidad\" value=\"10\">\r\n                        <div id=\"btnCantidadComprobaciones\" class=\"text-center mb-4\">\r\n                            <button type=\"button\" class=\"btn btn-secondary active\">10</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">20</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">30</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">40</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">50</button>\r\n                        </div>\r\n                    </div>\r\n                    <button type=\"submit\" class=\"btn btn-primary btn-block\">Aplicar</button>\r\n                </form>\r\n                <button type=\"button\" class=\"btn btn-danger btn-block\" data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div id=\"header\" class=\"header\">\r\n    <div class=\"header-item\">\r\n        <button id=\"btn-touchSidewipe\">\r\n            <img src=\"" + __webpack_require__(422) + "\" alt=\"MENU\">\r\n        </button>\r\n    </div>\r\n    <div class=\"header-item\">\r\n        <button onclick=\"app.View('main')\">\r\n            <img class=\"\" src=\"" + __webpack_require__(64) + "\" alt=\"headerIcon.png\">\r\n        </button>\r\n    </div>\r\n    <div class=\"header-item\">\r\n        <button onclick=\"app.LogOut();\">\r\n            <img src=\"" + __webpack_require__(423) + "\" alt=\"headerIcon.png\">\r\n        </button>\r\n    </div>\r\n</div>\r\n<div id=\"menu\" class=\"menu\">\r\n    <button class=\"menu-item active\" onclick=\"app.View('saldo')\" data-view=\"saldo\">\r\n        <img src=\"" + __webpack_require__(227) + "\" alt=\"SALDO\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('comprobar')\" data-view=\"comprobar\">\r\n        <img src=\"" + __webpack_require__(221) + "\" alt=\"COMPROBAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('solicitarAutorizacion')\" data-view=\"solicitarAutorizacion\">\r\n        <img src=\"" + __webpack_require__(222) + "\" alt=\"SOLICITAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('autorizarComprobacion')\" data-view=\"autorizarComprobacion\">\r\n        <img src=\"" + __webpack_require__(223) + "\" alt=\"AUTORIZAR\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('presupuestoAlta')\" data-view=\"presupuestoAlta\">\r\n        <img src=\"" + __webpack_require__(226) + "\" alt=\"PRESUPUESTOALTA\">\r\n    </button>\r\n    <button class=\"menu-item\" onclick=\"app.View('express')\" data-view=\"express\">\r\n        <img src=\"" + __webpack_require__(224) + "\" alt=\"EXPRESS\">\r\n    </button>\r\n</div>\r\n<div class=\"u-bar\"></div>\r\n<div id=\"renderBody\"></div>\r\n<div id=\"modalFiltros\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h5 class=\"text-center\">Búsqueda Avanzada</h5>\r\n                <div class=\"text-center\">\r\n                    <div class=\"dropdown\">\r\n                        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                            Predefinido\r\n                        </button>\r\n                        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"1\">Hoy</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"2\">Últimos 7 días</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"3\">Este mes</a>\r\n                            <a class=\"dropdown-item\" href=\"#\" data-value=\"4\">Últimos 90 días</a>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <form id=\"frmFiltros\">\r\n                    <div class=\"form-group\">\r\n                        <label>Fecha Inicio <span class=\"required\">*</span></label>\r\n                        <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" required>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Fecha Fin</label>\r\n                        <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Cantidad de comprobaciones</label>\r\n                        <input type=\"hidden\" name=\"Limit\" id=\"iCantidad\" value=\"10\">\r\n                        <div id=\"btnCantidadComprobaciones\" class=\"text-center mb-4\">\r\n                            <button type=\"button\" class=\"btn btn-secondary active\">10</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">20</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">30</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">40</button>\r\n                            <button type=\"button\" class=\"btn btn-secondary\">50</button>\r\n                        </div>\r\n                    </div>\r\n                    <button type=\"submit\" class=\"btn btn-primary btn-block\">Aplicar</button>\r\n                </form>\r\n                <button type=\"button\" class=\"btn btn-danger btn-block\" data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 392 */
@@ -76099,260 +76680,260 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 90,
-		"./af.js": 90,
-		"./ar": 97,
-		"./ar-dz": 91,
-		"./ar-dz.js": 91,
-		"./ar-kw": 92,
-		"./ar-kw.js": 92,
-		"./ar-ly": 93,
-		"./ar-ly.js": 93,
-		"./ar-ma": 94,
-		"./ar-ma.js": 94,
-		"./ar-sa": 95,
-		"./ar-sa.js": 95,
-		"./ar-tn": 96,
-		"./ar-tn.js": 96,
-		"./ar.js": 97,
-		"./az": 98,
-		"./az.js": 98,
-		"./be": 99,
-		"./be.js": 99,
-		"./bg": 100,
-		"./bg.js": 100,
-		"./bm": 101,
-		"./bm.js": 101,
-		"./bn": 102,
-		"./bn.js": 102,
-		"./bo": 103,
-		"./bo.js": 103,
-		"./br": 104,
-		"./br.js": 104,
-		"./bs": 105,
-		"./bs.js": 105,
-		"./ca": 106,
-		"./ca.js": 106,
-		"./cs": 107,
-		"./cs.js": 107,
-		"./cv": 108,
-		"./cv.js": 108,
-		"./cy": 109,
-		"./cy.js": 109,
-		"./da": 110,
-		"./da.js": 110,
-		"./de": 113,
-		"./de-at": 111,
-		"./de-at.js": 111,
-		"./de-ch": 112,
-		"./de-ch.js": 112,
-		"./de.js": 113,
-		"./dv": 114,
-		"./dv.js": 114,
-		"./el": 115,
-		"./el.js": 115,
-		"./en-SG": 116,
-		"./en-SG.js": 116,
-		"./en-au": 117,
-		"./en-au.js": 117,
-		"./en-ca": 118,
-		"./en-ca.js": 118,
-		"./en-gb": 119,
-		"./en-gb.js": 119,
-		"./en-ie": 120,
-		"./en-ie.js": 120,
-		"./en-il": 121,
-		"./en-il.js": 121,
-		"./en-nz": 122,
-		"./en-nz.js": 122,
-		"./eo": 123,
-		"./eo.js": 123,
-		"./es": 126,
-		"./es-do": 124,
-		"./es-do.js": 124,
-		"./es-us": 125,
-		"./es-us.js": 125,
-		"./es.js": 126,
-		"./et": 127,
-		"./et.js": 127,
-		"./eu": 128,
-		"./eu.js": 128,
-		"./fa": 129,
-		"./fa.js": 129,
-		"./fi": 130,
-		"./fi.js": 130,
-		"./fo": 131,
-		"./fo.js": 131,
-		"./fr": 134,
-		"./fr-ca": 132,
-		"./fr-ca.js": 132,
-		"./fr-ch": 133,
-		"./fr-ch.js": 133,
-		"./fr.js": 134,
-		"./fy": 135,
-		"./fy.js": 135,
-		"./ga": 136,
-		"./ga.js": 136,
-		"./gd": 137,
-		"./gd.js": 137,
-		"./gl": 138,
-		"./gl.js": 138,
-		"./gom-latn": 139,
-		"./gom-latn.js": 139,
-		"./gu": 140,
-		"./gu.js": 140,
-		"./he": 141,
-		"./he.js": 141,
-		"./hi": 142,
-		"./hi.js": 142,
-		"./hr": 143,
-		"./hr.js": 143,
-		"./hu": 144,
-		"./hu.js": 144,
-		"./hy-am": 145,
-		"./hy-am.js": 145,
-		"./id": 146,
-		"./id.js": 146,
-		"./is": 147,
-		"./is.js": 147,
-		"./it": 149,
-		"./it-ch": 148,
-		"./it-ch.js": 148,
-		"./it.js": 149,
-		"./ja": 150,
-		"./ja.js": 150,
-		"./jv": 151,
-		"./jv.js": 151,
-		"./ka": 152,
-		"./ka.js": 152,
-		"./kk": 153,
-		"./kk.js": 153,
-		"./km": 154,
-		"./km.js": 154,
-		"./kn": 155,
-		"./kn.js": 155,
-		"./ko": 156,
-		"./ko.js": 156,
-		"./ku": 157,
-		"./ku.js": 157,
-		"./ky": 158,
-		"./ky.js": 158,
-		"./lb": 159,
-		"./lb.js": 159,
-		"./lo": 160,
-		"./lo.js": 160,
-		"./lt": 161,
-		"./lt.js": 161,
-		"./lv": 162,
-		"./lv.js": 162,
-		"./me": 163,
-		"./me.js": 163,
-		"./mi": 164,
-		"./mi.js": 164,
-		"./mk": 165,
-		"./mk.js": 165,
-		"./ml": 166,
-		"./ml.js": 166,
-		"./mn": 167,
-		"./mn.js": 167,
-		"./mr": 168,
-		"./mr.js": 168,
-		"./ms": 170,
-		"./ms-my": 169,
-		"./ms-my.js": 169,
-		"./ms.js": 170,
-		"./mt": 171,
-		"./mt.js": 171,
-		"./my": 172,
-		"./my.js": 172,
-		"./nb": 173,
-		"./nb.js": 173,
-		"./ne": 174,
-		"./ne.js": 174,
-		"./nl": 176,
-		"./nl-be": 175,
-		"./nl-be.js": 175,
-		"./nl.js": 176,
-		"./nn": 177,
-		"./nn.js": 177,
-		"./pa-in": 178,
-		"./pa-in.js": 178,
-		"./pl": 179,
-		"./pl.js": 179,
-		"./pt": 181,
-		"./pt-br": 180,
-		"./pt-br.js": 180,
-		"./pt.js": 181,
-		"./ro": 182,
-		"./ro.js": 182,
-		"./ru": 183,
-		"./ru.js": 183,
-		"./sd": 184,
-		"./sd.js": 184,
-		"./se": 185,
-		"./se.js": 185,
-		"./si": 186,
-		"./si.js": 186,
-		"./sk": 187,
-		"./sk.js": 187,
-		"./sl": 188,
-		"./sl.js": 188,
-		"./sq": 189,
-		"./sq.js": 189,
-		"./sr": 191,
-		"./sr-cyrl": 190,
-		"./sr-cyrl.js": 190,
-		"./sr.js": 191,
-		"./ss": 192,
-		"./ss.js": 192,
-		"./sv": 193,
-		"./sv.js": 193,
-		"./sw": 194,
-		"./sw.js": 194,
-		"./ta": 195,
-		"./ta.js": 195,
-		"./te": 196,
-		"./te.js": 196,
-		"./tet": 197,
-		"./tet.js": 197,
-		"./tg": 198,
-		"./tg.js": 198,
-		"./th": 199,
-		"./th.js": 199,
-		"./tl-ph": 200,
-		"./tl-ph.js": 200,
-		"./tlh": 201,
-		"./tlh.js": 201,
-		"./tr": 202,
-		"./tr.js": 202,
-		"./tzl": 203,
-		"./tzl.js": 203,
-		"./tzm": 205,
-		"./tzm-latn": 204,
-		"./tzm-latn.js": 204,
-		"./tzm.js": 205,
-		"./ug-cn": 206,
-		"./ug-cn.js": 206,
-		"./uk": 207,
-		"./uk.js": 207,
-		"./ur": 208,
-		"./ur.js": 208,
-		"./uz": 210,
-		"./uz-latn": 209,
-		"./uz-latn.js": 209,
-		"./uz.js": 210,
-		"./vi": 211,
-		"./vi.js": 211,
-		"./x-pseudo": 212,
-		"./x-pseudo.js": 212,
-		"./yo": 213,
-		"./yo.js": 213,
-		"./zh-cn": 214,
-		"./zh-cn.js": 214,
-		"./zh-hk": 215,
-		"./zh-hk.js": 215,
-		"./zh-tw": 216,
-		"./zh-tw.js": 216
+		"./af": 91,
+		"./af.js": 91,
+		"./ar": 98,
+		"./ar-dz": 92,
+		"./ar-dz.js": 92,
+		"./ar-kw": 93,
+		"./ar-kw.js": 93,
+		"./ar-ly": 94,
+		"./ar-ly.js": 94,
+		"./ar-ma": 95,
+		"./ar-ma.js": 95,
+		"./ar-sa": 96,
+		"./ar-sa.js": 96,
+		"./ar-tn": 97,
+		"./ar-tn.js": 97,
+		"./ar.js": 98,
+		"./az": 99,
+		"./az.js": 99,
+		"./be": 100,
+		"./be.js": 100,
+		"./bg": 101,
+		"./bg.js": 101,
+		"./bm": 102,
+		"./bm.js": 102,
+		"./bn": 103,
+		"./bn.js": 103,
+		"./bo": 104,
+		"./bo.js": 104,
+		"./br": 105,
+		"./br.js": 105,
+		"./bs": 106,
+		"./bs.js": 106,
+		"./ca": 107,
+		"./ca.js": 107,
+		"./cs": 108,
+		"./cs.js": 108,
+		"./cv": 109,
+		"./cv.js": 109,
+		"./cy": 110,
+		"./cy.js": 110,
+		"./da": 111,
+		"./da.js": 111,
+		"./de": 114,
+		"./de-at": 112,
+		"./de-at.js": 112,
+		"./de-ch": 113,
+		"./de-ch.js": 113,
+		"./de.js": 114,
+		"./dv": 115,
+		"./dv.js": 115,
+		"./el": 116,
+		"./el.js": 116,
+		"./en-SG": 117,
+		"./en-SG.js": 117,
+		"./en-au": 118,
+		"./en-au.js": 118,
+		"./en-ca": 119,
+		"./en-ca.js": 119,
+		"./en-gb": 120,
+		"./en-gb.js": 120,
+		"./en-ie": 121,
+		"./en-ie.js": 121,
+		"./en-il": 122,
+		"./en-il.js": 122,
+		"./en-nz": 123,
+		"./en-nz.js": 123,
+		"./eo": 124,
+		"./eo.js": 124,
+		"./es": 127,
+		"./es-do": 125,
+		"./es-do.js": 125,
+		"./es-us": 126,
+		"./es-us.js": 126,
+		"./es.js": 127,
+		"./et": 128,
+		"./et.js": 128,
+		"./eu": 129,
+		"./eu.js": 129,
+		"./fa": 130,
+		"./fa.js": 130,
+		"./fi": 131,
+		"./fi.js": 131,
+		"./fo": 132,
+		"./fo.js": 132,
+		"./fr": 135,
+		"./fr-ca": 133,
+		"./fr-ca.js": 133,
+		"./fr-ch": 134,
+		"./fr-ch.js": 134,
+		"./fr.js": 135,
+		"./fy": 136,
+		"./fy.js": 136,
+		"./ga": 137,
+		"./ga.js": 137,
+		"./gd": 138,
+		"./gd.js": 138,
+		"./gl": 139,
+		"./gl.js": 139,
+		"./gom-latn": 140,
+		"./gom-latn.js": 140,
+		"./gu": 141,
+		"./gu.js": 141,
+		"./he": 142,
+		"./he.js": 142,
+		"./hi": 143,
+		"./hi.js": 143,
+		"./hr": 144,
+		"./hr.js": 144,
+		"./hu": 145,
+		"./hu.js": 145,
+		"./hy-am": 146,
+		"./hy-am.js": 146,
+		"./id": 147,
+		"./id.js": 147,
+		"./is": 148,
+		"./is.js": 148,
+		"./it": 150,
+		"./it-ch": 149,
+		"./it-ch.js": 149,
+		"./it.js": 150,
+		"./ja": 151,
+		"./ja.js": 151,
+		"./jv": 152,
+		"./jv.js": 152,
+		"./ka": 153,
+		"./ka.js": 153,
+		"./kk": 154,
+		"./kk.js": 154,
+		"./km": 155,
+		"./km.js": 155,
+		"./kn": 156,
+		"./kn.js": 156,
+		"./ko": 157,
+		"./ko.js": 157,
+		"./ku": 158,
+		"./ku.js": 158,
+		"./ky": 159,
+		"./ky.js": 159,
+		"./lb": 160,
+		"./lb.js": 160,
+		"./lo": 161,
+		"./lo.js": 161,
+		"./lt": 162,
+		"./lt.js": 162,
+		"./lv": 163,
+		"./lv.js": 163,
+		"./me": 164,
+		"./me.js": 164,
+		"./mi": 165,
+		"./mi.js": 165,
+		"./mk": 166,
+		"./mk.js": 166,
+		"./ml": 167,
+		"./ml.js": 167,
+		"./mn": 168,
+		"./mn.js": 168,
+		"./mr": 169,
+		"./mr.js": 169,
+		"./ms": 171,
+		"./ms-my": 170,
+		"./ms-my.js": 170,
+		"./ms.js": 171,
+		"./mt": 172,
+		"./mt.js": 172,
+		"./my": 173,
+		"./my.js": 173,
+		"./nb": 174,
+		"./nb.js": 174,
+		"./ne": 175,
+		"./ne.js": 175,
+		"./nl": 177,
+		"./nl-be": 176,
+		"./nl-be.js": 176,
+		"./nl.js": 177,
+		"./nn": 178,
+		"./nn.js": 178,
+		"./pa-in": 179,
+		"./pa-in.js": 179,
+		"./pl": 180,
+		"./pl.js": 180,
+		"./pt": 182,
+		"./pt-br": 181,
+		"./pt-br.js": 181,
+		"./pt.js": 182,
+		"./ro": 183,
+		"./ro.js": 183,
+		"./ru": 184,
+		"./ru.js": 184,
+		"./sd": 185,
+		"./sd.js": 185,
+		"./se": 186,
+		"./se.js": 186,
+		"./si": 187,
+		"./si.js": 187,
+		"./sk": 188,
+		"./sk.js": 188,
+		"./sl": 189,
+		"./sl.js": 189,
+		"./sq": 190,
+		"./sq.js": 190,
+		"./sr": 192,
+		"./sr-cyrl": 191,
+		"./sr-cyrl.js": 191,
+		"./sr.js": 192,
+		"./ss": 193,
+		"./ss.js": 193,
+		"./sv": 194,
+		"./sv.js": 194,
+		"./sw": 195,
+		"./sw.js": 195,
+		"./ta": 196,
+		"./ta.js": 196,
+		"./te": 197,
+		"./te.js": 197,
+		"./tet": 198,
+		"./tet.js": 198,
+		"./tg": 199,
+		"./tg.js": 199,
+		"./th": 200,
+		"./th.js": 200,
+		"./tl-ph": 201,
+		"./tl-ph.js": 201,
+		"./tlh": 202,
+		"./tlh.js": 202,
+		"./tr": 203,
+		"./tr.js": 203,
+		"./tzl": 204,
+		"./tzl.js": 204,
+		"./tzm": 206,
+		"./tzm-latn": 205,
+		"./tzm-latn.js": 205,
+		"./tzm.js": 206,
+		"./ug-cn": 207,
+		"./ug-cn.js": 207,
+		"./uk": 208,
+		"./uk.js": 208,
+		"./ur": 209,
+		"./ur.js": 209,
+		"./uz": 211,
+		"./uz-latn": 210,
+		"./uz-latn.js": 210,
+		"./uz.js": 211,
+		"./vi": 212,
+		"./vi.js": 212,
+		"./x-pseudo": 213,
+		"./x-pseudo.js": 213,
+		"./yo": 214,
+		"./yo.js": 214,
+		"./zh-cn": 215,
+		"./zh-cn.js": 215,
+		"./zh-hk": 216,
+		"./zh-hk.js": 216,
+		"./zh-tw": 217,
+		"./zh-tw.js": 217
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -79870,7 +80451,7 @@
 				__webpack_require__(2),
 				__webpack_require__(25),
 				__webpack_require__(408),
-				__webpack_require__(217)
+				__webpack_require__(218)
 			], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else if (typeof exports === 'object') {
 			module.exports = factory(
@@ -80100,7 +80681,7 @@
 				__webpack_require__(2),
 				__webpack_require__(25),
 				__webpack_require__(409),
-				__webpack_require__(217)
+				__webpack_require__(218)
 			], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else if (typeof exports === 'object') {
 			module.exports = factory(
