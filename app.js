@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b4e46057cabb3c279447"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aaf8caad07449caf4b0d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -59997,8 +59997,9 @@
 	                                                Employee = (0, _jquery2.default)(this).data("name");
 	                                                //Determinamos si es especial
 
-	                                                _this.Data.isSpecial = true;
-	                                                //DEJAR COMO ESTABA _this.Data.Employees.find(e => (e.EmployeeId == EmployeeId && e.FullName == Employee)).Special;
+	                                                _this.Data.isSpecial = _this.Data.Employees.find(function (e) {
+	                                                    return e.EmployeeId == EmployeeId && e.FullName == Employee;
+	                                                }).Special;
 
 	                                                _this.Data.Employee = {
 	                                                    EmployeeId: EmployeeId,
