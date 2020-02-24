@@ -130,7 +130,7 @@
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
     <edit-config target="CFBundleShortVersionString" file="*-Info.plist" mode="overwrite">
-        <string>212</string>
+        <string>215</string>
     </edit-config>
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="overwrite">
         <string>GinCard Travex requiere permiso para acceder a tu camara.</string>
