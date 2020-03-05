@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aaf8caad07449caf4b0d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "036f7d084da2951eaaeb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -589,7 +589,7 @@
 	    value: true
 	});
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -625,7 +625,7 @@
 
 	var _localforage2 = _interopRequireDefault(_localforage);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -16360,7 +16360,7 @@
 
 	exports.__esModule = true;
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -16412,7 +16412,7 @@
 	    value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(36);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -24220,7 +24220,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var store = __webpack_require__(57)('wks');
-	var uid = __webpack_require__(39);
+	var uid = __webpack_require__(40);
 	var Symbol = __webpack_require__(9).Symbol;
 	var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -24405,7 +24405,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var dP = __webpack_require__(17);
-	var createDesc = __webpack_require__(37);
+	var createDesc = __webpack_require__(38);
 	module.exports = __webpack_require__(14) ? function (object, key, value) {
 	  return dP.f(object, key, createDesc(1, value));
 	} : function (object, key, value) {
@@ -26409,7 +26409,7 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(36);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -27161,11 +27161,11 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -27825,7 +27825,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(36);
+	var aFunction = __webpack_require__(37);
 	module.exports = function (fn, that, length) {
 	  aFunction(fn);
 	  if (that === undefined) return fn;
@@ -28562,24 +28562,60 @@
 
 /***/ }),
 /* 35 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = {
+
+	var _defineProperty2 = __webpack_require__(36);
+
+	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+	var _SERVER_URL$SERVER_UR;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = (_SERVER_URL$SERVER_UR = {
 	    //SERVER_URL: 'http://10.0.200.45:53475',
-	    //SERVER_URL: 'https://gincard.onecardexternal.mx/Api/Travex/',
-	    SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp',
-	    STATUS: {
-	        SUCCESS: 0
-	    }
-	};
+	    SERVER_URL: 'http://10.0.200.38:53475'
+	}, (0, _defineProperty3.default)(_SERVER_URL$SERVER_UR, 'SERVER_URL', 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp'), (0, _defineProperty3.default)(_SERVER_URL$SERVER_UR, 'STATUS', {
+	    SUCCESS: 0
+	}), _SERVER_URL$SERVER_UR);
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _defineProperty = __webpack_require__(47);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (obj, key, value) {
+	  if (key in obj) {
+	    (0, _defineProperty2.default)(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	};
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it) {
@@ -28589,7 +28625,7 @@
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 	module.exports = function (bitmap, value) {
@@ -28603,7 +28639,7 @@
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var def = __webpack_require__(17).f;
@@ -28616,7 +28652,7 @@
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 	var id = 0;
@@ -28627,25 +28663,25 @@
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "e9963fec72c79c4f716299060111460d.gif";
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTE1LjY2NyA1MTUuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTUuNjY3IDUxNS42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00NDYuNTMzLDExOS40MjVsLTU0LjExNy0wLjI4M2wtNTEuODUtNzcuMzVjLTMuMTE3LTQuODE3LTguNS03LjkzMy0xNC4xNjctNy45MzNIMTg2LjcxNyAgICBjLTUuNjY3LDAtMTAuNzY3LDMuMTE3LTEzLjg4Myw3LjY1bC01My41NSw3Ny42MzNsLTUwLjE1LDAuMjgzQzMxLjE2NywxMTkuNDI1LDAsMTUwLjU5MiwwLDE4OC41NTh2MjIzLjU1ICAgIGMwLDM3Ljk2NywzMS4xNjcsNjkuNyw2OS4xMzMsNjkuN2gzNzcuNGMzNy45NjcsMCw2OS4xMzMtMzEuNzMzLDY5LjEzMy02OS43di0yMjMuNTUgICAgQzUxNS42NjcsMTUwLjU5Miw0ODQuNSwxMTkuNDI1LDQ0Ni41MzMsMTE5LjQyNXogTTQ4MS42NjcsNDEyLjEwOGMwLDE5LjI2Ny0xNS44NjcsMzUuNy0zNS4xMzMsMzUuN2gtMzc3LjQgICAgYy0xOS4yNjcsMC0zNS4xMzMtMTYuNDMzLTM1LjEzMy0zNS43di0yMjMuNTVjMC0xOS4yNjcsMTUuODY3LTM1LjEzMywzNS4xMzMtMzUuMTMzaDU5LjIxN2M1LjY2NywwLDEwLjc2Ny0zLjExNywxMy44ODMtNy42NSAgICBsNTMuNTUtNzcuNjMzaDEyMS41NWw1MS41NjcsNzcuMDY3YzMuMTE3LDQuNTMzLDguNSw3LjY1LDEzLjg4Myw3LjY1bDYzLjQ2NywwLjU2N2MxOS4yNjcsMCwzNS4xMzMsMTUuODY3LDM1LjEzMywzNS4xMzN2MjIzLjU1ICAgIEg0ODEuNjY3eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNMjU5LjI1LDE2MC4yMjVjLTY2LjU4MywwLTEyMC40MTcsNTQuMTE3LTEyMC40MTcsMTIwLjQxN1MxOTIuOTUsNDAxLjA1OCwyNTkuMjUsNDAxLjA1OHMxMjAuNDE3LTU0LjExNywxMjAuNDE3LTEyMC40MTcgICAgUzMyNS41NSwxNjAuMjI1LDI1OS4yNSwxNjAuMjI1eiBNMjU5LjI1LDM2Ny4wNThjLTQ3LjYsMC04Ni40MTctMzguODE3LTg2LjQxNy04Ni40MTdzMzguODE3LTg2LjQxNyw4Ni40MTctODYuNDE3ICAgIHM4Ni40MTcsMzguODE3LDg2LjQxNyw4Ni40MTdTMzA2Ljg1LDM2Ny4wNTgsMjU5LjI1LDM2Ny4wNTh6IiBmaWxsPSIjRkZGRkZGIi8+DQoJCTxjaXJjbGUgY3g9IjQyMC40NjciIGN5PSIyMTAuMDkyIiByPSI2LjUxNyIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNNDIwLjQ2NywxODYuNTc1Yy0xMy4wMzMsMC0yMy41MTcsMTAuNDgzLTIzLjUxNywyMy41MTdzMTAuNDgzLDIzLjUxNywyMy41MTcsMjMuNTE3czIzLjUxNy0xMC40ODMsMjMuNTE3LTIzLjUxNyAgICBTNDMzLjUsMTg2LjU3NSw0MjAuNDY3LDE4Ni41NzV6IE00MjAuNDY3LDIyMC41NzVjLTUuOTUsMC0xMC40ODMtNC44MTctMTAuNDgzLTEwLjQ4M3M0LjgxNy0xMC40ODMsMTAuNDgzLTEwLjQ4MyAgICBjNS42NjcsMCwxMC40ODMsNC44MTcsMTAuNDgzLDEwLjQ4M1M0MjYuNDE3LDIyMC41NzUsNDIwLjQ2NywyMjAuNTc1eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIxOCAyMTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIxOCAyMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPHBhdGggZD0iTTE1NS41NDcsMjE4SDYyLjQ1M2MtMTAuNzYxLDAtMTkuNTE1LTguNzU1LTE5LjUxNS0xOS41MTZWMTkuNTE2QzQyLjkzOCw4Ljc1NSw1MS42OTIsMCw2Mi40NTMsMGg5My4wOTQgIGMxMC43NjEsMCwxOS41MTUsOC43NTUsMTkuNTE1LDE5LjUxNnYxNzguOTY5QzE3NS4wNjIsMjA5LjI0NSwxNjYuMzA4LDIxOCwxNTUuNTQ3LDIxOHogTTUwLjkzOCwxODZ2MTIuNDg0ICBjMCw2LjM1LDUuMTY1LDExLjUxNiwxMS41MTUsMTEuNTE2aDkzLjA5NGM2LjM1LDAsMTEuNTE1LTUuMTY2LDExLjUxNS0xMS41MTZWMTg2SDUwLjkzOHogTTUwLjkzOCwxNzhoMTE2LjEyM1YyOUg1MC45MzhWMTc4eiAgIE01MC45MzgsMjFoMTE2LjEyM3YtMS40ODRjMC02LjM1LTUuMTY1LTExLjUxNi0xMS41MTUtMTEuNTE2SDYyLjQ1M2MtNi4zNSwwLTExLjUxNSw1LjE2Ni0xMS41MTUsMTEuNTE2VjIxeiBNMTIyLjc1LDIwMmgtMjcuNSAgYy0yLjIwOSwwLTQtMS43OTEtNC00czEuNzkxLTQsNC00aDI3LjVjMi4yMDksMCw0LDEuNzkxLDQsNFMxMjQuOTU5LDIwMiwxMjIuNzUsMjAyeiBNMTM4LjYzMywxNDYuMTI1SDc5LjM2N2MtMi4yMDksMC00LTEuNzkxLTQtNCAgdi0zNi44ODJINjguNjNjLTEuNjE4LDAtMy4wNzYtMC45NzUtMy42OTUtMi40NjlzLTAuMjc3LTMuMjE1LDAuODY3LTQuMzU5bDQwLjM3LTQwLjM3YzEuNTYxLTEuNTYyLDQuMDk2LTEuNTYyLDUuNjU2LDAgIGw0MC4zNyw0MC4zN2MxLjE0NSwxLjE0NCwxLjQ4NiwyLjg2NSwwLjg2Nyw0LjM1OXMtMi4wNzcsMi40NjktMy42OTUsMi40NjloLTYuNzM3djM2Ljg4MiAgQzE0Mi42MzMsMTQ0LjMzNCwxNDAuODQyLDE0Ni4xMjUsMTM4LjYzMywxNDYuMTI1eiBNODMuMzY3LDEzOC4xMjVoNTEuMjY2di0zNi44ODJjMC0yLjIwOSwxLjc5MS00LDQtNGgxLjA4TDEwOSw2Ni41MyAgTDc4LjI4Nyw5Ny4yNDNoMS4wOGMyLjIwOSwwLDQsMS43OTEsNCw0VjEzOC4xMjV6IiBmaWxsPSIjRkZGRkZGIi8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28764,7 +28800,7 @@
 	}
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29104,51 +29140,22 @@
 	//views
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = { "default": __webpack_require__(269), __esModule: true };
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = { "default": __webpack_require__(273), __esModule: true };
 
 /***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(278), __esModule: true };
-
-/***/ }),
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	exports.__esModule = true;
-
-	var _defineProperty = __webpack_require__(46);
-
-	var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (obj, key, value) {
-	  if (key in obj) {
-	    (0, _defineProperty2.default)(obj, key, {
-	      value: value,
-	      enumerable: true,
-	      configurable: true,
-	      writable: true
-	    });
-	  } else {
-	    obj[key] = value;
-	  }
-
-	  return obj;
-	};
+	module.exports = { "default": __webpack_require__(278), __esModule: true };
 
 /***/ }),
 /* 49 */
@@ -29190,7 +29197,7 @@
 
 	'use strict';
 	// 25.4.1.5 NewPromiseCapability(C)
-	var aFunction = __webpack_require__(36);
+	var aFunction = __webpack_require__(37);
 
 	function PromiseCapability(C) {
 	  var resolve, reject;
@@ -29260,7 +29267,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var pIE = __webpack_require__(33);
-	var createDesc = __webpack_require__(37);
+	var createDesc = __webpack_require__(38);
 	var toIObject = __webpack_require__(18);
 	var toPrimitive = __webpack_require__(60);
 	var has = __webpack_require__(19);
@@ -29289,7 +29296,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var shared = __webpack_require__(57)('keys');
-	var uid = __webpack_require__(39);
+	var uid = __webpack_require__(40);
 	module.exports = function (key) {
 	  return shared[key] || (shared[key] = uid(key));
 	};
@@ -33513,7 +33520,7 @@
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(46);
+	var _defineProperty = __webpack_require__(47);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -33606,7 +33613,7 @@
 	var hide = __webpack_require__(20);
 	var Iterators = __webpack_require__(30);
 	var $iterCreate = __webpack_require__(290);
-	var setToStringTag = __webpack_require__(38);
+	var setToStringTag = __webpack_require__(39);
 	var getPrototypeOf = __webpack_require__(78);
 	var ITERATOR = __webpack_require__(11)('iterator');
 	var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
@@ -33804,7 +33811,7 @@
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
 	var anObject = __webpack_require__(13);
-	var aFunction = __webpack_require__(36);
+	var aFunction = __webpack_require__(37);
 	var SPECIES = __webpack_require__(11)('species');
 	module.exports = function (O, D) {
 	  var C = anObject(O).constructor;
@@ -55511,7 +55518,7 @@
 
 	var _autorizarComprobacionTpl2 = _interopRequireDefault(_autorizarComprobacionTpl);
 
-	var _optionList2 = __webpack_require__(43);
+	var _optionList2 = __webpack_require__(44);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
@@ -58435,7 +58442,7 @@
 
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -58657,7 +58664,7 @@
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -59787,7 +59794,7 @@
 
 	var _resumenConceptosTpl2 = _interopRequireDefault(_resumenConceptosTpl);
 
-	var _optionList2 = __webpack_require__(43);
+	var _optionList2 = __webpack_require__(44);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
@@ -60634,7 +60641,7 @@
 	    value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(36);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -60652,7 +60659,7 @@
 
 	var _presupuestosRechazadosTpl2 = _interopRequireDefault(_presupuestosRechazadosTpl);
 
-	var _optionList2 = __webpack_require__(43);
+	var _optionList2 = __webpack_require__(44);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
@@ -62206,7 +62213,7 @@
 
 	var _constant2 = _interopRequireDefault(_constant);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -62862,7 +62869,7 @@
 
 	var _assign2 = _interopRequireDefault(_assign);
 
-	var _defineProperty = __webpack_require__(46);
+	var _defineProperty = __webpack_require__(47);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -62870,7 +62877,7 @@
 
 	var _defineProperties2 = _interopRequireDefault(_defineProperties);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -78079,8 +78086,8 @@
 
 	'use strict';
 	var create = __webpack_require__(53);
-	var descriptor = __webpack_require__(37);
-	var setToStringTag = __webpack_require__(38);
+	var descriptor = __webpack_require__(38);
+	var setToStringTag = __webpack_require__(39);
 	var IteratorPrototype = {};
 
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -78133,7 +78140,7 @@
 /* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var META = __webpack_require__(39)('meta');
+	var META = __webpack_require__(40)('meta');
 	var isObject = __webpack_require__(16);
 	var has = __webpack_require__(19);
 	var setDesc = __webpack_require__(17).f;
@@ -78601,7 +78608,7 @@
 	var classof = __webpack_require__(71);
 	var $export = __webpack_require__(12);
 	var isObject = __webpack_require__(16);
-	var aFunction = __webpack_require__(36);
+	var aFunction = __webpack_require__(37);
 	var anInstance = __webpack_require__(282);
 	var forOf = __webpack_require__(285);
 	var speciesConstructor = __webpack_require__(84);
@@ -78816,7 +78823,7 @@
 	}
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
-	__webpack_require__(38)($Promise, PROMISE);
+	__webpack_require__(39)($Promise, PROMISE);
 	__webpack_require__(300)(PROMISE);
 	Wrapper = __webpack_require__(7)[PROMISE];
 
@@ -78896,8 +78903,8 @@
 	var META = __webpack_require__(293).KEY;
 	var $fails = __webpack_require__(23);
 	var shared = __webpack_require__(57);
-	var setToStringTag = __webpack_require__(38);
-	var uid = __webpack_require__(39);
+	var setToStringTag = __webpack_require__(39);
+	var uid = __webpack_require__(40);
 	var wks = __webpack_require__(11);
 	var wksExt = __webpack_require__(62);
 	var wksDefine = __webpack_require__(61);
@@ -78907,7 +78914,7 @@
 	var isObject = __webpack_require__(16);
 	var toIObject = __webpack_require__(18);
 	var toPrimitive = __webpack_require__(60);
-	var createDesc = __webpack_require__(37);
+	var createDesc = __webpack_require__(38);
 	var _create = __webpack_require__(53);
 	var gOPNExt = __webpack_require__(296);
 	var $GOPD = __webpack_require__(54);
@@ -80485,13 +80492,13 @@
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===================================\r\n=            TICKET MANUAL            =\r\n====================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Ticket Manual</div>\r\n        </div>\r\n        <form id=\"frm-setUploadManualTicket\" class=\"travexForm\">\r\n            <input type=\"hidden\" name=\"TransactionId\" class=\"RelationId\" value=\"{{TransactionId}}\">\r\n            <input type=\"hidden\" name=\"File\" id=\"iFile\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Concepto</div>\r\n                <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" required>\r\n                    {{> dropDownList Conceptos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Clasificacion</div>\r\n                <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" required>\r\n                    <option selected disabled>Seleccione un concepto</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Centro de Costos</div>\r\n                <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                    {{> dropDownList CentroCostos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Presupuesto</div>\r\n                <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                    {{> dropDownList Presupuestos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input type=\"number\" name=\"Amount\" id=\"iAmount\" class=\"travexForm-control\" value=\"{{Amount}}\" step=\"0.01\" required>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Descripción</div>\r\n                <textarea name=\"Description\" class=\"travexForm-control\"></textarea>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Cerrar</button>\r\n        </form>\r\n    </div>\r\n</section>";
+	module.exports = "<!--===================================\r\n=            TICKET MANUAL            =\r\n====================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Ticket Manual</div>\r\n        </div>\r\n        <form id=\"frm-setUploadManualTicket\" class=\"travexForm\">\r\n            <input type=\"hidden\" name=\"TransactionId\" class=\"RelationId\" value=\"{{TransactionId}}\">\r\n            <input type=\"hidden\" name=\"File\" id=\"iFile\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Concepto</div>\r\n                <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" required>\r\n                    {{> dropDownList Conceptos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Clasificacion</div>\r\n                <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" required>\r\n                    <option selected disabled>Seleccione un concepto</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Centro de Costos</div>\r\n                <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                    {{> dropDownList CentroCostos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Presupuesto</div>\r\n                <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                    {{> dropDownList Presupuestos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input type=\"number\" name=\"Amount\" id=\"iAmount\" class=\"travexForm-control\" value=\"{{Amount}}\" step=\"0.01\" required>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(43) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(41) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Descripción</div>\r\n                <textarea name=\"Description\" class=\"travexForm-control\"></textarea>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Cerrar</button>\r\n        </form>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--========================================\r\n=            TRANSACCION MANUAL            =\r\n=========================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Transaccion Manual</div>\r\n        </div>\r\n        <form id=\"frm-setTransactionManual\" class=\"travexForm\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Empleado</div>\r\n                <select id=\"cbEmployee\" class=\"travexForm-control\" name=\"EmployeeId\" required>\r\n                    {{> dropDownList Empleados}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Método de Pago</div>\r\n                <select id=\"MethodId\" class=\"travexForm-control\" name=\"MethodId\" required>\r\n                    <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label lblFecha\">Fecha</div>\r\n                <input type=\"date\" class=\"travexForm-control\" id=\"dtFecha\" value=\"{{Fecha}}\" name=\"DateApplied\" required>\r\n            </div>\r\n            <div id=\"TransactionGas\">\r\n                <div class=\"travexForm-group\">\r\n                    <span>\r\n                        <div class=\"travexForm-label\">Fecha Final</div><input type=\"date\" class=\"travexForm-control\" id=\"dtFechaFinGas\" value=\"{{FechaFinGas}}\">\r\n                    </span>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Recorrido (Kms)</div>\r\n                    <input type=\"number\" class=\"travexForm-control\" id=\"recorridoGas\" value=\"0\" name=\"Distance\">\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Tarifa/Km</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"tarifaGas\" value=\" \" name=\"GasRate\" readonly>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input id=\"Amount\" type=\"number\" class=\"travexForm-control\" name=\"Amount\" step=\"0.01\" required>\r\n            </div>\r\n            <div id=\"TransactionManual\">\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Comercio</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"Merchant\" name=\"Merchant\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Archivo</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-check\">\r\n                <input class=\"form-check-input\" type=\"checkbox\" id=\"ckTicketManual\" name=\"Ticket\" value=\"true\">\r\n                <label class=\"form-check-label\" for=\"ckTicketManual\">\r\n                    Copiar Ticket Manual\r\n                </label>\r\n            </div>\r\n            <p><small class=\"text-muted\">Se puede realizar un Ticket como comprobante, copiando los datos ya capturados y se puede agregar un archivo al mismo Ticket. *** No subir XML y PDF.</small></p>\r\n            <button class=\"btn btn-secondary btn-block mb-4\" type=\"button\" id=\"btnCollapse\" data-toggle=\"collapse\" data-target=\"#copiaTicketManualContainer\" aria-expanded=\"false\" aria-controls=\"copiaTicketManualContainer\" disabled>\r\n                Mas Información\r\n            </button>\r\n            <div id=\"copiaTicketManualContainer\" class=\"collapse\">\r\n                <h4 class=\"subtitle\">CLASIFICAR</h4>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Concepto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\">\r\n                        {{> dropDownList Conceptos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Clasificacion</div>\r\n                    <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\">\r\n                        <option selected disabled>Seleccione un concepto</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Centro de Costos</div>\r\n                    <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                        {{> dropDownList CentroCostos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Presupuesto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                        {{> dropDownList Presupuestos}}\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n        </form>\r\n    </div>\r\n</section>";
+	module.exports = "<!--========================================\r\n=            TRANSACCION MANUAL            =\r\n=========================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Transaccion Manual</div>\r\n        </div>\r\n        <form id=\"frm-setTransactionManual\" class=\"travexForm\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Empleado</div>\r\n                <select id=\"cbEmployee\" class=\"travexForm-control\" name=\"EmployeeId\" required>\r\n                    {{> dropDownList Empleados}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Método de Pago</div>\r\n                <select id=\"MethodId\" class=\"travexForm-control\" name=\"MethodId\" required>\r\n                    <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label lblFecha\">Fecha</div>\r\n                <input type=\"date\" class=\"travexForm-control\" id=\"dtFecha\" value=\"{{Fecha}}\" name=\"DateApplied\" required>\r\n            </div>\r\n            <div id=\"TransactionGas\">\r\n                <div class=\"travexForm-group\">\r\n                    <span>\r\n                        <div class=\"travexForm-label\">Fecha Final</div><input type=\"date\" class=\"travexForm-control\" id=\"dtFechaFinGas\" value=\"{{FechaFinGas}}\">\r\n                    </span>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Recorrido (Kms)</div>\r\n                    <input type=\"number\" class=\"travexForm-control\" id=\"recorridoGas\" value=\"0\" name=\"Distance\">\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Tarifa/Km</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"tarifaGas\" value=\" \" name=\"GasRate\" readonly>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input id=\"Amount\" type=\"number\" class=\"travexForm-control\" name=\"Amount\" step=\"0.01\" required>\r\n            </div>\r\n            <div id=\"TransactionManual\">\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Comercio</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"Merchant\" name=\"Merchant\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Archivo</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(43) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(41) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-check\">\r\n                <input class=\"form-check-input\" type=\"checkbox\" id=\"ckTicketManual\" name=\"Ticket\" value=\"true\">\r\n                <label class=\"form-check-label\" for=\"ckTicketManual\">\r\n                    Copiar Ticket Manual\r\n                </label>\r\n            </div>\r\n            <p><small class=\"text-muted\">Se puede realizar un Ticket como comprobante, copiando los datos ya capturados y se puede agregar un archivo al mismo Ticket. *** No subir XML y PDF.</small></p>\r\n            <button class=\"btn btn-secondary btn-block mb-4\" type=\"button\" id=\"btnCollapse\" data-toggle=\"collapse\" data-target=\"#copiaTicketManualContainer\" aria-expanded=\"false\" aria-controls=\"copiaTicketManualContainer\" disabled>\r\n                Mas Información\r\n            </button>\r\n            <div id=\"copiaTicketManualContainer\" class=\"collapse\">\r\n                <h4 class=\"subtitle\">CLASIFICAR</h4>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Concepto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\">\r\n                        {{> dropDownList Conceptos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Clasificacion</div>\r\n                    <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\">\r\n                        <option selected disabled>Seleccione un concepto</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Centro de Costos</div>\r\n                    <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                        {{> dropDownList CentroCostos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Presupuesto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                        {{> dropDownList Presupuestos}}\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n        </form>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 371 */
@@ -80569,7 +80576,7 @@
 /* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===============================================\r\n=            POR FACTURAR - CLASIFICAR            =\r\n================================================-->\r\n<section id=\"clasificarContainer\">\r\n    <h3 class=\"text-muted text-center\">Clasificar</h3>\r\n    <form id=\"frm-setCatSubInvBalance\" class=\"travexForm\">\r\n        <input type=\"hidden\" name=\"RelationId\" value=\"{{RelationId}}\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Concepto</div>\r\n            <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" tabindex=\"1\">\r\n                {{> dropDownList Clasificar.Conceptos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Clasificacion</div>\r\n            <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" tabindex=\"2\">\r\n                <option selected disabled>Seleccione un concepto</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Centro de Costos</div>\r\n            <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\" tabindex=\"3\">\r\n                {{> dropDownList Clasificar.CentroCostos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Presupuesto</div>\r\n            <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\" tabindex=\"4\">\r\n                <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                {{#each Clasificar.Presupuestos}}\r\n                    <option value=\"{{Value}}\" {{Selected}}>{{Text}}</option>\r\n                    {{else}}\r\n                        <option value=\"\">N/A</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Subir Imagen</div>\r\n        </div>\r\n        <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <div class=\"files64-prev\">\r\n                <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"pretty p-default p-thick p-pulse\">\r\n                <input type=\"checkbox\" id=\"ck-asistente\" tabindex=\"6\">\r\n                <div class=\"state p-warning-o\">\r\n                    <label class=\"travexForm-label\">Copia a Asistente</label>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Comentarios</div>\r\n            <textarea name=\"Comments\" class=\"travexForm-control\" tabindex=\"5\"></textarea>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-secondary\" data-relation=\"{{RelationId}}\" data-type=\"regresar\">Regresar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-danger\" data-relation=\"{{RelationId}}\" data-type=\"cancelar\">Cancelar</button>\r\n    </form>\r\n</section>";
+	module.exports = "<!--===============================================\r\n=            POR FACTURAR - CLASIFICAR            =\r\n================================================-->\r\n<section id=\"clasificarContainer\">\r\n    <h3 class=\"text-muted text-center\">Clasificar</h3>\r\n    <form id=\"frm-setCatSubInvBalance\" class=\"travexForm\">\r\n        <input type=\"hidden\" name=\"RelationId\" value=\"{{RelationId}}\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Concepto</div>\r\n            <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" tabindex=\"1\">\r\n                {{> dropDownList Clasificar.Conceptos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Clasificacion</div>\r\n            <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" tabindex=\"2\">\r\n                <option selected disabled>Seleccione un concepto</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Centro de Costos</div>\r\n            <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\" tabindex=\"3\">\r\n                {{> dropDownList Clasificar.CentroCostos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Presupuesto</div>\r\n            <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\" tabindex=\"4\">\r\n                <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                {{#each Clasificar.Presupuestos}}\r\n                    <option value=\"{{Value}}\" {{Selected}}>{{Text}}</option>\r\n                    {{else}}\r\n                        <option value=\"\">N/A</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Subir Imagen</div>\r\n        </div>\r\n        <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(43) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <div class=\"files64-prev\">\r\n                <img src=\"" + __webpack_require__(41) + "\" class=\"files64-prev-img\">\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"pretty p-default p-thick p-pulse\">\r\n                <input type=\"checkbox\" id=\"ck-asistente\" tabindex=\"6\">\r\n                <div class=\"state p-warning-o\">\r\n                    <label class=\"travexForm-label\">Copia a Asistente</label>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Comentarios</div>\r\n            <textarea name=\"Comments\" class=\"travexForm-control\" tabindex=\"5\"></textarea>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-secondary\" data-relation=\"{{RelationId}}\" data-type=\"regresar\">Regresar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-danger\" data-relation=\"{{RelationId}}\" data-type=\"cancelar\">Cancelar</button>\r\n    </form>\r\n</section>";
 
 /***/ }),
 /* 384 */
@@ -80599,7 +80606,7 @@
 /* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div id=\"CatalogField\">\r\n                <label class=\"travexForm-label\">Catálogo</label>\r\n                <select name=\"CatalogId\" id=\"cbCatalog\" class=\"travexForm-control\">            \r\n            </div>\r\n            </select>\r\n                <div class=\"travexForm-label\">Periodo</div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(41) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(40) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n    </form>\r\n    </div>\r\n    <div class=\"p-3\" style=\"background: #f1f1f1\">\r\n        <h3 class=\"text-muted\">Conceptos</h3>\r\n        <div id=\"Details-container\"></div>\r\n        <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n    </div>\r\n    <section id=\"resumen\" class=\"m-4\">\r\n        <div class=\"resumen\">\r\n            <div class=\"resumen-item\">\r\n                <label>Empleado</label>\r\n                <span>{{Employee.FullName}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Proyecto</label>\r\n                <span>{{Project.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Estado</label>\r\n                <span>{{State.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Municipio</label>\r\n                <span>{{Municipality.Name}}</span>\r\n            </div>\r\n            <div id=\"resumen-container\" class=\"text-right\"></div>\r\n        </div>\r\n    </section>\r\n    <div class=\"text-center\">\r\n        <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n    </div>\r\n</div>";
+	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div id=\"CatalogField\">\r\n                <label class=\"travexForm-label\">Catálogo</label>\r\n                <select name=\"CatalogId\" id=\"cbCatalog\" class=\"travexForm-control\">            \r\n            </div>\r\n            </select>\r\n                <div class=\"travexForm-label\">Periodo</div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-label\">Información Adicional</div>\r\n            <textarea class=\"form-control\" rows=\"5\" id=\"aditionalInfo\" name=\"InformacionAdicional\" placeholder=\"Escriba inforamción extra\"></textarea>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(43) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(42) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(41) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n    </form>\r\n    </div>\r\n    <div class=\"p-3\" style=\"background: #f1f1f1\">\r\n        <h3 class=\"text-muted\">Conceptos</h3>\r\n        <div id=\"Details-container\"></div>\r\n        <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n    </div>\r\n    <section id=\"resumen\" class=\"m-4\">\r\n        <div class=\"resumen\">\r\n            <div class=\"resumen-item\">\r\n                <label>Empleado</label>\r\n                <span>{{Employee.FullName}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Proyecto</label>\r\n                <span>{{Project.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Estado</label>\r\n                <span>{{State.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Municipio</label>\r\n                <span>{{Municipality.Name}}</span>\r\n            </div>\r\n            <div id=\"resumen-container\" class=\"text-right\"></div>\r\n        </div>\r\n    </section>\r\n    <div class=\"text-center\">\r\n        <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 389 */
