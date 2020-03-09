@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "506bde44d283dce5153f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "008444f3ca03a03347f4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28571,7 +28571,8 @@
 	});
 	exports.default = {
 	    //SERVER_URL: 'http://10.0.200.45:53475',
-	    SERVER_URL: 'http://10.0.200.38:53475',
+	    //SERVER_URL: 'http://10.0.200.38:53475',
+	    SERVER_URL: 'http://test.ocsi.mx/Extranet/WebApi_Travex',
 	    //SERVER_URL: 'https://gincard.onecardexternal.mx/Api/Travex/',
 	    //SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp',
 	    STATUS: {
@@ -60181,6 +60182,9 @@
 	                                                        if (!valido.Success) {
 	                                                            alert("Valide la información\n\n" + valido.Mensaje);
 	                                                            valid = false;
+	                                                        } else if (formData.InformacionAdicional == "") {
+	                                                            alert("Escriba información Adicional");
+	                                                            valid = false;
 	                                                        } else {
 	                                                            _this.Data.Details.push({
 	                                                                "Catalog": {
@@ -60219,7 +60223,7 @@
 	                                                        _this.Data.BudgetId = resultSpecial.Data.Id;
 	                                                        SetFileBudget(_this);
 	                                                    }
-	                                                    $btn.attr("disabled", true);
+	                                                    $btn.attr("disabled", false);
 	                                                    _context7.next = 22;
 	                                                    break;
 
@@ -60231,7 +60235,7 @@
 	                                                            _this.Data.BudgetId = r.Data.Id;
 	                                                            SetFileBudget(_this);
 	                                                        }
-	                                                        $btn.attr("disabled", true);
+	                                                        $btn.attr("disabled", false);
 	                                                    });
 
 	                                                case 22:
