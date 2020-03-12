@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "409822d099f668f523bc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e42ea8efd8eac2ad88dc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28572,9 +28572,9 @@
 	exports.default = {
 	    //SERVER_URL: 'http://10.0.200.45:53475',
 	    //SERVER_URL: 'http://10.0.200.38:53475',
-	    SERVER_URL: 'http://test.ocsi.mx/Extranet/WebApi_Travex',
+	    //SERVER_URL: 'http://test.ocsi.mx/Extranet/WebApi_Travex',
 	    //SERVER_URL: 'https://gincard.onecardexternal.mx/Api/Travex/',
-	    //SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp',
+	    SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp', //PRODUCCIÓN
 	    STATUS: {
 	        SUCCESS: 0
 	    }
@@ -60181,9 +60181,6 @@
 	                                                        var valido = _this.validarConcepto(data);
 	                                                        if (!valido.Success) {
 	                                                            alert("Valide la información\n\n" + valido.Mensaje);
-	                                                            valid = false;
-	                                                        } else if (formData.InformacionAdicional == "") {
-	                                                            alert("Ingrese información adicional");
 	                                                            valid = false;
 	                                                        } else {
 	                                                            _this.Data.Details.push({
