@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e42ea8efd8eac2ad88dc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "13cb7432b67628aa689e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28571,9 +28571,9 @@
 	});
 	exports.default = {
 	    //SERVER_URL: 'http://10.0.200.45:53475',
-	    //SERVER_URL: 'http://10.0.200.38:53475',
-	    //SERVER_URL: 'http://test.ocsi.mx/Extranet/WebApi_Travex',
 	    //SERVER_URL: 'https://gincard.onecardexternal.mx/Api/Travex/',
+	    //SERVER_URL: 'http://10.0.200.38:53475', //JAIRO
+	    //SERVER_URL: 'http://test.ocsi.mx/Extranet/WebApi_Travex',//TEST
 	    SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp', //PRODUCCIÓN
 	    STATUS: {
 	        SUCCESS: 0
@@ -59665,11 +59665,11 @@
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 	var SetFileBudget = function () {
-	    var _ref11 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15(_this) {
+	    var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee16(_this) {
 	        var files64, data;
-	        return _regenerator2.default.wrap(function _callee15$(_context15) {
+	        return _regenerator2.default.wrap(function _callee16$(_context16) {
 	            while (1) {
-	                switch (_context15.prev = _context15.next) {
+	                switch (_context16.prev = _context16.next) {
 	                    case 0:
 	                        if (!_this.Data.File) {
 	                            alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId);
@@ -59695,34 +59695,34 @@
 
 	                    case 1:
 	                    case "end":
-	                        return _context15.stop();
+	                        return _context16.stop();
 	                }
 	            }
-	        }, _callee15, this);
+	        }, _callee16, this);
 	    }));
 
-	    return function SetFileBudget(_x4) {
-	        return _ref11.apply(this, arguments);
+	    return function SetFileBudget(_x6) {
+	        return _ref12.apply(this, arguments);
 	    };
 	}();
 
 	var renderConcepts = function () {
-	    var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee16(_this) {
+	    var _ref13 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee17(_this) {
 	        var Conceptos, Conceptos2, periodoDefault, template;
-	        return _regenerator2.default.wrap(function _callee16$(_context16) {
+	        return _regenerator2.default.wrap(function _callee17$(_context17) {
 	            while (1) {
-	                switch (_context16.prev = _context16.next) {
+	                switch (_context17.prev = _context17.next) {
 	                    case 0:
-	                        _context16.next = 2;
+	                        _context17.next = 2;
 	                        return _store2.default.Catalogs(_this.Data.Employee.EmployeeId);
 
 	                    case 2:
-	                        Conceptos = _context16.sent;
-	                        _context16.next = 5;
+	                        Conceptos = _context17.sent;
+	                        _context17.next = 5;
 	                        return _store2.default.GetRegisterCatalogs(_this.Data.Employee.EmployeeId);
 
 	                    case 5:
-	                        Conceptos2 = _context16.sent;
+	                        Conceptos2 = _context17.sent;
 
 	                        if (Conceptos.Success && Conceptos2.Success) {
 	                            _this.Data.Catalogs = _linq2.default.from(Conceptos.Data).select(function (el) {
@@ -59760,14 +59760,14 @@
 
 	                    case 7:
 	                    case "end":
-	                        return _context16.stop();
+	                        return _context17.stop();
 	                }
 	            }
-	        }, _callee16, this);
+	        }, _callee17, this);
 	    }));
 
-	    return function renderConcepts(_x5) {
-	        return _ref12.apply(this, arguments);
+	    return function renderConcepts(_x7) {
+	        return _ref13.apply(this, arguments);
 	    };
 	}();
 
@@ -59892,16 +59892,18 @@
 	                            _this3.Data = {};
 	                            _this3.Data.Details = [];
 	                            _this = _this3;
-	                            _context2.next = 5;
+
+	                            _this.Data.isbtnCollapseClick = false;
+	                            _context2.next = 6;
 	                            return _store2.default.Users({
 	                                Type: 'Budget'
 	                            });
 
-	                        case 5:
+	                        case 6:
 	                            users = _context2.sent;
 
 	                            if (!users.Success) {
-	                                _context2.next = 20;
+	                                _context2.next = 21;
 	                                break;
 	                            }
 
@@ -59909,10 +59911,10 @@
 	                            employees = _dataUI2.default.getRows(users.Data, 'Id:EmployeeId,Name:FullName,Description:CardNumber');
 	                            _context2.t0 = _tool2.default;
 	                            _context2.t1 = _presupuestoAltaTpl2.default;
-	                            _context2.next = 13;
+	                            _context2.next = 14;
 	                            return _optionList3.default.render(employees, "empleado");
 
-	                        case 13:
+	                        case 14:
 	                            _context2.t2 = _context2.sent;
 	                            _context2.t3 = {
 	                                Partial: _context2.t2
@@ -59921,17 +59923,17 @@
 
 	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
 	                            _optionList3.default.handleEvents();
-	                            _context2.next = 21;
+	                            _context2.next = 22;
 	                            break;
 
-	                        case 20:
+	                        case 21:
 	                            alert('Ha ocurrido un error favor de intentar mas tarde');
 
-	                        case 21:
+	                        case 22:
 
 	                            _this3.handleEvents();
 
-	                        case 22:
+	                        case 23:
 	                        case "end":
 	                            return _context2.stop();
 	                    }
@@ -60081,12 +60083,12 @@
 	    renderPartialResumen: function renderPartialResumen() {
 	        var _this5 = this;
 
-	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
+	        return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
 	            var _this, collapseId, nuevoConceptoInit;
 
-	            return _regenerator2.default.wrap(function _callee8$(_context8) {
+	            return _regenerator2.default.wrap(function _callee9$(_context9) {
 	                while (1) {
-	                    switch (_context8.prev = _context8.next) {
+	                    switch (_context9.prev = _context9.next) {
 	                        case 0:
 	                            _this = _this5;
 	                            collapseId = _this5.Data.Details.length + 1;
@@ -60125,20 +60127,19 @@
 
 	                            //Nuevo Concepto
 	                            (0, _jquery2.default)("#btnNuevoConcepto").on("click", function () {
-	                                var isValid = true;
 	                                //valida que no exista un concepto incompleto...
+	                                var isValidConcept = true;
+	                                _this.Data.isbtnCollapseClick = false;
 	                                (0, _jquery2.default)(".accordion").each(function (index, el) {
 	                                    var $frm = (0, _jquery2.default)(el).find(".Details");
 	                                    var data = $frm.serializeObject();
-
-	                                    var valido = _this.validarConcepto(data, true);
-
+	                                    var valido = _this.validarConcepto(data, el, true);
 	                                    if (!valido.Success) {
 	                                        alert("Valide la información\n" + valido.Mensaje);
-	                                        isValid = false;
+	                                        isValidConcept = false;
 	                                    }
 	                                });
-	                                if (isValid) {
+	                                if (isValidConcept) {
 	                                    //Agrrega template de nuevo concepto...
 	                                    _this.Data.collapseId = _this.Data.collapseId + 1;
 	                                    var template = _tool2.default.renderTpl(_nuevoConceptoTpl2.default, _this.Data);
@@ -60148,99 +60149,116 @@
 	                                    _this.handleEventsNuevoConcepto();
 	                                }
 	                            });
-
 	                            //Guardar presupesto en base
 	                            (0, _jquery2.default)("#btnGuardarPrespuesto").on("click", function () {
-	                                var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(e) {
-	                                    var $btn, formData, valid, resultSpecial;
-	                                    return _regenerator2.default.wrap(function _callee7$(_context7) {
+	                                var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(e) {
+	                                    var $btn, formData, isValidBudget, resultSpecial, r;
+	                                    return _regenerator2.default.wrap(function _callee8$(_context8) {
 	                                        while (1) {
-	                                            switch (_context7.prev = _context7.next) {
+	                                            switch (_context8.prev = _context8.next) {
 	                                                case 0:
 	                                                    $btn = (0, _jquery2.default)(this);
 	                                                    formData = (0, _jquery2.default)("#frm-budget").serializeObject();
 
 	                                                    if (formData.Description) {
-	                                                        _context7.next = 6;
+	                                                        _context8.next = 6;
 	                                                        break;
 	                                                    }
 
 	                                                    alert("Ingrese un objetivo.");
 	                                                    (0, _jquery2.default)("#iDescription").focus();
-	                                                    return _context7.abrupt("return", false);
+	                                                    return _context8.abrupt("return", false);
 
 	                                                case 6:
 
 	                                                    _this.Data.Details = [];
-	                                                    valid = true;
+	                                                    isValidBudget = true;
 
+	                                                    (0, _jquery2.default)(".accordion").each(function () {
+	                                                        var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(index, el) {
+	                                                            var $frm, data, valido;
+	                                                            return _regenerator2.default.wrap(function _callee7$(_context7) {
+	                                                                while (1) {
+	                                                                    switch (_context7.prev = _context7.next) {
+	                                                                        case 0:
+	                                                                            $frm = (0, _jquery2.default)(el).find(".Details");
+	                                                                            data = $frm.serializeObject();
+	                                                                            valido = _this.validarConcepto(data, el);
 
-	                                                    (0, _jquery2.default)(".accordion").each(function (index, el) {
-	                                                        var $frm = (0, _jquery2.default)(el).find(".Details");
-	                                                        var data = $frm.serializeObject();
-	                                                        var valido = _this.validarConcepto(data);
-	                                                        if (!valido.Success) {
-	                                                            alert("Valide la información\n\n" + valido.Mensaje);
-	                                                            valid = false;
-	                                                        } else {
-	                                                            _this.Data.Details.push({
-	                                                                "Catalog": {
-	                                                                    "Id": data.CatalogId
-	                                                                },
-	                                                                "Subcatalog": {
-	                                                                    "Id": data.SubcatalogId
-	                                                                },
-	                                                                "Amount": data.Amount,
-	                                                                "Description": data.Description
-	                                                            });
-	                                                        }
-	                                                    });
+	                                                                            if (!valido.Success) {
+	                                                                                alert("Valide la información\n\n" + valido.Mensaje);
+	                                                                                isValidBudget = false;
+	                                                                            } else {
+	                                                                                _this.Data.Details.push({
+	                                                                                    "Catalog": {
+	                                                                                        "Id": data.CatalogId
+	                                                                                    },
+	                                                                                    "Subcatalog": {
+	                                                                                        "Id": data.SubcatalogId
+	                                                                                    },
+	                                                                                    "Amount": data.Amount,
+	                                                                                    "Description": data.Description
+	                                                                                });
+	                                                                            }
 
-	                                                    if (!valid) {
-	                                                        _context7.next = 22;
+	                                                                        case 4:
+	                                                                        case "end":
+	                                                                            return _context7.stop();
+	                                                                    }
+	                                                                }
+	                                                            }, _callee7, this);
+	                                                        }));
+
+	                                                        return function (_x4, _x5) {
+	                                                            return _ref5.apply(this, arguments);
+	                                                        };
+	                                                    }());
+
+	                                                    if (!(isValidBudget && _this.Data.isbtnCollapseClick)) {
+	                                                        _context8.next = 24;
 	                                                        break;
 	                                                    }
 
 	                                                    _jquery2.default.extend(_this.Data, formData);
 	                                                    console.log("BUDGETS", _this.Data, _this.Data.Description);
-	                                                    $btn.attr("disabled", true);
 
 	                                                    if (!_this.Data.isSpecial) {
-	                                                        _context7.next = 21;
+	                                                        _context8.next = 19;
 	                                                        break;
 	                                                    }
 
-	                                                    _context7.next = 16;
+	                                                    _context8.next = 15;
 	                                                    return _store2.default.SetSpecialCatalogs(_this.Data);
 
-	                                                case 16:
-	                                                    resultSpecial = _context7.sent;
+	                                                case 15:
+	                                                    resultSpecial = _context8.sent;
 
 	                                                    if (resultSpecial.Success) {
 	                                                        _this.Data.BudgetId = resultSpecial.Data.Id;
 	                                                        SetFileBudget(_this);
 	                                                    }
-	                                                    $btn.attr("disabled", false);
-	                                                    _context7.next = 22;
+	                                                    _context8.next = 24;
 	                                                    break;
 
+	                                                case 19:
+	                                                    _context8.next = 21;
+	                                                    return _store2.default.Budgets(_this.Data);
+
 	                                                case 21:
+	                                                    r = _context8.sent;
 
-	                                                    _store2.default.Budgets(_this.Data).then(function (r) {
-	                                                        console.log(r);
-	                                                        if (r.Success) {
-	                                                            _this.Data.BudgetId = r.Data.Id;
-	                                                            SetFileBudget(_this);
-	                                                        }
-	                                                        $btn.attr("disabled", false);
-	                                                    });
+	                                                    console.log(r);
+	                                                    if (r.Success) {
+	                                                        _this.Data.BudgetId = r.Data.Id;
+	                                                        SetFileBudget(_this);
+	                                                    }
 
-	                                                case 22:
+	                                                case 24:
 	                                                case "end":
-	                                                    return _context7.stop();
+	                                                    return _context8.stop();
 	                                            }
 	                                        }
-	                                    }, _callee7, this);
+	                                    }, _callee8, this);
 	                                }));
 
 	                                return function (_x3) {
@@ -60250,25 +60268,25 @@
 
 	                        case 10:
 	                        case "end":
-	                            return _context8.stop();
+	                            return _context9.stop();
 	                    }
 	                }
-	            }, _callee8, _this5);
+	            }, _callee9, _this5);
 	        }))();
 	    },
 	    handleEventsEstado: function handleEventsEstado(_this) {
 	        var renderSpecial = function () {
-	            var _ref7 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	            var _ref8 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12() {
 	                var catalogs, renderTpl, fields;
-	                return _regenerator2.default.wrap(function _callee11$(_context11) {
+	                return _regenerator2.default.wrap(function _callee12$(_context12) {
 	                    while (1) {
-	                        switch (_context11.prev = _context11.next) {
+	                        switch (_context12.prev = _context12.next) {
 	                            case 0:
-	                                _context11.next = 2;
+	                                _context12.next = 2;
 	                                return _store2.default.GetSpecialCatalogs(0);
 
 	                            case 2:
-	                                catalogs = _context11.sent;
+	                                catalogs = _context12.sent;
 	                                renderTpl = _tool2.default.renderTpl(_presupuestoAlta_datosTpl2.default, {
 	                                    type: 'especial'
 	                                });
@@ -60298,31 +60316,31 @@
 
 	                            case 21:
 	                            case "end":
-	                                return _context11.stop();
+	                                return _context12.stop();
 	                        }
 	                    }
-	                }, _callee11, this);
+	                }, _callee12, this);
 	            }));
 
 	            return function renderSpecial() {
-	                return _ref7.apply(this, arguments);
+	                return _ref8.apply(this, arguments);
 	            };
 	        }();
 
 	        //Seleccion de estado...
-	        (0, _jquery2.default)("#cbEstado").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
+	        (0, _jquery2.default)("#cbEstado").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
 	            var StateId, Name, Municipios, options;
-	            return _regenerator2.default.wrap(function _callee9$(_context9) {
+	            return _regenerator2.default.wrap(function _callee10$(_context10) {
 	                while (1) {
-	                    switch (_context9.prev = _context9.next) {
+	                    switch (_context10.prev = _context10.next) {
 	                        case 0:
 	                            StateId = (0, _jquery2.default)(this).val();
 	                            Name = (0, _jquery2.default)(this).find("option:selected").text();
-	                            _context9.next = 4;
+	                            _context10.next = 4;
 	                            return _store2.default.Municipalities(StateId);
 
 	                        case 4:
-	                            Municipios = _context9.sent;
+	                            Municipios = _context10.sent;
 
 
 	                            _this.Data.State = {
@@ -60352,10 +60370,10 @@
 
 	                        case 11:
 	                        case "end":
-	                            return _context9.stop();
+	                            return _context10.stop();
 	                    }
 	                }
-	            }, _callee9, this);
+	            }, _callee10, this);
 	        })));
 	        //seleccion de municipio...            
 	        (0, _jquery2.default)("#cbMunicipio").on("change", function () {
@@ -60368,10 +60386,10 @@
 	            };
 	            console.log("MUNICIPIO", _this.Data);
 	        });
-	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
-	            return _regenerator2.default.wrap(function _callee10$(_context10) {
+	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	            return _regenerator2.default.wrap(function _callee11$(_context11) {
 	                while (1) {
-	                    switch (_context10.prev = _context10.next) {
+	                    switch (_context11.prev = _context11.next) {
 	                        case 0:
 	                            if (!_this.Data.State) {
 	                                alert("Seleccione un Estado para continuar.");
@@ -60389,18 +60407,18 @@
 
 	                        case 1:
 	                        case "end":
-	                            return _context10.stop();
+	                            return _context11.stop();
 	                    }
 	                }
-	            }, _callee10, this);
+	            }, _callee11, this);
 	        })));
 	    },
 	    handleEventsSpecialCats: function handleEventsSpecialCats(_this) {
-	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12() {
+	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
 	            var frmData;
-	            return _regenerator2.default.wrap(function _callee12$(_context12) {
+	            return _regenerator2.default.wrap(function _callee13$(_context13) {
 	                while (1) {
-	                    switch (_context12.prev = _context12.next) {
+	                    switch (_context13.prev = _context13.next) {
 	                        case 0:
 	                            frmData = (0, _jquery2.default)('#frm-Special').serializeObject();
 	                            ;
@@ -60408,14 +60426,14 @@
 	                                _this.Data = (0, _assign2.default)(_this.Data, frmData);
 	                                renderConcepts(_this);
 	                            }
-	                            return _context12.abrupt("return", false);
+	                            return _context13.abrupt("return", false);
 
 	                        case 4:
 	                        case "end":
-	                            return _context12.stop();
+	                            return _context13.stop();
 	                    }
 	                }
-	            }, _callee12, this);
+	            }, _callee13, this);
 	        })));
 	    },
 	    handleEventsNuevoConcepto: function handleEventsNuevoConcepto() {
@@ -60425,11 +60443,11 @@
 	        var $cbClasificacion = $accordionActual.find(".cbClasificacion");
 	        var $btnEliminarConcepto = $accordionActual.find(".btnEliminarConcepto");
 	        //cambio en el combo de concepto, carga clasificaciones y cambia el header
-	        $cbConceptos.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
+	        $cbConceptos.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
 	            var $this, $parent, accordion, $accordion, CadalogId, vcCatalog, Clasificaciones, renderOptions, template;
-	            return _regenerator2.default.wrap(function _callee13$(_context13) {
+	            return _regenerator2.default.wrap(function _callee14$(_context14) {
 	                while (1) {
-	                    switch (_context13.prev = _context13.next) {
+	                    switch (_context14.prev = _context14.next) {
 	                        case 0:
 	                            $this = (0, _jquery2.default)(this);
 	                            $parent = $this.parent().parent();
@@ -60447,11 +60465,11 @@
 
 	                            $accordionActual.find(".AmountPolicy").val(0);
 
-	                            _context13.next = 12;
+	                            _context14.next = 12;
 	                            return _store2.default.SubCatalogs(CadalogId);
 
 	                        case 12:
-	                            Clasificaciones = _context13.sent;
+	                            Clasificaciones = _context14.sent;
 	                            renderOptions = _linq2.default.from(Clasificaciones.Data).select(function (el) {
 	                                return {
 	                                    Text: el.Name,
@@ -60464,17 +60482,17 @@
 
 	                        case 16:
 	                        case "end":
-	                            return _context13.stop();
+	                            return _context14.stop();
 	                    }
 	                }
-	            }, _callee13, this);
+	            }, _callee14, this);
 	        })));
 	        //cambio en combo de clasificacion, carga el monto por politica
-	        $cbClasificacion.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
+	        $cbClasificacion.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15() {
 	            var $cb, SubCatalogId, vcSubcatalog, data;
-	            return _regenerator2.default.wrap(function _callee14$(_context14) {
+	            return _regenerator2.default.wrap(function _callee15$(_context15) {
 	                while (1) {
-	                    switch (_context14.prev = _context14.next) {
+	                    switch (_context15.prev = _context15.next) {
 	                        case 0:
 	                            $cb = (0, _jquery2.default)(this);
 	                            SubCatalogId = $cb.val();
@@ -60505,10 +60523,10 @@
 
 	                        case 7:
 	                        case "end":
-	                            return _context14.stop();
+	                            return _context15.stop();
 	                    }
 	                }
-	            }, _callee14, this);
+	            }, _callee15, this);
 	        })));
 	        //Elimina concepto...
 	        $btnEliminarConcepto.on("click", function () {
@@ -60535,13 +60553,15 @@
 	            var type = $btn.data("type");
 	            var $frm = $btn.closest('.Details');
 	            var data = $frm.serializeObject();
-
+	            _this.Data.isbtnCollapseClick = true;
 	            var valido = _this.validarConcepto(data);
 
 	            if (!valido.Success) {
 	                alert(valido.Mensaje);
+	                _this.Data.isbtnCollapseClick = false;
 	                return false;
 	            } else {
+	                $accordionActual.attr('created', true); //Lo cree
 	                _this.Data.Details.push({
 	                    "Catalog": {
 	                        "Id": data.CatalogId,
@@ -60567,7 +60587,7 @@
 	            return false;
 	        });
 	    },
-	    validarConcepto: function validarConcepto(info, validExist) {
+	    validarConcepto: function validarConcepto(info, container, validExist) {
 	        var _this = this;
 	        var result = {
 	            Success: true,
@@ -60578,19 +60598,20 @@
 	            result.Success = false;
 	            result.Mensaje = "✋ Seleccione un Concepto";
 	            return result;
-	        }
-	        if (!info.SubcatalogId) {
+	        } else if (!info.SubcatalogId) {
 	            result.Success = false;
 	            result.Mensaje = "✋ Seleccione una Clasificación";
 	            return result;
-	        }
-
-	        if (!validExist) {
+	        } else if (!validExist) {
 	            var exist = _linq2.default.from(_this.Data.Details).where(function (el) {
 	                return el.Catalog.Id === info.CatalogId && el.Subcatalog.Id === info.SubcatalogId;
 	            }).toArray();
 
-	            if (exist.length > 0) {
+	            if (!_this.Data.isbtnCollapseClick && info.CatalogId && info.SubcatalogId && (0, _jquery2.default)(container).attr('created') === undefined) //Si no se ha dado click y estan llenos lso 
+	                {
+	                    result.Success = false;
+	                    result.Mensaje = "✋ Guarde Concepto y  Clasificación.";
+	                } else if (exist.length > 0) {
 	                result.Success = false;
 	                result.Mensaje = "✋ Ya existe un Concepto con esta clasificación.";
 	                return result;
