@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "13cb7432b67628aa689e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5211a280b8cf14050241"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -59646,7 +59646,7 @@
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -59665,17 +59665,17 @@
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 	var SetFileBudget = function () {
-	    var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee16(_this) {
+	    var _ref13 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee17(_this) {
 	        var files64, data;
-	        return _regenerator2.default.wrap(function _callee16$(_context16) {
+	        return _regenerator2.default.wrap(function _callee17$(_context17) {
 	            while (1) {
-	                switch (_context16.prev = _context16.next) {
+	                switch (_context17.prev = _context17.next) {
 	                    case 0:
 	                        if (!_this.Data.File) {
-	                            alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId);
-	                            app.View("main");
+	                            alert('Se creo correctamente el presupuesto.\nPRESPUESTO: ' + _this.Data.BudgetId);
+	                            app.View('main');
 	                        } else {
-	                            files64 = (0, _jquery2.default)("#files64").data("base");
+	                            files64 = (0, _jquery2.default)('#files64').data('base');
 	                            data = {
 	                                BudgetId: _this.Data.BudgetId,
 	                                File: files64
@@ -59685,44 +59685,44 @@
 	                            _store2.default.FileBudget(data).then(function (result) {
 	                                console.log(result);
 	                                if (!result) {
-	                                    alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId + "\nOcurrio un error al guardar el archivo.");
+	                                    alert('Se creo correctamente el presupuesto.\nPRESPUESTO: ' + _this.Data.BudgetId + '\nOcurrio un error al guardar el archivo.');
 	                                } else {
-	                                    alert("Se creo correctamente el presupuesto.\nPRESPUESTO: " + _this.Data.BudgetId);
+	                                    alert('Se creo correctamente el presupuesto.\nPRESPUESTO: ' + _this.Data.BudgetId);
 	                                }
-	                                app.View("main");
+	                                app.View('main');
 	                            });
 	                        }
 
 	                    case 1:
-	                    case "end":
-	                        return _context16.stop();
+	                    case 'end':
+	                        return _context17.stop();
 	                }
 	            }
-	        }, _callee16, this);
+	        }, _callee17, this);
 	    }));
 
-	    return function SetFileBudget(_x6) {
-	        return _ref12.apply(this, arguments);
+	    return function SetFileBudget(_x8) {
+	        return _ref13.apply(this, arguments);
 	    };
 	}();
 
 	var renderConcepts = function () {
-	    var _ref13 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee17(_this) {
+	    var _ref14 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee18(_this) {
 	        var Conceptos, Conceptos2, periodoDefault, template;
-	        return _regenerator2.default.wrap(function _callee17$(_context17) {
+	        return _regenerator2.default.wrap(function _callee18$(_context18) {
 	            while (1) {
-	                switch (_context17.prev = _context17.next) {
+	                switch (_context18.prev = _context18.next) {
 	                    case 0:
-	                        _context17.next = 2;
+	                        _context18.next = 2;
 	                        return _store2.default.Catalogs(_this.Data.Employee.EmployeeId);
 
 	                    case 2:
-	                        Conceptos = _context17.sent;
-	                        _context17.next = 5;
+	                        Conceptos = _context18.sent;
+	                        _context18.next = 5;
 	                        return _store2.default.GetRegisterCatalogs(_this.Data.Employee.EmployeeId);
 
 	                    case 5:
-	                        Conceptos2 = _context17.sent;
+	                        Conceptos2 = _context18.sent;
 
 	                        if (Conceptos.Success && Conceptos2.Success) {
 	                            _this.Data.Catalogs = _linq2.default.from(Conceptos.Data).select(function (el) {
@@ -59733,7 +59733,7 @@
 	                            }).toArray();
 	                            _this.Data.Catalogs2 = Conceptos2.Data;
 	                            //fechas periodo
-	                            periodoDefault = (0, _moment2.default)().format("YYYY-MM-DD");
+	                            periodoDefault = (0, _moment2.default)().format('YYYY-MM-DD');
 
 	                            _this.Data.periodoDefault = periodoDefault;
 	                            _this.Data.StartDate = periodoDefault;
@@ -59742,7 +59742,7 @@
 	                            template = _tool2.default.renderTpl(_presupuestoAlta_resumenTpl2.default, _this.Data);
 
 
-	                            (0, _jquery2.default)("#presupuestoAltaPartial").html(template);
+	                            (0, _jquery2.default)('#presupuestoAltaPartial').html(template);
 	                            if (_this.Data.isSpecial) {
 	                                (0, _jquery2.default)('#CatalogField').hide();
 	                            } else {
@@ -59759,15 +59759,15 @@
 	                        }
 
 	                    case 7:
-	                    case "end":
-	                        return _context17.stop();
+	                    case 'end':
+	                        return _context18.stop();
 	                }
 	            }
-	        }, _callee17, this);
+	        }, _callee18, this);
 	    }));
 
-	    return function renderConcepts(_x7) {
-	        return _ref13.apply(this, arguments);
+	    return function renderConcepts(_x9) {
+	        return _ref14.apply(this, arguments);
 	    };
 	}();
 
@@ -59853,26 +59853,26 @@
 	                    switch (_context.prev = _context.next) {
 	                        case 0:
 	                            _context.next = 2;
-	                            return _store2.default.Pass("Budget");
+	                            return _store2.default.Pass('Budget');
 
 	                        case 2:
 	                            Pass = _context.sent;
 	                            HasPermit = Pass.Data.HasPermit;
 
-	                            if (!(HasPermit === "0")) {
+	                            if (!(HasPermit === '0')) {
 	                                _context.next = 8;
 	                                break;
 	                            }
 
-	                            alert("El usuario no tiene permisos para solicitar presupuestos.\nPonte en contacto con el administrador.");
-	                            app.View("main");
-	                            return _context.abrupt("return");
+	                            alert('El usuario no tiene permisos para solicitar presupuestos.\nPonte en contacto con el administrador.');
+	                            app.View('main');
+	                            return _context.abrupt('return');
 
 	                        case 8:
 	                            _this2.render();
 
 	                        case 9:
-	                        case "end":
+	                        case 'end':
 	                            return _context.stop();
 	                    }
 	                }
@@ -59912,7 +59912,7 @@
 	                            _context2.t0 = _tool2.default;
 	                            _context2.t1 = _presupuestoAltaTpl2.default;
 	                            _context2.next = 14;
-	                            return _optionList3.default.render(employees, "empleado");
+	                            return _optionList3.default.render(employees, 'empleado');
 
 	                        case 14:
 	                            _context2.t2 = _context2.sent;
@@ -59921,7 +59921,7 @@
 	                            };
 	                            renderTpl = _context2.t0.renderTpl.call(_context2.t0, _context2.t1, _context2.t3);
 
-	                            (0, _jquery2.default)("#renderBody").html(renderTpl);
+	                            (0, _jquery2.default)('#renderBody').html(renderTpl);
 	                            _optionList3.default.handleEvents();
 	                            _context2.next = 22;
 	                            break;
@@ -59934,7 +59934,7 @@
 	                            _this3.handleEvents();
 
 	                        case 23:
-	                        case "end":
+	                        case 'end':
 	                            return _context2.stop();
 	                    }
 	                }
@@ -59967,11 +59967,11 @@
 	                                        type: 'datos'
 	                                    });
 
-	                                    (0, _jquery2.default)("#presupuestoAltaPartial").html(renderTpl);
+	                                    (0, _jquery2.default)('#presupuestoAltaPartial').html(renderTpl);
 	                                    _this.handleEventsEstado(_this);
 
 	                                case 7:
-	                                case "end":
+	                                case 'end':
 	                                    return _context5.stop();
 	                            }
 	                        }
@@ -59991,14 +59991,14 @@
 	                        case 0:
 	                            _this = _this4;
 
-	                            (0, _jquery2.default)(".opt-employee").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
+	                            (0, _jquery2.default)('.opt-employee').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
 	                                var EmployeeId, Employee, Proyectos, renderTpl;
 	                                return _regenerator2.default.wrap(function _callee4$(_context4) {
 	                                    while (1) {
 	                                        switch (_context4.prev = _context4.next) {
 	                                            case 0:
-	                                                EmployeeId = (0, _jquery2.default)(this).data("id");
-	                                                Employee = (0, _jquery2.default)(this).data("name");
+	                                                EmployeeId = (0, _jquery2.default)(this).data('id');
+	                                                Employee = (0, _jquery2.default)(this).data('name');
 	                                                //Determinamos si es especial
 
 	                                                _this.Data.isSpecial = _this.Data.Employees.find(function (e) {
@@ -60010,7 +60010,7 @@
 	                                                    FullName: Employee
 	                                                };
 
-	                                                console.log("EMPLEADO", _this.Data);
+	                                                console.log('EMPLEADO', _this.Data);
 
 	                                                //cargo los datos de los combos...
 	                                                _context4.next = 7;
@@ -60027,24 +60027,24 @@
 	                                                    break;
 	                                                }
 
-	                                                renderStates(1, "N/A");
+	                                                renderStates(1, 'N/A');
 	                                                _context4.next = 18;
 	                                                break;
 
 	                                            case 13:
 	                                                _context4.next = 15;
-	                                                return _optionList3.default.render(Proyectos, "proyecto", null, true);
+	                                                return _optionList3.default.render(Proyectos, 'proyecto', null, true);
 
 	                                            case 15:
 	                                                renderTpl = _context4.sent;
 
-	                                                (0, _jquery2.default)("#presupuestoAltaPartial").html(renderTpl);
+	                                                (0, _jquery2.default)('#presupuestoAltaPartial').html(renderTpl);
 	                                                _optionList3.default.handleEvents();
 
 	                                            case 18:
 
 	                                                //seleccion de proyecto...
-	                                                (0, _jquery2.default)(".opt-project").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+	                                                (0, _jquery2.default)('.opt-project').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
 	                                                    var Id, Name;
 	                                                    return _regenerator2.default.wrap(function _callee3$(_context3) {
 	                                                        while (1) {
@@ -60054,10 +60054,10 @@
 	                                                                    Name = (0, _jquery2.default)(this).attr('data-name');
 
 	                                                                    renderStates(Id, Name);
-	                                                                    console.log("PROYECTO", _this.Data);
+	                                                                    console.log('PROYECTO', _this.Data);
 
 	                                                                case 4:
-	                                                                case "end":
+	                                                                case 'end':
 	                                                                    return _context3.stop();
 	                                                            }
 	                                                        }
@@ -60065,7 +60065,7 @@
 	                                                })));
 
 	                                            case 19:
-	                                            case "end":
+	                                            case 'end':
 	                                                return _context4.stop();
 	                                        }
 	                                    }
@@ -60073,7 +60073,7 @@
 	                            })));
 
 	                        case 2:
-	                        case "end":
+	                        case 'end':
 	                            return _context6.stop();
 	                    }
 	                }
@@ -60098,19 +60098,19 @@
 
 	                            nuevoConceptoInit = _tool2.default.renderTpl(_nuevoConceptoTpl2.default, _this.Data);
 
-	                            (0, _jquery2.default)("#Details-container").append(nuevoConceptoInit);
+	                            (0, _jquery2.default)('#Details-container').append(nuevoConceptoInit);
 	                            _this.handleEventsNuevoConcepto();
 
 	                            //Archivo presupuesto
-	                            (0, _jquery2.default)(".files64-button").on("click", function () {
+	                            (0, _jquery2.default)('.files64-button').on('click', function () {
 	                                var $btn = (0, _jquery2.default)(this);
-	                                var $container = $btn.parent(".files64");
-	                                var pictureSource = $btn.data("source");
+	                                var $container = $btn.parent('.files64');
+	                                var pictureSource = $btn.data('source');
 
 	                                app.getPicture(pictureSource).then(function (imageData) {
 	                                    console.log(imageData);
-	                                    $container.data("base", imageData);
-	                                    $container.find(".files64-prev-img").attr("src", "data:image/jpeg;base64," + imageData);
+	                                    $container.data('base', imageData);
+	                                    $container.find('.files64-prev-img').attr('src', 'data:image/jpeg;base64,' + imageData);
 	                                }, function (err) {
 	                                    console.log(err);
 	                                });
@@ -60119,23 +60119,23 @@
 	                            });
 
 	                            //Guarda las periodo en objeto global
-	                            (0, _jquery2.default)(".datepicker").on("change", function () {
+	                            (0, _jquery2.default)('.datepicker').on('change', function () {
 	                                var $this = (0, _jquery2.default)(this);
-	                                var name = $this.prop("name");
+	                                var name = $this.prop('name');
 	                                _this.Data[name] = $this.val();
 	                            });
 
 	                            //Nuevo Concepto
-	                            (0, _jquery2.default)("#btnNuevoConcepto").on("click", function () {
+	                            (0, _jquery2.default)('#btnNuevoConcepto').on('click', function () {
 	                                //valida que no exista un concepto incompleto...
-	                                var isValidConcept = true;
 	                                _this.Data.isbtnCollapseClick = false;
-	                                (0, _jquery2.default)(".accordion").each(function (index, el) {
-	                                    var $frm = (0, _jquery2.default)(el).find(".Details");
+	                                var isValidConcept = true;
+	                                (0, _jquery2.default)('.accordion').each(function (index, el) {
+	                                    var $frm = (0, _jquery2.default)(el).find('.Details');
 	                                    var data = $frm.serializeObject();
 	                                    var valido = _this.validarConcepto(data, el, true);
 	                                    if (!valido.Success) {
-	                                        alert("Valide la información\n" + valido.Mensaje);
+	                                        alert('Valide la información\n' + valido.Mensaje);
 	                                        isValidConcept = false;
 	                                    }
 	                                });
@@ -60145,12 +60145,12 @@
 	                                    var template = _tool2.default.renderTpl(_nuevoConceptoTpl2.default, _this.Data);
 	                                    //colapsa todos los conceptos
 	                                    (0, _jquery2.default)('.collapse').removeClass('show');
-	                                    (0, _jquery2.default)("#Details-container").append(template);
+	                                    (0, _jquery2.default)('#Details-container').append(template);
 	                                    _this.handleEventsNuevoConcepto();
 	                                }
 	                            });
 	                            //Guardar presupesto en base
-	                            (0, _jquery2.default)("#btnGuardarPrespuesto").on("click", function () {
+	                            (0, _jquery2.default)('#btnGuardarPrespuesto').on('click', function () {
 	                                var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(e) {
 	                                    var $btn, formData, isValidBudget, resultSpecial, r;
 	                                    return _regenerator2.default.wrap(function _callee8$(_context8) {
@@ -60158,51 +60158,53 @@
 	                                            switch (_context8.prev = _context8.next) {
 	                                                case 0:
 	                                                    $btn = (0, _jquery2.default)(this);
-	                                                    formData = (0, _jquery2.default)("#frm-budget").serializeObject();
+	                                                    formData = (0, _jquery2.default)('#frm-budget').serializeObject();
 
 	                                                    if (formData.Description) {
 	                                                        _context8.next = 6;
 	                                                        break;
 	                                                    }
 
-	                                                    alert("Ingrese un objetivo.");
-	                                                    (0, _jquery2.default)("#iDescription").focus();
-	                                                    return _context8.abrupt("return", false);
+	                                                    alert('Ingrese un objetivo.');
+	                                                    (0, _jquery2.default)('#iDescription').focus();
+	                                                    return _context8.abrupt('return', false);
 
 	                                                case 6:
 
 	                                                    _this.Data.Details = [];
 	                                                    isValidBudget = true;
 
-	                                                    (0, _jquery2.default)(".accordion").each(function () {
+	                                                    (0, _jquery2.default)('.accordion').each(function () {
 	                                                        var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(index, el) {
 	                                                            var $frm, data, valido;
 	                                                            return _regenerator2.default.wrap(function _callee7$(_context7) {
 	                                                                while (1) {
 	                                                                    switch (_context7.prev = _context7.next) {
 	                                                                        case 0:
-	                                                                            $frm = (0, _jquery2.default)(el).find(".Details");
+	                                                                            $frm = (0, _jquery2.default)(el).find('.Details');
 	                                                                            data = $frm.serializeObject();
 	                                                                            valido = _this.validarConcepto(data, el);
 
 	                                                                            if (!valido.Success) {
-	                                                                                alert("Valide la información\n\n" + valido.Mensaje);
+	                                                                                alert('Valide la información\n\n' + valido.Mensaje);
 	                                                                                isValidBudget = false;
 	                                                                            } else {
 	                                                                                _this.Data.Details.push({
-	                                                                                    "Catalog": {
-	                                                                                        "Id": data.CatalogId
+	                                                                                    Catalog: {
+	                                                                                        Id: data.CatalogId,
+	                                                                                        vcCatalog: data.vcCatalog
 	                                                                                    },
-	                                                                                    "Subcatalog": {
-	                                                                                        "Id": data.SubcatalogId
+	                                                                                    Subcatalog: {
+	                                                                                        Id: data.SubcatalogId,
+	                                                                                        vcSubcatalog: data.vcSubcatalog
 	                                                                                    },
-	                                                                                    "Amount": data.Amount,
-	                                                                                    "Description": data.Description
+	                                                                                    Amount: +data.Amount,
+	                                                                                    Description: data.Description
 	                                                                                });
 	                                                                            }
 
 	                                                                        case 4:
-	                                                                        case "end":
+	                                                                        case 'end':
 	                                                                            return _context7.stop();
 	                                                                    }
 	                                                                }
@@ -60220,7 +60222,7 @@
 	                                                    }
 
 	                                                    _jquery2.default.extend(_this.Data, formData);
-	                                                    console.log("BUDGETS", _this.Data, _this.Data.Description);
+	                                                    console.log('BUDGETS', _this.Data, _this.Data.Description);
 
 	                                                    if (!_this.Data.isSpecial) {
 	                                                        _context8.next = 19;
@@ -60254,7 +60256,7 @@
 	                                                    }
 
 	                                                case 24:
-	                                                case "end":
+	                                                case 'end':
 	                                                    return _context8.stop();
 	                                            }
 	                                        }
@@ -60267,7 +60269,7 @@
 	                            }());
 
 	                        case 10:
-	                        case "end":
+	                        case 'end':
 	                            return _context9.stop();
 	                    }
 	                }
@@ -60315,7 +60317,7 @@
 	                                _UI2.default.handleEvents('select');
 
 	                            case 21:
-	                            case "end":
+	                            case 'end':
 	                                return _context12.stop();
 	                        }
 	                    }
@@ -60328,14 +60330,14 @@
 	        }();
 
 	        //Seleccion de estado...
-	        (0, _jquery2.default)("#cbEstado").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
+	        (0, _jquery2.default)('#cbEstado').on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
 	            var StateId, Name, Municipios, options;
 	            return _regenerator2.default.wrap(function _callee10$(_context10) {
 	                while (1) {
 	                    switch (_context10.prev = _context10.next) {
 	                        case 0:
 	                            StateId = (0, _jquery2.default)(this).val();
-	                            Name = (0, _jquery2.default)(this).find("option:selected").text();
+	                            Name = (0, _jquery2.default)(this).find('option:selected').text();
 	                            _context10.next = 4;
 	                            return _store2.default.Municipalities(StateId);
 
@@ -60348,13 +60350,13 @@
 	                                Name: Name
 	                            };
 	                            //valida que sea estado Nacional, si es asi, establece en NA el municipio
-	                            if (StateId === "2") {
+	                            if (StateId === '2') {
 	                                _this.Data.Municipality = {
 	                                    Id: 1,
-	                                    Name: "N/A"
+	                                    Name: 'N/A'
 	                                };
 	                            }
-	                            console.log("ESTADO", _this.Data);
+	                            console.log('ESTADO', _this.Data);
 	                            //formato para template de options
 	                            Municipios = _linq2.default.from(Municipios.Data).select(function (el) {
 	                                return {
@@ -60366,37 +60368,37 @@
 	                            options = _tool2.default.renderTpl(_optionsTpl2.default, Municipios);
 	                            //cargo en combo de municipios
 
-	                            (0, _jquery2.default)("#cbMunicipio").html(options);
+	                            (0, _jquery2.default)('#cbMunicipio').html(options);
 
 	                        case 11:
-	                        case "end":
+	                        case 'end':
 	                            return _context10.stop();
 	                    }
 	                }
 	            }, _callee10, this);
 	        })));
-	        //seleccion de municipio...            
-	        (0, _jquery2.default)("#cbMunicipio").on("change", function () {
+	        //seleccion de municipio...
+	        (0, _jquery2.default)('#cbMunicipio').on('change', function () {
 	            var Id = (0, _jquery2.default)(this).val();
-	            var Name = (0, _jquery2.default)(this).find("option:selected").text();
+	            var Name = (0, _jquery2.default)(this).find('option:selected').text();
 
 	            _this.Data.Municipality = {
 	                Id: Id,
 	                Name: Name
 	            };
-	            console.log("MUNICIPIO", _this.Data);
+	            console.log('MUNICIPIO', _this.Data);
 	        });
-	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	        (0, _jquery2.default)('.btnSiguiente').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
 	            return _regenerator2.default.wrap(function _callee11$(_context11) {
 	                while (1) {
 	                    switch (_context11.prev = _context11.next) {
 	                        case 0:
 	                            if (!_this.Data.State) {
-	                                alert("Seleccione un Estado para continuar.");
-	                                (0, _jquery2.default)("#cbEstado").focus();
+	                                alert('Seleccione un Estado para continuar.');
+	                                (0, _jquery2.default)('#cbEstado').focus();
 	                            } else if (_this.Data.State.Id !== 2 && !_this.Data.Municipality) {
-	                                alert("Seleccione un Municipio para continuar.");
-	                                (0, _jquery2.default)("#cbMunicipio").focus();
+	                                alert('Seleccione un Municipio para continuar.');
+	                                (0, _jquery2.default)('#cbMunicipio').focus();
 	                            } else {
 	                                if (_this.Data.isSpecial) {
 	                                    renderSpecial();
@@ -60406,7 +60408,7 @@
 	                            }
 
 	                        case 1:
-	                        case "end":
+	                        case 'end':
 	                            return _context11.stop();
 	                    }
 	                }
@@ -60414,22 +60416,22 @@
 	        })));
 	    },
 	    handleEventsSpecialCats: function handleEventsSpecialCats(_this) {
-	        (0, _jquery2.default)(".btnSiguiente").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
+	        (0, _jquery2.default)('.btnSiguiente').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
 	            var frmData;
 	            return _regenerator2.default.wrap(function _callee13$(_context13) {
 	                while (1) {
 	                    switch (_context13.prev = _context13.next) {
 	                        case 0:
 	                            frmData = (0, _jquery2.default)('#frm-Special').serializeObject();
-	                            ;
+
 	                            if (validateForm(frmData)) {
 	                                _this.Data = (0, _assign2.default)(_this.Data, frmData);
 	                                renderConcepts(_this);
 	                            }
-	                            return _context13.abrupt("return", false);
+	                            return _context13.abrupt('return', false);
 
-	                        case 4:
-	                        case "end":
+	                        case 3:
+	                        case 'end':
 	                            return _context13.stop();
 	                    }
 	                }
@@ -60438,12 +60440,12 @@
 	    },
 	    handleEventsNuevoConcepto: function handleEventsNuevoConcepto() {
 	        var _this = this;
-	        var $accordionActual = (0, _jquery2.default)("#accordion-" + _this.Data.collapseId);
-	        var $cbConceptos = $accordionActual.find(".cbConceptos");
-	        var $cbClasificacion = $accordionActual.find(".cbClasificacion");
-	        var $btnEliminarConcepto = $accordionActual.find(".btnEliminarConcepto");
+	        var $accordionActual = (0, _jquery2.default)('#accordion-' + _this.Data.collapseId);
+	        var $cbConceptos = $accordionActual.find('.cbConceptos');
+	        var $cbClasificacion = $accordionActual.find('.cbClasificacion');
+	        var $btnEliminarConcepto = $accordionActual.find('.btnEliminarConcepto');
 	        //cambio en el combo de concepto, carga clasificaciones y cambia el header
-	        $cbConceptos.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
+	        $cbConceptos.on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
 	            var $this, $parent, accordion, $accordion, CadalogId, vcCatalog, Clasificaciones, renderOptions, template;
 	            return _regenerator2.default.wrap(function _callee14$(_context14) {
 	                while (1) {
@@ -60451,24 +60453,25 @@
 	                        case 0:
 	                            $this = (0, _jquery2.default)(this);
 	                            $parent = $this.parent().parent();
-	                            accordion = $parent.data("accordion");
+	                            accordion = $parent.data('accordion');
 	                            $accordion = (0, _jquery2.default)(accordion);
 	                            CadalogId = $this.val();
-	                            vcCatalog = $this.find("option:selected").text();
+	                            vcCatalog = $this.find('option:selected').text();
 
+	                            _this.Data.isbtnCollapseClick = false; //Reiniciamos el estado del click
 
-	                            $this.next("input[name=vcCatalog]").val(vcCatalog);
+	                            $this.next('input[name=vcCatalog]').val(vcCatalog);
 
 	                            _this.Data.CadalogId = CadalogId;
 
-	                            $accordion.find(".accordion-header span").html(vcCatalog);
+	                            $accordion.find('.accordion-header span').html(vcCatalog);
 
-	                            $accordionActual.find(".AmountPolicy").val(0);
+	                            $accordionActual.find('.AmountPolicy').val(0);
 
-	                            _context14.next = 12;
+	                            _context14.next = 13;
 	                            return _store2.default.SubCatalogs(CadalogId);
 
-	                        case 12:
+	                        case 13:
 	                            Clasificaciones = _context14.sent;
 	                            renderOptions = _linq2.default.from(Clasificaciones.Data).select(function (el) {
 	                                return {
@@ -60480,110 +60483,168 @@
 
 	                            $cbClasificacion.html(template);
 
-	                        case 16:
-	                        case "end":
+	                        case 17:
+	                        case 'end':
 	                            return _context14.stop();
 	                    }
 	                }
 	            }, _callee14, this);
 	        })));
 	        //cambio en combo de clasificacion, carga el monto por politica
-	        $cbClasificacion.on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15() {
-	            var $cb, SubCatalogId, vcSubcatalog, data;
+	        $cbClasificacion.on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15() {
+	            var $cb, SubCatalogId, vcSubcatalog, $accordionActual, data;
 	            return _regenerator2.default.wrap(function _callee15$(_context15) {
 	                while (1) {
 	                    switch (_context15.prev = _context15.next) {
 	                        case 0:
 	                            $cb = (0, _jquery2.default)(this);
 	                            SubCatalogId = $cb.val();
-	                            vcSubcatalog = $cb.find("option:selected").text();
+	                            vcSubcatalog = $cb.find('option:selected').text();
 
+	                            $cb.next('input[name=vcSubcatalog]').val(vcSubcatalog);
 
-	                            $cb.next("input[name=vcSubcatalog]").val(vcSubcatalog);
+	                            $accordionActual = (0, _jquery2.default)(this).parents('.accordion');
 
-	                            console.log("cbClasificacion", _this.Data);
+	                            _this.Data.isbtnCollapseClick = false; //Reiniciamos el estado del click
+	                            if ($accordionActual.attr('created')) $accordionActual.attr('updated', true);
+	                            console.log('cbClasificacion', _this.Data);
 
 	                            data = {
-	                                'CatalogId': _this.Data.CadalogId,
-	                                'SubCatalogId': SubCatalogId,
-	                                'EmployeeId': _this.Data.Employee.EmployeeId,
-	                                'State': _this.Data.State.Id,
-	                                'StartDate': _this.Data.StartDate,
-	                                'EndDate': _this.Data.EndDate
+	                                CatalogId: _this.Data.CadalogId,
+	                                SubCatalogId: SubCatalogId,
+	                                EmployeeId: _this.Data.Employee.EmployeeId,
+	                                State: _this.Data.State.Id,
+	                                StartDate: _this.Data.StartDate,
+	                                EndDate: _this.Data.EndDate
 	                            };
 
 	                            _store2.default.CheckAmountPolicy(data).then(function (r) {
-	                                console.log("CheckAmountPolicy", r);
+	                                console.log('CheckAmountPolicy', r);
 	                                if (r.Success) {
 	                                    var AmountPolicy = r.Data.Amount;
 
-	                                    $accordionActual.find(".AmountPolicy").val(AmountPolicy);
+	                                    $accordionActual.find('.AmountPolicy').val(AmountPolicy);
 	                                }
 	                            });
 
-	                        case 7:
-	                        case "end":
+	                        case 10:
+	                        case 'end':
 	                            return _context15.stop();
 	                    }
 	                }
 	            }, _callee15, this);
 	        })));
 	        //Elimina concepto...
-	        $btnEliminarConcepto.on("click", function () {
+	        $btnEliminarConcepto.on('click', function () {
 	            var $btn = (0, _jquery2.default)(this);
 	            var $frm = $btn.closest('.Detail');
 	            var info = $frm.serializeObject();
-	            var id = (0, _jquery2.default)(this).data("accordion");
-	            var accordions = (0, _jquery2.default)(".accordion").length;
+	            var id = (0, _jquery2.default)(this).data('accordion');
+	            var accordions = (0, _jquery2.default)('.accordion').length;
 
 	            if (accordions > 1) {
 	                (0, _jquery2.default)(id).remove();
-	                _tool2.default.scrollPageToObj(100, "#Details-container");
+	                _tool2.default.scrollPageToObj(100, '#Details-container');
 	                //elimina del objeto general...
 	                _this.Data.Details = _linq2.default.from(_this.Data.Details).where(function (el) {
 	                    return el.Catalog.Id === info.CatalogId && el.Subcatalog.Id === info.SubcatalogId;
 	                }).toArray();
 	            } else {
-	                alert("El presupuesto debe tener mínimo un concepto.");
+	                alert('El presupuesto debe tener mínimo un concepto.');
 	            }
 	        });
 	        //Guardar Concepto, colapsa acordeon
-	        $accordionActual.find(".btnCollapse").on("click", function () {
-	            var $btn = (0, _jquery2.default)(this);
-	            var type = $btn.data("type");
-	            var $frm = $btn.closest('.Details');
-	            var data = $frm.serializeObject();
+	        $accordionActual.find('.btnCollapse').on('click', function () {
+	            var valido = '';
 	            _this.Data.isbtnCollapseClick = true;
-	            var valido = _this.validarConcepto(data);
+	            if ($accordionActual.attr('created')) {
+	                _this.Data.Details = [];
+	                var conceptsTrue = [];
+	                (0, _jquery2.default)('.accordion').each(function () {
+	                    var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee16(index, el) {
+	                        var $frm, data;
+	                        return _regenerator2.default.wrap(function _callee16$(_context16) {
+	                            while (1) {
+	                                switch (_context16.prev = _context16.next) {
+	                                    case 0:
+	                                        $frm = (0, _jquery2.default)(el).find('.Details');
+	                                        data = $frm.serializeObject();
 
-	            if (!valido.Success) {
-	                alert(valido.Mensaje);
-	                _this.Data.isbtnCollapseClick = false;
-	                return false;
+	                                        valido = _this.validarConcepto(data, el);
+	                                        if (!valido.Success) {
+	                                            alert('Valide la información\n\n' + valido.Mensaje);
+	                                            _this.Data.isbtnCollapseClick = false;
+	                                            conceptsTrue.push(false);
+	                                        } else {
+	                                            if ($accordionActual.attr('updated')) $accordionActual.removeAttr('updated');
+	                                            _this.Data.Details.push({
+	                                                Catalog: {
+	                                                    Id: data.CatalogId,
+	                                                    vcCatalog: data.vcCatalog
+	                                                },
+	                                                Subcatalog: {
+	                                                    Id: data.SubcatalogId,
+	                                                    vcSubcatalog: data.vcSubcatalog
+	                                                },
+	                                                Amount: +data.Amount,
+	                                                Description: data.Description
+	                                            });
+	                                            conceptsTrue.push(true);
+	                                        }
+
+	                                    case 4:
+	                                    case 'end':
+	                                        return _context16.stop();
+	                                }
+	                            }
+	                        }, _callee16, this);
+	                    }));
+
+	                    return function (_x6, _x7) {
+	                        return _ref12.apply(this, arguments);
+	                    };
+	                }());
+	                if (conceptsTrue.every(function (currentValue) {
+	                    return currentValue == true;
+	                })) $accordionActual.find('.collapse').removeClass('show');
 	            } else {
-	                $accordionActual.attr('created', true); //Lo cree
-	                _this.Data.Details.push({
-	                    "Catalog": {
-	                        "Id": data.CatalogId,
-	                        "vcCatalog": data.vcCatalog
-	                    },
-	                    "Subcatalog": {
-	                        "Id": data.SubcatalogId,
-	                        "vcSubcatalog": data.vcSubcatalog
-	                    },
-	                    "Amount": +data.Amount,
-	                    "Description": data.Description
-	                });
+	                var $btn = (0, _jquery2.default)(this);
+	                var type = $btn.data('type');
+	                var $frm = $btn.closest('.Details');
+	                var data = $frm.serializeObject();
+	                valido = _this.validarConcepto(data);
+
+	                if (!valido.Success) {
+	                    alert(valido.Mensaje);
+	                    _this.Data.isbtnCollapseClick = false;
+	                    return false;
+	                } else {
+	                    $accordionActual.attr('created', true); //Lo cree
+	                    _this.Data.Details.push({
+	                        Catalog: {
+	                            Id: data.CatalogId,
+	                            vcCatalog: data.vcCatalog
+	                        },
+	                        Subcatalog: {
+	                            Id: data.SubcatalogId,
+	                            vcSubcatalog: data.vcSubcatalog
+	                        },
+	                        Amount: +data.Amount,
+	                        Description: data.Description
+	                    });
+	                    $accordionActual.find('.collapse').removeClass('show');
+	                }
 	            }
 
-	            $accordionActual.find('.collapse').removeClass('show');
-	            $btn.remove();
-	            //Agrego al resumen
-	            var renderTpl = _tool2.default.renderTpl(_resumenConceptosTpl2.default, {
-	                Details: _this.Data.Details,
-	                Total: _linq2.default.from(_this.Data.Details).sum("$.Amount")
-	            });
-	            (0, _jquery2.default)("#resumen-container").html(renderTpl);
+	            if (valido.Success) {
+	                //$btn.remove();
+	                //Agrego al resumen
+	                var renderTpl = _tool2.default.renderTpl(_resumenConceptosTpl2.default, {
+	                    Details: _this.Data.Details,
+	                    Total: _linq2.default.from(_this.Data.Details).sum('$.Amount')
+	                });
+	                (0, _jquery2.default)('#resumen-container').html(renderTpl);
+	            }
 	            return false;
 	        });
 	    },
@@ -60591,29 +60652,36 @@
 	        var _this = this;
 	        var result = {
 	            Success: true,
-	            Mensaje: ""
+	            Mensaje: ''
 	        };
 
 	        if (!info.CatalogId) {
 	            result.Success = false;
-	            result.Mensaje = "✋ Seleccione un Concepto";
+	            result.Mensaje = '✋ Seleccione un Concepto';
 	            return result;
 	        } else if (!info.SubcatalogId) {
 	            result.Success = false;
-	            result.Mensaje = "✋ Seleccione una Clasificación";
+	            result.Mensaje = '✋ Seleccione una Clasificación';
 	            return result;
 	        } else if (!validExist) {
 	            var exist = _linq2.default.from(_this.Data.Details).where(function (el) {
 	                return el.Catalog.Id === info.CatalogId && el.Subcatalog.Id === info.SubcatalogId;
 	            }).toArray();
-
-	            if (!_this.Data.isbtnCollapseClick && info.CatalogId && info.SubcatalogId && (0, _jquery2.default)(container).attr('created') === undefined) //Si no se ha dado click y estan llenos lso 
-	                {
-	                    result.Success = false;
-	                    result.Mensaje = "✋ Guarde Concepto y  Clasificación.";
-	                } else if (exist.length > 0) {
+	            var camposLlenos = !_this.Data.isbtnCollapseClick && info.CatalogId && info.SubcatalogId ? true : false;
+	            var conceptoCreado = (0, _jquery2.default)(container).attr('created') == 'true';
+	            var conceptoEditado = (0, _jquery2.default)(container).attr('updated') == 'true';
+	            if (camposLlenos && !conceptoCreado) {
+	                //Si no se ha dado click y estan llenos lso
 	                result.Success = false;
-	                result.Mensaje = "✋ Ya existe un Concepto con esta clasificación.";
+	                result.Mensaje = '✋ Guarde Concepto y  Clasificación.';
+	                _this.Data.isbtnCollapseClick = false;
+	            } else if (camposLlenos && conceptoCreado && conceptoEditado) {
+	                result.Success = false;
+	                result.Mensaje = '✋ Guarde Concepto y  Clasificación.';
+	                _this.Data.isbtnCollapseClick = false;
+	            } else if (exist.length > 0) {
+	                result.Success = false;
+	                result.Mensaje = '✋ Ya existe un Concepto con esta clasificación.';
 	                return result;
 	            }
 	        }
@@ -80610,7 +80678,7 @@
 /* 386 */
 /***/ (function(module, exports) {
 
-	module.exports = "<!--====================================\r\n=            Nuevo Concepto            =\r\n=====================================-->\r\n<div id=\"accordion-{{collapseId}}\" class=\"accordion\">\r\n    <div class=\"accordion-header\" id=\"{{collapseId}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{collapseId}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{collapseId}}\">\r\n        <span>Concepto</span>\r\n    </div>\r\n    <div id=\"collapse-{{collapseId}}\" class=\"collapse show\" aria-labelledby=\"{{collapseId}}\" data-parent=\"#accordion\">\r\n        <form class=\"resumen Details\" data-accordion=\"#accordion-{{collapseId}}\">\r\n            <div class=\"resumen-item\">\r\n                <label>Concepto</label>\r\n                <select class=\"cbConceptos form-control needsclick\" name=\"CatalogId\">\r\n                    {{>dropDownList Catalogs}}\r\n                </select>\r\n                <input type=\"hidden\" name=\"vcCatalog\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Clasificacion</label>\r\n                <select class=\"cbClasificacion form-control needsclick\" name=\"SubcatalogId\"></select>\r\n                <input type=\"hidden\" name=\"vcSubcatalog\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Monto</label>\r\n                <input type=\"number\" class=\"form-control needsclick AmountPolicy\" name=\"Amount\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Descripcion</label>\r\n                <textarea cols=\"10\" rows=\"5\" class=\"form-control needsclick\" name=\"Description\"></textarea>\r\n            </div>\r\n            <div class=\"text-center\">\r\n                <button type=\"button\" class=\"btnEliminarConcepto btn btn-danger\" data-accordion=\"#accordion-{{collapseId}}\">Eliminar</button>\r\n                <button type=\"button\" class=\"btnCollapse btn btn-secondary\" type=\"guardar\">Guardar</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>";
+	module.exports = "<!--====================================\r\n=            Nuevo Concepto            =\r\n=====================================-->\r\n<div id=\"accordion-{{collapseId}}\" class=\"accordion\">\r\n    <div class=\"accordion-header\" id=\"{{collapseId}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{collapseId}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{collapseId}}\">\r\n        <span>Concepto</span>\r\n    </div>\r\n    <div id=\"collapse-{{collapseId}}\" class=\"collapse show\" aria-labelledby=\"{{collapseId}}\">\r\n        <form class=\"resumen Details\" data-accordion=\"#accordion-{{collapseId}}\">\r\n            <div class=\"resumen-item\">\r\n                <label>Concepto</label>\r\n                <select class=\"cbConceptos form-control needsclick\" name=\"CatalogId\">\r\n                    {{>dropDownList Catalogs}}\r\n                </select>\r\n                <input type=\"hidden\" name=\"vcCatalog\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Clasificacion</label>\r\n                <select class=\"cbClasificacion form-control needsclick\" name=\"SubcatalogId\"></select>\r\n                <input type=\"hidden\" name=\"vcSubcatalog\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Monto</label>\r\n                <input type=\"number\" class=\"form-control needsclick AmountPolicy\" name=\"Amount\">\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Descripcion</label>\r\n                <textarea cols=\"10\" rows=\"5\" class=\"form-control needsclick\" name=\"Description\"></textarea>\r\n            </div>\r\n            <div class=\"text-center\">\r\n                <button type=\"button\" class=\"btnEliminarConcepto btn btn-danger\" data-accordion=\"#accordion-{{collapseId}}\">Eliminar</button>\r\n                <button type=\"button\" class=\"btnCollapse btn btn-secondary\" type=\"guardar\">Guardar</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 387 */
