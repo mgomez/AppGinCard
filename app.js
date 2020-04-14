@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f2ee07fbc92aff6aa872"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "72550013165ae0b41189"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -25123,18 +25123,24 @@
 							rdata.isSelect = true;
 							rdata.data = dfield.data || [];
 							if (rdata.data.length > 0) {
+								var na = {
+									Text: 'N/A',
+									Value: 1
+								};
+								var isNA = false;
 								$.each(rdata.data, function (k) {
 									if (rdata.data[k]['Text'] == el.value && dfield.selected) {
 										rdata.data[k].Selected = 'selected';
 										return false;
-									} else if (el.value == 'N/A' && dfield.selected) {
-										rdata.data.unshift({
-											Text: 'N/A',
-											Value: 1,
-											Selected: 'selected'
-										});
+									} else if (rdata.data[k]['Text'] == 'N/A') {
+										isNA = true;
+										rdata.data[k].Selected = 'selected';
 									}
 								});
+								if (!isNA && dfield.NA != undefined) {
+									if (dfield.selected) na.Selected = 'selected';
+									rdata.data.unshift(na);
+								}
 							} else {
 								rdata.data.push({
 									Value: 1,
@@ -59763,30 +59769,6 @@
 		}
 	}
 
-	/*var ticketFrmHtml = UI.Form({ 'd': '', 'a': '', 'c': '' }, {
-	                        idFrm: 'frm-Concepts',
-	                        fields: 'Descripción:d,Archivo:a,Correo Notificación:c',
-	                        dataFields: {
-	                            'Correo': {
-	                                name: 'File',
-	                                required: 'required',
-	                                type: 'file'
-	                            },
-	                            'Archivo': {
-	                                name: 'File',
-	                                required: 'required',
-	                                type: 'file'
-	                            },
-	                            'Descripción': {
-	                                name: 'Description',
-	                                type: 'textarea',
-	                                maxlength: 256,
-	                                required: 'required'
-	                            }
-	                        }
-	                    });
-	                    $('#ticketDescription').html(ticketFrmHtml);*/
-
 /***/ }),
 /* 243 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -62242,7 +62224,7 @@
 								};
 
 								if (!(agreements.Data.length > 1)) {
-									_context2.next = 15;
+									_context2.next = 16;
 									break;
 								}
 
@@ -62287,6 +62269,7 @@
 								_this.Page.Partial = _context2.sent;
 
 								$('#renderBody').html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
+								_optionList3.default.handleEvents();
 								swiper = _tool2.default.swiperScroll('.swiper-container1', {
 									events: {
 										slideChange: function slideChange() {
@@ -62296,20 +62279,20 @@
 										}
 									}
 								});
-								_context2.next = 19;
+								_context2.next = 20;
 								break;
 
-							case 15:
+							case 16:
 								//Cargamos directo la pantalla de empleados si solo hay un convenio
 								_this.Data.AgreementId = agreements.Data[0].iAgreement;
 								_this.Data.AgreementName = agreements.Data[0].vcDisplay;
-								_context2.next = 19;
+								_context2.next = 20;
 								return _this2.loadEmployees({
 									AgreementId: _this.Data.AgreementId,
 									AgreementName: _this.Data.AgreementName
 								});
 
-							case 19:
+							case 20:
 							case 'end':
 								return _context2.stop();
 						}
@@ -62323,7 +62306,7 @@
 			var _this = this;
 
 			$('.btnRechazo').on('click', function (e) {
-				e.stopPropagation();
+				e.stopPropagation(btnDeleteConcept);
 				var btn = $(this);
 				_this.Page.toggleBtn = !_this.Page.toggleBtn;
 				if (_this.Page.toggleBtn) {
@@ -62402,12 +62385,17 @@
 								id = $(this).attr('data-id');
 								detailid = $(this).attr('detail-id');
 
-								if (!confirm('¿El concepto será eliminado, desea continuar?')) {
-									_context4.next = 7;
+								if (!(_this.Data.conceptData.length > 1)) {
+									_context4.next = 10;
 									break;
 								}
 
-								_context4.next = 5;
+								if (!confirm('¿El concepto será eliminado, desea continuar?')) {
+									_context4.next = 8;
+									break;
+								}
+
+								_context4.next = 6;
 								return _store2.default.UpdateBudgetDetail({
 									BudgetId: id,
 									Type: 2,
@@ -62418,7 +62406,7 @@
 									Description: 'x'
 								});
 
-							case 5:
+							case 6:
 								resp = _context4.sent;
 
 								if (resp.Success) {
@@ -62432,7 +62420,14 @@
 									});
 								}
 
-							case 7:
+							case 8:
+								_context4.next = 11;
+								break;
+
+							case 10:
+								alert('El presupuesto debe tener almenos 1 concepto y clasificación');
+
+							case 11:
 							case 'end':
 								return _context4.stop();
 						}
@@ -63212,12 +63207,12 @@
 											name: 'Project',
 											type: 'select',
 											data: projects,
-											selected: true
+											selected: true,
+											NA: true
 										},
 										Municipio: {
 											required: 'required',
 											name: 'Municipality',
-
 											type: 'select'
 										},
 										Fecha_Inicial: {
@@ -63248,7 +63243,8 @@
 											name: 'Catalog',
 											type: 'select',
 											selected: true,
-											data: registercatalogs
+											data: registercatalogs,
+											NA: true
 										}
 									}
 								});
