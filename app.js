@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e48a03529dac3a1faf3d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "eca5757d10a00c7d79ea"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -62182,10 +62182,10 @@
 /* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _defineProperty2 = __webpack_require__(48);
@@ -62232,1243 +62232,1243 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var swiper = '';
+	var swiper = "";
 
 	//Mensajes
 	var messages = {
-		error: 'Ha ocurrido un error, intente nuevamente. ',
-		noData: 'No se encontraron registros'
+	  error: "Ha ocurrido un error, intente nuevamente. ",
+	  noData: "No se encontraron registros"
 	};
 
 	exports.default = {
-		Data: {},
-		Page: {
-			scrollToConcepts: false,
-			toggleBtn: false
-		},
-		init: function init() {
-			this.render();
-		},
-		render: function render() {
-			var _this2 = this;
-
-			return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
-				var _this, agreements, options;
-
-				return _regenerator2.default.wrap(function _callee2$(_context2) {
-					while (1) {
-						switch (_context2.prev = _context2.next) {
-							case 0:
-								_this = _this2;
-								// Vamos por los convenios/empresas
-
-								_context2.next = 3;
-								return _store2.default.GetAgreements({
-									Type: 4
-								});
-
-							case 3:
-								agreements = _context2.sent;
-
-								_this.Data.typeUser = 'UpdateBudget';
-								_this.Page = {
-									Partial: '',
-									pageTitle: 'Presupuestos Rechazados',
-									pages: {
-										first: true,
-										second: false
-									}
-								};
-
-								if (!(agreements.Data.length > 1)) {
-									_context2.next = 16;
-									break;
-								}
-
-								options = _dataUI2.default.getRows(agreements.Data, 'Id:iAgreement,Name:vcDisplay');
-								/* Cargamos la data de la pagina que se cargara en el template general */
-
-								_context2.next = 10;
-								return _optionList3.default.render({
-									data: options,
-									name: 'empresa',
-									onClick: function () {
-										var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(el) {
-											return _regenerator2.default.wrap(function _callee$(_context) {
-												while (1) {
-													switch (_context.prev = _context.next) {
-														case 0:
-															_this.Data.AgreementId = el.id;
-															_this.Data.AgreementName = el.name;
-															_context.next = 4;
-															return _this.loadEmployees({
-																AgreementId: _this.Data.AgreementId,
-																AgreementName: _this.Data.AgreementName
-															});
-
-														case 4:
-														case 'end':
-															return _context.stop();
-													}
-												}
-											}, _callee, this);
-										}));
-
-										function onClick(_x) {
-											return _ref.apply(this, arguments);
-										}
-
-										return onClick;
-									}()
-								});
-
-							case 10:
-								_this.Page.Partial = _context2.sent;
-
-								$('#renderBody').html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
-								_optionList3.default.handleEvents();
-								swiper = _tool2.default.swiperScroll('.swiper-container1', {
-									events: {
-										slideChange: function slideChange() {
-											$('.btnRechazo').protipHide();
-											$('.protip-container').remove();
-											_this.Page.toggleBtn = false;
-										}
-									}
-								});
-								_context2.next = 20;
-								break;
-
-							case 16:
-								//Cargamos directo la pantalla de empleados si solo hay un convenio
-								_this.Data.AgreementId = agreements.Data[0].iAgreement;
-								_this.Data.AgreementName = agreements.Data[0].vcDisplay;
-								_context2.next = 20;
-								return _this2.loadEmployees({
-									AgreementId: _this.Data.AgreementId,
-									AgreementName: _this.Data.AgreementName
-								});
-
-							case 20:
-							case 'end':
-								return _context2.stop();
-						}
-					}
-				}, _callee2, _this2);
-			}))();
-		},
-
-		//CARGA DE EVENTOS
-		handleEventsBudget: function handleEventsBudget() {
-			var _this = this;
-
-			$('.btnRechazo').on('click', function (e) {
-				e.stopPropagation(btnDeleteConcept);
-				var btn = $(this);
-				_this.Page.toggleBtn = !_this.Page.toggleBtn;
-				if (_this.Page.toggleBtn) {
-					btn.protipShow({
-						title: $(this).attr('data-value'),
-						trigger: 'click',
-						position: 'top',
-						auto_hide: true,
-						animate: 'bounceIn',
-						scheme: 'red'
-					});
-				} else {
-					btn.protipHide();
-				}
-			});
-		},
-		unbindFormModals: function unbindFormModals() {
-			$('#cbState').unbind('click');
-		},
-		handleFormModals: function handleFormModals() {
-			var _this = this;
-			$('#cbState').on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
-				var municipalities;
-				return _regenerator2.default.wrap(function _callee3$(_context3) {
-					while (1) {
-						switch (_context3.prev = _context3.next) {
-							case 0:
-								_this.Data.State = $(this).val();
-								_context3.next = 3;
-								return _store2.default.Municipalities(_this.Data.State);
-
-							case 3:
-								municipalities = _context3.sent;
-
-								municipalities = _UI2.default.DropDownListFor(municipalities.Data, {
-									textField: 'Name',
-									valueField: 'Id'
-								});
-								$('#cbMunicipality').html(municipalities);
-								if (_this.Data.budgetData != '') {
-									if ($("#cbMunicipality option[value='" + _this.Data.budgetData.Municipality.Id + "']").length > 0) {
-										$('#cbMunicipality').val(_this.Data.budgetData.Municipality.Id).trigger('change');
-									} else {
-										$('#cbMunicipality').val($('#cbMunicipality option:first').val()).trigger('change');
-									}
-								}
-
-							case 7:
-							case 'end':
-								return _context3.stop();
-						}
-					}
-				}, _callee3, this);
-			})));
-		},
-		unbindEventsModals: function unbindEventsModals() {
-			$('mdl-editBudget').unbind('hide.bs.modal');
-			$('mdl-editBudget').unbind('shown.bs.modal');
-			$('#editBtn').unbind('click');
-			$('#cancelBtn').unbind('click');
-			$('#sendBtn').unbind('click');
-			$('#saveBtn').unbind('click');
-			$('#btnAddConcept').unbind('click');
-		},
-		undbindSliderEvents: function undbindSliderEvents() {
-			$('.btnDeleteConcept').unbind('click');
-		},
-		handleSliderEvents: function handleSliderEvents() {
-			var _this = this;
-			$('.btnDeleteConcept').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
-				var id, detailid, resp;
-				return _regenerator2.default.wrap(function _callee4$(_context4) {
-					while (1) {
-						switch (_context4.prev = _context4.next) {
-							case 0:
-								id = $(this).attr('data-id');
-								detailid = $(this).attr('detail-id');
-
-								if (!(_this.Data.conceptData.length > 1)) {
-									_context4.next = 10;
-									break;
-								}
-
-								if (!confirm('¿El concepto será eliminado, desea continuar?')) {
-									_context4.next = 8;
-									break;
-								}
-
-								_context4.next = 6;
-								return _store2.default.UpdateBudgetDetail({
-									BudgetId: id,
-									Type: 2,
-									BudgetDetailId: detailid,
-									CatalogId: '1',
-									SubcatalogId: '1',
-									Amount: '0',
-									Description: 'x'
-								});
-
-							case 6:
-								resp = _context4.sent;
-
-								if (resp.Success) {
-									alert('¡Se ha eliminado el concepto correctamente!');
-									_tool2.default.closeModal('#mdl-editBudget');
-									_this.unbindEventsModals();
-									_this.Page.scrollToConcepts = true;
-									_this.loadEditModal({
-										edit: true,
-										reload: true
-									});
-								}
-
-							case 8:
-								_context4.next = 11;
-								break;
-
-							case 10:
-								alert('El presupuesto debe tener almenos 1 concepto y clasificación');
-
-							case 11:
-							case 'end':
-								return _context4.stop();
-						}
-					}
-				}, _callee4, this);
-			})));
-		},
-		handleEventsModals: function handleEventsModals() {
-			var _this = this;
-			$('#mdl-editBudget').on('hide.bs.modal', function () {
-				_tool2.default.scrollPageToObj(20, _this.Data.scrolled);
-				$('#saveBtn').attr('hidden', true);
-				$('#editBtn').attr('hidden', false);
-				$('#sendBtn').attr('hidden', false);
-				$('#cancelBtn').attr('hidden', true);
-				$('#budgetDetailContainer').show();
-				$('#budgetFormContainer').attr('hidden', true);
-				_this.unbindEventsModals();
-				_this.unbindFormModals();
-			});
-			$('#mdl-editBudget').on('shown.bs.modal', function () {
-				_this.Page.swiperConcepts = _tool2.default.swiperFraction('#swiperConcepts', {
-					autoHeight: true,
-					space: 30,
-					navigation: true
-				});
-				if (_this.Page.scrollToConcepts) {
-					_tool2.default.scrollToObj(500, '#body-report', '#conceptsContainer', 100);
-					_this.Page.scrollToConcepts = false;
-				}
-			});
-			$('#editBtn').on('click', function () {
-				$(this).attr('hidden', true);
-				$('#saveBtn').attr('hidden', false);
-				$('#sendBtn').attr('hidden', true);
-				$('#cancelBtn').attr('hidden', false);
-				$('#budgetDetailContainer').hide();
-				$('#budgetFormContainer').removeAttr('hidden');
-				$('#cbEmpleado').trigger('change');
-				$('#btnAddConcept').attr('hidden', false);
-				_tool2.default.scrollTo(0, '#body-report', 0);
-				$('#cbState').find('option:selected').trigger('change');
-				var conceptsHtml = _UI2.default.SliderLabelList(_this.Data.conceptData, {
-					fields: 'Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill',
-					sliderId: 'swiperConcepts',
-					buttons: [{
-						class: 'btnDeleteConcept',
-						value: 'Eliminar',
-						colorClass: 'btn-danger',
-						id: _this.Data.BudgetId
-					}],
-					changeCustomByRow: function changeCustomByRow(row, config) {
-						config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
-						config.disabled = _this.Page.isAgency && row.key == 'Concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
-					}
-				});
-				$('#conceptsContainer').html(conceptsHtml);
-				_this.handleSliderEvents();
-				_this.Page.swiperConcepts = _tool2.default.swiperFraction('#swiperConcepts', {
-					autoHeight: true,
-					space: 30,
-					navigation: true
-				});
-			});
-			$('#cancelBtn').on('click', function () {
-				$(this).attr('hidden', true);
-				$('#saveBtn').attr('hidden', true);
-				$('#editBtn').attr('hidden', false);
-				$('#sendBtn').attr('hidden', false);
-				_this.unbindFormModals();
-				$('#budgetFormContainer').attr('hidden', true);
-				$('#budgetFormContainer').html(_this.Page.budgetFormHtml);
-				$('#conceptsContainer').html(_this.Page.conceptsHtmlMain);
-				$('#btnAddConcept').attr('hidden', true);
-				_this.handleSliderEvents();
-				_this.Page.swiperConcepts = _tool2.default.swiperFraction('#swiperConcepts', {
-					autoHeight: true,
-					space: 30,
-					navigation: true
-				});
-				_this.Page.swiperConcepts.slideTo(1);
-				$('#budgetDetailContainer').show();
-				_tool2.default.scrollTo(0, '#body-report', 0);
-				_this.handleFormModals();
-			});
-			$('#saveBtn').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
-				var data, resp, loadResult;
-				return _regenerator2.default.wrap(function _callee5$(_context5) {
-					while (1) {
-						switch (_context5.prev = _context5.next) {
-							case 0:
-								data = $('#frm-Budget').serializeObject();
-
-								data.BudgetId = _this.Data.BudgetId;
-
-								if (!validateFormBudget(data)) {
-									_context5.next = 18;
-									break;
-								}
-
-								if (!confirm('¿El presupuesto será actualizado, desea continuar?')) {
-									_context5.next = 18;
-									break;
-								}
-
-								_context5.next = 6;
-								return _store2.default.UpdateBudget(data);
-
-							case 6:
-								resp = _context5.sent;
-
-								if (!resp.Success) {
-									_context5.next = 18;
-									break;
-								}
-
-								alert('¡Se ha actualizado la información del presupuesto con éxito!');
-								//Cargar nuevamente el presupuesto
-								_context5.next = 11;
-								return _this.loadBudgets({
-									reload: true
-								});
-
-							case 11:
-								loadResult = _context5.sent;
-
-								if (loadResult) {
-									_context5.next = 16;
-									break;
-								}
-
-								_context5.next = 15;
-								return _this.loadEmployees({
-									AgreementId: _this.Data.AgreementId,
-									AgreementName: _this.Data.AgreementName
-								});
-
-							case 15:
-								_tool2.default.scrollPageTo(0, 150);
-
-							case 16:
-								_tool2.default.closeModal('#mdl-editBudget');
-								_this.loadEditModal({
-									edit: false,
-									reload: true
-								});
-
-							case 18:
-							case 'end':
-								return _context5.stop();
-						}
-					}
-				}, _callee5, this);
-			})));
-			$('#sendBtn').on('click', function () {
-				_this.changeStatus();
-			});
-			$('#btnAddConcept').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
-				var id, catalogs, conceptFormHtml;
-				return _regenerator2.default.wrap(function _callee6$(_context6) {
-					while (1) {
-						switch (_context6.prev = _context6.next) {
-							case 0:
-								id = $(this).attr('data-id');
-
-								_tool2.default.openModal('#mdl-Concepts', '#mdl-Concepts');
-								_this.unbindFormModals();
-								_context6.next = 5;
-								return _store2.default.Catalogs(_this.Data.EmployeeId);
-
-							case 5:
-								catalogs = _context6.sent;
-								conceptFormHtml = _UI2.default.Form(_this.Data.conceptData, {
-									idFrm: 'frm-Concepts',
-									fields: 'Catálogo:Catalog.Name,' + 'Clasificación:Subcatalog.CatalogName,' + 'Monto:empty,Descripción:empty',
-									dataFields: {
-										Catálogo: {
-											required: 'required',
-											type: 'select',
-											name: 'CatalogId',
-											data: Enumerable.from(catalogs.Data).select(function (el) {
-												return {
-													Text: el.Name,
-													Value: el.Id
-												};
-											}).toArray()
-										},
-										Clasificación: {
-											name: 'SubcatalogId',
-											required: 'required',
-											type: 'select'
-										},
-										Monto: {
-											name: 'Amount',
-											type: 'number',
-											required: 'required'
-										},
-										Descripción: {
-											name: 'Description',
-											type: 'textarea',
-											maxlength: 256,
-											required: 'required'
-										}
-									}
-								});
-
-								$('#formConceptsContainer').html(conceptFormHtml);
-								_this.Page.swiperConcepts.slideTo(1);
-								_this.handleEventsConceptModal();
-
-							case 10:
-							case 'end':
-								return _context6.stop();
-						}
-					}
-				}, _callee6, this);
-			})));
-		},
-		unbindConceptModal: function unbindConceptModal() {
-			$('#mdl-Concepts').unbind('hide.bs.modal');
-			$('#mdl-Concepts').unbind('shown.bs.modal');
-			$('#cancelConceptBtn').unbind('click');
-			$('#saveConceptBtn').unbind('click');
-			$('#cbConcepto').unbind('change');
-		},
-		handleEventsConceptModal: function handleEventsConceptModal() {
-			var _this = this;
-			$('#mdl-Concepts').on('hide.bs.modal', function () {
-				_this.unbindConceptModal();
-			});
-
-			$('#cancelConceptBtn').on('click', function () {
-				_tool2.default.closeModal('#mdl-Concepts');
-			});
-
-			$('#saveConceptBtn').on('click', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
-				var data, resp;
-				return _regenerator2.default.wrap(function _callee7$(_context7) {
-					while (1) {
-						switch (_context7.prev = _context7.next) {
-							case 0:
-								data = $('#frm-Concepts').serializeObject();
-
-								data.BudgetId = _this.Data.BudgetId;
-								data.Type = 1;
-
-								if (!validateConceptFormBudget(data)) {
-									_context7.next = 15;
-									break;
-								}
-
-								if (!confirm('¿Se añadirá un concepto al presupuesto, desea continuar?')) {
-									_context7.next = 15;
-									break;
-								}
-
-								_context7.prev = 5;
-								_context7.next = 8;
-								return _store2.default.UpdateBudgetDetail(data);
-
-							case 8:
-								resp = _context7.sent;
-
-								if (resp.Success) {
-									alert('¡Se ha registrado el concepto correctamente!');
-									_tool2.default.closeModal('#mdl-Concepts');
-									_tool2.default.closeModal('#mdl-editBudget');
-									_this.unbindEventsModals();
-									_this.unbindFormModals();
-									_this.Page.scrollToConcepts = true;
-									_this.loadEditModal({
-										edit: true,
-										reload: true
-									});
-								}
-								_context7.next = 15;
-								break;
-
-							case 12:
-								_context7.prev = 12;
-								_context7.t0 = _context7['catch'](5);
-
-								console.log(_context7.t0);
-
-							case 15:
-							case 'end':
-								return _context7.stop();
-						}
-					}
-				}, _callee7, this, [[5, 12]]);
-			})));
-
-			$('#cbCatalogId').on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
-				var subcatalogs, subcatalogsHtml;
-				return _regenerator2.default.wrap(function _callee8$(_context8) {
-					while (1) {
-						switch (_context8.prev = _context8.next) {
-							case 0:
-								_this.Data.CatalogId = $(this).val();
-
-								if (!(_this.Data.CatalogId != 'N/A')) {
-									_context8.next = 7;
-									break;
-								}
-
-								_context8.next = 4;
-								return _store2.default.SubCatalogs(_this.Data.CatalogId);
-
-							case 4:
-								subcatalogs = _context8.sent;
-								subcatalogsHtml = _UI2.default.DropDownListFor(subcatalogs.Data, {
-									textField: 'Name',
-									valueField: 'Id'
-								});
-
-								$('#cbSubcatalogId').html(subcatalogsHtml);
-
-							case 7:
-							case 'end':
-								return _context8.stop();
-						}
-					}
-				}, _callee8, this);
-			})));
-			$('#cbSubcatalogId').on('change', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
-				var budgetData, r;
-				return _regenerator2.default.wrap(function _callee9$(_context9) {
-					while (1) {
-						switch (_context9.prev = _context9.next) {
-							case 0:
-								budgetData = $('#frm-Budget').serializeObject();
-
-								_this.Data.SubCatalogId = $(this).val();
-
-								if (!(_this.Data.CatalogId != 'N/A')) {
-									_context9.next = 8;
-									break;
-								}
-
-								_context9.next = 5;
-								return _store2.default.CheckAmountPolicy({
-									CatalogId: _this.Data.CatalogId,
-									SubCatalogId: _this.Data.SubCatalogId,
-									EmployeeId: _this.Data.EmployeeId,
-									State: budgetData.State,
-									StartDate: budgetData.StartDate,
-									EndDate: budgetData.EndDate
-								});
-
-							case 5:
-								r = _context9.sent;
-
-								console.log('CheckAmountPolicy', r);
-								if (r.Success) $('#Amount').val(r.Data.Amount);
-
-							case 8:
-							case 'end':
-								return _context9.stop();
-						}
-					}
-				}, _callee9, this);
-			})));
-		},
-
-		//CARGA DE DATOS
-		loadEmployees: function loadEmployees(Data) {
-			var _this3 = this;
-
-			return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
-				var _this, options;
-
-				return _regenerator2.default.wrap(function _callee11$(_context11) {
-					while (1) {
-						switch (_context11.prev = _context11.next) {
-							case 0:
-								_this = _this3;
-								_context11.next = 3;
-								return _store2.default.GetEmployees({
-									Agreement: _this.Data.AgreementId,
-									Type: _this.Data.typeUser
-								});
-
-							case 3:
-								_this.Data.users = _context11.sent;
-
-								//Cargamos la data de empleados en el partial de opciones
-								_this.Page.pages.first = true;
-								_this.Page.pages.second = false;
-								options = _dataUI2.default.getRows(_this.Data.users.Data, 'Id:iEmployeeId,Name:vcNames,Description:vcCard');
-								_context11.next = 9;
-								return _optionList3.default.render({
-									data: options,
-									name: 'empleado',
-									title: Data.AgreementName,
-									onClick: function () {
-										var _ref9 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10(el) {
-											var loadResult;
-											return _regenerator2.default.wrap(function _callee10$(_context10) {
-												while (1) {
-													switch (_context10.prev = _context10.next) {
-														case 0:
-															_this.Data.EmployeeId = el.id;
-															_this.Data.EmployeeName = el.name;
-															//Si no encontramos registros al buscar presupuestos recargamos
-															_context10.next = 4;
-															return _this.loadBudgets({
-																reload: false
-															});
-
-														case 4:
-															loadResult = _context10.sent;
-
-															if (loadResult) {
-																_context10.next = 9;
-																break;
-															}
-
-															_context10.next = 8;
-															return _this.loadEmployees({
-																AgreementId: _this.Data.AgreementId,
-																AgreementName: _this.Data.AgreementName
-															});
-
-														case 8:
-															_tool2.default.scrollPageTo(0, 150);
-
-														case 9:
-														case 'end':
-															return _context10.stop();
-													}
-												}
-											}, _callee10, this);
-										}));
-
-										function onClick(_x2) {
-											return _ref9.apply(this, arguments);
-										}
-
-										return onClick;
-									}()
-								});
-
-							case 9:
-								_this.Page.Partial = _context11.sent;
-
-								$('#renderBody').html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
-
-								swiper = _tool2.default.swiperScroll('.swiper-container1', {
-									events: {
-										slideChange: function slideChange() {
-											$('.btnRechazo').protipHide();
-											$('.protip-container').remove();
-											_this.Page.toggleBtn = false;
-										}
-									}
-								});
-								_optionList3.default.handleEvents();
-								swiper.slideTo(1);
-
-							case 14:
-							case 'end':
-								return _context11.stop();
-						}
-					}
-				}, _callee11, _this3);
-			}))();
-		},
-		loadBudgets: function loadBudgets(Data) {
-			var _this4 = this;
-
-			return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
-				var _this, date, budgets;
-
-				return _regenerator2.default.wrap(function _callee13$(_context13) {
-					while (1) {
-						switch (_context13.prev = _context13.next) {
-							case 0:
-								_this = _this4;
-								date = (0, _moment2.default)().format('YYYY-MM-DD');
-								_context13.next = 4;
-								return _store2.default.GetBudgetsByEmployee({
-									Operation: 'REJECTED',
-									EmployeeId: _this.Data.EmployeeId,
-									StartDate: date,
-									EndDate: date
-								});
-
-							case 4:
-								budgets = _context13.sent;
-
-								if (!budgets.Success) {
-									_context13.next = 24;
-									break;
-								}
-
-								if (!(budgets.Data.length > 0)) {
-									_context13.next = 19;
-									break;
-								}
-
-								_context13.next = 9;
-								return _UI2.default.InfoCardHeader(budgets.Data, {
-									idField: 'BudgetId',
-									valueField: 'Amount',
-									fields: 'Proyecto:Project,Objetivo:Target,Periodo:Period,Rechazo:Comment',
-									searchId: 'budgetsSearch',
-									type: 'Presupuesto',
-									title: _this.Data.EmployeeName,
-									fieldAsButtons: ['Rechazo'],
-									bgColorClass: 'btn-danger',
-									classBtn: 'btnRechazo',
-									onClick: function () {
-										var _ref10 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12(el) {
-											return _regenerator2.default.wrap(function _callee12$(_context12) {
-												while (1) {
-													switch (_context12.prev = _context12.next) {
-														case 0:
-															_this.Data.scrolled = el.container;
-															_this.Data.BudgetId = el.id;
-															_context12.next = 4;
-															return _this.loadEditModal({
-																edit: false,
-																reload: true
-															});
-
-														case 4:
-														case 'end':
-															return _context12.stop();
-													}
-												}
-											}, _callee12, this);
-										}));
-
-										function onClick(_x3) {
-											return _ref10.apply(this, arguments);
-										}
-
-										return onClick;
-									}()
-								});
-
-							case 9:
-								_this.Page.Presupuestos = _context13.sent;
-
-								if (!Data.reload) {
-									//Definimos false el reload si se carga por primera vez
-									//Reseteamos todo antes de cargar nuevamente
-									_this.Page.pages.first = _this.Page.pages.second = true;
-									$('#renderBody').html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
-									swiper = _tool2.default.swiperScroll('.swiper-container1', {
-										space: 30,
-										events: {
-											slideChange: function slideChange() {
-												$('.btnRechazo').protipHide();
-												$('.protip-container').remove();
-												_this.Page.toggleBtn = false;
-											}
-										}
-									});
-									_tool2.default.scrollPageTo(0, 10);
-									swiper.slideNext(300);
-								} else {
-									//Recargamos los presupuestos unicamente no toda la página
-									$('#budgets').empty();
-									$('#budgets').html(_this.Page.Presupuestos);
-									_tool2.default.scrollPageTo(0, 200);
-									swiper = _tool2.default.swiperScroll('.swiper-container1', {
-										events: {
-											slideChange: function slideChange() {
-												$('.btnRechazo').protipHide();
-												$('.protip-container').remove();
-												_this.Page.toggleBtn = false;
-											}
-										}
-									});
-								}
-								//Añadimos los eventos que se utilizarán solo en esta vista
-								_this4.handleEventsBudget(_this4);
-								_optionList3.default.handleEvents();
-								_UI2.default.handleEvents('card');
-								_UI2.default.handleEvents('search', function () {
-									swiper.slideTo(2);
-								});
-								swiper.slideTo(2);
-
-								return _context13.abrupt('return', true);
-
-							case 19:
-								_this.Page.Presupuestos = '';
-								/*El  mensaje de noData solo aparece cuando se carga por primera vez
-	                     NO EN EL CASO donde esta haciendo una operación (solicitar, autorizar, rechazar)
-	                     en este caso si se queda sin presupuestos osea si es el último presupuesto
-	                      simplemente regresa a la página de Empleados*/
-								if (!Data.reload) alert(messages.noData);
-								return _context13.abrupt('return', false);
-
-							case 22:
-								_context13.next = 26;
-								break;
-
-							case 24:
-								alert(messages.error);
-								return _context13.abrupt('return', false);
-
-							case 26:
-							case 'end':
-								return _context13.stop();
-						}
-					}
-				}, _callee13, _this4);
-			}))();
-		},
-		loadEditModal: function loadEditModal(Data) {
-			var _this5 = this;
-
-			return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
-				var _this, budgetDetail, _Estado, budgetDetailHtml, projects, registercatalogs, states, employees, conceptshtml;
-
-				return _regenerator2.default.wrap(function _callee14$(_context14) {
-					while (1) {
-						switch (_context14.prev = _context14.next) {
-							case 0:
-								_this = _this5;
-								//$('#btnAddConcept').attr('hidden', true);
-
-								if (!Data.reload) {
-									_context14.next = 49;
-									break;
-								}
-
-								$('#mdlEditBudget-Title').html('Presupuesto: ' + _this.Data.BudgetId);
-								_context14.next = 5;
-								return _store2.default.GetBudgets({
-									Type: 'Budget',
-									BudgetId: _this.Data.BudgetId
-								});
-
-							case 5:
-								budgetDetail = _context14.sent;
-
-								if (!budgetDetail.Success) {
-									_context14.next = 48;
-									break;
-								}
-
-								if (!(budgetDetail.Data.length > 0)) {
-									_context14.next = 45;
-									break;
-								}
-
-								budgetDetailHtml = _UI2.default.ItemList(budgetDetail.Data, {
-									alignment: 'vh',
-									fields: 'Empleado:Employee.FullName,' + 'Objetivo:Description,Proyecto:Project.Name,' + 'Periodo:#StartDate>EndDate,' + 'Estado:State.Name,Municipio:Municipality.Name,' + 'Catálogo:Catalog,Información Adicional:Additional',
-									changeCustomByRow: function changeCustomByRow(row, config) {
-										switch (row.key) {
-											case 'empleado':
-											case 'periodo':
-											case 'objetivo':
-											case 'proyecto':
-											case 'información_adicional':
-											case 'clasificación':
-												config.align = 'col-12';
-												config.subalign = 'col-12';
-												break;
-
-											default:
-												config.align = 'col-12';
-												config.subalign = 'col-6';
-												break;
-										}
-									}
-								});
-
-								//Obtenemos los proyectos
-
-								_context14.next = 11;
-								return _store2.default.Projects(_this.Data.EmployeeId);
-
-							case 11:
-								projects = _context14.sent;
-
-								projects = Enumerable.from(projects.Data).select(function (el) {
-									return {
-										Text: el.Name,
-										Value: el.Id
-									};
-								}).toArray();
-
-								//Obtenemos los catálogos
-								_context14.next = 15;
-								return _store2.default.GetRegisterCatalogs(_this.Data.EmployeeId);
-
-							case 15:
-								registercatalogs = _context14.sent;
-
-								registercatalogs = Enumerable.from(registercatalogs.Data).select(function (el) {
-									return {
-										Text: el.vcCatalog,
-										Value: el.CatalogId
-									};
-								}).toArray();
-
-								//Obtenemos los Estados
-								_context14.next = 19;
-								return _store2.default.States();
-
-							case 19:
-								states = _context14.sent;
-
-								states = Enumerable.from(states.Data).select(function (el) {
-									return {
-										Text: el.Name,
-										Value: el.Id
-									};
-								}).toArray();
-
-								//Obtenemos los empleados
-								employees = Enumerable.from(_this.Data.users.Data).select(function (el) {
-									return {
-										Text: el.vcNames,
-										Value: el.iEmployeeId
-									};
-								}).toArray();
-
-
-								_this.Data.budgetData = budgetDetail.Data[0];
-								_this.Data.conceptData = budgetDetail.Data[0].Details;
-
-								//Determinamos si es un presupuesto de agencia
-								if (budgetDetail.Data[0].Agency != undefined) _this.Page.isAgency = budgetDetail.Data[0].Agency == '1' ? true : budgetDetail.Data[0].Agency == '0' ? false : false;
-
-								//Cargamos el slider con conceptos
-								conceptshtml = '';
-
-								if (Data.edit) {
-									_this.Page.conceptsHtmlEdit = _UI2.default.SliderLabelList(_this.Data.conceptData, {
-										fields: 'Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill',
-										sliderId: 'swiperConcepts',
-										buttons: [{
-											class: 'btnDeleteConcept',
-											value: 'Eliminar',
-											colorClass: 'btn-danger',
-											id: _this.Data.BudgetId
-										}],
-										changeCustomByRow: function changeCustomByRow(row, config) {
-											config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
-											config.disabled = _this.Page.isAgency && row.key == 'Concepto' && row.value == 'AGENCIA' ? 'disabled' : '';
-										}
-									});
-									conceptshtml = _this.Page.conceptsHtmlEdit;
-								} else {
-									_this.Page.conceptsHtmlMain = _UI2.default.SliderLabelList(budgetDetail.Data[0].Details, {
-										fields: 'Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill',
-										sliderId: 'swiperConcepts',
-										changeCustomByRow: function changeCustomByRow(row, config) {
-											config.hidden = row.key == 'Id' ? config.hidden = 'd-none' : '';
-										}
-									});
-									conceptshtml = _this.Page.conceptsHtmlMain;
-								}
-
-								_this.undbindSliderEvents();
-
-								_this.Page.budgetFormHtml = _UI2.default.Form(budgetDetail.Data, {
-									idFrm: 'frm-Budget',
-									fields: 'Empleado:Employee.FullName,' + 'Objetivo:Description,Proyecto:Project.Name,' + 'Fecha Inicial:StartDate,Fecha Final:EndDate,' + 'Estado:State.Name,Municipio:Municipality.Name,' + 'Catálogo:Catalog,Información adicional:Additional',
-									dataFields: {
-										Información_adicional: {
-											name: 'Additional',
-											type: 'textarea'
-										},
-										Objetivo: {
-											name: 'Target'
-										},
-										Proyecto: {
-											required: 'required',
-											name: 'Project',
-											type: 'select',
-											data: projects,
-											selected: true,
-											NA: true
-										},
-										Municipio: {
-											required: 'required',
-											name: 'Municipality',
-											type: 'select'
-										},
-										Fecha_Inicial: {
-											required: 'required',
-											name: 'StartDate',
-											type: 'date'
-										},
-										Fecha_Final: {
-											required: 'required',
-											name: 'EndDate',
-											type: 'date'
-										},
-										Empleado: {
-											required: 'required',
-											disabled: 'disabled',
-											type: 'select',
-											selected: true,
-											data: employees
-										},
-										Estado: (_Estado = {
-											required: true,
-											type: 'select',
-											name: 'State',
-											selected: true
-										}, (0, _defineProperty3.default)(_Estado, 'required', 'required'), (0, _defineProperty3.default)(_Estado, 'data', states), _Estado),
-										Catálogo: {
-											required: 'required',
-											name: 'Catalog',
-											type: 'select',
-											selected: true,
-											data: registercatalogs,
-											NA: true
-										}
-									}
-								});
-
-								$('#btnAddConcept').attr('data-id', _this.Data.BudgetId);
-								$('#budgetDetailContainer').html(budgetDetailHtml);
-								$('#budgetFormContainer').html(_this.Page.budgetFormHtml);
-								$('#conceptsContainer').html(conceptshtml);
-
-								_this.handleFormModals();
-								_this.handleEventsModals();
-								_this.handleSliderEvents();
-								_tool2.default.openModal('#mdl-editBudget', '#mdl-Concepts');
-
-								//Si el modo edit esta activado regresamos a la pantalla de edición
-								if (Data.edit) {
-									$('#budgetDetailContainer').hide();
-									$('#budgetFormContainer').removeAttr('hidden');
-									$('#cbState').find('option:selected').trigger('change');
-								} else {
-									$('#budgetDetailContainer').show();
-									$('#budgetFormContainer').attr('hidden', true);
-								}
-								//Definimos que botones estarán activados según el modo
-								$('#saveBtn').attr('hidden', !Data.edit);
-								$('#cancelBtn').attr('hidden', !Data.edit);
-								$('#btnAddConcept').attr('hidden', !Data.edit);
-								$('#editBtn').attr('hidden', Data.edit);
-								$('#sendBtn').attr('hidden', Data.edit);
-								_context14.next = 46;
-								break;
-
-							case 45:
-								alert(messages.noData);
-
-							case 46:
-								_context14.next = 49;
-								break;
-
-							case 48:
-								alert(messages.error);
-
-							case 49:
-							case 'end':
-								return _context14.stop();
-						}
-					}
-				}, _callee14, _this5);
-			}))();
-		},
-		changeStatus: function changeStatus() {
-			var _this6 = this;
-
-			return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15() {
-				var _this, chStatus, loadResult;
-
-				return _regenerator2.default.wrap(function _callee15$(_context15) {
-					while (1) {
-						switch (_context15.prev = _context15.next) {
-							case 0:
-								_this = _this6;
-
-								if (!confirm('¿Está seguro, que desea solicitar la autorización del presupuesto?')) {
-									_context15.next = 19;
-									break;
-								}
-
-								_context15.next = 4;
-								return _store2.default.SetChangeStatus({
-									BudgetId: _this.Data.BudgetId,
-									Status: 'Solicitado',
-									Comments: 'Concepto Modificado'
-								});
-
-							case 4:
-								chStatus = _context15.sent;
-
-								if (!chStatus.Success) {
-									_context15.next = 17;
-									break;
-								}
-
-								_tool2.default.closeModal('#mdl-editBudget');
-								_context15.next = 9;
-								return _this.loadBudgets({
-									//Verifico si hay presupuestos
-									EmployeeId: _this.Data.EmployeeId,
-									EmployeeName: _this.Data.EmployeeName,
-									AgreementId: _this.Data.AgreementId,
-									reload: true
-								});
-
-							case 9:
-								loadResult = _context15.sent;
-
-								if (loadResult) {
-									_context15.next = 14;
-									break;
-								}
-
-								_context15.next = 13;
-								return _this.loadEmployees({
-									AgreementId: _this.Data.AgreementId,
-									AgreementName: _this.Data.AgreementName
-								});
-
-							case 13:
-								_tool2.default.scrollPageTo(0, 150);
-
-							case 14:
-								alert('¡Se ha solicitado exitosamente el presupuesto!');
-								_context15.next = 19;
-								break;
-
-							case 17:
-								result.Success = false;
-								result.Message = messages.error + ', ' + chStatus.Data;
-
-							case 19:
-							case 'end':
-								return _context15.stop();
-						}
-					}
-				}, _callee15, _this6);
-			}))();
-		}
+	  Data: {},
+	  Page: {
+	    scrollToConcepts: false,
+	    toggleBtn: false
+	  },
+	  init: function init() {
+	    this.render();
+	  },
+	  render: function render() {
+	    var _this2 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+	      var _this, agreements, options;
+
+	      return _regenerator2.default.wrap(function _callee2$(_context2) {
+	        while (1) {
+	          switch (_context2.prev = _context2.next) {
+	            case 0:
+	              _this = _this2;
+	              // Vamos por los convenios/empresas
+
+	              _context2.next = 3;
+	              return _store2.default.GetAgreements({
+	                Type: 4
+	              });
+
+	            case 3:
+	              agreements = _context2.sent;
+
+	              _this.Data.typeUser = "UpdateBudget";
+	              _this.Page = {
+	                Partial: "",
+	                pageTitle: "Presupuestos Rechazados",
+	                pages: {
+	                  first: true,
+	                  second: false
+	                }
+	              };
+
+	              if (!(agreements.Data.length > 1)) {
+	                _context2.next = 16;
+	                break;
+	              }
+
+	              options = _dataUI2.default.getRows(agreements.Data, "Id:iAgreement,Name:vcDisplay");
+	              /* Cargamos la data de la pagina que se cargara en el template general */
+
+	              _context2.next = 10;
+	              return _optionList3.default.render({
+	                data: options,
+	                name: "empresa",
+	                onClick: function () {
+	                  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(el) {
+	                    return _regenerator2.default.wrap(function _callee$(_context) {
+	                      while (1) {
+	                        switch (_context.prev = _context.next) {
+	                          case 0:
+	                            _this.Data.AgreementId = el.id;
+	                            _this.Data.AgreementName = el.name;
+	                            _context.next = 4;
+	                            return _this.loadEmployees({
+	                              AgreementId: _this.Data.AgreementId,
+	                              AgreementName: _this.Data.AgreementName
+	                            });
+
+	                          case 4:
+	                          case "end":
+	                            return _context.stop();
+	                        }
+	                      }
+	                    }, _callee, this);
+	                  }));
+
+	                  function onClick(_x) {
+	                    return _ref.apply(this, arguments);
+	                  }
+
+	                  return onClick;
+	                }()
+	              });
+
+	            case 10:
+	              _this.Page.Partial = _context2.sent;
+
+	              $("#renderBody").html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
+	              _optionList3.default.handleEvents();
+	              swiper = _tool2.default.swiperScroll(".swiper-container1", {
+	                events: {
+	                  slideChange: function slideChange() {
+	                    $(".btnRechazo").protipHide();
+	                    $(".protip-container").remove();
+	                    _this.Page.toggleBtn = false;
+	                  }
+	                }
+	              });
+	              _context2.next = 20;
+	              break;
+
+	            case 16:
+	              //Cargamos directo la pantalla de empleados si solo hay un convenio
+	              _this.Data.AgreementId = agreements.Data[0].iAgreement;
+	              _this.Data.AgreementName = agreements.Data[0].vcDisplay;
+	              _context2.next = 20;
+	              return _this2.loadEmployees({
+	                AgreementId: _this.Data.AgreementId,
+	                AgreementName: _this.Data.AgreementName
+	              });
+
+	            case 20:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }
+	      }, _callee2, _this2);
+	    }))();
+	  },
+
+	  //CARGA DE EVENTOS
+	  handleEventsBudget: function handleEventsBudget() {
+	    var _this = this;
+
+	    $(".btnRechazo").on("click", function (e) {
+	      e.stopPropagation();
+	      var btn = $(this);
+	      _this.Page.toggleBtn = !_this.Page.toggleBtn;
+	      if (_this.Page.toggleBtn) {
+	        btn.protipShow({
+	          title: $(this).attr("data-value"),
+	          trigger: "click",
+	          position: "top",
+	          auto_hide: true,
+	          animate: "bounceIn",
+	          scheme: "red"
+	        });
+	      } else {
+	        btn.protipHide();
+	      }
+	    });
+	  },
+	  unbindFormModals: function unbindFormModals() {
+	    $("#cbState").unbind("click");
+	  },
+	  handleFormModals: function handleFormModals() {
+	    var _this = this;
+	    $("#cbState").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+	      var municipalities;
+	      return _regenerator2.default.wrap(function _callee3$(_context3) {
+	        while (1) {
+	          switch (_context3.prev = _context3.next) {
+	            case 0:
+	              _this.Data.State = $(this).val();
+	              _context3.next = 3;
+	              return _store2.default.Municipalities(_this.Data.State);
+
+	            case 3:
+	              municipalities = _context3.sent;
+
+	              municipalities = _UI2.default.DropDownListFor(municipalities.Data, {
+	                textField: "Name",
+	                valueField: "Id"
+	              });
+	              $("#cbMunicipality").html(municipalities);
+	              if (_this.Data.budgetData != "") {
+	                if ($("#cbMunicipality option[value='" + _this.Data.budgetData.Municipality.Id + "']").length > 0) {
+	                  $("#cbMunicipality").val(_this.Data.budgetData.Municipality.Id).trigger("change");
+	                } else {
+	                  $("#cbMunicipality").val($("#cbMunicipality option:first").val()).trigger("change");
+	                }
+	              }
+
+	            case 7:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }
+	      }, _callee3, this);
+	    })));
+	  },
+	  unbindEventsModals: function unbindEventsModals() {
+	    $("mdl-editBudget").unbind("hide.bs.modal");
+	    $("mdl-editBudget").unbind("shown.bs.modal");
+	    $("#editBtn").unbind("click");
+	    $("#cancelBtn").unbind("click");
+	    $("#sendBtn").unbind("click");
+	    $("#saveBtn").unbind("click");
+	    $("#btnAddConcept").unbind("click");
+	  },
+	  undbindSliderEvents: function undbindSliderEvents() {
+	    $(".btnDeleteConcept").unbind("click");
+	  },
+	  handleSliderEvents: function handleSliderEvents() {
+	    var _this = this;
+	    $(".btnDeleteConcept").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
+	      var id, detailid, resp;
+	      return _regenerator2.default.wrap(function _callee4$(_context4) {
+	        while (1) {
+	          switch (_context4.prev = _context4.next) {
+	            case 0:
+	              id = $(this).attr("data-id");
+	              detailid = $(this).attr("detail-id");
+
+	              if (!(_this.Data.conceptData.length > 1)) {
+	                _context4.next = 10;
+	                break;
+	              }
+
+	              if (!confirm("¿El concepto será eliminado, desea continuar?")) {
+	                _context4.next = 8;
+	                break;
+	              }
+
+	              _context4.next = 6;
+	              return _store2.default.UpdateBudgetDetail({
+	                BudgetId: id,
+	                Type: 2,
+	                BudgetDetailId: detailid,
+	                CatalogId: "1",
+	                SubcatalogId: "1",
+	                Amount: "0",
+	                Description: "x"
+	              });
+
+	            case 6:
+	              resp = _context4.sent;
+
+	              if (resp.Success) {
+	                alert("¡Se ha eliminado el concepto correctamente!");
+	                _tool2.default.closeModal("#mdl-editBudget");
+	                _this.unbindEventsModals();
+	                _this.Page.scrollToConcepts = true;
+	                _this.loadEditModal({
+	                  edit: true,
+	                  reload: true
+	                });
+	              }
+
+	            case 8:
+	              _context4.next = 11;
+	              break;
+
+	            case 10:
+	              alert("El presupuesto debe tener almenos 1 concepto y clasificación");
+
+	            case 11:
+	            case "end":
+	              return _context4.stop();
+	          }
+	        }
+	      }, _callee4, this);
+	    })));
+	  },
+	  handleEventsModals: function handleEventsModals() {
+	    var _this = this;
+	    $("#mdl-editBudget").on("hide.bs.modal", function () {
+	      _tool2.default.scrollPageToObj(20, _this.Data.scrolled);
+	      $("#saveBtn").attr("hidden", true);
+	      $("#editBtn").attr("hidden", false);
+	      $("#sendBtn").attr("hidden", false);
+	      $("#cancelBtn").attr("hidden", true);
+	      $("#budgetDetailContainer").show();
+	      $("#budgetFormContainer").attr("hidden", true);
+	      _this.unbindEventsModals();
+	      _this.unbindFormModals();
+	    });
+	    $("#mdl-editBudget").on("shown.bs.modal", function () {
+	      _this.Page.swiperConcepts = _tool2.default.swiperFraction("#swiperConcepts", {
+	        autoHeight: true,
+	        space: 30,
+	        navigation: true
+	      });
+	      if (_this.Page.scrollToConcepts) {
+	        _tool2.default.scrollToObj(500, "#body-report", "#conceptsContainer", 100);
+	        _this.Page.scrollToConcepts = false;
+	      }
+	    });
+	    $("#editBtn").on("click", function () {
+	      $(this).attr("hidden", true);
+	      $("#saveBtn").attr("hidden", false);
+	      $("#sendBtn").attr("hidden", true);
+	      $("#cancelBtn").attr("hidden", false);
+	      $("#budgetDetailContainer").hide();
+	      $("#budgetFormContainer").removeAttr("hidden");
+	      $("#cbEmpleado").trigger("change");
+	      $("#btnAddConcept").attr("hidden", false);
+	      _tool2.default.scrollTo(0, "#body-report", 0);
+	      $("#cbState").find("option:selected").trigger("change");
+	      var conceptsHtml = _UI2.default.SliderLabelList(_this.Data.conceptData, {
+	        fields: "Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill",
+	        sliderId: "swiperConcepts",
+	        buttons: [{
+	          class: "btnDeleteConcept",
+	          value: "Eliminar",
+	          colorClass: "btn-danger",
+	          id: _this.Data.BudgetId
+	        }],
+	        changeCustomByRow: function changeCustomByRow(row, config) {
+	          config.hidden = row.key == "Id" ? config.hidden = "d-none" : "";
+	          config.disabled = _this.Page.isAgency && row.key == "Concepto" && row.value == "AGENCIA" ? "disabled" : "";
+	        }
+	      });
+	      $("#conceptsContainer").html(conceptsHtml);
+	      _this.handleSliderEvents();
+	      _this.Page.swiperConcepts = _tool2.default.swiperFraction("#swiperConcepts", {
+	        autoHeight: true,
+	        space: 30,
+	        navigation: true
+	      });
+	    });
+	    $("#cancelBtn").on("click", function () {
+	      $(this).attr("hidden", true);
+	      $("#saveBtn").attr("hidden", true);
+	      $("#editBtn").attr("hidden", false);
+	      $("#sendBtn").attr("hidden", false);
+	      _this.unbindFormModals();
+	      $("#budgetFormContainer").attr("hidden", true);
+	      $("#budgetFormContainer").html(_this.Page.budgetFormHtml);
+	      $("#conceptsContainer").html(_this.Page.conceptsHtmlMain);
+	      $("#btnAddConcept").attr("hidden", true);
+	      _this.handleSliderEvents();
+	      _this.Page.swiperConcepts = _tool2.default.swiperFraction("#swiperConcepts", {
+	        autoHeight: true,
+	        space: 30,
+	        navigation: true
+	      });
+	      _this.Page.swiperConcepts.slideTo(1);
+	      $("#budgetDetailContainer").show();
+	      _tool2.default.scrollTo(0, "#body-report", 0);
+	      _this.handleFormModals();
+	    });
+	    $("#saveBtn").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
+	      var data, resp, loadResult;
+	      return _regenerator2.default.wrap(function _callee5$(_context5) {
+	        while (1) {
+	          switch (_context5.prev = _context5.next) {
+	            case 0:
+	              data = $("#frm-Budget").serializeObject();
+
+	              data.BudgetId = _this.Data.BudgetId;
+
+	              if (!validateFormBudget(data)) {
+	                _context5.next = 18;
+	                break;
+	              }
+
+	              if (!confirm("¿El presupuesto será actualizado, desea continuar?")) {
+	                _context5.next = 18;
+	                break;
+	              }
+
+	              _context5.next = 6;
+	              return _store2.default.UpdateBudget(data);
+
+	            case 6:
+	              resp = _context5.sent;
+
+	              if (!resp.Success) {
+	                _context5.next = 18;
+	                break;
+	              }
+
+	              alert("¡Se ha actualizado la información del presupuesto con éxito!");
+	              //Cargar nuevamente el presupuesto
+	              _context5.next = 11;
+	              return _this.loadBudgets({
+	                reload: true
+	              });
+
+	            case 11:
+	              loadResult = _context5.sent;
+
+	              if (loadResult) {
+	                _context5.next = 16;
+	                break;
+	              }
+
+	              _context5.next = 15;
+	              return _this.loadEmployees({
+	                AgreementId: _this.Data.AgreementId,
+	                AgreementName: _this.Data.AgreementName
+	              });
+
+	            case 15:
+	              _tool2.default.scrollPageTo(0, 150);
+
+	            case 16:
+	              _tool2.default.closeModal("#mdl-editBudget");
+	              _this.loadEditModal({
+	                edit: false,
+	                reload: true
+	              });
+
+	            case 18:
+	            case "end":
+	              return _context5.stop();
+	          }
+	        }
+	      }, _callee5, this);
+	    })));
+	    $("#sendBtn").on("click", function () {
+	      _this.changeStatus();
+	    });
+	    $("#btnAddConcept").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
+	      var id, catalogs, conceptFormHtml;
+	      return _regenerator2.default.wrap(function _callee6$(_context6) {
+	        while (1) {
+	          switch (_context6.prev = _context6.next) {
+	            case 0:
+	              id = $(this).attr("data-id");
+
+	              _tool2.default.openModal("#mdl-Concepts", "#mdl-Concepts");
+	              _this.unbindFormModals();
+	              _context6.next = 5;
+	              return _store2.default.Catalogs(_this.Data.EmployeeId);
+
+	            case 5:
+	              catalogs = _context6.sent;
+	              conceptFormHtml = _UI2.default.Form(_this.Data.conceptData, {
+	                idFrm: "frm-Concepts",
+	                fields: "Catálogo:Catalog.Name," + "Clasificación:Subcatalog.CatalogName," + "Monto:empty,Descripción:empty",
+	                dataFields: {
+	                  Catálogo: {
+	                    required: "required",
+	                    type: "select",
+	                    name: "CatalogId",
+	                    data: Enumerable.from(catalogs.Data).select(function (el) {
+	                      return {
+	                        Text: el.Name,
+	                        Value: el.Id
+	                      };
+	                    }).toArray()
+	                  },
+	                  Clasificación: {
+	                    name: "SubcatalogId",
+	                    required: "required",
+	                    type: "select"
+	                  },
+	                  Monto: {
+	                    name: "Amount",
+	                    type: "number",
+	                    required: "required"
+	                  },
+	                  Descripción: {
+	                    name: "Description",
+	                    type: "textarea",
+	                    maxlength: 256,
+	                    required: "required"
+	                  }
+	                }
+	              });
+
+	              $("#formConceptsContainer").html(conceptFormHtml);
+	              _this.Page.swiperConcepts.slideTo(1);
+	              _this.handleEventsConceptModal();
+
+	            case 10:
+	            case "end":
+	              return _context6.stop();
+	          }
+	        }
+	      }, _callee6, this);
+	    })));
+	  },
+	  unbindConceptModal: function unbindConceptModal() {
+	    $("#mdl-Concepts").unbind("hide.bs.modal");
+	    $("#mdl-Concepts").unbind("shown.bs.modal");
+	    $("#cancelConceptBtn").unbind("click");
+	    $("#saveConceptBtn").unbind("click");
+	    $("#cbConcepto").unbind("change");
+	  },
+	  handleEventsConceptModal: function handleEventsConceptModal() {
+	    var _this = this;
+	    $("#mdl-Concepts").on("hide.bs.modal", function () {
+	      _this.unbindConceptModal();
+	    });
+
+	    $("#cancelConceptBtn").on("click", function () {
+	      _tool2.default.closeModal("#mdl-Concepts");
+	    });
+
+	    $("#saveConceptBtn").on("click", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
+	      var data, resp;
+	      return _regenerator2.default.wrap(function _callee7$(_context7) {
+	        while (1) {
+	          switch (_context7.prev = _context7.next) {
+	            case 0:
+	              data = $("#frm-Concepts").serializeObject();
+
+	              data.BudgetId = _this.Data.BudgetId;
+	              data.Type = 1;
+
+	              if (!validateConceptFormBudget(data)) {
+	                _context7.next = 15;
+	                break;
+	              }
+
+	              if (!confirm("¿Se añadirá un concepto al presupuesto, desea continuar?")) {
+	                _context7.next = 15;
+	                break;
+	              }
+
+	              _context7.prev = 5;
+	              _context7.next = 8;
+	              return _store2.default.UpdateBudgetDetail(data);
+
+	            case 8:
+	              resp = _context7.sent;
+
+	              if (resp.Success) {
+	                alert("¡Se ha registrado el concepto correctamente!");
+	                _tool2.default.closeModal("#mdl-Concepts");
+	                _tool2.default.closeModal("#mdl-editBudget");
+	                _this.unbindEventsModals();
+	                _this.unbindFormModals();
+	                _this.Page.scrollToConcepts = true;
+	                _this.loadEditModal({
+	                  edit: true,
+	                  reload: true
+	                });
+	              }
+	              _context7.next = 15;
+	              break;
+
+	            case 12:
+	              _context7.prev = 12;
+	              _context7.t0 = _context7["catch"](5);
+
+	              console.log(_context7.t0);
+
+	            case 15:
+	            case "end":
+	              return _context7.stop();
+	          }
+	        }
+	      }, _callee7, this, [[5, 12]]);
+	    })));
+
+	    $("#cbCatalogId").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
+	      var subcatalogs, subcatalogsHtml;
+	      return _regenerator2.default.wrap(function _callee8$(_context8) {
+	        while (1) {
+	          switch (_context8.prev = _context8.next) {
+	            case 0:
+	              _this.Data.CatalogId = $(this).val();
+
+	              if (!(_this.Data.CatalogId != "N/A")) {
+	                _context8.next = 7;
+	                break;
+	              }
+
+	              _context8.next = 4;
+	              return _store2.default.SubCatalogs(_this.Data.CatalogId);
+
+	            case 4:
+	              subcatalogs = _context8.sent;
+	              subcatalogsHtml = _UI2.default.DropDownListFor(subcatalogs.Data, {
+	                textField: "Name",
+	                valueField: "Id"
+	              });
+
+	              $("#cbSubcatalogId").html(subcatalogsHtml);
+
+	            case 7:
+	            case "end":
+	              return _context8.stop();
+	          }
+	        }
+	      }, _callee8, this);
+	    })));
+	    $("#cbSubcatalogId").on("change", (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
+	      var budgetData, r;
+	      return _regenerator2.default.wrap(function _callee9$(_context9) {
+	        while (1) {
+	          switch (_context9.prev = _context9.next) {
+	            case 0:
+	              budgetData = $("#frm-Budget").serializeObject();
+
+	              _this.Data.SubCatalogId = $(this).val();
+
+	              if (!(_this.Data.CatalogId != "N/A")) {
+	                _context9.next = 8;
+	                break;
+	              }
+
+	              _context9.next = 5;
+	              return _store2.default.CheckAmountPolicy({
+	                CatalogId: _this.Data.CatalogId,
+	                SubCatalogId: _this.Data.SubCatalogId,
+	                EmployeeId: _this.Data.EmployeeId,
+	                State: budgetData.State,
+	                StartDate: budgetData.StartDate,
+	                EndDate: budgetData.EndDate
+	              });
+
+	            case 5:
+	              r = _context9.sent;
+
+	              console.log("CheckAmountPolicy", r);
+	              if (r.Success) $("#Amount").val(r.Data.Amount);
+
+	            case 8:
+	            case "end":
+	              return _context9.stop();
+	          }
+	        }
+	      }, _callee9, this);
+	    })));
+	  },
+
+	  //CARGA DE DATOS
+	  loadEmployees: function loadEmployees(Data) {
+	    var _this3 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
+	      var _this, options;
+
+	      return _regenerator2.default.wrap(function _callee11$(_context11) {
+	        while (1) {
+	          switch (_context11.prev = _context11.next) {
+	            case 0:
+	              _this = _this3;
+	              _context11.next = 3;
+	              return _store2.default.GetEmployees({
+	                Agreement: _this.Data.AgreementId,
+	                Type: _this.Data.typeUser
+	              });
+
+	            case 3:
+	              _this.Data.users = _context11.sent;
+
+	              //Cargamos la data de empleados en el partial de opciones
+	              _this.Page.pages.first = true;
+	              _this.Page.pages.second = false;
+	              options = _dataUI2.default.getRows(_this.Data.users.Data, "Id:iEmployeeId,Name:vcNames,Description:vcCard");
+	              _context11.next = 9;
+	              return _optionList3.default.render({
+	                data: options,
+	                name: "empleado",
+	                title: Data.AgreementName,
+	                onClick: function () {
+	                  var _ref9 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10(el) {
+	                    var loadResult;
+	                    return _regenerator2.default.wrap(function _callee10$(_context10) {
+	                      while (1) {
+	                        switch (_context10.prev = _context10.next) {
+	                          case 0:
+	                            _this.Data.EmployeeId = el.id;
+	                            _this.Data.EmployeeName = el.name;
+	                            //Si no encontramos registros al buscar presupuestos recargamos
+	                            _context10.next = 4;
+	                            return _this.loadBudgets({
+	                              reload: false
+	                            });
+
+	                          case 4:
+	                            loadResult = _context10.sent;
+
+	                            if (loadResult) {
+	                              _context10.next = 9;
+	                              break;
+	                            }
+
+	                            _context10.next = 8;
+	                            return _this.loadEmployees({
+	                              AgreementId: _this.Data.AgreementId,
+	                              AgreementName: _this.Data.AgreementName
+	                            });
+
+	                          case 8:
+	                            _tool2.default.scrollPageTo(0, 150);
+
+	                          case 9:
+	                          case "end":
+	                            return _context10.stop();
+	                        }
+	                      }
+	                    }, _callee10, this);
+	                  }));
+
+	                  function onClick(_x2) {
+	                    return _ref9.apply(this, arguments);
+	                  }
+
+	                  return onClick;
+	                }()
+	              });
+
+	            case 9:
+	              _this.Page.Partial = _context11.sent;
+
+	              $("#renderBody").html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
+
+	              swiper = _tool2.default.swiperScroll(".swiper-container1", {
+	                events: {
+	                  slideChange: function slideChange() {
+	                    $(".btnRechazo").protipHide();
+	                    $(".protip-container").remove();
+	                    _this.Page.toggleBtn = false;
+	                  }
+	                }
+	              });
+	              _optionList3.default.handleEvents();
+	              swiper.slideTo(1);
+
+	            case 14:
+	            case "end":
+	              return _context11.stop();
+	          }
+	        }
+	      }, _callee11, _this3);
+	    }))();
+	  },
+	  loadBudgets: function loadBudgets(Data) {
+	    var _this4 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee13() {
+	      var _this, date, budgets;
+
+	      return _regenerator2.default.wrap(function _callee13$(_context13) {
+	        while (1) {
+	          switch (_context13.prev = _context13.next) {
+	            case 0:
+	              _this = _this4;
+	              date = (0, _moment2.default)().format("YYYY-MM-DD");
+	              _context13.next = 4;
+	              return _store2.default.GetBudgetsByEmployee({
+	                Operation: "REJECTED",
+	                EmployeeId: _this.Data.EmployeeId,
+	                StartDate: date,
+	                EndDate: date
+	              });
+
+	            case 4:
+	              budgets = _context13.sent;
+
+	              if (!budgets.Success) {
+	                _context13.next = 24;
+	                break;
+	              }
+
+	              if (!(budgets.Data.length > 0)) {
+	                _context13.next = 19;
+	                break;
+	              }
+
+	              _context13.next = 9;
+	              return _UI2.default.InfoCardHeader(budgets.Data, {
+	                idField: "BudgetId",
+	                valueField: "Amount",
+	                fields: "Proyecto:Project,Objetivo:Target,Periodo:Period,Rechazo:Comment",
+	                searchId: "budgetsSearch",
+	                type: "Presupuesto",
+	                title: _this.Data.EmployeeName,
+	                fieldAsButtons: ["Rechazo"],
+	                bgColorClass: "btn-danger",
+	                classBtn: "btnRechazo",
+	                onClick: function () {
+	                  var _ref10 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12(el) {
+	                    return _regenerator2.default.wrap(function _callee12$(_context12) {
+	                      while (1) {
+	                        switch (_context12.prev = _context12.next) {
+	                          case 0:
+	                            _this.Data.scrolled = el.container;
+	                            _this.Data.BudgetId = el.id;
+	                            _context12.next = 4;
+	                            return _this.loadEditModal({
+	                              edit: false,
+	                              reload: true
+	                            });
+
+	                          case 4:
+	                          case "end":
+	                            return _context12.stop();
+	                        }
+	                      }
+	                    }, _callee12, this);
+	                  }));
+
+	                  function onClick(_x3) {
+	                    return _ref10.apply(this, arguments);
+	                  }
+
+	                  return onClick;
+	                }()
+	              });
+
+	            case 9:
+	              _this.Page.Presupuestos = _context13.sent;
+
+	              if (!Data.reload) {
+	                //Definimos false el reload si se carga por primera vez
+	                //Reseteamos todo antes de cargar nuevamente
+	                _this.Page.pages.first = _this.Page.pages.second = true;
+	                $("#renderBody").html(_tool2.default.renderTpl(_presupuestosRechazadosTpl2.default, _this.Page));
+	                swiper = _tool2.default.swiperScroll(".swiper-container1", {
+	                  space: 30,
+	                  events: {
+	                    slideChange: function slideChange() {
+	                      $(".btnRechazo").protipHide();
+	                      $(".protip-container").remove();
+	                      _this.Page.toggleBtn = false;
+	                    }
+	                  }
+	                });
+	                _tool2.default.scrollPageTo(0, 10);
+	                swiper.slideNext(300);
+	              } else {
+	                //Recargamos los presupuestos unicamente no toda la página
+	                $("#budgets").empty();
+	                $("#budgets").html(_this.Page.Presupuestos);
+	                _tool2.default.scrollPageTo(0, 200);
+	                swiper = _tool2.default.swiperScroll(".swiper-container1", {
+	                  events: {
+	                    slideChange: function slideChange() {
+	                      $(".btnRechazo").protipHide();
+	                      $(".protip-container").remove();
+	                      _this.Page.toggleBtn = false;
+	                    }
+	                  }
+	                });
+	              }
+	              //Añadimos los eventos que se utilizarán solo en esta vista
+	              _this4.handleEventsBudget(_this4);
+	              _optionList3.default.handleEvents();
+	              _UI2.default.handleEvents("card");
+	              _UI2.default.handleEvents("search", function () {
+	                swiper.slideTo(2);
+	              });
+	              swiper.slideTo(2);
+
+	              return _context13.abrupt("return", true);
+
+	            case 19:
+	              _this.Page.Presupuestos = "";
+	              /*El  mensaje de noData solo aparece cuando se carga por primera vez
+	                        NO EN EL CASO donde esta haciendo una operación (solicitar, autorizar, rechazar)
+	                        en este caso si se queda sin presupuestos osea si es el último presupuesto
+	                         simplemente regresa a la página de Empleados*/
+	              if (!Data.reload) alert(messages.noData);
+	              return _context13.abrupt("return", false);
+
+	            case 22:
+	              _context13.next = 26;
+	              break;
+
+	            case 24:
+	              alert(messages.error);
+	              return _context13.abrupt("return", false);
+
+	            case 26:
+	            case "end":
+	              return _context13.stop();
+	          }
+	        }
+	      }, _callee13, _this4);
+	    }))();
+	  },
+	  loadEditModal: function loadEditModal(Data) {
+	    var _this5 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee14() {
+	      var _this, budgetDetail, _Estado, budgetDetailHtml, projects, registercatalogs, states, employees, conceptshtml;
+
+	      return _regenerator2.default.wrap(function _callee14$(_context14) {
+	        while (1) {
+	          switch (_context14.prev = _context14.next) {
+	            case 0:
+	              _this = _this5;
+	              //$('#btnAddConcept').attr('hidden', true);
+
+	              if (!Data.reload) {
+	                _context14.next = 49;
+	                break;
+	              }
+
+	              $("#mdlEditBudget-Title").html("Presupuesto: " + _this.Data.BudgetId);
+	              _context14.next = 5;
+	              return _store2.default.GetBudgets({
+	                Type: "Budget",
+	                BudgetId: _this.Data.BudgetId
+	              });
+
+	            case 5:
+	              budgetDetail = _context14.sent;
+
+	              if (!budgetDetail.Success) {
+	                _context14.next = 48;
+	                break;
+	              }
+
+	              if (!(budgetDetail.Data.length > 0)) {
+	                _context14.next = 45;
+	                break;
+	              }
+
+	              budgetDetailHtml = _UI2.default.ItemList(budgetDetail.Data, {
+	                alignment: "vh",
+	                fields: "Empleado:Employee.FullName," + "Objetivo:Description,Proyecto:Project.Name," + "Periodo:#StartDate>EndDate," + "Estado:State.Name,Municipio:Municipality.Name," + "Catálogo:Catalog,Información Adicional:Additional",
+	                changeCustomByRow: function changeCustomByRow(row, config) {
+	                  switch (row.key) {
+	                    case "empleado":
+	                    case "periodo":
+	                    case "objetivo":
+	                    case "proyecto":
+	                    case "información_adicional":
+	                    case "clasificación":
+	                      config.align = "col-12";
+	                      config.subalign = "col-12";
+	                      break;
+
+	                    default:
+	                      config.align = "col-12";
+	                      config.subalign = "col-6";
+	                      break;
+	                  }
+	                }
+	              });
+
+	              //Obtenemos los proyectos
+
+	              _context14.next = 11;
+	              return _store2.default.Projects(_this.Data.EmployeeId);
+
+	            case 11:
+	              projects = _context14.sent;
+
+	              projects = Enumerable.from(projects.Data).select(function (el) {
+	                return {
+	                  Text: el.Name,
+	                  Value: el.Id
+	                };
+	              }).toArray();
+
+	              //Obtenemos los catálogos
+	              _context14.next = 15;
+	              return _store2.default.GetRegisterCatalogs(_this.Data.EmployeeId);
+
+	            case 15:
+	              registercatalogs = _context14.sent;
+
+	              registercatalogs = Enumerable.from(registercatalogs.Data).select(function (el) {
+	                return {
+	                  Text: el.vcCatalog,
+	                  Value: el.CatalogId
+	                };
+	              }).toArray();
+
+	              //Obtenemos los Estados
+	              _context14.next = 19;
+	              return _store2.default.States();
+
+	            case 19:
+	              states = _context14.sent;
+
+	              states = Enumerable.from(states.Data).select(function (el) {
+	                return {
+	                  Text: el.Name,
+	                  Value: el.Id
+	                };
+	              }).toArray();
+
+	              //Obtenemos los empleados
+	              employees = Enumerable.from(_this.Data.users.Data).select(function (el) {
+	                return {
+	                  Text: el.vcNames,
+	                  Value: el.iEmployeeId
+	                };
+	              }).toArray();
+
+
+	              _this.Data.budgetData = budgetDetail.Data[0];
+	              _this.Data.conceptData = budgetDetail.Data[0].Details;
+
+	              //Determinamos si es un presupuesto de agencia
+	              if (budgetDetail.Data[0].Agency != undefined) _this.Page.isAgency = budgetDetail.Data[0].Agency == "1" ? true : budgetDetail.Data[0].Agency == "0" ? false : false;
+
+	              //Cargamos el slider con conceptos
+	              conceptshtml = "";
+
+	              if (Data.edit) {
+	                _this.Page.conceptsHtmlEdit = _UI2.default.SliderLabelList(_this.Data.conceptData, {
+	                  fields: "Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill",
+	                  sliderId: "swiperConcepts",
+	                  buttons: [{
+	                    class: "btnDeleteConcept",
+	                    value: "Eliminar",
+	                    colorClass: "btn-danger",
+	                    id: _this.Data.BudgetId
+	                  }],
+	                  changeCustomByRow: function changeCustomByRow(row, config) {
+	                    config.hidden = row.key == "Id" ? config.hidden = "d-none" : "";
+	                    config.disabled = _this.Page.isAgency && row.key == "Concepto" && row.value == "AGENCIA" ? "disabled" : "";
+	                  }
+	                });
+	                conceptshtml = _this.Page.conceptsHtmlEdit;
+	              } else {
+	                _this.Page.conceptsHtmlMain = _UI2.default.SliderLabelList(budgetDetail.Data[0].Details, {
+	                  fields: "Id:Id,Concepto:Catalog.Name,Clasificación:Subcatalog.Name,Monto:$Amount,Dispersar:Refill",
+	                  sliderId: "swiperConcepts",
+	                  changeCustomByRow: function changeCustomByRow(row, config) {
+	                    config.hidden = row.key == "Id" ? config.hidden = "d-none" : "";
+	                  }
+	                });
+	                conceptshtml = _this.Page.conceptsHtmlMain;
+	              }
+
+	              _this.undbindSliderEvents();
+
+	              _this.Page.budgetFormHtml = _UI2.default.Form(budgetDetail.Data, {
+	                idFrm: "frm-Budget",
+	                fields: "Empleado:Employee.FullName," + "Objetivo:Description,Proyecto:Project.Name," + "Fecha Inicial:StartDate,Fecha Final:EndDate," + "Estado:State.Name,Municipio:Municipality.Name," + "Catálogo:Catalog,Información adicional:Additional",
+	                dataFields: {
+	                  Información_adicional: {
+	                    name: "Additional",
+	                    type: "textarea"
+	                  },
+	                  Objetivo: {
+	                    name: "Target"
+	                  },
+	                  Proyecto: {
+	                    required: "required",
+	                    name: "Project",
+	                    type: "select",
+	                    data: projects,
+	                    selected: true,
+	                    NA: true
+	                  },
+	                  Municipio: {
+	                    required: "required",
+	                    name: "Municipality",
+	                    type: "select"
+	                  },
+	                  Fecha_Inicial: {
+	                    required: "required",
+	                    name: "StartDate",
+	                    type: "date"
+	                  },
+	                  Fecha_Final: {
+	                    required: "required",
+	                    name: "EndDate",
+	                    type: "date"
+	                  },
+	                  Empleado: {
+	                    required: "required",
+	                    disabled: "disabled",
+	                    type: "select",
+	                    selected: true,
+	                    data: employees
+	                  },
+	                  Estado: (_Estado = {
+	                    required: true,
+	                    type: "select",
+	                    name: "State",
+	                    selected: true
+	                  }, (0, _defineProperty3.default)(_Estado, "required", "required"), (0, _defineProperty3.default)(_Estado, "data", states), _Estado),
+	                  Catálogo: {
+	                    required: "required",
+	                    name: "Catalog",
+	                    type: "select",
+	                    selected: true,
+	                    data: registercatalogs,
+	                    NA: true
+	                  }
+	                }
+	              });
+
+	              $("#btnAddConcept").attr("data-id", _this.Data.BudgetId);
+	              $("#budgetDetailContainer").html(budgetDetailHtml);
+	              $("#budgetFormContainer").html(_this.Page.budgetFormHtml);
+	              $("#conceptsContainer").html(conceptshtml);
+
+	              _this.handleFormModals();
+	              _this.handleEventsModals();
+	              _this.handleSliderEvents();
+	              _tool2.default.openModal("#mdl-editBudget", "#mdl-Concepts");
+
+	              //Si el modo edit esta activado regresamos a la pantalla de edición
+	              if (Data.edit) {
+	                $("#budgetDetailContainer").hide();
+	                $("#budgetFormContainer").removeAttr("hidden");
+	                $("#cbState").find("option:selected").trigger("change");
+	              } else {
+	                $("#budgetDetailContainer").show();
+	                $("#budgetFormContainer").attr("hidden", true);
+	              }
+	              //Definimos que botones estarán activados según el modo
+	              $("#saveBtn").attr("hidden", !Data.edit);
+	              $("#cancelBtn").attr("hidden", !Data.edit);
+	              $("#btnAddConcept").attr("hidden", !Data.edit);
+	              $("#editBtn").attr("hidden", Data.edit);
+	              $("#sendBtn").attr("hidden", Data.edit);
+	              _context14.next = 46;
+	              break;
+
+	            case 45:
+	              alert(messages.noData);
+
+	            case 46:
+	              _context14.next = 49;
+	              break;
+
+	            case 48:
+	              alert(messages.error);
+
+	            case 49:
+	            case "end":
+	              return _context14.stop();
+	          }
+	        }
+	      }, _callee14, _this5);
+	    }))();
+	  },
+	  changeStatus: function changeStatus() {
+	    var _this6 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee15() {
+	      var _this, chStatus, loadResult;
+
+	      return _regenerator2.default.wrap(function _callee15$(_context15) {
+	        while (1) {
+	          switch (_context15.prev = _context15.next) {
+	            case 0:
+	              _this = _this6;
+
+	              if (!confirm("¿Está seguro, que desea solicitar la autorización del presupuesto?")) {
+	                _context15.next = 19;
+	                break;
+	              }
+
+	              _context15.next = 4;
+	              return _store2.default.SetChangeStatus({
+	                BudgetId: _this.Data.BudgetId,
+	                Status: "Solicitado",
+	                Comments: "Concepto Modificado"
+	              });
+
+	            case 4:
+	              chStatus = _context15.sent;
+
+	              if (!chStatus.Success) {
+	                _context15.next = 17;
+	                break;
+	              }
+
+	              _tool2.default.closeModal("#mdl-editBudget");
+	              _context15.next = 9;
+	              return _this.loadBudgets({
+	                //Verifico si hay presupuestos
+	                EmployeeId: _this.Data.EmployeeId,
+	                EmployeeName: _this.Data.EmployeeName,
+	                AgreementId: _this.Data.AgreementId,
+	                reload: true
+	              });
+
+	            case 9:
+	              loadResult = _context15.sent;
+
+	              if (loadResult) {
+	                _context15.next = 14;
+	                break;
+	              }
+
+	              _context15.next = 13;
+	              return _this.loadEmployees({
+	                AgreementId: _this.Data.AgreementId,
+	                AgreementName: _this.Data.AgreementName
+	              });
+
+	            case 13:
+	              _tool2.default.scrollPageTo(0, 150);
+
+	            case 14:
+	              alert("¡Se ha solicitado exitosamente el presupuesto!");
+	              _context15.next = 19;
+	              break;
+
+	            case 17:
+	              result.Success = false;
+	              result.Message = messages.error + ", " + chStatus.Data;
+
+	            case 19:
+	            case "end":
+	              return _context15.stop();
+	          }
+	        }
+	      }, _callee15, _this6);
+	    }))();
+	  }
 	};
 
 
 	function validateConceptFormBudget(data) {
-		var resp = false;
-		if (data.CatalogId == '' || data.CatalogId == undefined) {
-			alert('Seleccione un Catálogo');
-		} else if (data.SubcatalogId == '' || data.SubcatalogId == undefined) {
-			alert('Seleccione una Clasificación');
-		} else if (data.Amount == '' || data.Amount == undefined) {
-			alert('Escriba un Monto');
-		} else if (data.Description == '' || data.Description == undefined) {
-			alert('Escriba una Descripción');
-		} else {
-			resp = true;
-		}
-		return resp;
+	  var resp = false;
+	  if (data.CatalogId == "" || data.CatalogId == undefined) {
+	    alert("Seleccione un Catálogo");
+	  } else if (data.SubcatalogId == "" || data.SubcatalogId == undefined) {
+	    alert("Seleccione una Clasificación");
+	  } else if (data.Amount == "" || data.Amount == undefined) {
+	    alert("Escriba un Monto");
+	  } else if (data.Description == "" || data.Description == undefined) {
+	    alert("Escriba una Descripción");
+	  } else {
+	    resp = true;
+	  }
+	  return resp;
 	}
 
 	function validateFormBudget(data) {
-		var resp = false;
-		if (data.Target == '') {
-			alert('Escriba un Objetivo');
-		} else if (data.Project == '' || data.Project == undefined) {
-			alert('Seleccione un Proyecto');
-		} else if (data.State == '' || data.State == undefined) {
-			alert('Seleccione un Estado');
-		} else if (data.Municipality == '' || data.Municipality == undefined) {
-			alert('Seleccione un Municipio');
-		} else if (data.Catalog == '' || data.Catalog == undefined) {
-			alert('Seleccione un Catálogo');
-		} else if (data.StartDate == '' || data.StartDate == undefined) {
-			alert('Seleccione una Fecha inicial');
-		} else if (data.EndDate == '' || data.EndDate == undefined) {
-			alert('Seleccione una Fecha final');
-		} else if ((0, _moment2.default)(data.StartDate) > (0, _moment2.default)(data.EndDate)) {
-			alert('La fecha inicial debe ser menor o igual que la fecha final');
-		} else {
-			resp = true;
-		}
-		return resp;
+	  var resp = false;
+	  if (data.Target == "") {
+	    alert("Escriba un Objetivo");
+	  } else if (data.Project == "" || data.Project == undefined) {
+	    alert("Seleccione un Proyecto");
+	  } else if (data.State == "" || data.State == undefined) {
+	    alert("Seleccione un Estado");
+	  } else if (data.Municipality == "" || data.Municipality == undefined) {
+	    alert("Seleccione un Municipio");
+	  } else if (data.Catalog == "" || data.Catalog == undefined) {
+	    alert("Seleccione un Catálogo");
+	  } else if (data.StartDate == "" || data.StartDate == undefined) {
+	    alert("Seleccione una Fecha inicial");
+	  } else if (data.EndDate == "" || data.EndDate == undefined) {
+	    alert("Seleccione una Fecha final");
+	  } else if ((0, _moment2.default)(data.StartDate) > (0, _moment2.default)(data.EndDate)) {
+	    alert("La fecha inicial debe ser menor o igual que la fecha final");
+	  } else {
+	    resp = true;
+	  }
+	  return resp;
 	}
 
 /***/ }),
