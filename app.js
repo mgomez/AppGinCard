@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e499f1bc56713ae8b991"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "09288dcc80976a1284bb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -589,7 +589,7 @@
 	    value: true
 	});
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -625,7 +625,7 @@
 
 	var _localforage2 = _interopRequireDefault(_localforage);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -16018,7 +16018,7 @@
 
 	exports.__esModule = true;
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -16430,7 +16430,7 @@
 		value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(49);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -16461,7 +16461,7 @@
 
 	var _linq2 = _interopRequireDefault(_linq);
 
-	var _constant = __webpack_require__(39);
+	var _constant = __webpack_require__(40);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -18399,6 +18399,8 @@
 
 						case 2:
 							User = _context62.sent;
+
+							app.loadingXHR(true);
 							return _context62.abrupt('return', _jquery2.default.ajax({
 								url: _constant2.default.HELPDESK_URL + '/api/Tickets/Classifications',
 								type: 'GET',
@@ -18406,10 +18408,13 @@
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
 								},
-								data: data
+								data: data,
+								complete: function complete(params) {
+									app.loadingXHR(false);
+								}
 							}));
 
-						case 4:
+						case 5:
 						case 'end':
 							return _context62.stop();
 					}
@@ -18430,16 +18435,21 @@
 
 						case 2:
 							User = _context63.sent;
+
+							app.loadingXHR(true);
 							return _context63.abrupt('return', _jquery2.default.ajax({
 								url: _constant2.default.HELPDESK_URL + '/api/Tickets/SLA',
 								type: 'GET',
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
 								},
-								data: data
+								data: data,
+								complete: function complete(params) {
+									app.loadingXHR(false);
+								}
 							}));
 
-						case 4:
+						case 5:
 						case 'end':
 							return _context63.stop();
 					}
@@ -18460,8 +18470,10 @@
 
 						case 2:
 							User = _context64.sent;
+
+							app.loadingXHR(true);
 							return _context64.abrupt('return', _jquery2.default.ajax({
-								url: 'https://www.ocsi.mx/Extranet/Services/WebApi_HelpDesk/api/Tickets/Create',
+								url: _constant2.default.HELPDESK_URL + '/api/Tickets/Create',
 								type: 'POST',
 								dataType: 'json',
 								cache: false,
@@ -18471,10 +18483,13 @@
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
 								},
-								data: data
+								data: data,
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
 							}));
 
-						case 4:
+						case 5:
 						case 'end':
 							return _context64.stop();
 					}
@@ -18495,16 +18510,21 @@
 
 						case 2:
 							User = _context65.sent;
+
+							app.loadingXHR(true);
 							return _context65.abrupt('return', _jquery2.default.ajax({
 								url: _constant2.default.HELPDESK_URL + '/api/Account/Profile',
 								type: 'POST',
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
 								},
-								data: formData
+								data: formData,
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
 							}));
 
-						case 4:
+						case 5:
 						case 'end':
 							return _context65.stop();
 					}
@@ -18526,14 +18546,18 @@
 						case 2:
 							User = _context66.sent;
 
-							console.log(User);
+							app.loadingXHR(true);
 							return _context66.abrupt('return', _jquery2.default.ajax({
 								url: _constant2.default.HELPDESK_URL + '/api/Account/VerifyCode',
 								type: 'POST',
+								dataType: 'json',
 								headers: {
-									Authorization: 'Bearer ' + User.access_token
+									Authorization: "Bearer " + User.access_token
 								},
-								data: data
+								data: data,
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
 							}));
 
 						case 5:
@@ -18543,7 +18567,7 @@
 				}
 			}, _callee66, _this66);
 		}))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetForms', function GetForms(ClasificationId) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'VerifyCodeAPI', function VerifyCodeAPI(data) {
 		var _this67 = this;
 
 		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee67() {
@@ -18557,24 +18581,29 @@
 
 						case 2:
 							User = _context67.sent;
+
+							console.log(User);
+							app.loadingXHR(true);
 							return _context67.abrupt('return', _jquery2.default.ajax({
-								url: _constant2.default.HELPDESK_URL + '/api/Tickets/Forms',
-								type: 'GET',
-								dataType: 'json',
+								url: _constant2.default.HELPDESK_URL + '/api/Account/VerifyCode',
+								type: 'POST',
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
 								},
-								data: { ClasificationId: ClasificationId }
+								data: data,
+								complete: function complete(params) {
+									app.loadingXHR(false);
+								}
 							}));
 
-						case 4:
+						case 6:
 						case 'end':
 							return _context67.stop();
 					}
 				}
 			}, _callee67, _this67);
 		}))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetProfileInfo', function GetProfileInfo(appId) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetForms', function GetForms(ClasificationId) {
 		var _this68 = this;
 
 		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee68() {
@@ -18588,31 +18617,33 @@
 
 						case 2:
 							User = _context68.sent;
+
+							app.loadingXHR(true);
 							return _context68.abrupt('return', _jquery2.default.ajax({
-								url: 'https://www.ocsi.mx/Extranet/Services/WebApi_HelpDesk/api/Account/Profile?ApplicationId=' + appId,
+								url: _constant2.default.HELPDESK_URL + '/api/Tickets/Forms',
 								type: 'GET',
 								dataType: 'json',
-								cache: false,
-								contentType: false,
-								processData: false,
-								async: true,
 								headers: {
 									Authorization: 'Bearer ' + User.access_token
+								},
+								data: { ClasificationId: ClasificationId },
+								complete: function complete() {
+									app.loadingXHR(false);
 								}
 							}));
 
-						case 4:
+						case 5:
 						case 'end':
 							return _context68.stop();
 					}
 				}
 			}, _callee68, _this68);
 		}))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'getUserId', function getUserId() {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetProfileInfo', function GetProfileInfo(appId) {
 		var _this69 = this;
 
 		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee69() {
-			var User, userId, appId;
+			var User;
 			return _regenerator2.default.wrap(function _callee69$(_context69) {
 				while (1) {
 					switch (_context69.prev = _context69.next) {
@@ -18622,10 +18653,48 @@
 
 						case 2:
 							User = _context69.sent;
-							userId = _jquery2.default.Deferred();
-							appId = (0, _jquery2.default)('#applicationid').val();
 
-							_this69.GetProfileInfo(appId).then(function (r) {
+							app.loadingXHR(true);
+							return _context69.abrupt('return', _jquery2.default.ajax({
+								url: _constant2.default.HELPDESK_URL + '/api/Account/Profile?ApplicationId=' + appId,
+								type: 'GET',
+								dataType: 'json',
+								cache: false,
+								contentType: false,
+								processData: false,
+								async: true,
+								headers: {
+									Authorization: 'Bearer ' + User.access_token
+								},
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
+							}));
+
+						case 5:
+						case 'end':
+							return _context69.stop();
+					}
+				}
+			}, _callee69, _this69);
+		}))();
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'getUserId', function getUserId(appId) {
+		var _this70 = this;
+
+		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee70() {
+			var User, userId;
+			return _regenerator2.default.wrap(function _callee70$(_context70) {
+				while (1) {
+					switch (_context70.prev = _context70.next) {
+						case 0:
+							_context70.next = 2;
+							return _this70.GetUserHD();
+
+						case 2:
+							User = _context70.sent;
+							userId = _jquery2.default.Deferred();
+
+							_this70.GetProfileInfo(appId).then(function (r) {
 								if (!r.Success) {
 									console.log('error obteniendo UserId');
 								} else {
@@ -18635,14 +18704,89 @@
 									});
 								}
 							});
-							return _context69.abrupt('return', userId.promise());
+							return _context70.abrupt('return', userId.promise());
 
-						case 7:
+						case 6:
 						case 'end':
-							return _context69.stop();
+							return _context70.stop();
 					}
 				}
-			}, _callee69, _this69);
+			}, _callee70, _this70);
+		}))();
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'getStatus', function getStatus() {
+		var _this71 = this;
+
+		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee71() {
+			var User;
+			return _regenerator2.default.wrap(function _callee71$(_context71) {
+				while (1) {
+					switch (_context71.prev = _context71.next) {
+						case 0:
+							_context71.next = 2;
+							return _this71.GetUserHD();
+
+						case 2:
+							User = _context71.sent;
+
+							app.loadingXHR(true);
+							return _context71.abrupt('return', _jquery2.default.ajax({
+								url: _constant2.default.HELPDESK_URL + '/api/Tickets/AllStatus',
+								type: 'GET',
+								dataType: 'json',
+								cache: false,
+								contentType: false,
+								processData: false,
+								async: true,
+								headers: {
+									Authorization: 'Bearer ' + User.access_token
+								},
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
+							}));
+
+						case 5:
+						case 'end':
+							return _context71.stop();
+					}
+				}
+			}, _callee71, _this71);
+		}))();
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'TicketsReport', function TicketsReport(data) {
+		var _this72 = this;
+
+		return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee72() {
+			var User;
+			return _regenerator2.default.wrap(function _callee72$(_context72) {
+				while (1) {
+					switch (_context72.prev = _context72.next) {
+						case 0:
+							_context72.next = 2;
+							return _this72.GetUserHD();
+
+						case 2:
+							User = _context72.sent;
+
+							app.loadingXHR(true);
+							return _context72.abrupt('return', _jquery2.default.ajax({
+								url: _constant2.default.HELPDESK_URL + '/api/Tickets/Reports',
+								type: 'GET',
+								dataType: 'json',
+								data: data,
+								headers: {
+									Authorization: 'Bearer ' + User.access_token
+								},
+								complete: function complete() {
+									app.loadingXHR(false);
+								}
+							}));
+
+						case 5:
+						case 'end':
+							return _context72.stop();
+					}
+				}
+			}, _callee72, _this72);
 		}))();
 	}), _GetUser$GetUserHD$Ge);
 
@@ -24499,8 +24643,8 @@
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var store = __webpack_require__(57)('wks');
-	var uid = __webpack_require__(43);
+	var store = __webpack_require__(58)('wks');
+	var uid = __webpack_require__(44);
 	var Symbol = __webpack_require__(10).Symbol;
 	var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -24642,7 +24786,7 @@
 
 	var anObject = __webpack_require__(13);
 	var IE8_DOM_DEFINE = __webpack_require__(73);
-	var toPrimitive = __webpack_require__(60);
+	var toPrimitive = __webpack_require__(61);
 	var dP = Object.defineProperty;
 
 	exports.f = __webpack_require__(14) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
@@ -24664,7 +24808,7 @@
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
 	var IObject = __webpack_require__(74);
-	var defined = __webpack_require__(49);
+	var defined = __webpack_require__(50);
 	module.exports = function (it) {
 	  return IObject(defined(it));
 	};
@@ -24685,7 +24829,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var dP = __webpack_require__(17);
-	var createDesc = __webpack_require__(41);
+	var createDesc = __webpack_require__(42);
 	module.exports = __webpack_require__(14) ? function (object, key, value) {
 	  return dP.f(object, key, createDesc(1, value));
 	} : function (object, key, value) {
@@ -24906,7 +25050,7 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(49);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -25836,6 +25980,18 @@
 	        subalign: "col-6"
 	      };
 	      break;
+	    case "h4h":
+	      return {
+	        align: "col-4",
+	        subalign: "col-6"
+	      };
+	      break;
+	    case "h4v":
+	      return {
+	        align: "col-4",
+	        subalign: "col-12"
+	      };
+	      break;
 
 	    default:
 	      return {
@@ -25868,11 +26024,11 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
-	var _promise = __webpack_require__(47);
+	var _promise = __webpack_require__(48);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -25934,10 +26090,8 @@
 	                var configHeader = [];
 	                configHeader.changeCustomByRow = config.changeHeaderByRow;
 	                configHeader.desc = config.desc;
-
-	                configDetail.changeCustomByRow = config.changeDetailByRow;
-	                configDetail.fields = config.detailFields || '';
-	                configDetail.desc = config.subdesc;
+	                configHeader.align = config.align;
+	                configHeader.subalign = config.subalign;
 
 	                rowData = _linq2.default.from(fields).select(function (el) {
 	                    increment += 1;
@@ -25954,22 +26108,29 @@
 	                            class: config.class,
 	                            idParent: config.idParent,
 	                            container: config.container
-	                        },
-	                        detail: {
-	                            empty: false,
-	                            title: config.detailTitle + " #" + el[config.idField],
-	                            labels: _this.getLabelData(Data[increment - 1], configDetail)
 	                        }
 	                    };
 	                }).toArray();
+
+	                //Si hay detail fields creamos el detalle añadimos 
+	                if (config.detailFields) {
+	                    configDetail.changeCustomByRow = config.changeDetailByRow;
+	                    configDetail.fields = config.detailFields || '';
+	                    configDetail.desc = config.subdesc;
+	                    rowData.detail = {
+	                        empty: false,
+	                        title: config.detailTitle + " #" + el[config.idField],
+	                        labels: _this.getLabelData(Data[increment - 1], configDetail)
+	                    };
+	                }
 	                rowData.idParent = config.idParent;
-	                rowData.message = config.message;
+	                rowData.message = config.message || '';
 	                rowData.searchId = config.searchId;
 	                rowData.title = config.title;
 	                rowData.type = config.type;
 	                break;
 	            case 'detailExpand':
-	                //Esta solo tiene los headers ID Y VALUE junto con los fields pero el detalle esta vacio
+	                //Esta solo tiene los headers ID Y VALUE junto con los fields pero el detalle esta vacio y se llena tras una petición
 	                var report = config.btnDetailText != '' ? {
 	                    class: 'btn-secondary',
 	                    classReport: 'detailBtn',
@@ -26130,7 +26291,6 @@
 	    getDetailRowData: function getDetailRowData(Data, Detail, config) {
 	        var _this = this;
 	        var data = _linq2.default.from(Data).select(function (el) {
-
 	            //Podemos agregar una condición via callback para cambiar la configuración del config para un row especifico
 	            if (config.changeCustomByRow != undefined && config.changeCustomByRow === Object(config.changeCustomByRow)) config.changeCustomByRow(el, config);
 
@@ -26498,20 +26658,19 @@
 	}
 
 	function dateOperations(sfield, Data) {
-	    var type = sfield.includes("#d") ? "days" : sfield.includes("#m") ? "months" : sfield.includes("#a") ? "years" : sfield.includes("#") ? "period" : "";
-	    var f1 = "";
-	    var f2 = "";
+	    var type = sfield.includes("#dt_") ? "date" : sfield.includes("#d") ? "days" : sfield.includes("#m") ? "months" : sfield.includes("#a") ? "years" : sfield.includes("#") ? "period" : "";
 	    sfield = sfield.replace(/#| |#m|#d|#a/g, '');
 	    var dates = sfield.includes(">") ? sfield.split(">") : "";
 	    var resp = "";
+	    //Hay un rango de fecha
 	    if (dates != "") {
-	        f1 = (0, _moment2.default)(Data[dates[0]]);
-	        f2 = (0, _moment2.default)(Data[dates[1]]);
 	        if (type != "period" && type != "") {
-	            return f1.diff(f2, type);
+	            resp = f1.diff(f2, type);
 	        } else {
-	            resp = "Del " + f1.format('YYYY-MM-DD') + " al " + f2.format('YYYY-MM-DD');
+	            resp = "Del " + (0, _moment2.default)(Data[dates[0]]).format('YYYY-MM-DD') + " al " + (0, _moment2.default)(Data[dates[1]]).format('YYYY-MM-DD');
 	        }
+	    } else {
+	        resp = type == "date" ? (0, _moment2.default)(Data[sfield]).format('YYYY-MM-DD') : Data[sfield];
 	    }
 	    return resp;
 	}
@@ -26660,7 +26819,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(40);
+	var aFunction = __webpack_require__(41);
 	module.exports = function (fn, that, length) {
 	  aFunction(fn);
 	  if (that === undefined) return fn;
@@ -26701,7 +26860,7 @@
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
 	var $keys = __webpack_require__(79);
-	var enumBugKeys = __webpack_require__(51);
+	var enumBugKeys = __webpack_require__(52);
 
 	module.exports = Object.keys || function keys(O) {
 	  return $keys(O, enumBugKeys);
@@ -28380,16 +28539,22 @@
 /* 35 */
 /***/ (function(module, exports) {
 
-	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTE1LjY2NyA1MTUuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTUuNjY3IDUxNS42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00NDYuNTMzLDExOS40MjVsLTU0LjExNy0wLjI4M2wtNTEuODUtNzcuMzVjLTMuMTE3LTQuODE3LTguNS03LjkzMy0xNC4xNjctNy45MzNIMTg2LjcxNyAgICBjLTUuNjY3LDAtMTAuNzY3LDMuMTE3LTEzLjg4Myw3LjY1bC01My41NSw3Ny42MzNsLTUwLjE1LDAuMjgzQzMxLjE2NywxMTkuNDI1LDAsMTUwLjU5MiwwLDE4OC41NTh2MjIzLjU1ICAgIGMwLDM3Ljk2NywzMS4xNjcsNjkuNyw2OS4xMzMsNjkuN2gzNzcuNGMzNy45NjcsMCw2OS4xMzMtMzEuNzMzLDY5LjEzMy02OS43di0yMjMuNTUgICAgQzUxNS42NjcsMTUwLjU5Miw0ODQuNSwxMTkuNDI1LDQ0Ni41MzMsMTE5LjQyNXogTTQ4MS42NjcsNDEyLjEwOGMwLDE5LjI2Ny0xNS44NjcsMzUuNy0zNS4xMzMsMzUuN2gtMzc3LjQgICAgYy0xOS4yNjcsMC0zNS4xMzMtMTYuNDMzLTM1LjEzMy0zNS43di0yMjMuNTVjMC0xOS4yNjcsMTUuODY3LTM1LjEzMywzNS4xMzMtMzUuMTMzaDU5LjIxN2M1LjY2NywwLDEwLjc2Ny0zLjExNywxMy44ODMtNy42NSAgICBsNTMuNTUtNzcuNjMzaDEyMS41NWw1MS41NjcsNzcuMDY3YzMuMTE3LDQuNTMzLDguNSw3LjY1LDEzLjg4Myw3LjY1bDYzLjQ2NywwLjU2N2MxOS4yNjcsMCwzNS4xMzMsMTUuODY3LDM1LjEzMywzNS4xMzN2MjIzLjU1ICAgIEg0ODEuNjY3eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNMjU5LjI1LDE2MC4yMjVjLTY2LjU4MywwLTEyMC40MTcsNTQuMTE3LTEyMC40MTcsMTIwLjQxN1MxOTIuOTUsNDAxLjA1OCwyNTkuMjUsNDAxLjA1OHMxMjAuNDE3LTU0LjExNywxMjAuNDE3LTEyMC40MTcgICAgUzMyNS41NSwxNjAuMjI1LDI1OS4yNSwxNjAuMjI1eiBNMjU5LjI1LDM2Ny4wNThjLTQ3LjYsMC04Ni40MTctMzguODE3LTg2LjQxNy04Ni40MTdzMzguODE3LTg2LjQxNyw4Ni40MTctODYuNDE3ICAgIHM4Ni40MTcsMzguODE3LDg2LjQxNyw4Ni40MTdTMzA2Ljg1LDM2Ny4wNTgsMjU5LjI1LDM2Ny4wNTh6IiBmaWxsPSIjRkZGRkZGIi8+DQoJCTxjaXJjbGUgY3g9IjQyMC40NjciIGN5PSIyMTAuMDkyIiByPSI2LjUxNyIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNNDIwLjQ2NywxODYuNTc1Yy0xMy4wMzMsMC0yMy41MTcsMTAuNDgzLTIzLjUxNywyMy41MTdzMTAuNDgzLDIzLjUxNywyMy41MTcsMjMuNTE3czIzLjUxNy0xMC40ODMsMjMuNTE3LTIzLjUxNyAgICBTNDMzLjUsMTg2LjU3NSw0MjAuNDY3LDE4Ni41NzV6IE00MjAuNDY3LDIyMC41NzVjLTUuOTUsMC0xMC40ODMtNC44MTctMTAuNDgzLTEwLjQ4M3M0LjgxNy0xMC40ODMsMTAuNDgzLTEwLjQ4MyAgICBjNS42NjcsMCwxMC40ODMsNC44MTcsMTAuNDgzLDEwLjQ4M1M0MjYuNDE3LDIyMC41NzUsNDIwLjQ2NywyMjAuNTc1eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+	module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTEuNjM0IiBoZWlnaHQ9IjUxMS42MzQiIHZpZXdCb3g9IjAgMCA1MTEuNjM0IDUxMS42MzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGlkPSJDYXBhXzEiIG92ZXJmbG93PSJoaWRkZW4iPjxnPjxwYXRoIGQ9IiBNIDQ4Mi41MTMgODMuOTQyIEMgNDc1LjI4OCA3Ni43MDkgNDY2LjcxNiA3My4wOTIgNDU2LjgxOSA3My4wOTIgTCA0MjAuMjc4IDczLjA5MiBMIDQyMC4yNzggNDUuNjgyIEMgNDIwLjI3OCAzMy4xMjIgNDE1LjgwMSAyMi4zNjcgNDA2Ljg1NiAxMy40MjEgQyAzOTcuOTA2IDQuNDc1IDM4Ny4xNTcgMCAzNzQuNTkxIDAgTCAzNTYuMzIzIDAgQyAzNDMuNzU4IDAgMzMzLjAwNSA0LjQ3NSAzMjQuMDU5IDEzLjQyMiBDIDMxNS4xMSAyMi4zNjcgMzEwLjYzNyAzMy4xMjMgMzEwLjYzNyA0NS42ODMgTCAzMTAuNjM3IDczLjA5MyBMIDIwMS4wMDcgNzMuMDkzIEwgMjAxLjAwNyA0NS42ODMgQyAyMDEuMDA3IDMzLjEyMyAxOTYuNTMyIDIyLjM2OCAxODcuNTg1IDEzLjQyMiBDIDE3OC42NCA0LjQ3NSAxNjcuODg2IDAgMTU1LjMyMSAwIEwgMTM3LjA1IDAgQyAxMjQuNDg4IDAgMTEzLjczMyA0LjQ3NSAxMDQuNzg2IDEzLjQyMiBDIDk1Ljg0MSAyMi4zNjcgOTEuMzY1IDMzLjEyMyA5MS4zNjUgNDUuNjgzIEwgOTEuMzY1IDczLjA5MyBMIDU0LjgyMyA3My4wOTMgQyA0NC45MjMgNzMuMDkzIDM2LjM1OSA3Ni43MSAyOS4xMjYgODMuOTQzIEMgMjEuODkzIDkxLjE3NSAxOC4yNzYgOTkuNzQzIDE4LjI3NiAxMDkuNjQgTCAxOC4yNzYgNDc1LjA5MyBDIDE4LjI3NiA0ODQuOTgzIDIxLjg5MyA0OTMuNTQ5IDI5LjEyNiA1MDAuNzg2IEMgMzYuMzU4IDUwOC4wMTcgNDQuOTIyIDUxMS42MzUgNTQuODIzIDUxMS42MzUgTCA0NTYuODEyIDUxMS42MzUgQyA0NjYuNzA5IDUxMS42MzUgNDc1LjI4MiA1MDguMDE4IDQ4Mi41MDYgNTAwLjc4NiBDIDQ4OS43NCA0OTMuNTUyIDQ5My4zNTggNDg0Ljk4MiA0OTMuMzU4IDQ3NS4wOTMgTCA0OTMuMzU4IDEwOS42MzkgQyA0OTMuMzU3IDk5LjczOSA0ODkuNzQzIDkxLjE3NSA0ODIuNTEzIDgzLjk0MiBaIE0gMzQ3LjE4NyA0NS42ODYgQyAzNDcuMTg3IDQzLjAxOSAzNDguMDM2IDQwLjgyOCAzNDkuNzQ3IDM5LjExOSBDIDM1MS40NTggMzcuNDA4IDM1My42NDggMzYuNTUxIDM1Ni4zMTcgMzYuNTUxIEwgMzc0LjU4NSAzNi41NTEgQyAzNzcuMjU1IDM2LjU1MSAzNzkuNDM4IDM3LjQwNSAzODEuMTU1IDM5LjExOSBDIDM4Mi44NjcgNDAuODMxIDM4My43MjIgNDMuMDIyIDM4My43MjIgNDUuNjg2IEwgMzgzLjcyMiAxMjcuOTEgQyAzODMuNzIyIDEzMC41NzYgMzgyLjg2NyAxMzIuNzYzIDM4MS4xNTUgMTM0LjQ3NyBDIDM3OS40MzcgMTM2LjE4NiAzNzcuMjU1IDEzNy4wNDUgMzc0LjU4NSAxMzcuMDQ1IEwgMzU2LjMxNyAxMzcuMDQ1IEMgMzUzLjY0OCAxMzcuMDQ1IDM1MS40NTggMTM2LjE5IDM0OS43NDcgMTM0LjQ3NyBDIDM0OC4wMzYgMTMyLjc2MiAzNDcuMTg3IDEzMC41NzYgMzQ3LjE4NyAxMjcuOTEgTCAzNDcuMTg3IDQ1LjY4NiBaIE0gMTI3LjkxNSA0NS42ODYgQyAxMjcuOTE1IDQzLjAxOSAxMjguNzcgNDAuODI4IDEzMC40ODMgMzkuMTE5IEMgMTMyLjE5NyAzNy40MDggMTM0LjM4NCAzNi41NTEgMTM3LjA1IDM2LjU1MSBMIDE1NS4zMjEgMzYuNTUxIEMgMTU3Ljk4OCAzNi41NTEgMTYwLjE3OSAzNy40MDUgMTYxLjg4OCAzOS4xMTkgQyAxNjMuNTk5IDQwLjgzMSAxNjQuNDU4IDQzLjAyMiAxNjQuNDU4IDQ1LjY4NiBMIDE2NC40NTggMTI3LjkxIEMgMTY0LjQ1OCAxMzAuNTc2IDE2My42MDMgMTMyLjc2NiAxNjEuODg4IDEzNC40NzcgQyAxNjAuMTc1IDEzNi4xODYgMTU3Ljk4OCAxMzcuMDQ1IDE1NS4zMjEgMTM3LjA0NSBMIDEzNy4wNSAxMzcuMDQ1IEMgMTM0LjM4NCAxMzcuMDQ1IDEzMi4xOTQgMTM2LjE5IDEzMC40ODMgMTM0LjQ3NyBDIDEyOC43NzQgMTMyLjc2MiAxMjcuOTE1IDEzMC41NzYgMTI3LjkxNSAxMjcuOTEgTCAxMjcuOTE1IDQ1LjY4NiBaIE0gNDU2LjgxMiA0NzUuMDg4IEwgNTQuODIzIDQ3NS4wODggTCA1NC44MjMgMTgyLjcyOCBMIDQ1Ni44MTIgMTgyLjcyOCBMIDQ1Ni44MTIgNDc1LjA4OCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMSIgZmlsbD0iIzAwMUE3MCIgZmlsbC1vcGFjaXR5PSIxIi8+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg=="
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
 
-	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIxOCAyMTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIxOCAyMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPHBhdGggZD0iTTE1NS41NDcsMjE4SDYyLjQ1M2MtMTAuNzYxLDAtMTkuNTE1LTguNzU1LTE5LjUxNS0xOS41MTZWMTkuNTE2QzQyLjkzOCw4Ljc1NSw1MS42OTIsMCw2Mi40NTMsMGg5My4wOTQgIGMxMC43NjEsMCwxOS41MTUsOC43NTUsMTkuNTE1LDE5LjUxNnYxNzguOTY5QzE3NS4wNjIsMjA5LjI0NSwxNjYuMzA4LDIxOCwxNTUuNTQ3LDIxOHogTTUwLjkzOCwxODZ2MTIuNDg0ICBjMCw2LjM1LDUuMTY1LDExLjUxNiwxMS41MTUsMTEuNTE2aDkzLjA5NGM2LjM1LDAsMTEuNTE1LTUuMTY2LDExLjUxNS0xMS41MTZWMTg2SDUwLjkzOHogTTUwLjkzOCwxNzhoMTE2LjEyM1YyOUg1MC45MzhWMTc4eiAgIE01MC45MzgsMjFoMTE2LjEyM3YtMS40ODRjMC02LjM1LTUuMTY1LTExLjUxNi0xMS41MTUtMTEuNTE2SDYyLjQ1M2MtNi4zNSwwLTExLjUxNSw1LjE2Ni0xMS41MTUsMTEuNTE2VjIxeiBNMTIyLjc1LDIwMmgtMjcuNSAgYy0yLjIwOSwwLTQtMS43OTEtNC00czEuNzkxLTQsNC00aDI3LjVjMi4yMDksMCw0LDEuNzkxLDQsNFMxMjQuOTU5LDIwMiwxMjIuNzUsMjAyeiBNMTM4LjYzMywxNDYuMTI1SDc5LjM2N2MtMi4yMDksMC00LTEuNzkxLTQtNCAgdi0zNi44ODJINjguNjNjLTEuNjE4LDAtMy4wNzYtMC45NzUtMy42OTUtMi40NjlzLTAuMjc3LTMuMjE1LDAuODY3LTQuMzU5bDQwLjM3LTQwLjM3YzEuNTYxLTEuNTYyLDQuMDk2LTEuNTYyLDUuNjU2LDAgIGw0MC4zNyw0MC4zN2MxLjE0NSwxLjE0NCwxLjQ4NiwyLjg2NSwwLjg2Nyw0LjM1OXMtMi4wNzcsMi40NjktMy42OTUsMi40NjloLTYuNzM3djM2Ljg4MiAgQzE0Mi42MzMsMTQ0LjMzNCwxNDAuODQyLDE0Ni4xMjUsMTM4LjYzMywxNDYuMTI1eiBNODMuMzY3LDEzOC4xMjVoNTEuMjY2di0zNi44ODJjMC0yLjIwOSwxLjc5MS00LDQtNGgxLjA4TDEwOSw2Ni41MyAgTDc4LjI4Nyw5Ny4yNDNoMS4wOGMyLjIwOSwwLDQsMS43OTEsNCw0VjEzOC4xMjV6IiBmaWxsPSIjRkZGRkZGIi8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTE1LjY2NyA1MTUuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTUuNjY3IDUxNS42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00NDYuNTMzLDExOS40MjVsLTU0LjExNy0wLjI4M2wtNTEuODUtNzcuMzVjLTMuMTE3LTQuODE3LTguNS03LjkzMy0xNC4xNjctNy45MzNIMTg2LjcxNyAgICBjLTUuNjY3LDAtMTAuNzY3LDMuMTE3LTEzLjg4Myw3LjY1bC01My41NSw3Ny42MzNsLTUwLjE1LDAuMjgzQzMxLjE2NywxMTkuNDI1LDAsMTUwLjU5MiwwLDE4OC41NTh2MjIzLjU1ICAgIGMwLDM3Ljk2NywzMS4xNjcsNjkuNyw2OS4xMzMsNjkuN2gzNzcuNGMzNy45NjcsMCw2OS4xMzMtMzEuNzMzLDY5LjEzMy02OS43di0yMjMuNTUgICAgQzUxNS42NjcsMTUwLjU5Miw0ODQuNSwxMTkuNDI1LDQ0Ni41MzMsMTE5LjQyNXogTTQ4MS42NjcsNDEyLjEwOGMwLDE5LjI2Ny0xNS44NjcsMzUuNy0zNS4xMzMsMzUuN2gtMzc3LjQgICAgYy0xOS4yNjcsMC0zNS4xMzMtMTYuNDMzLTM1LjEzMy0zNS43di0yMjMuNTVjMC0xOS4yNjcsMTUuODY3LTM1LjEzMywzNS4xMzMtMzUuMTMzaDU5LjIxN2M1LjY2NywwLDEwLjc2Ny0zLjExNywxMy44ODMtNy42NSAgICBsNTMuNTUtNzcuNjMzaDEyMS41NWw1MS41NjcsNzcuMDY3YzMuMTE3LDQuNTMzLDguNSw3LjY1LDEzLjg4Myw3LjY1bDYzLjQ2NywwLjU2N2MxOS4yNjcsMCwzNS4xMzMsMTUuODY3LDM1LjEzMywzNS4xMzN2MjIzLjU1ICAgIEg0ODEuNjY3eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNMjU5LjI1LDE2MC4yMjVjLTY2LjU4MywwLTEyMC40MTcsNTQuMTE3LTEyMC40MTcsMTIwLjQxN1MxOTIuOTUsNDAxLjA1OCwyNTkuMjUsNDAxLjA1OHMxMjAuNDE3LTU0LjExNywxMjAuNDE3LTEyMC40MTcgICAgUzMyNS41NSwxNjAuMjI1LDI1OS4yNSwxNjAuMjI1eiBNMjU5LjI1LDM2Ny4wNThjLTQ3LjYsMC04Ni40MTctMzguODE3LTg2LjQxNy04Ni40MTdzMzguODE3LTg2LjQxNyw4Ni40MTctODYuNDE3ICAgIHM4Ni40MTcsMzguODE3LDg2LjQxNyw4Ni40MTdTMzA2Ljg1LDM2Ny4wNTgsMjU5LjI1LDM2Ny4wNTh6IiBmaWxsPSIjRkZGRkZGIi8+DQoJCTxjaXJjbGUgY3g9IjQyMC40NjciIGN5PSIyMTAuMDkyIiByPSI2LjUxNyIgZmlsbD0iI0ZGRkZGRiIvPg0KCQk8cGF0aCBkPSJNNDIwLjQ2NywxODYuNTc1Yy0xMy4wMzMsMC0yMy41MTcsMTAuNDgzLTIzLjUxNywyMy41MTdzMTAuNDgzLDIzLjUxNywyMy41MTcsMjMuNTE3czIzLjUxNy0xMC40ODMsMjMuNTE3LTIzLjUxNyAgICBTNDMzLjUsMTg2LjU3NSw0MjAuNDY3LDE4Ni41NzV6IE00MjAuNDY3LDIyMC41NzVjLTUuOTUsMC0xMC40ODMtNC44MTctMTAuNDgzLTEwLjQ4M3M0LjgxNy0xMC40ODMsMTAuNDgzLTEwLjQ4MyAgICBjNS42NjcsMCwxMC40ODMsNC44MTcsMTAuNDgzLDEwLjQ4M1M0MjYuNDE3LDIyMC41NzUsNDIwLjQ2NywyMjAuNTc1eiIgZmlsbD0iI0ZGRkZGRiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports) {
+
+	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIxOCAyMTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIxOCAyMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPg0KPHBhdGggZD0iTTE1NS41NDcsMjE4SDYyLjQ1M2MtMTAuNzYxLDAtMTkuNTE1LTguNzU1LTE5LjUxNS0xOS41MTZWMTkuNTE2QzQyLjkzOCw4Ljc1NSw1MS42OTIsMCw2Mi40NTMsMGg5My4wOTQgIGMxMC43NjEsMCwxOS41MTUsOC43NTUsMTkuNTE1LDE5LjUxNnYxNzguOTY5QzE3NS4wNjIsMjA5LjI0NSwxNjYuMzA4LDIxOCwxNTUuNTQ3LDIxOHogTTUwLjkzOCwxODZ2MTIuNDg0ICBjMCw2LjM1LDUuMTY1LDExLjUxNiwxMS41MTUsMTEuNTE2aDkzLjA5NGM2LjM1LDAsMTEuNTE1LTUuMTY2LDExLjUxNS0xMS41MTZWMTg2SDUwLjkzOHogTTUwLjkzOCwxNzhoMTE2LjEyM1YyOUg1MC45MzhWMTc4eiAgIE01MC45MzgsMjFoMTE2LjEyM3YtMS40ODRjMC02LjM1LTUuMTY1LTExLjUxNi0xMS41MTUtMTEuNTE2SDYyLjQ1M2MtNi4zNSwwLTExLjUxNSw1LjE2Ni0xMS41MTUsMTEuNTE2VjIxeiBNMTIyLjc1LDIwMmgtMjcuNSAgYy0yLjIwOSwwLTQtMS43OTEtNC00czEuNzkxLTQsNC00aDI3LjVjMi4yMDksMCw0LDEuNzkxLDQsNFMxMjQuOTU5LDIwMiwxMjIuNzUsMjAyeiBNMTM4LjYzMywxNDYuMTI1SDc5LjM2N2MtMi4yMDksMC00LTEuNzkxLTQtNCAgdi0zNi44ODJINjguNjNjLTEuNjE4LDAtMy4wNzYtMC45NzUtMy42OTUtMi40NjlzLTAuMjc3LTMuMjE1LDAuODY3LTQuMzU5bDQwLjM3LTQwLjM3YzEuNTYxLTEuNTYyLDQuMDk2LTEuNTYyLDUuNjU2LDAgIGw0MC4zNyw0MC4zN2MxLjE0NSwxLjE0NCwxLjQ4NiwyLjg2NSwwLjg2Nyw0LjM1OXMtMi4wNzcsMi40NjktMy42OTUsMi40NjloLTYuNzM3djM2Ljg4MiAgQzE0Mi42MzMsMTQ0LjMzNCwxNDAuODQyLDE0Ni4xMjUsMTM4LjYzMywxNDYuMTI1eiBNODMuMzY3LDEzOC4xMjVoNTEuMjY2di0zNi44ODJjMC0yLjIwOSwxLjc5MS00LDQtNGgxLjA4TDEwOSw2Ni41MyAgTDc4LjI4Nyw5Ny4yNDNoMS4wOGMyLjIwOSwwLDQsMS43OTEsNCw0VjEzOC4xMjV6IiBmaWxsPSIjRkZGRkZGIi8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28539,7 +28704,7 @@
 	}
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29219,7 +29384,7 @@
 	};
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -29244,7 +29409,7 @@
 	};
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it) {
@@ -29254,7 +29419,7 @@
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 	module.exports = function (bitmap, value) {
@@ -29268,7 +29433,7 @@
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var def = __webpack_require__(17).f;
@@ -29281,7 +29446,7 @@
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 	var id = 0;
@@ -29292,7 +29457,7 @@
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29353,7 +29518,7 @@
 
 	var _autorizarComprobacion2 = _interopRequireDefault(_autorizarComprobacion);
 
-	var _comprobar = __webpack_require__(38);
+	var _comprobar = __webpack_require__(39);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -29636,32 +29801,32 @@
 	//views
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = { "default": __webpack_require__(270), __esModule: true };
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = { "default": __webpack_require__(274), __esModule: true };
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = { "default": __webpack_require__(279), __esModule: true };
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(46);
+	var _defineProperty = __webpack_require__(47);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -29683,7 +29848,7 @@
 	};
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -29694,7 +29859,7 @@
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(16);
@@ -29707,7 +29872,7 @@
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports) {
 
 	// IE 8- don't enum bug keys
@@ -29717,12 +29882,12 @@
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 25.4.1.5 NewPromiseCapability(C)
-	var aFunction = __webpack_require__(40);
+	var aFunction = __webpack_require__(41);
 
 	function PromiseCapability(C) {
 	  var resolve, reject;
@@ -29741,21 +29906,21 @@
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 	var anObject = __webpack_require__(13);
 	var dPs = __webpack_require__(76);
-	var enumBugKeys = __webpack_require__(51);
-	var IE_PROTO = __webpack_require__(56)('IE_PROTO');
+	var enumBugKeys = __webpack_require__(52);
+	var IE_PROTO = __webpack_require__(57)('IE_PROTO');
 	var Empty = function () { /* empty */ };
 	var PROTOTYPE = 'prototype';
 
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function () {
 	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(50)('iframe');
+	  var iframe = __webpack_require__(51)('iframe');
 	  var i = enumBugKeys.length;
 	  var lt = '<';
 	  var gt = '>';
@@ -29788,13 +29953,13 @@
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var pIE = __webpack_require__(32);
-	var createDesc = __webpack_require__(41);
+	var createDesc = __webpack_require__(42);
 	var toIObject = __webpack_require__(18);
-	var toPrimitive = __webpack_require__(60);
+	var toPrimitive = __webpack_require__(61);
 	var has = __webpack_require__(19);
 	var IE8_DOM_DEFINE = __webpack_require__(73);
 	var gOPD = Object.getOwnPropertyDescriptor;
@@ -29810,25 +29975,25 @@
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var shared = __webpack_require__(57)('keys');
-	var uid = __webpack_require__(43);
+	var shared = __webpack_require__(58)('keys');
+	var uid = __webpack_require__(44);
 	module.exports = function (key) {
 	  return shared[key] || (shared[key] = uid(key));
 	};
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var core = __webpack_require__(7);
@@ -29846,7 +30011,7 @@
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -29858,18 +30023,18 @@
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(49);
+	var defined = __webpack_require__(50);
 	module.exports = function (it) {
 	  return Object(defined(it));
 	};
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.1 ToPrimitive(input [, PreferredType])
@@ -29887,13 +30052,13 @@
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(10);
 	var core = __webpack_require__(7);
 	var LIBRARY = __webpack_require__(30);
-	var wksExt = __webpack_require__(62);
+	var wksExt = __webpack_require__(63);
 	var defineProperty = __webpack_require__(17).f;
 	module.exports = function (name) {
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -29902,23 +30067,17 @@
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports.f = __webpack_require__(11);
 
 
 /***/ }),
-/* 63 */
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 64 */
 /***/ (function(module, exports) {
 
-	module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTEuNjM0IiBoZWlnaHQ9IjUxMS42MzQiIHZpZXdCb3g9IjAgMCA1MTEuNjM0IDUxMS42MzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGlkPSJDYXBhXzEiIG92ZXJmbG93PSJoaWRkZW4iPjxnPjxwYXRoIGQ9IiBNIDQ4Mi41MTMgODMuOTQyIEMgNDc1LjI4OCA3Ni43MDkgNDY2LjcxNiA3My4wOTIgNDU2LjgxOSA3My4wOTIgTCA0MjAuMjc4IDczLjA5MiBMIDQyMC4yNzggNDUuNjgyIEMgNDIwLjI3OCAzMy4xMjIgNDE1LjgwMSAyMi4zNjcgNDA2Ljg1NiAxMy40MjEgQyAzOTcuOTA2IDQuNDc1IDM4Ny4xNTcgMCAzNzQuNTkxIDAgTCAzNTYuMzIzIDAgQyAzNDMuNzU4IDAgMzMzLjAwNSA0LjQ3NSAzMjQuMDU5IDEzLjQyMiBDIDMxNS4xMSAyMi4zNjcgMzEwLjYzNyAzMy4xMjMgMzEwLjYzNyA0NS42ODMgTCAzMTAuNjM3IDczLjA5MyBMIDIwMS4wMDcgNzMuMDkzIEwgMjAxLjAwNyA0NS42ODMgQyAyMDEuMDA3IDMzLjEyMyAxOTYuNTMyIDIyLjM2OCAxODcuNTg1IDEzLjQyMiBDIDE3OC42NCA0LjQ3NSAxNjcuODg2IDAgMTU1LjMyMSAwIEwgMTM3LjA1IDAgQyAxMjQuNDg4IDAgMTEzLjczMyA0LjQ3NSAxMDQuNzg2IDEzLjQyMiBDIDk1Ljg0MSAyMi4zNjcgOTEuMzY1IDMzLjEyMyA5MS4zNjUgNDUuNjgzIEwgOTEuMzY1IDczLjA5MyBMIDU0LjgyMyA3My4wOTMgQyA0NC45MjMgNzMuMDkzIDM2LjM1OSA3Ni43MSAyOS4xMjYgODMuOTQzIEMgMjEuODkzIDkxLjE3NSAxOC4yNzYgOTkuNzQzIDE4LjI3NiAxMDkuNjQgTCAxOC4yNzYgNDc1LjA5MyBDIDE4LjI3NiA0ODQuOTgzIDIxLjg5MyA0OTMuNTQ5IDI5LjEyNiA1MDAuNzg2IEMgMzYuMzU4IDUwOC4wMTcgNDQuOTIyIDUxMS42MzUgNTQuODIzIDUxMS42MzUgTCA0NTYuODEyIDUxMS42MzUgQyA0NjYuNzA5IDUxMS42MzUgNDc1LjI4MiA1MDguMDE4IDQ4Mi41MDYgNTAwLjc4NiBDIDQ4OS43NCA0OTMuNTUyIDQ5My4zNTggNDg0Ljk4MiA0OTMuMzU4IDQ3NS4wOTMgTCA0OTMuMzU4IDEwOS42MzkgQyA0OTMuMzU3IDk5LjczOSA0ODkuNzQzIDkxLjE3NSA0ODIuNTEzIDgzLjk0MiBaIE0gMzQ3LjE4NyA0NS42ODYgQyAzNDcuMTg3IDQzLjAxOSAzNDguMDM2IDQwLjgyOCAzNDkuNzQ3IDM5LjExOSBDIDM1MS40NTggMzcuNDA4IDM1My42NDggMzYuNTUxIDM1Ni4zMTcgMzYuNTUxIEwgMzc0LjU4NSAzNi41NTEgQyAzNzcuMjU1IDM2LjU1MSAzNzkuNDM4IDM3LjQwNSAzODEuMTU1IDM5LjExOSBDIDM4Mi44NjcgNDAuODMxIDM4My43MjIgNDMuMDIyIDM4My43MjIgNDUuNjg2IEwgMzgzLjcyMiAxMjcuOTEgQyAzODMuNzIyIDEzMC41NzYgMzgyLjg2NyAxMzIuNzYzIDM4MS4xNTUgMTM0LjQ3NyBDIDM3OS40MzcgMTM2LjE4NiAzNzcuMjU1IDEzNy4wNDUgMzc0LjU4NSAxMzcuMDQ1IEwgMzU2LjMxNyAxMzcuMDQ1IEMgMzUzLjY0OCAxMzcuMDQ1IDM1MS40NTggMTM2LjE5IDM0OS43NDcgMTM0LjQ3NyBDIDM0OC4wMzYgMTMyLjc2MiAzNDcuMTg3IDEzMC41NzYgMzQ3LjE4NyAxMjcuOTEgTCAzNDcuMTg3IDQ1LjY4NiBaIE0gMTI3LjkxNSA0NS42ODYgQyAxMjcuOTE1IDQzLjAxOSAxMjguNzcgNDAuODI4IDEzMC40ODMgMzkuMTE5IEMgMTMyLjE5NyAzNy40MDggMTM0LjM4NCAzNi41NTEgMTM3LjA1IDM2LjU1MSBMIDE1NS4zMjEgMzYuNTUxIEMgMTU3Ljk4OCAzNi41NTEgMTYwLjE3OSAzNy40MDUgMTYxLjg4OCAzOS4xMTkgQyAxNjMuNTk5IDQwLjgzMSAxNjQuNDU4IDQzLjAyMiAxNjQuNDU4IDQ1LjY4NiBMIDE2NC40NTggMTI3LjkxIEMgMTY0LjQ1OCAxMzAuNTc2IDE2My42MDMgMTMyLjc2NiAxNjEuODg4IDEzNC40NzcgQyAxNjAuMTc1IDEzNi4xODYgMTU3Ljk4OCAxMzcuMDQ1IDE1NS4zMjEgMTM3LjA0NSBMIDEzNy4wNSAxMzcuMDQ1IEMgMTM0LjM4NCAxMzcuMDQ1IDEzMi4xOTQgMTM2LjE5IDEzMC40ODMgMTM0LjQ3NyBDIDEyOC43NzQgMTMyLjc2MiAxMjcuOTE1IDEzMC41NzYgMTI3LjkxNSAxMjcuOTEgTCAxMjcuOTE1IDQ1LjY4NiBaIE0gNDU2LjgxMiA0NzUuMDg4IEwgNTQuODIzIDQ3NS4wODggTCA1NC44MjMgMTgyLjcyOCBMIDQ1Ni44MTIgMTgyLjcyOCBMIDQ1Ni44MTIgNDc1LjA4OCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMSIgZmlsbD0iIzAwMUE3MCIgZmlsbC1vcGFjaXR5PSIxIi8+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg=="
+	// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 65 */
@@ -34336,7 +34495,7 @@
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(46);
+	var _defineProperty = __webpack_require__(47);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -34402,7 +34561,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = !__webpack_require__(14) && !__webpack_require__(25)(function () {
-	  return Object.defineProperty(__webpack_require__(50)('div'), 'a', { get: function () { return 7; } }).a != 7;
+	  return Object.defineProperty(__webpack_require__(51)('div'), 'a', { get: function () { return 7; } }).a != 7;
 	});
 
 
@@ -34429,7 +34588,7 @@
 	var hide = __webpack_require__(20);
 	var Iterators = __webpack_require__(29);
 	var $iterCreate = __webpack_require__(291);
-	var setToStringTag = __webpack_require__(42);
+	var setToStringTag = __webpack_require__(43);
 	var getPrototypeOf = __webpack_require__(78);
 	var ITERATOR = __webpack_require__(11)('iterator');
 	var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
@@ -34518,7 +34677,7 @@
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 	var $keys = __webpack_require__(79);
-	var hiddenKeys = __webpack_require__(51).concat('length', 'prototype');
+	var hiddenKeys = __webpack_require__(52).concat('length', 'prototype');
 
 	exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 	  return $keys(O, hiddenKeys);
@@ -34531,8 +34690,8 @@
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 	var has = __webpack_require__(19);
-	var toObject = __webpack_require__(59);
-	var IE_PROTO = __webpack_require__(56)('IE_PROTO');
+	var toObject = __webpack_require__(60);
+	var IE_PROTO = __webpack_require__(57)('IE_PROTO');
 	var ObjectProto = Object.prototype;
 
 	module.exports = Object.getPrototypeOf || function (O) {
@@ -34551,7 +34710,7 @@
 	var has = __webpack_require__(19);
 	var toIObject = __webpack_require__(18);
 	var arrayIndexOf = __webpack_require__(284)(false);
-	var IE_PROTO = __webpack_require__(56)('IE_PROTO');
+	var IE_PROTO = __webpack_require__(57)('IE_PROTO');
 
 	module.exports = function (object, names) {
 	  var O = toIObject(object);
@@ -34602,7 +34761,7 @@
 
 	var anObject = __webpack_require__(13);
 	var isObject = __webpack_require__(16);
-	var newPromiseCapability = __webpack_require__(52);
+	var newPromiseCapability = __webpack_require__(53);
 
 	module.exports = function (C, x) {
 	  anObject(C);
@@ -34627,7 +34786,7 @@
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
 	var anObject = __webpack_require__(13);
-	var aFunction = __webpack_require__(40);
+	var aFunction = __webpack_require__(41);
 	var SPECIES = __webpack_require__(11)('species');
 	module.exports = function (O, D) {
 	  var C = anObject(O).constructor;
@@ -34643,7 +34802,7 @@
 	var ctx = __webpack_require__(28);
 	var invoke = __webpack_require__(287);
 	var html = __webpack_require__(72);
-	var cel = __webpack_require__(50);
+	var cel = __webpack_require__(51);
 	var global = __webpack_require__(10);
 	var process = global.process;
 	var setTask = global.setImmediate;
@@ -34731,7 +34890,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(58);
+	var toInteger = __webpack_require__(59);
 	var min = Math.min;
 	module.exports = function (it) {
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -56346,11 +56505,11 @@
 
 	var _autorizarComprobacionTpl2 = _interopRequireDefault(_autorizarComprobacionTpl);
 
-	var _optionList2 = __webpack_require__(37);
+	var _optionList2 = __webpack_require__(38);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
-	__webpack_require__(63);
+	__webpack_require__(64);
 
 	var _jquery = __webpack_require__(2);
 
@@ -57497,7 +57656,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(38);
+	var _comprobar = __webpack_require__(39);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -57714,7 +57873,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(38);
+	var _comprobar = __webpack_require__(39);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -58153,7 +58312,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _comprobar = __webpack_require__(38);
+	var _comprobar = __webpack_require__(39);
 
 	var _comprobar2 = _interopRequireDefault(_comprobar);
 
@@ -58773,7 +58932,7 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	__webpack_require__(63);
+	__webpack_require__(64);
 
 	var _UI = __webpack_require__(23);
 
@@ -59275,25 +59434,41 @@
 
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
+	//INICIALIZAR VISTAS
 	var verTicketsInit = function () {
-	  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6(_this) {
-	    return _regenerator2.default.wrap(function _callee6$(_context6) {
+	  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(_this) {
+	    var r;
+	    return _regenerator2.default.wrap(function _callee8$(_context8) {
 	      while (1) {
-	        switch (_context6.prev = _context6.next) {
+	        switch (_context8.prev = _context8.next) {
 	          case 0:
+	            _this.Page.fecha = (0, _moment2.default)().format("YYYY-MM-DD");
 	            (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_helpDeskTpl2.default, _this.Page));
 	            _this.swiper = _tool2.default.swiperScroll(".swiper-container", {
 	              events: {
 	                slidePrevTransitionStart: reset(_this)
 	              }
 	            });
+	            _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
+	            _this.handleEventsVerTickets();
+	            _context8.next = 7;
+	            return _store2.default.getStatus();
 
-	          case 2:
+	          case 7:
+	            r = _context8.sent;
+
+	            (0, _jquery2.default)("#cbStatus").html(_UI2.default.DropDownListFor(r.Data, {
+	              valueField: "iStatusId",
+	              textField: "vcStatus"
+	            }));
+	            getTickets(_this, 1, (0, _jquery2.default)("#frm-ticketsReport"), false);
+
+	          case 10:
 	          case "end":
-	            return _context6.stop();
+	            return _context8.stop();
 	        }
 	      }
-	    }, _callee6, this);
+	    }, _callee8, this);
 	  }));
 
 	  return function verTicketsInit(_x2) {
@@ -59302,19 +59477,26 @@
 	}();
 
 	var perfilHelpDeskInit = function () {
-	  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(_this) {
-	    return _regenerator2.default.wrap(function _callee7$(_context7) {
+	  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9(_this) {
+	    return _regenerator2.default.wrap(function _callee9$(_context9) {
 	      while (1) {
-	        switch (_context7.prev = _context7.next) {
+	        switch (_context9.prev = _context9.next) {
 	          case 0:
-	            (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_helpDeskTpl2.default, _this.Page));
 
-	          case 1:
+	            (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_helpDeskTpl2.default, _this.Page));
+	            if (_this.Profile.hasProfile) {
+	              (0, _jquery2.default)("#nameProfile").val(_this.Profile.Data[0].vcName);
+	              (0, _jquery2.default)("#notificationMail").val(_this.Profile.Data[0].vcMail);
+	              (0, _jquery2.default)("#cellProfile").val(_this.Profile.Data[0].vcCellPhone);
+	            } else (0, _jquery2.default)("frm-updateProfile input[name='TypeId'").val("1");
+	            _this.handleEventsProfile();
+
+	          case 3:
 	          case "end":
-	            return _context7.stop();
+	            return _context9.stop();
 	        }
 	      }
-	    }, _callee7, this);
+	    }, _callee9, this);
 	  }));
 
 	  return function perfilHelpDeskInit(_x3) {
@@ -59322,21 +59504,15 @@
 	  };
 	}();
 
-	var altaTicketInit = function () {
-	  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(_this) {
-	    var hasProfile, currentMail;
-	    return _regenerator2.default.wrap(function _callee8$(_context8) {
+	var altaTicketsInit = function () {
+	  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10(_this) {
+	    var currentMail;
+	    return _regenerator2.default.wrap(function _callee10$(_context10) {
 	      while (1) {
-	        switch (_context8.prev = _context8.next) {
+	        switch (_context10.prev = _context10.next) {
 	          case 0:
-	            _context8.next = 2;
-	            return _store2.default.GetProfileInfo(2);
-
-	          case 2:
-	            hasProfile = _context8.sent;
-
-	            if (!(hasProfile.Data.length != 0)) {
-	              _context8.next = 40;
+	            if (!_this.Profile.hasProfile) {
+	              _context10.next = 30;
 	              break;
 	            }
 
@@ -59355,24 +59531,24 @@
 	              }
 	            });
 
-	            _context8.next = 11;
+	            _context10.next = 8;
 	            return _store2.default.GetAgreements({
 	              Type: 4
 	            });
 
-	          case 11:
-	            _this.agreements = _context8.sent;
+	          case 8:
+	            _this.agreements = _context10.sent;
 
 
 	            _this.Page.Agreements = "";
 	            _this.agreements = _dataUI2.default.getRows(_this.agreements.Data, "Id:iAgreement,Name:vcDisplay");
 
 	            if (!(_this.agreements.length > 1)) {
-	              _context8.next = 20;
+	              _context10.next = 17;
 	              break;
 	            }
 
-	            _context8.next = 17;
+	            _context10.next = 14;
 	            return _optionList3.default.render({
 	              data: _this.agreements,
 	              name: "empresa",
@@ -59382,25 +59558,30 @@
 	                if (_this.agreements.length > 1) {
 	                  if (_this.Data.typeid == "") alert("Seleccione el tipo de ticket");else if (_this.Data.classificationid == "") alert("Seleccione la clasificación del ticket");else {
 	                    (0, _jquery2.default)("#classification-ticket").attr("hidden", "");
-	                    _this.swiper.allowSlideNext = true;
-	                    _this.swiper.slideNext();
+	                    _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = true;
 	                    _tool2.default.scrollPageTo(0);
-	                    _this.swiper.allowSlideNext = false;
+	                    _this.swiper.slideNext();
+	                    _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
 	                  }
 	                }
 	              }
 	            });
 
-	          case 17:
-	            _this.Page.Agreements = _context8.sent;
-	            _context8.next = 22;
+	          case 14:
+	            _this.Page.Agreements = _context10.sent;
+	            _context10.next = 18;
 	            break;
 
-	          case 20:
-	            _this.Data.agreementid = _this.agreements[0].Id;
-	            _this.Page.agreementname = _this.agreements[0].Name;
+	          case 17:
+	            if (_this.agreements.length > 0) {
+	              _this.Data.agreementid = _this.agreements[0].Id;
+	              _this.Page.agreementname = _this.agreements[0].Name;
+	            } else {
+	              alert("No cuenta con un convenio registrado.");
+	              app.View("main");
+	            }
 
-	          case 22:
+	          case 18:
 	            (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_helpDeskTpl2.default, _this.Page));
 	            _this.swiper = _tool2.default.swiperScroll(".swiper-container", {
 	              events: {
@@ -59409,52 +59590,130 @@
 	            });
 	            _UI2.default.handleEvents("button");
 	            _optionList3.default.handleEvents();
-	            _this.swiper.allowSlideNext = false;
-	            _context8.next = 29;
+	            _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
+	            _context10.next = 25;
 	            return _store2.default.GetNotificationMail();
 
-	          case 29:
-	            currentMail = _context8.sent;
+	          case 25:
+	            currentMail = _context10.sent;
 
 	            if (currentMail.Success) {
 	              (0, _jquery2.default)("#notificationMail").val(currentMail.Data);
 	              (0, _jquery2.default)("#notificationMail").html(currentMail.Data);
 	            }
-	            //Obtenemos la info del perfil
-	            _context8.next = 33;
-	            return _store2.default.GetProfileInfo((0, _jquery2.default)("#applicationid").val()).Data;
+	            _this.handleEventsAlta();
 
-	          case 33:
-	            _context8.t0 = _context8.sent;
-
-	            if (_context8.t0) {
-	              _context8.next = 36;
-	              break;
-	            }
-
-	            _context8.t0 = {};
-
-	          case 36:
-	            _this.Profile = _context8.t0;
-
-	            _this.handleEvents();
-	            _context8.next = 42;
+	            _context10.next = 32;
 	            break;
 
-	          case 40:
+	          case 30:
 	            alert("No tiene permisos o no cuenta con un perfil para dar de alta tickets.");
 	            app.View("main");
 
-	          case 42:
+	          case 32:
 	          case "end":
-	            return _context8.stop();
+	            return _context10.stop();
 	        }
 	      }
-	    }, _callee8, this);
+	    }, _callee10, this);
 	  }));
 
-	  return function altaTicketInit(_x4) {
+	  return function altaTicketsInit(_x4) {
 	    return _ref5.apply(this, arguments);
+	  };
+	}();
+	//CARGAR INFORMACIÓN
+
+
+	var getTickets = function () {
+	  var _ref6 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12(_this, statusId, $frm, validate) {
+	    var user, formData;
+	    return _regenerator2.default.wrap(function _callee12$(_context12) {
+	      while (1) {
+	        switch (_context12.prev = _context12.next) {
+	          case 0:
+	            _context12.next = 2;
+	            return _store2.default.getUserId(2);
+
+	          case 2:
+	            user = _context12.sent;
+
+	            (0, _jquery2.default)('#UserId').val(user.userid);
+	            (0, _jquery2.default)('#StatusId').val(statusId);
+	            //Cargo los tickets  
+	            formData = $frm.serializeObject();
+	            //StatusId al iniciar
+
+	            formData.StartDate = (0, _moment2.default)(formData.StartDate).format('YYYY/MM/DD');
+	            formData.EndDate = (0, _moment2.default)(formData.EndDate).format('YYYY/MM/DD');
+	            _store2.default.TicketsReport(formData).then(function () {
+	              var _ref7 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11(r) {
+	                var ticketsHtml;
+	                return _regenerator2.default.wrap(function _callee11$(_context11) {
+	                  while (1) {
+	                    switch (_context11.prev = _context11.next) {
+	                      case 0:
+	                        if (!r.Success) {
+	                          _context11.next = 16;
+	                          break;
+	                        }
+
+	                        console.log(r.Data);
+
+	                        if (!(r.Data.length > 0)) {
+	                          _context11.next = 13;
+	                          break;
+	                        }
+
+	                        _context11.next = 5;
+	                        return _UI2.default.DetailCardHeader(r.Data, {
+	                          typeCard: 'noheader',
+	                          type: 'Ticket',
+	                          title: 'Tickets',
+	                          idField: 'Id',
+	                          alignment: 'hv',
+	                          fields: 'Id:iTicketId,Creación:#dt_dtCreated,Estado:vcSLATime'
+	                        });
+
+	                      case 5:
+	                        ticketsHtml = _context11.sent;
+
+	                        (0, _jquery2.default)("#ticketsContainer").html(ticketsHtml);
+	                        _UI2.default.handleEvents('search');
+	                        _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = true;
+	                        _tool2.default.scrollPageTo(0);
+	                        _this.swiper.slideNext();
+	                        _context11.next = 16;
+	                        break;
+
+	                      case 13:
+	                        _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
+	                        _tool2.default.scrollPageTo(0);
+	                        if (validate) alert("No se encontró información.");
+
+	                      case 16:
+	                      case "end":
+	                        return _context11.stop();
+	                    }
+	                  }
+	                }, _callee11, this);
+	              }));
+
+	              return function (_x9) {
+	                return _ref7.apply(this, arguments);
+	              };
+	            }());
+
+	          case 9:
+	          case "end":
+	            return _context12.stop();
+	        }
+	      }
+	    }, _callee12, this);
+	  }));
+
+	  return function getTickets(_x5, _x6, _x7, _x8) {
+	    return _ref6.apply(this, arguments);
 	  };
 	}();
 
@@ -59494,7 +59753,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _optionList2 = __webpack_require__(37);
+	var _optionList2 = __webpack_require__(38);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
@@ -59507,7 +59766,12 @@
 	    classificationid: ""
 	  },
 	  Page: {
-	    nameAction: ""
+	    nameAction: "",
+	    pages: {
+	      alta: "altaTicket",
+	      ver: "verTickets",
+	      perfil: "perfilHelpDesk"
+	    }
 	  },
 	  Profile: {},
 	  init: function init(page) {
@@ -59518,10 +59782,11 @@
 	        while (1) {
 	          switch (_context.prev = _context.next) {
 	            case 0:
+	              _moment2.default.locale("es");
 	              _this2.Page.page = page;
 	              _this2.render();
 
-	            case 2:
+	            case 3:
 	            case "end":
 	              return _context.stop();
 	          }
@@ -59540,11 +59805,25 @@
 	          switch (_context2.prev = _context2.next) {
 	            case 0:
 	              _this = _this3;
-
-	              if (_this.Page.page == "altaTicket") altaTicketInit(_this);else if (_this.Page.page == "verTickets") verTicketsInit(_this);else if (_this.Page.page == "perfilHelpDesk") perfilHelpDeskInit(_this);
-	              _this3.handleEvents();
+	              _context2.next = 3;
+	              return _store2.default.GetProfileInfo(2);
 
 	            case 3:
+	              _this.Profile = _context2.sent;
+
+	              _this.Profile.hasProfile = false;
+
+	              if (_this.Profile.Data) _this.Profile.hasProfile = _this.Profile.Data.length > 0;else _this.Profile.Data = {};
+
+	              if (_this.Page.page == _this.Page.pages.alta) {
+	                if (_this.Profile.hasProfile) altaTicketsInit(_this);else {
+	                  _this.Page.wasAlta = true;
+	                  _this.Page.page = _this.Page.pages.perfil;
+	                  perfilHelpDeskInit(_this);
+	                }
+	              } else if (_this.Page.page == _this.Page.pages.ver) verTicketsInit(_this);else if (_this.Page.page == _this.Page.pages.perfil) perfilHelpDeskInit(_this);
+
+	            case 7:
 	            case "end":
 	              return _context2.stop();
 	          }
@@ -59552,7 +59831,7 @@
 	      }, _callee2, _this3);
 	    }))();
 	  },
-	  handleEvents: function handleEvents() {
+	  handleEventsAlta: function handleEventsAlta() {
 	    var _this4 = this;
 
 	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
@@ -59564,10 +59843,8 @@
 	            case 0:
 	              _this = _this4;
 
-
 	              (0, _jquery2.default)(".frm-description").on("submit", function () {
 	                (0, _jquery2.default)(this).attr("disabled", true);
-
 	                var inputData = [];
 	                (0, _jquery2.default)(this).find(":input").each(function () {
 	                  var data = {};
@@ -59597,9 +59874,9 @@
 	                (0, _jquery2.default)("#classificationid").html(_this.Page.classificationname);
 
 	                //Pasamos a la siguiente slide
-	                _this.swiper.allowSlideNext = true;
-	                _this.swiper.slideNext();
+	                _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = true;
 	                _tool2.default.scrollPageTo(0);
+	                _this.swiper.slideNext();
 	                _this.swiper.allowSlideNext = false;
 	                (0, _jquery2.default)(this).attr("disabled", false);
 	                return false;
@@ -59683,8 +59960,8 @@
 	                        if (_this.agreements.length <= 1) {
 	                          (0, _jquery2.default)("#classification-ticket").attr("hidden", "");
 	                          _this.swiper.allowSlideNext = true;
-	                          _this.swiper.slideNext();
 	                          _tool2.default.scrollPageTo(0);
+	                          _this.swiper.slideNext();
 	                          _this.swiper.allowSlideNext = false;
 	                        }
 
@@ -59695,7 +59972,6 @@
 	                  }
 	                }, _callee3, this);
 	              })));
-
 	              (0, _jquery2.default)("#frm-ticket").on("submit", function () {
 	                var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(e) {
 	                  var $frm, hasFile, isXML, validSubmit, mailCorrectFormat, msjWarning, formData, user, r, resp;
@@ -59741,7 +60017,7 @@
 	                          _context4.prev = 17;
 	                          formData = new FormData($frm[0]);
 	                          _context4.next = 21;
-	                          return _store2.default.getUserId();
+	                          return _store2.default.getUserId(2);
 
 	                        case 21:
 	                          user = _context4.sent;
@@ -59799,9 +60075,97 @@
 	        }
 	      }, _callee5, _this4);
 	    }))();
+	  },
+	  handleEventsProfile: function handleEventsProfile() {
+	    var _this5 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
+	      var _this;
+
+	      return _regenerator2.default.wrap(function _callee6$(_context6) {
+	        while (1) {
+	          switch (_context6.prev = _context6.next) {
+	            case 0:
+	              _this = _this5;
+
+	              (0, _jquery2.default)("#frm-updateProfile").on("submit", function (e) {
+	                e.preventDefault();
+	                var $frm = (0, _jquery2.default)(this);
+	                _this.ProfileModified = $frm.serializeObject();
+	                var $btnSubmit = $frm.find("button[type=submit]");
+	                $btnSubmit.attr('disabled', true);
+	                (0, _jquery2.default)("#frm-updateProfile input").attr('disabled', true);
+	                var mailCorrectFormat = _tool2.default.mailValidation((0, _jquery2.default)("#notificationMail").val());
+	                if (!$frm.valid()) {
+	                  alert("Faltan campos por llenar");
+	                } else if (!mailCorrectFormat) {
+	                  alert("El correo no tiene el formato correcto");
+	                } else {
+	                  _store2.default.ProfileHelpDesk(_this.ProfileModified).then(function (r) {
+	                    if (!r.Success) {
+	                      alert(r.Message);
+	                      console.log(r.Message);
+	                    } else {
+	                      if (r.Data !== "") {
+	                        alert("Favor de verificar el codigo.\n" + r.Data);
+	                        (0, _jquery2.default)("#verifyCode").html(r.Data);
+	                        verifyCode(_this);
+	                      } else {
+	                        alert("Se ha efectuado el cambio con éxito.");
+	                        if (_this.Page.wasAlta) app.View("altaTicket");else app.View("main");
+	                      }
+	                    }
+	                  }, function (r) {
+	                    var json = JSON.parse(r.responseText).Message;
+	                    json = JSON.parse(json);
+	                    alert(json.Message);
+	                    $btnSubmit.attr('disabled', false);
+	                    (0, _jquery2.default)("#frm-updateProfile input").attr('disabled', true);
+	                  });
+	                }
+	                $btnSubmit.attr('disabled', false);
+	                (0, _jquery2.default)("#frm-updateProfile input").attr('disabled', false);
+	                return false;
+	              }).validate();
+
+	            case 2:
+	            case "end":
+	              return _context6.stop();
+	          }
+	        }
+	      }, _callee6, _this5);
+	    }))();
+	  },
+	  handleEventsVerTickets: function handleEventsVerTickets() {
+	    var _this6 = this;
+
+	    return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
+	      var _this;
+
+	      return _regenerator2.default.wrap(function _callee7$(_context7) {
+	        while (1) {
+	          switch (_context7.prev = _context7.next) {
+	            case 0:
+	              _this = _this6;
+
+	              (0, _jquery2.default)('#frm-ticketsReport').on('submit', function () {
+	                var $frm = (0, _jquery2.default)(this);
+	                var frmData = $frm.serializeObject();
+	                var validFrm = validFrmData(frmData);
+	                if (validFrm) getTickets(_this, (0, _jquery2.default)('#cbStatus').val(), $frm, true);
+	                return false;
+	              });
+
+	            case 2:
+	            case "end":
+	              return _context7.stop();
+	          }
+	        }
+	      }, _callee7, _this6);
+	    }))();
 	  }
 	};
-
+	;
 
 	function loadClassifications(iTypeId, _this) {
 	  if (iTypeId) {
@@ -59831,6 +60195,58 @@
 	    _this.Page.nameAction = "";
 	  }
 	}
+	function verifyCode(_this) {
+	  (0, _jquery2.default)("#frm-updateProfile input").prop("readonly", true).css("opacity", 0.8);
+
+	  (0, _jquery2.default)("#frm-verifyCode").removeAttr('hidden');
+	  (0, _jquery2.default)("#inputCode").focus();
+
+	  (0, _jquery2.default)("#frm-verifyCode").on("submit", function () {
+	    var $frm = (0, _jquery2.default)(this);
+	    var formData = $frm.serializeObject();
+	    var $btnSubmit = (0, _jquery2.default)("#frm-updateProfile").find("button[type=submit]");
+	    var $btnSubmit2 = $frm.find("button[type=submit]");
+	    if (_this.ProfileModified) formData.CellPhone = _this.ProfileModified.Cellphone;
+	    $btnSubmit.attr('disabled', true);
+	    _store2.default.VerifyCodeAPI(formData).then(function (r) {
+	      if (r.Success) {
+	        alert(r.Message);
+	        (0, _jquery2.default)("#updateProfile-container").remove();
+	        (0, _jquery2.default)("#frm-verifyCode").attr('hidden', true);
+	        $btnSubmit.attr('disabled', false);
+	        $btnSubmit2.attr('disabled', false);
+	        if (_this.Page.page == _this.Page.pages.alta) app.View(_this.Page.pages.alta);else app.View("main");
+	      } else {
+	        console.log(r.Message);
+	        $btnSubmit.attr('disabled', false);
+	        $btnSubmit2.attr('disabled', false);
+	      }
+	    }, function (r) {
+	      var json = JSON.parse(r.responseText).Message;
+	      json = JSON.parse(json);
+	      alert(json.Message);
+	      $btnSubmit.attr('disabled', false);
+	      $btnSubmit2.attr('disabled', false);
+	    });
+
+	    return false;
+	  }).show();
+	}
+	function validFrmData(data) {
+	  var resp = false;
+	  if ((0, _jquery2.default)("#cbStatus").val() == "" || (0, _jquery2.default)("#cbStatus").val() == undefined) {
+	    alert("Seleccione un estatus");
+	  } else if (data.DateStart == "" || data.DateStart == undefined) {
+	    alert("Seleccione una Fecha inicial");
+	  } else if (data.DateEnd == "" || data.DateEnd == undefined) {
+	    alert("Seleccione una Fecha final");
+	  } else if ((0, _moment2.default)(data.StartDate) > (0, _moment2.default)(data.EndDate)) {
+	    alert("La fecha inicial debe ser menor o igual que la fecha final");
+	  } else {
+	    resp = true;
+	  }
+	  return resp;
+	}
 
 /***/ }),
 /* 244 */
@@ -59846,7 +60262,7 @@
 
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -59872,7 +60288,7 @@
 
 	var _aesCtr2 = _interopRequireDefault(_aesCtr);
 
-	var _constant = __webpack_require__(39);
+	var _constant = __webpack_require__(40);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -60068,7 +60484,7 @@
 
 	var _tool2 = _interopRequireDefault(_tool);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -60076,7 +60492,7 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _constant = __webpack_require__(39);
+	var _constant = __webpack_require__(40);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
@@ -61213,7 +61629,7 @@
 
 	var _resumenConceptosTpl2 = _interopRequireDefault(_resumenConceptosTpl);
 
-	var _optionList2 = __webpack_require__(37);
+	var _optionList2 = __webpack_require__(38);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
@@ -62194,7 +62610,7 @@
 	  value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(48);
+	var _defineProperty2 = __webpack_require__(49);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -62210,11 +62626,11 @@
 
 	var _presupuestosRechazadosTpl2 = _interopRequireDefault(_presupuestosRechazadosTpl);
 
-	var _optionList2 = __webpack_require__(37);
+	var _optionList2 = __webpack_require__(38);
 
 	var _optionList3 = _interopRequireDefault(_optionList2);
 
-	__webpack_require__(63);
+	__webpack_require__(64);
 
 	var _moment = __webpack_require__(1);
 
@@ -63665,11 +64081,11 @@
 
 	var _linq2 = _interopRequireDefault(_linq);
 
-	var _constant = __webpack_require__(39);
+	var _constant = __webpack_require__(40);
 
 	var _constant2 = _interopRequireDefault(_constant);
 
-	var _router = __webpack_require__(44);
+	var _router = __webpack_require__(45);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -64028,7 +64444,7 @@
 
 	var _assign2 = _interopRequireDefault(_assign);
 
-	var _defineProperty = __webpack_require__(46);
+	var _defineProperty = __webpack_require__(47);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -64036,7 +64452,7 @@
 
 	var _defineProperties2 = _interopRequireDefault(_defineProperties);
 
-	var _stringify = __webpack_require__(45);
+	var _stringify = __webpack_require__(46);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -79072,7 +79488,7 @@
 
 	__webpack_require__(88);
 	__webpack_require__(89);
-	module.exports = __webpack_require__(62).f('iterator');
+	module.exports = __webpack_require__(63).f('iterator');
 
 
 /***/ }),
@@ -79128,7 +79544,7 @@
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(31);
-	var gOPS = __webpack_require__(55);
+	var gOPS = __webpack_require__(56);
 	var pIE = __webpack_require__(32);
 	module.exports = function (it) {
 	  var result = getKeys(it);
@@ -79244,9 +79660,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create = __webpack_require__(53);
-	var descriptor = __webpack_require__(41);
-	var setToStringTag = __webpack_require__(42);
+	var create = __webpack_require__(54);
+	var descriptor = __webpack_require__(42);
+	var setToStringTag = __webpack_require__(43);
 	var IteratorPrototype = {};
 
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -79299,7 +79715,7 @@
 /* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var META = __webpack_require__(43)('meta');
+	var META = __webpack_require__(44)('meta');
 	var isObject = __webpack_require__(16);
 	var has = __webpack_require__(19);
 	var setDesc = __webpack_require__(17).f;
@@ -79436,9 +79852,9 @@
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys = __webpack_require__(31);
-	var gOPS = __webpack_require__(55);
+	var gOPS = __webpack_require__(56);
 	var pIE = __webpack_require__(32);
-	var toObject = __webpack_require__(59);
+	var toObject = __webpack_require__(60);
 	var IObject = __webpack_require__(74);
 	var $assign = Object.assign;
 
@@ -79545,7 +79961,7 @@
 	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
 	    function (test, buggy, set) {
 	      try {
-	        set = __webpack_require__(28)(Function.call, __webpack_require__(54).f(Object.prototype, '__proto__').set, 2);
+	        set = __webpack_require__(28)(Function.call, __webpack_require__(55).f(Object.prototype, '__proto__').set, 2);
 	        set(test, []);
 	        buggy = !(test instanceof Array);
 	      } catch (e) { buggy = true; }
@@ -79584,8 +80000,8 @@
 /* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(58);
-	var defined = __webpack_require__(49);
+	var toInteger = __webpack_require__(59);
+	var defined = __webpack_require__(50);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function (TO_STRING) {
@@ -79607,7 +80023,7 @@
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(58);
+	var toInteger = __webpack_require__(59);
 	var max = Math.max;
 	var min = Math.min;
 	module.exports = function (index, length) {
@@ -79696,7 +80112,7 @@
 
 	var $export = __webpack_require__(12);
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	$export($export.S, 'Object', { create: __webpack_require__(53) });
+	$export($export.S, 'Object', { create: __webpack_require__(54) });
 
 
 /***/ }),
@@ -79723,7 +80139,7 @@
 
 	// 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
 	var toIObject = __webpack_require__(18);
-	var $getOwnPropertyDescriptor = __webpack_require__(54).f;
+	var $getOwnPropertyDescriptor = __webpack_require__(55).f;
 
 	__webpack_require__(80)('getOwnPropertyDescriptor', function () {
 	  return function getOwnPropertyDescriptor(it, key) {
@@ -79737,7 +80153,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 Object.getPrototypeOf(O)
-	var toObject = __webpack_require__(59);
+	var toObject = __webpack_require__(60);
 	var $getPrototypeOf = __webpack_require__(78);
 
 	__webpack_require__(80)('getPrototypeOf', function () {
@@ -79767,13 +80183,13 @@
 	var classof = __webpack_require__(71);
 	var $export = __webpack_require__(12);
 	var isObject = __webpack_require__(16);
-	var aFunction = __webpack_require__(40);
+	var aFunction = __webpack_require__(41);
 	var anInstance = __webpack_require__(283);
 	var forOf = __webpack_require__(286);
 	var speciesConstructor = __webpack_require__(84);
 	var task = __webpack_require__(85).set;
 	var microtask = __webpack_require__(295)();
-	var newPromiseCapabilityModule = __webpack_require__(52);
+	var newPromiseCapabilityModule = __webpack_require__(53);
 	var perform = __webpack_require__(81);
 	var userAgent = __webpack_require__(304);
 	var promiseResolve = __webpack_require__(82);
@@ -79982,7 +80398,7 @@
 	}
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
-	__webpack_require__(42)($Promise, PROMISE);
+	__webpack_require__(43)($Promise, PROMISE);
 	__webpack_require__(301)(PROMISE);
 	Wrapper = __webpack_require__(7)[PROMISE];
 
@@ -80061,22 +80477,22 @@
 	var redefine = __webpack_require__(83);
 	var META = __webpack_require__(294).KEY;
 	var $fails = __webpack_require__(25);
-	var shared = __webpack_require__(57);
-	var setToStringTag = __webpack_require__(42);
-	var uid = __webpack_require__(43);
+	var shared = __webpack_require__(58);
+	var setToStringTag = __webpack_require__(43);
+	var uid = __webpack_require__(44);
 	var wks = __webpack_require__(11);
-	var wksExt = __webpack_require__(62);
-	var wksDefine = __webpack_require__(61);
+	var wksExt = __webpack_require__(63);
+	var wksDefine = __webpack_require__(62);
 	var enumKeys = __webpack_require__(285);
 	var isArray = __webpack_require__(289);
 	var anObject = __webpack_require__(13);
 	var isObject = __webpack_require__(16);
 	var toIObject = __webpack_require__(18);
-	var toPrimitive = __webpack_require__(60);
-	var createDesc = __webpack_require__(41);
-	var _create = __webpack_require__(53);
+	var toPrimitive = __webpack_require__(61);
+	var createDesc = __webpack_require__(42);
+	var _create = __webpack_require__(54);
 	var gOPNExt = __webpack_require__(297);
-	var $GOPD = __webpack_require__(54);
+	var $GOPD = __webpack_require__(55);
 	var $DP = __webpack_require__(17);
 	var $keys = __webpack_require__(31);
 	var gOPD = $GOPD.f;
@@ -80203,7 +80619,7 @@
 	  $DP.f = $defineProperty;
 	  __webpack_require__(77).f = gOPNExt.f = $getOwnPropertyNames;
 	  __webpack_require__(32).f = $propertyIsEnumerable;
-	  __webpack_require__(55).f = $getOwnPropertySymbols;
+	  __webpack_require__(56).f = $getOwnPropertySymbols;
 
 	  if (DESCRIPTORS && !__webpack_require__(30)) {
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -80336,7 +80752,7 @@
 	'use strict';
 	// https://github.com/tc39/proposal-promise-try
 	var $export = __webpack_require__(12);
-	var newPromiseCapability = __webpack_require__(52);
+	var newPromiseCapability = __webpack_require__(53);
 	var perform = __webpack_require__(81);
 
 	$export($export.S, 'Promise', { 'try': function (callbackfn) {
@@ -80351,14 +80767,14 @@
 /* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(61)('asyncIterator');
+	__webpack_require__(62)('asyncIterator');
 
 
 /***/ }),
 /* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(61)('observable');
+	__webpack_require__(62)('observable');
 
 
 /***/ }),
@@ -81543,7 +81959,7 @@
 /* 352 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\r\n<div class=\"cardTravex-hgroup noShadow\">\r\n    <div class=\"cardTravex-partial\">\r\n        <div class=\"cardTravex-title\">{{title}}</div>\r\n        {{#if message}}\r\n        <div class=\"card text-white bg-info m-3\" style=\"font-size: small;\">\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text text-light\">{{message}}</p>\r\n            </div>\r\n        </div>\r\n        {{/if}}\r\n        <h4 class=\"simpleLabelTravex\">Seleccionar {{type}}</h4>\r\n        <input type=\"search\" id=\"{{searchId}}\" class=\"jetsSearch\" placeholder=\"🔎 Buscar {{type}}\" spellcheck=\"false\" autocomplete=\"off\">\r\n        <div id=\"accordion-{{idParent}}\" class=\"accordionTravex\">\r\n            {{#each this}}\r\n            <div class=\"accordionTravex-accordion\">\r\n                <div class=\"accordionTravex-accordion-header cardHeader {{config.class}}\" id=\"heading-{{id}}\" data-id=\"{{id}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{id}}\">\r\n                    {{#equal config.typeCard 'header'}}\r\n                    <div class=\"row\">\r\n                        <div class=\"col-6\"><span class=\"field-number p-2\">#{{idField}} </span></div>\r\n                        <div class=\"col-6\"><span class=\"field-number field-amm\">{{currency valueField}}</span></div>\r\n                    </div>\r\n                    <hr> {{>labelItems fields}} {{/equal}} {{#equal config.typeCard 'dot'}}\r\n                    <div class=\"d-flex justify-content-around align-items-center\">\r\n                        <b>{{title}}</b> {{#if config.dot}}\r\n                        <span class=\"dotTravex\">{{content}}</span> {{else}}\r\n                        <span>{{content}}</span> {{/if}}\r\n                    </div>\r\n                    {{/equal}} {{#equal config.typeCard 'single'}}\r\n                    <div class=\"cardTravex-hgroup col-12\">\r\n                        <b class=\"{{textSize}} {{colorTextClass}}\">{{title}}</b>\r\n                        <span class=\"font-weight-light\">{{content}}</span>\r\n                    </div>\r\n                    {{/equal}} {{#equal config.typeCard 'noheader'}} {{>labelItems fields}} {{/equal}}\r\n                </div>\r\n                {{#if detail}}\r\n                <div id=\"collapse-{{id}}\" class=\"accordionTravex-collapse  collapse {{config.subcardClass}}\" aria-labelledby=\"heading-{{id}}\" data-container=\"{{config.container}}\" data-id=\"{{id}}\" data-parent=\"#accordion-{{config.idParent}}\" smooth={{config.smooth}}>\r\n                    <!--  Detalle sub cards o sub labels -->\r\n                    {{#equal detail.empty false}} {{#if detail.title}}\r\n                    <div class=\"col-12 mt-3 \">\r\n                        <h5>{{detail.title}}</h5>\r\n                    </div>\r\n                    {{/if}} {{>cardItems detail.cards}} {{>listItems detail.labels}} {{>rowItems detail.rows}} {{/equal}} {{#equal detail.empty true}}\r\n                    <div class=\"row bg-light rounded \">\r\n                        {{#if detail.title}}\r\n                        <div class=\"col-12 mt-3 \">\r\n                            <h5>{{detail.title}}</h5>\r\n                        </div>\r\n                        {{/if}}\r\n                        <div class=\"detailContainer col-12 \"></div>\r\n                    </div>\r\n                    {{/equal}} {{#if config.report}}\r\n                    <div class=\"row \">\r\n                        <span class=\"col-12 \"><button type=\"button\" data-id =\"{{id}} \"class=\"btn btn-block {{config.report.class}} {{config.report.classReport}}\">{{config.report.name}}</button></span>\r\n                    </div>\r\n                    {{/if}}\r\n                    <!--  Acción -->\r\n                    {{#if detail.action}}\r\n                    <div class=\"row p-3 \">\r\n                        <form id=\"frm-setAction\" class=\"travexForm row \">\r\n                            <input type=\"hidden\" name=\"id \" value=\"{{id}} \"> {{#equal detail.action.comment true}}\r\n                            <div class=\"col-12 travexForm-group\">\r\n                                <textarea name=\"comment \" class=\"form-control comment\" rows=\"5 \" id=\"comment-{{id}} \" placeholder=\"Inserte un comentario\"></textarea>\r\n                            </div>\r\n                            {{/equal}} {{#if detail.action.buttons}}\r\n                            <div class=\"col-12 travexForm-group \">\r\n                                {{#each detail.action.buttons}}\r\n                                <span class=\"text-center \"><button type=\"submit\" class=\" btn btn-block m-1 {{class}} actionBtn \" data-action=\"{{name}} \">{{name}}</button></span> {{/each}}\r\n                            </div>\r\n                            {{/if}}\r\n                            <hr>\r\n                        </form>\r\n                    </div>\r\n                    {{/if}}\r\n                </div>\r\n                {{/if}}\r\n            </div>\r\n            {{/each}}\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/if}}";
+	module.exports = "{{#if this}}\r\n<div class=\"cardTravex-hgroup noShadow\">\r\n    <div class=\"cardTravex-partial\">\r\n        {{#if title}}\r\n        <div class=\"cardTravex-title\">{{title}}</div>\r\n        {{/if}}\r\n        {{#if message}}\r\n        <div class=\"card text-white bg-info m-3\" style=\"font-size: small;\">\r\n            <div class=\"card-body\">\r\n                <p class=\"card-text text-light\">{{message}}</p>\r\n            </div>\r\n        </div>\r\n        {{/if}}\r\n        <h4 class=\"simpleLabelTravex\">Seleccionar {{type}}</h4>\r\n        <input type=\"search\" id=\"{{searchId}}\" class=\"jetsSearch\" placeholder=\"🔎 Buscar {{type}}\" spellcheck=\"false\" autocomplete=\"off\">\r\n        <div id=\"accordion-{{idParent}}\" class=\"accordionTravex\">\r\n            {{#each this}}\r\n            <div class=\"accordionTravex-accordion\">\r\n                <div class=\"accordionTravex-accordion-header cardHeader {{config.class}}\" id=\"heading-{{id}}\" data-id=\"{{id}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{id}}\">\r\n                    {{#equal config.typeCard 'header'}}\r\n                    <div class=\"row\">\r\n                        <div class=\"col-6\"><span class=\"field-number p-2\">#{{idField}} </span></div>\r\n                        <div class=\"col-6\"><span class=\"field-number field-amm\">{{currency valueField}}</span></div>\r\n                    </div>\r\n                    <hr> \r\n                    {{>labelItems fields}} \r\n                    {{/equal}} \r\n                    {{#equal config.typeCard 'dot'}}\r\n                    <div class=\"d-flex justify-content-around align-items-center\">\r\n                        <b>{{title}}</b> {{#if config.dot}}\r\n                        <span class=\"dotTravex\">{{content}}</span> {{else}}\r\n                        <span>{{content}}</span> {{/if}}\r\n                    </div>\r\n                    {{/equal}} {{#equal config.typeCard 'single'}}\r\n                    <div class=\"cardTravex-hgroup col-12\">\r\n                        <b class=\"{{textSize}} {{colorTextClass}}\">{{title}}</b>\r\n                        <span class=\"font-weight-light\">{{content}}</span>\r\n                    </div>\r\n                    {{/equal}} \r\n                    {{#equal config.typeCard 'noheader'}} \r\n                    {{>labelItems fields}} {{/equal}}\r\n                </div>\r\n                {{#if detail}}\r\n                <div id=\"collapse-{{id}}\" class=\"accordionTravex-collapse  collapse {{config.subcardClass}}\" aria-labelledby=\"heading-{{id}}\" data-container=\"{{config.container}}\" data-id=\"{{id}}\" data-parent=\"#accordion-{{config.idParent}}\" smooth={{config.smooth}}>\r\n                    <!--  Detalle sub cards o sub labels -->\r\n                    {{#equal detail.empty false}} \r\n                         {{#if detail.title}}\r\n                        <div class=\"col-12 mt-3 \">\r\n                            <h5>{{detail.title}}</h5>\r\n                        </div>\r\n                        {{/if}} \r\n                        {{>cardItems detail.cards}} {{>listItems detail.labels}} {{>rowItems detail.rows}} \r\n                    {{/equal}} \r\n                    {{#equal detail.empty true}}\r\n                    <div class=\"row bg-light rounded \">\r\n                        {{#if detail.title}}\r\n                        <div class=\"col-12 mt-3 \">\r\n                            <h5>{{detail.title}}</h5>\r\n                        </div>\r\n                        {{/if}}\r\n                        <div class=\"detailContainer col-12 \"></div>\r\n                    </div>\r\n                    {{/equal}} \r\n                    {{#if config.report}}\r\n                    <div class=\"row\">\r\n                        <span class=\"col-12 \"><button type=\"button\" data-id =\"{{id}} \"class=\"btn btn-block {{config.report.class}} {{config.report.classReport}}\">{{config.report.name}}</button></span>\r\n                    </div>\r\n                    {{/if}}\r\n                    <!--  Acción -->\r\n                    {{#if detail.action}}\r\n                    <div class=\"row p-3 \">\r\n                        <form id=\"frm-setAction\" class=\"travexForm row \">\r\n                            <input type=\"hidden\" name=\"id \" value=\"{{id}} \"> {{#equal detail.action.comment true}}\r\n                            <div class=\"col-12 travexForm-group\">\r\n                                <textarea name=\"comment \" class=\"form-control comment\" rows=\"5 \" id=\"comment-{{id}} \" placeholder=\"Inserte un comentario\"></textarea>\r\n                            </div>\r\n                            {{/equal}} {{#if detail.action.buttons}}\r\n                            <div class=\"col-12 travexForm-group \">\r\n                                {{#each detail.action.buttons}}\r\n                                <span class=\"text-center \"><button type=\"submit\" class=\" btn btn-block m-1 {{class}} actionBtn \" data-action=\"{{name}} \">{{name}}</button></span> {{/each}}\r\n                            </div>\r\n                            {{/if}}\r\n                            <hr>\r\n                        </form>\r\n                    </div>\r\n                    {{/if}}\r\n                </div>\r\n                {{/if}}\r\n            </div>\r\n            {{/each}}\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/if}}";
 
 /***/ }),
 /* 353 */
@@ -81561,7 +81977,7 @@
 /* 355 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3  m-auto\"></div>{{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}:</b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} {{#equal desc false}} {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\">{{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
+	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto Travex-text w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3  m-auto\"></div>\r\n            {{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}} Travex-text\"><b>{{title}}: </b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} Travex-text font-weight-light\">{{content}}</div>\r\n            {{/equal}} \r\n            {{#equal desc false}} \r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 Travex-text {{textSize}}\"> {{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} Travex-text {{textSize}}\"> {{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
 
 /***/ }),
 /* 356 */
@@ -81609,7 +82025,7 @@
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===========================================\r\n=            Autorizar Presupuesto            =\r\n============================================-->\r\n<section id=\"autorizarPresupuesto\" class=\"autorizarPresupuesto\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <h3 class=\"cardTravex-title\">Autorizar Presupuesto</h3>\r\n        </div>\r\n        <form id=\"frm-Budgets\" class=\"autorizarPresupuesto-filtros\">\r\n            <input type=\"hidden\" name=\"Type\" value=\"Date\">\r\n            <div class=\"row\">\r\n                <div class=\"col-6\">\r\n                    <div class=\"autorizarPresupuesto-group\">\r\n                        <img src=\"" + __webpack_require__(64) + "\">\r\n                        <label>Inicio</label>\r\n                        <input type=\"date\" name=\"StartDate\" id=\"StartDate\" class=\"travexForm-control\" value=\"{{fecha}}\" required>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-6\">\r\n                    <div class=\"autorizarPresupuesto-group\">\r\n                        <img src=\"" + __webpack_require__(64) + "\">\r\n                        <label>Fin</label>\r\n                        <input type=\"date\" name=\"EndDate\" id=\"EndDate\" class=\"travexForm-control\" value=\"{{fecha}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"m-4 text-center\">\r\n                <button type=\"submit\" class=\"btn btn-primary btn-block\">Buscar</button>\r\n            </div>\r\n        </form>\r\n        <div class=\"autorizarPresupuesto-presupuestos\">\r\n            <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar presupuesto...\">\r\n            <div id=\"accordion\" class=\"accordionAutorizar\">\r\n                {{#each Presupuestos}}\r\n                    <div class=\"accordionAutorizar-accordion {{Status.Name}}\" data-status=\"{{Status.Id}}\">\r\n                        <div class=\"accordionAutorizar-accordion-header\" id=\"heading-{{Id}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{Id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{Id}}\">\r\n                            <div class=\"budget-number\"><span>N° {{Id}}</span></div>\r\n                            <div class=\"budget-amm\"><span>Monto: {{currency Amount}}</span></div>\r\n                            <div>{{Employee.FullName}}</div>\r\n                            <div class=\"budget-desc\">{{Description}}</div>\r\n                            <div class=\"budget-proj\">{{Project.Name}}</div>\r\n                            <div class=\"budget-date\">{{StartDate}} a {{EndDate}}</div>\r\n                            <div class=\"budget-createDate\"><img src=\"" + __webpack_require__(64) + "\" width=\"22px\"> {{CreateDate}}</div>\r\n                        </div>\r\n                        <div id=\"collapse-{{Id}}\" class=\"accordionAutorizar-collapse collapse\" aria-labelledby=\"heading-{{Id}}\" data-parent=\"#accordion\">\r\n                            <ul class=\"list-group list-group-flush\">\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Objetivo</b></div>\r\n                                    <div class=\"text-muted\">{{Description}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Estado</b></div>\r\n                                    <div class=\"text-muted\">{{State.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Municipio</b></div>\r\n                                    <div class=\"text-muted\">{{Municipality.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Estatus</b></div>\r\n                                    <div class=\"text-muted\">{{Status.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Saldo</b></div>\r\n                                    <div class=\"text-muted\">{{currency Balance}}</div>\r\n                                </li>\r\n                            </ul>\r\n                            <h5 class=\"m-4 text-muted\">Detalle</h5>\r\n                            <div id=\"accordion-detail\" class=\"accordionAutorizar-accordion\">\r\n                                {{#each Details}}\r\n                                    <div class=\"accordionAutorizar-accordion-header\" data-toggle=\"collapse\" data-target=\"#details-{{BudgetId}}-{{Id}}\" aria-expanded=\"true\" aria-controls=\"details-{{Id}}\">\r\n                                        Concepto: <b>{{Catalog.Name}}</b>\r\n                                    </div>\r\n                                    <div id=\"details-{{BudgetId}}-{{Id}}\" class=\"collapse accordionAutorizar-collapse\" aria-labelledby=\"headingOne\" data-parent=\"#accordion-detail\">\r\n                                        <ul class=\"list-group\">\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Concepto</b></div>\r\n                                                <div class=\"text-muted\">{{Catalog.Name}}</div>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Clasificacion</b></div>\r\n                                                <div class=\"text-muted\">{{Subcatalog.Name}}</div>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Monto</b></div>\r\n                                                <input type=\"number\" name=\"Amount\" value=\"{{Amount}}\" class=\"updateBudgetDetail form-control m-1\" data-detail=\"{{Id}}\" data-budget=\"{{BudgetId}}\">\r\n                                                <span class=\"btnSetUpdateBudgetDetail badge badge-primary badge-pill\">editar</span>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Descripcion</b></div>\r\n                                                <div class=\"text-muted\">{{Description}}</div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                {{/each}}\r\n                            </div>\r\n                            <div class=\"travexForm\">\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Comentarios</div>\r\n                                    <textarea class=\"travexForm-control txt\"></textarea>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"text-center {{#if showButtons}} hide {{/if}}\">\r\n                                <button class=\"btnSetChangeStatus btn btn-success btn-block\" data-status=\"Autorizado\" data-budget=\"{{Id}}\">Autorizar</button>\r\n                                <button class=\"btnSetChangeStatus btn btn-danger btn-block\" data-status=\"Rechazado\" data-budget=\"{{Id}}\">Rechazar</button>\r\n                                <button class=\"btnSetChangeStatus btn btn-secondary btn-block\" data-status=\"Cancelado\" data-budget=\"{{Id}}\">Cancelar</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    {{else}}\r\n                        <p class=\"jumbotron text-center text-center p-4\">No existen presupuesto por autorizar.</p>\r\n                {{/each}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>";
+	module.exports = "<!--===========================================\r\n=            Autorizar Presupuesto            =\r\n============================================-->\r\n<section id=\"autorizarPresupuesto\" class=\"autorizarPresupuesto\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <h3 class=\"cardTravex-title\">Autorizar Presupuesto</h3>\r\n        </div>\r\n        <form id=\"frm-Budgets\" class=\"autorizarPresupuesto-filtros\">\r\n            <input type=\"hidden\" name=\"Type\" value=\"Date\">\r\n            <div class=\"row\">\r\n                <div class=\"col-6\">\r\n                    <div class=\"autorizarPresupuesto-group\">\r\n                        <img src=\"" + __webpack_require__(35) + "\">\r\n                        <label>Inicio</label>\r\n                        <input type=\"date\" name=\"StartDate\" id=\"StartDate\" class=\"travexForm-control\" value=\"{{fecha}}\" required>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-6\">\r\n                    <div class=\"autorizarPresupuesto-group\">\r\n                        <img src=\"" + __webpack_require__(35) + "\">\r\n                        <label>Fin</label>\r\n                        <input type=\"date\" name=\"EndDate\" id=\"EndDate\" class=\"travexForm-control\" value=\"{{fecha}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"m-4 text-center\">\r\n                <button type=\"submit\" class=\"btn btn-primary btn-block\">Buscar</button>\r\n            </div>\r\n        </form>\r\n        <div class=\"autorizarPresupuesto-presupuestos\">\r\n            <input type=\"search\" id=\"jetsSearch\" placeholder=\"🔎 Buscar presupuesto...\">\r\n            <div id=\"accordion\" class=\"accordionAutorizar\">\r\n                {{#each Presupuestos}}\r\n                    <div class=\"accordionAutorizar-accordion {{Status.Name}}\" data-status=\"{{Status.Id}}\">\r\n                        <div class=\"accordionAutorizar-accordion-header\" id=\"heading-{{Id}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{Id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{Id}}\">\r\n                            <div class=\"budget-number\"><span>N° {{Id}}</span></div>\r\n                            <div class=\"budget-amm\"><span>Monto: {{currency Amount}}</span></div>\r\n                            <div>{{Employee.FullName}}</div>\r\n                            <div class=\"budget-desc\">{{Description}}</div>\r\n                            <div class=\"budget-proj\">{{Project.Name}}</div>\r\n                            <div class=\"budget-date\">{{StartDate}} a {{EndDate}}</div>\r\n                            <div class=\"budget-createDate\"><img src=\"" + __webpack_require__(35) + "\" width=\"22px\"> {{CreateDate}}</div>\r\n                        </div>\r\n                        <div id=\"collapse-{{Id}}\" class=\"accordionAutorizar-collapse collapse\" aria-labelledby=\"heading-{{Id}}\" data-parent=\"#accordion\">\r\n                            <ul class=\"list-group list-group-flush\">\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Objetivo</b></div>\r\n                                    <div class=\"text-muted\">{{Description}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Estado</b></div>\r\n                                    <div class=\"text-muted\">{{State.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Municipio</b></div>\r\n                                    <div class=\"text-muted\">{{Municipality.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Estatus</b></div>\r\n                                    <div class=\"text-muted\">{{Status.Name}}</div>\r\n                                </li>\r\n                                <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                    <div><b>Saldo</b></div>\r\n                                    <div class=\"text-muted\">{{currency Balance}}</div>\r\n                                </li>\r\n                            </ul>\r\n                            <h5 class=\"m-4 text-muted\">Detalle</h5>\r\n                            <div id=\"accordion-detail\" class=\"accordionAutorizar-accordion\">\r\n                                {{#each Details}}\r\n                                    <div class=\"accordionAutorizar-accordion-header\" data-toggle=\"collapse\" data-target=\"#details-{{BudgetId}}-{{Id}}\" aria-expanded=\"true\" aria-controls=\"details-{{Id}}\">\r\n                                        Concepto: <b>{{Catalog.Name}}</b>\r\n                                    </div>\r\n                                    <div id=\"details-{{BudgetId}}-{{Id}}\" class=\"collapse accordionAutorizar-collapse\" aria-labelledby=\"headingOne\" data-parent=\"#accordion-detail\">\r\n                                        <ul class=\"list-group\">\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Concepto</b></div>\r\n                                                <div class=\"text-muted\">{{Catalog.Name}}</div>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Clasificacion</b></div>\r\n                                                <div class=\"text-muted\">{{Subcatalog.Name}}</div>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Monto</b></div>\r\n                                                <input type=\"number\" name=\"Amount\" value=\"{{Amount}}\" class=\"updateBudgetDetail form-control m-1\" data-detail=\"{{Id}}\" data-budget=\"{{BudgetId}}\">\r\n                                                <span class=\"btnSetUpdateBudgetDetail badge badge-primary badge-pill\">editar</span>\r\n                                            </li>\r\n                                            <li class=\"list-group-item d-flex justify-content-between align-items-center\">\r\n                                                <div><b>Descripcion</b></div>\r\n                                                <div class=\"text-muted\">{{Description}}</div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                {{/each}}\r\n                            </div>\r\n                            <div class=\"travexForm\">\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Comentarios</div>\r\n                                    <textarea class=\"travexForm-control txt\"></textarea>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"text-center {{#if showButtons}} hide {{/if}}\">\r\n                                <button class=\"btnSetChangeStatus btn btn-success btn-block\" data-status=\"Autorizado\" data-budget=\"{{Id}}\">Autorizar</button>\r\n                                <button class=\"btnSetChangeStatus btn btn-danger btn-block\" data-status=\"Rechazado\" data-budget=\"{{Id}}\">Rechazar</button>\r\n                                <button class=\"btnSetChangeStatus btn btn-secondary btn-block\" data-status=\"Cancelado\" data-budget=\"{{Id}}\">Cancelar</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    {{else}}\r\n                        <p class=\"jumbotron text-center text-center p-4\">No existen presupuesto por autorizar.</p>\r\n                {{/each}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 364 */
@@ -81645,13 +82061,13 @@
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===================================\r\n=            TICKET MANUAL            =\r\n====================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Ticket Manual</div>\r\n        </div>\r\n        <form id=\"frm-setUploadManualTicket\" class=\"travexForm\">\r\n            <input type=\"hidden\" name=\"TransactionId\" class=\"RelationId\" value=\"{{TransactionId}}\">\r\n            <input type=\"hidden\" name=\"File\" id=\"iFile\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Concepto</div>\r\n                <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" required>\r\n                    {{> dropDownList Conceptos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Clasificacion</div>\r\n                <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" required>\r\n                    <option selected disabled>Seleccione un concepto</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Centro de Costos</div>\r\n                <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                    {{> dropDownList CentroCostos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Presupuesto</div>\r\n                <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                    {{> dropDownList Presupuestos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input type=\"number\" name=\"Amount\" id=\"iAmount\" class=\"travexForm-control\" value=\"{{Amount}}\" step=\"0.01\" required>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(35) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Descripción</div>\r\n                <textarea name=\"Description\" class=\"travexForm-control\"></textarea>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Cerrar</button>\r\n        </form>\r\n    </div>\r\n</section>";
+	module.exports = "<!--===================================\r\n=            TICKET MANUAL            =\r\n====================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Ticket Manual</div>\r\n        </div>\r\n        <form id=\"frm-setUploadManualTicket\" class=\"travexForm\">\r\n            <input type=\"hidden\" name=\"TransactionId\" class=\"RelationId\" value=\"{{TransactionId}}\">\r\n            <input type=\"hidden\" name=\"File\" id=\"iFile\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Concepto</div>\r\n                <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" required>\r\n                    {{> dropDownList Conceptos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Clasificacion</div>\r\n                <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" required>\r\n                    <option selected disabled>Seleccione un concepto</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Centro de Costos</div>\r\n                <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                    {{> dropDownList CentroCostos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Presupuesto</div>\r\n                <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                    {{> dropDownList Presupuestos}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input type=\"number\" name=\"Amount\" id=\"iAmount\" class=\"travexForm-control\" value=\"{{Amount}}\" step=\"0.01\" required>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(37) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Descripción</div>\r\n                <textarea name=\"Description\" class=\"travexForm-control\"></textarea>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Cerrar</button>\r\n        </form>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--========================================\r\n=            TRANSACCION MANUAL            =\r\n=========================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Transaccion Manual</div>\r\n        </div>\r\n        <form id=\"frm-setTransactionManual\" class=\"travexForm\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Empleado</div>\r\n                <select id=\"cbEmployee\" class=\"travexForm-control\" name=\"EmployeeId\" required>\r\n                    {{> dropDownList Empleados}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Método de Pago</div>\r\n                <select id=\"MethodId\" class=\"travexForm-control\" name=\"MethodId\" required>\r\n                    <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label lblFecha\">Fecha</div>\r\n                <input type=\"date\" class=\"travexForm-control\" id=\"dtFecha\" value=\"{{Fecha}}\" name=\"DateApplied\" required>\r\n            </div>\r\n            <div id=\"TransactionGas\">\r\n                <div class=\"travexForm-group\">\r\n                    <span>\r\n                        <div class=\"travexForm-label\">Fecha Final</div><input type=\"date\" class=\"travexForm-control\" id=\"dtFechaFinGas\" value=\"{{FechaFinGas}}\">\r\n                    </span>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Recorrido (Kms)</div>\r\n                    <input type=\"number\" class=\"travexForm-control\" id=\"recorridoGas\" value=\"0\" name=\"Distance\">\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Tarifa/Km</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"tarifaGas\" value=\" \" name=\"GasRate\" readonly>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input id=\"Amount\" type=\"number\" class=\"travexForm-control\" name=\"Amount\" step=\"0.01\" required>\r\n            </div>\r\n            <div id=\"TransactionManual\">\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Comercio</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"Merchant\" name=\"Merchant\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Archivo</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(35) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-check\">\r\n                <input class=\"form-check-input\" type=\"checkbox\" id=\"ckTicketManual\" name=\"Ticket\" value=\"true\">\r\n                <label class=\"form-check-label\" for=\"ckTicketManual\">\r\n                    Copiar Ticket Manual\r\n                </label>\r\n            </div>\r\n            <p><small class=\"text-muted\">Se puede realizar un Ticket como comprobante, copiando los datos ya capturados y se puede agregar un archivo al mismo Ticket. *** No subir XML y PDF.</small></p>\r\n            <button class=\"btn btn-secondary btn-block mb-4\" type=\"button\" id=\"btnCollapse\" data-toggle=\"collapse\" data-target=\"#copiaTicketManualContainer\" aria-expanded=\"false\" aria-controls=\"copiaTicketManualContainer\" disabled>\r\n                Mas Información\r\n            </button>\r\n            <div id=\"copiaTicketManualContainer\" class=\"collapse\">\r\n                <h4 class=\"subtitle\">CLASIFICAR</h4>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Concepto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\">\r\n                        {{> dropDownList Conceptos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Clasificacion</div>\r\n                    <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\">\r\n                        <option selected disabled>Seleccione un concepto</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Centro de Costos</div>\r\n                    <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                        {{> dropDownList CentroCostos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Presupuesto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                        {{> dropDownList Presupuestos}}\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n        </form>\r\n    </div>\r\n</section>";
+	module.exports = "<!--========================================\r\n=            TRANSACCION MANUAL            =\r\n=========================================-->\r\n<section class=\"transaccionManual\">\r\n    <div class=\"cardTravex\">\r\n        <div class=\"cardTravex-hgroup\">\r\n            <div class=\"cardTravex-title\">Transaccion Manual</div>\r\n        </div>\r\n        <form id=\"frm-setTransactionManual\" class=\"travexForm\">\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Empleado</div>\r\n                <select id=\"cbEmployee\" class=\"travexForm-control\" name=\"EmployeeId\" required>\r\n                    {{> dropDownList Empleados}}\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Método de Pago</div>\r\n                <select id=\"MethodId\" class=\"travexForm-control\" name=\"MethodId\" required>\r\n                    <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label lblFecha\">Fecha</div>\r\n                <input type=\"date\" class=\"travexForm-control\" id=\"dtFecha\" value=\"{{Fecha}}\" name=\"DateApplied\" required>\r\n            </div>\r\n            <div id=\"TransactionGas\">\r\n                <div class=\"travexForm-group\">\r\n                    <span>\r\n                        <div class=\"travexForm-label\">Fecha Final</div><input type=\"date\" class=\"travexForm-control\" id=\"dtFechaFinGas\" value=\"{{FechaFinGas}}\">\r\n                    </span>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Recorrido (Kms)</div>\r\n                    <input type=\"number\" class=\"travexForm-control\" id=\"recorridoGas\" value=\"0\" name=\"Distance\">\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Tarifa/Km</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"tarifaGas\" value=\" \" name=\"GasRate\" readonly>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Monto</div>\r\n                <input id=\"Amount\" type=\"number\" class=\"travexForm-control\" name=\"Amount\" step=\"0.01\" required>\r\n            </div>\r\n            <div id=\"TransactionManual\">\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Comercio</div>\r\n                    <input type=\"text\" class=\"travexForm-control\" id=\"Merchant\" name=\"Merchant\">\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Archivo</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                    <img src=\"" + __webpack_require__(37) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                    <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-check\">\r\n                <input class=\"form-check-input\" type=\"checkbox\" id=\"ckTicketManual\" name=\"Ticket\" value=\"true\">\r\n                <label class=\"form-check-label\" for=\"ckTicketManual\">\r\n                    Copiar Ticket Manual\r\n                </label>\r\n            </div>\r\n            <p><small class=\"text-muted\">Se puede realizar un Ticket como comprobante, copiando los datos ya capturados y se puede agregar un archivo al mismo Ticket. *** No subir XML y PDF.</small></p>\r\n            <button class=\"btn btn-secondary btn-block mb-4\" type=\"button\" id=\"btnCollapse\" data-toggle=\"collapse\" data-target=\"#copiaTicketManualContainer\" aria-expanded=\"false\" aria-controls=\"copiaTicketManualContainer\" disabled>\r\n                Mas Información\r\n            </button>\r\n            <div id=\"copiaTicketManualContainer\" class=\"collapse\">\r\n                <h4 class=\"subtitle\">CLASIFICAR</h4>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Concepto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\">\r\n                        {{> dropDownList Conceptos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Clasificacion</div>\r\n                    <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\">\r\n                        <option selected disabled>Seleccione un concepto</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Centro de Costos</div>\r\n                    <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\">\r\n                        {{> dropDownList CentroCostos}}\r\n                    </select>\r\n                </div>\r\n                <div class=\"travexForm-group\">\r\n                    <div class=\"travexForm-label\">Presupuesto</div>\r\n                    <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\">\r\n                        {{> dropDownList Presupuestos}}\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n            <button type=\"button\" class=\"btnVolver btn btn-block btn-secondary\">Volver</button>\r\n        </form>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 371 */
@@ -81693,7 +82109,7 @@
 /* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "{{#equal page 'altaTicket'}}\r\n<!--===================================\r\n=              ALTA TICKETS           =\r\n====================================-->\r\n<div class=\"cardTravex-hgroup\">\r\n    <div class=\"swiper-container swiper-main\">\r\n        <div class=\"cardTravex-title cardTravex-title-border shadow-sm\"> Alta Tickets</div>\r\n        <div class=\"swiper-scrollbar\"></div>\r\n        <div class=\"swiper-wrapper\">\r\n            <section id=\"altaTicket1\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup noShadow\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Tipo de Ticket</div>\r\n                            {{{TiposTickets}}}\r\n                            <hr>        \r\n                            <div id=\"classification-ticket\" class=\"travexForm-group\" hidden>\r\n                                <div class=\"travexForm-label\">Seleccionar Clasificación: </div>                    \r\n                                <select id=\"cbClassification\" class=\"travexForm-control\"></select> \r\n                            <hr>                         \r\n                            </div>\r\n                            {{{Agreements}}}\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"altaTicket2\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Descripción del Ticket</div>    \r\n                            <hr>                           \r\n                            <div class=\"col-12 text-center\">\r\n                                <div class=\"travexForm-label\">Clasificación: </div>\r\n                                <h3 id=\"classificationTicket\" class=\"text-primary font-weight-bold\"></h3>\r\n                            </div>                             \r\n                            <hr>\r\n                            <div class=\"col-12 text-center\">                                        \r\n                                <div class=\"travexForm-label\">SLA: </div>\r\n                                <div id=\"SLA\"></div>                                        \r\n                            </div>  \r\n                            <hr>\r\n                            <div id =\"noData\"hidden>\r\n                                <div id=\"noData\" class=\"card text-white bg-info m-3\" style=\"font-size: small;\" >\r\n                                    <div class=\"card-body\">\r\n                                        <p class=\"card-text text-light\">No se encontró ningun formulario con la clasificación correspondiente.</p>\r\n                                    </div>\r\n                                </div>\r\n                                <br>\r\n                            </div>\r\n\r\n                            <form id=\"frm-description\" class=\"travexForm frm-description noPadding\" data-id=\"sugerencia\" hidden>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Comentarios</div>\r\n                                    <textarea class=\"form-control\" rows=\"10\" name=\"Comentario\" placeholder=\"Escriba un comentario...\"></textarea>   \r\n                                </div>\r\n                                <div class=\"travexForm-group\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btnSiguiente col-12\" data-view=\"guardar\">Siguiente</button>\r\n                                </div>\r\n                            </form>\r\n                            <form id=\"frm-description\" class=\"travexForm frm-description noPadding\" data-id=\"error\" hidden>\r\n                                <div class= \"frm-content\"></div>                              \r\n                                <div class=\"travexForm-group\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btnSiguiente col-12\" data-view=\"guardar\">Siguiente</button>\r\n                                </div>\r\n                            </form>          \r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"altaTicket3\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Mandar Ticket</div>\r\n                            <form id=\"frm-ticket\" class=\"travexForm noPadding\">\r\n                                <input type=\"hidden\" name=\"status\" value=\"2\">\r\n                                <input type=\"hidden\" name=\"priority\" value=\"2\">\r\n                                <input type=\"hidden\" name=\"userassignid\" value=\"80\">\r\n                                <input type=\"hidden\" name=\"applicationid\" id=\"applicationid\" value=\"2\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-12 text-center\">\r\n                                        <hr>\r\n                                        <div class=\"travexForm-label\">Tipo: </div>\r\n                                        <h3 id=\"typeid\" class=\"text-primary font-weight-bold\"></h3>\r\n                                        <hr>\r\n                                        <div class=\"travexForm-label\">Clasificación: </div>\r\n                                        <h5 id=\"classificationid\" class=\"text-primary font-weight-bold\"></h5>\r\n                                    </div>\r\n                                </div>\r\n                                <hr>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Convenio</div>\r\n                                    <input type=\"text\" class=\"travexForm-control\" id=\"iAgreementName\" value=\"\" readonly>                                   \r\n                                </div>                              \r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Archivo</div>\r\n                                    <input type=\"file\" class=\"travexForm-control\" id=\"files\" name=\"files\" multiple>                       \r\n                                </div>                              \r\n                                <!--<div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Subir Archivo</div>\r\n                                    <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                                        <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                                        <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                                    </button>\r\n                                        <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                                        <img src=\"" + __webpack_require__(35) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                                    </button>\r\n                                        <div class=\"files64-prev\">\r\n                                            <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                                        </div>\r\n                                    </div>\r\n                                </div>-->\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Correo Notificación</div>\r\n                                    <input id=\"notificationMail\" type=\"text\" name=\"email\" class=\"travexForm-control\" value=\"\" required>\r\n                                </div>\r\n                                <div class=\"travexForm-group\">\r\n                                <div class=\"travexForm-group\">\r\n                                    <button type=\"submit\" id=\"btnAltaTicket\" class=\"btn btn-primary col-12\" data-view=\"guardar\">Alta Ticket</button>\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/equal}} {{#equal page 'verTickets'}}\r\n<!--===================================\r\n=              VER TICKETS            =\r\n====================================-->\r\n<div class=\"cardTravex-hgroup\">\r\n    <div class=\"swiper-container swiper-main\">\r\n        <div class=\"cardTravex-title cardTravex-title-border shadow-sm\">Ver Tickets</div>\r\n        <div class=\"swiper-scrollbar\"></div>\r\n        <div class=\"swiper-wrapper\">\r\n            <section id=\"verTickets1\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex h-100\">\r\n                    <div class=\"cardTravex-hgroup noShadow\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Buscar Ticket</div>\r\n                            <form id=\"frm-Budgets\" class=\"autorizarPresupuesto-filtros\" novalidate=\"novalidate\">\r\n                                <input type=\"hidden\" name=\"Type\" value=\"Date\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-6\">\r\n                                        <div class=\"autorizarPresupuesto-group\">\r\n                                            <img src=\"data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTEuNjM0IiBoZWlnaHQ9IjUxMS42MzQiIHZpZXdCb3g9IjAgMCA1MTEuNjM0IDUxMS42MzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGlkPSJDYXBhXzEiIG92ZXJmbG93PSJoaWRkZW4iPjxnPjxwYXRoIGQ9IiBNIDQ4Mi41MTMgODMuOTQyIEMgNDc1LjI4OCA3Ni43MDkgNDY2LjcxNiA3My4wOTIgNDU2LjgxOSA3My4wOTIgTCA0MjAuMjc4IDczLjA5MiBMIDQyMC4yNzggNDUuNjgyIEMgNDIwLjI3OCAzMy4xMjIgNDE1LjgwMSAyMi4zNjcgNDA2Ljg1NiAxMy40MjEgQyAzOTcuOTA2IDQuNDc1IDM4Ny4xNTcgMCAzNzQuNTkxIDAgTCAzNTYuMzIzIDAgQyAzNDMuNzU4IDAgMzMzLjAwNSA0LjQ3NSAzMjQuMDU5IDEzLjQyMiBDIDMxNS4xMSAyMi4zNjcgMzEwLjYzNyAzMy4xMjMgMzEwLjYzNyA0NS42ODMgTCAzMTAuNjM3IDczLjA5MyBMIDIwMS4wMDcgNzMuMDkzIEwgMjAxLjAwNyA0NS42ODMgQyAyMDEuMDA3IDMzLjEyMyAxOTYuNTMyIDIyLjM2OCAxODcuNTg1IDEzLjQyMiBDIDE3OC42NCA0LjQ3NSAxNjcuODg2IDAgMTU1LjMyMSAwIEwgMTM3LjA1IDAgQyAxMjQuNDg4IDAgMTEzLjczMyA0LjQ3NSAxMDQuNzg2IDEzLjQyMiBDIDk1Ljg0MSAyMi4zNjcgOTEuMzY1IDMzLjEyMyA5MS4zNjUgNDUuNjgzIEwgOTEuMzY1IDczLjA5MyBMIDU0LjgyMyA3My4wOTMgQyA0NC45MjMgNzMuMDkzIDM2LjM1OSA3Ni43MSAyOS4xMjYgODMuOTQzIEMgMjEuODkzIDkxLjE3NSAxOC4yNzYgOTkuNzQzIDE4LjI3NiAxMDkuNjQgTCAxOC4yNzYgNDc1LjA5MyBDIDE4LjI3NiA0ODQuOTgzIDIxLjg5MyA0OTMuNTQ5IDI5LjEyNiA1MDAuNzg2IEMgMzYuMzU4IDUwOC4wMTcgNDQuOTIyIDUxMS42MzUgNTQuODIzIDUxMS42MzUgTCA0NTYuODEyIDUxMS42MzUgQyA0NjYuNzA5IDUxMS42MzUgNDc1LjI4MiA1MDguMDE4IDQ4Mi41MDYgNTAwLjc4NiBDIDQ4OS43NCA0OTMuNTUyIDQ5My4zNTggNDg0Ljk4MiA0OTMuMzU4IDQ3NS4wOTMgTCA0OTMuMzU4IDEwOS42MzkgQyA0OTMuMzU3IDk5LjczOSA0ODkuNzQzIDkxLjE3NSA0ODIuNTEzIDgzLjk0MiBaIE0gMzQ3LjE4NyA0NS42ODYgQyAzNDcuMTg3IDQzLjAxOSAzNDguMDM2IDQwLjgyOCAzNDkuNzQ3IDM5LjExOSBDIDM1MS40NTggMzcuNDA4IDM1My42NDggMzYuNTUxIDM1Ni4zMTcgMzYuNTUxIEwgMzc0LjU4NSAzNi41NTEgQyAzNzcuMjU1IDM2LjU1MSAzNzkuNDM4IDM3LjQwNSAzODEuMTU1IDM5LjExOSBDIDM4Mi44NjcgNDAuODMxIDM4My43MjIgNDMuMDIyIDM4My43MjIgNDUuNjg2IEwgMzgzLjcyMiAxMjcuOTEgQyAzODMuNzIyIDEzMC41NzYgMzgyLjg2NyAxMzIuNzYzIDM4MS4xNTUgMTM0LjQ3NyBDIDM3OS40MzcgMTM2LjE4NiAzNzcuMjU1IDEzNy4wNDUgMzc0LjU4NSAxMzcuMDQ1IEwgMzU2LjMxNyAxMzcuMDQ1IEMgMzUzLjY0OCAxMzcuMDQ1IDM1MS40NTggMTM2LjE5IDM0OS43NDcgMTM0LjQ3NyBDIDM0OC4wMzYgMTMyLjc2MiAzNDcuMTg3IDEzMC41NzYgMzQ3LjE4NyAxMjcuOTEgTCAzNDcuMTg3IDQ1LjY4NiBaIE0gMTI3LjkxNSA0NS42ODYgQyAxMjcuOTE1IDQzLjAxOSAxMjguNzcgNDAuODI4IDEzMC40ODMgMzkuMTE5IEMgMTMyLjE5NyAzNy40MDggMTM0LjM4NCAzNi41NTEgMTM3LjA1IDM2LjU1MSBMIDE1NS4zMjEgMzYuNTUxIEMgMTU3Ljk4OCAzNi41NTEgMTYwLjE3OSAzNy40MDUgMTYxLjg4OCAzOS4xMTkgQyAxNjMuNTk5IDQwLjgzMSAxNjQuNDU4IDQzLjAyMiAxNjQuNDU4IDQ1LjY4NiBMIDE2NC40NTggMTI3LjkxIEMgMTY0LjQ1OCAxMzAuNTc2IDE2My42MDMgMTMyLjc2NiAxNjEuODg4IDEzNC40NzcgQyAxNjAuMTc1IDEzNi4xODYgMTU3Ljk4OCAxMzcuMDQ1IDE1NS4zMjEgMTM3LjA0NSBMIDEzNy4wNSAxMzcuMDQ1IEMgMTM0LjM4NCAxMzcuMDQ1IDEzMi4xOTQgMTM2LjE5IDEzMC40ODMgMTM0LjQ3NyBDIDEyOC43NzQgMTMyLjc2MiAxMjcuOTE1IDEzMC41NzYgMTI3LjkxNSAxMjcuOTEgTCAxMjcuOTE1IDQ1LjY4NiBaIE0gNDU2LjgxMiA0NzUuMDg4IEwgNTQuODIzIDQ3NS4wODggTCA1NC44MjMgMTgyLjcyOCBMIDQ1Ni44MTIgMTgyLjcyOCBMIDQ1Ni44MTIgNDc1LjA4OCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMSIgZmlsbD0iIzAwMUE3MCIgZmlsbC1vcGFjaXR5PSIxIi8+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg==\">\r\n                                            <label>Inicio</label>\r\n                                            <input type=\"date\" name=\"StartDate\" id=\"StartDate\" class=\"travexForm-control\" value=\"2020-03-23\" required=\"\">\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"col-6\">\r\n                                        <div class=\"autorizarPresupuesto-group\">\r\n                                            <img src=\"data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTEuNjM0IiBoZWlnaHQ9IjUxMS42MzQiIHZpZXdCb3g9IjAgMCA1MTEuNjM0IDUxMS42MzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGlkPSJDYXBhXzEiIG92ZXJmbG93PSJoaWRkZW4iPjxnPjxwYXRoIGQ9IiBNIDQ4Mi41MTMgODMuOTQyIEMgNDc1LjI4OCA3Ni43MDkgNDY2LjcxNiA3My4wOTIgNDU2LjgxOSA3My4wOTIgTCA0MjAuMjc4IDczLjA5MiBMIDQyMC4yNzggNDUuNjgyIEMgNDIwLjI3OCAzMy4xMjIgNDE1LjgwMSAyMi4zNjcgNDA2Ljg1NiAxMy40MjEgQyAzOTcuOTA2IDQuNDc1IDM4Ny4xNTcgMCAzNzQuNTkxIDAgTCAzNTYuMzIzIDAgQyAzNDMuNzU4IDAgMzMzLjAwNSA0LjQ3NSAzMjQuMDU5IDEzLjQyMiBDIDMxNS4xMSAyMi4zNjcgMzEwLjYzNyAzMy4xMjMgMzEwLjYzNyA0NS42ODMgTCAzMTAuNjM3IDczLjA5MyBMIDIwMS4wMDcgNzMuMDkzIEwgMjAxLjAwNyA0NS42ODMgQyAyMDEuMDA3IDMzLjEyMyAxOTYuNTMyIDIyLjM2OCAxODcuNTg1IDEzLjQyMiBDIDE3OC42NCA0LjQ3NSAxNjcuODg2IDAgMTU1LjMyMSAwIEwgMTM3LjA1IDAgQyAxMjQuNDg4IDAgMTEzLjczMyA0LjQ3NSAxMDQuNzg2IDEzLjQyMiBDIDk1Ljg0MSAyMi4zNjcgOTEuMzY1IDMzLjEyMyA5MS4zNjUgNDUuNjgzIEwgOTEuMzY1IDczLjA5MyBMIDU0LjgyMyA3My4wOTMgQyA0NC45MjMgNzMuMDkzIDM2LjM1OSA3Ni43MSAyOS4xMjYgODMuOTQzIEMgMjEuODkzIDkxLjE3NSAxOC4yNzYgOTkuNzQzIDE4LjI3NiAxMDkuNjQgTCAxOC4yNzYgNDc1LjA5MyBDIDE4LjI3NiA0ODQuOTgzIDIxLjg5MyA0OTMuNTQ5IDI5LjEyNiA1MDAuNzg2IEMgMzYuMzU4IDUwOC4wMTcgNDQuOTIyIDUxMS42MzUgNTQuODIzIDUxMS42MzUgTCA0NTYuODEyIDUxMS42MzUgQyA0NjYuNzA5IDUxMS42MzUgNDc1LjI4MiA1MDguMDE4IDQ4Mi41MDYgNTAwLjc4NiBDIDQ4OS43NCA0OTMuNTUyIDQ5My4zNTggNDg0Ljk4MiA0OTMuMzU4IDQ3NS4wOTMgTCA0OTMuMzU4IDEwOS42MzkgQyA0OTMuMzU3IDk5LjczOSA0ODkuNzQzIDkxLjE3NSA0ODIuNTEzIDgzLjk0MiBaIE0gMzQ3LjE4NyA0NS42ODYgQyAzNDcuMTg3IDQzLjAxOSAzNDguMDM2IDQwLjgyOCAzNDkuNzQ3IDM5LjExOSBDIDM1MS40NTggMzcuNDA4IDM1My42NDggMzYuNTUxIDM1Ni4zMTcgMzYuNTUxIEwgMzc0LjU4NSAzNi41NTEgQyAzNzcuMjU1IDM2LjU1MSAzNzkuNDM4IDM3LjQwNSAzODEuMTU1IDM5LjExOSBDIDM4Mi44NjcgNDAuODMxIDM4My43MjIgNDMuMDIyIDM4My43MjIgNDUuNjg2IEwgMzgzLjcyMiAxMjcuOTEgQyAzODMuNzIyIDEzMC41NzYgMzgyLjg2NyAxMzIuNzYzIDM4MS4xNTUgMTM0LjQ3NyBDIDM3OS40MzcgMTM2LjE4NiAzNzcuMjU1IDEzNy4wNDUgMzc0LjU4NSAxMzcuMDQ1IEwgMzU2LjMxNyAxMzcuMDQ1IEMgMzUzLjY0OCAxMzcuMDQ1IDM1MS40NTggMTM2LjE5IDM0OS43NDcgMTM0LjQ3NyBDIDM0OC4wMzYgMTMyLjc2MiAzNDcuMTg3IDEzMC41NzYgMzQ3LjE4NyAxMjcuOTEgTCAzNDcuMTg3IDQ1LjY4NiBaIE0gMTI3LjkxNSA0NS42ODYgQyAxMjcuOTE1IDQzLjAxOSAxMjguNzcgNDAuODI4IDEzMC40ODMgMzkuMTE5IEMgMTMyLjE5NyAzNy40MDggMTM0LjM4NCAzNi41NTEgMTM3LjA1IDM2LjU1MSBMIDE1NS4zMjEgMzYuNTUxIEMgMTU3Ljk4OCAzNi41NTEgMTYwLjE3OSAzNy40MDUgMTYxLjg4OCAzOS4xMTkgQyAxNjMuNTk5IDQwLjgzMSAxNjQuNDU4IDQzLjAyMiAxNjQuNDU4IDQ1LjY4NiBMIDE2NC40NTggMTI3LjkxIEMgMTY0LjQ1OCAxMzAuNTc2IDE2My42MDMgMTMyLjc2NiAxNjEuODg4IDEzNC40NzcgQyAxNjAuMTc1IDEzNi4xODYgMTU3Ljk4OCAxMzcuMDQ1IDE1NS4zMjEgMTM3LjA0NSBMIDEzNy4wNSAxMzcuMDQ1IEMgMTM0LjM4NCAxMzcuMDQ1IDEzMi4xOTQgMTM2LjE5IDEzMC40ODMgMTM0LjQ3NyBDIDEyOC43NzQgMTMyLjc2MiAxMjcuOTE1IDEzMC41NzYgMTI3LjkxNSAxMjcuOTEgTCAxMjcuOTE1IDQ1LjY4NiBaIE0gNDU2LjgxMiA0NzUuMDg4IEwgNTQuODIzIDQ3NS4wODggTCA1NC44MjMgMTgyLjcyOCBMIDQ1Ni44MTIgMTgyLjcyOCBMIDQ1Ni44MTIgNDc1LjA4OCBaIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMSIgZmlsbD0iIzAwMUE3MCIgZmlsbC1vcGFjaXR5PSIxIi8+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg==\">\r\n                                            <label>Fin</label>\r\n                                            <input type=\"date\" name=\"EndDate\" id=\"EndDate\" class=\"travexForm-control\" value=\"2020-03-23\" required=\"\">\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"m-4 text-center\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btn-block\">Buscar</button>\r\n                                </div>\r\n                            </form>\r\n                            <div id=\"ticketsContainer\"></div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"verTickets2\" class=\"swiper-slide\">\r\n                <div id=\"ticketDescription\" class=\"h-100\">\r\n                    <div class=\"cardTravex  searchContainer\">\r\n                        <div class=\"cardTravex-hgroup\">\r\n                            <h3 class=\"cardTravex-title\">Buscar Ticket</h3>\r\n                        </div>\r\n                        <form id=\"frm-getBudget\" class=\"travexForm\">\r\n                            <input type=\"hidden\" name=\"Type\" value=\"Ticket\">\r\n                            <div class=\"container-fluid\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-12\">\r\n                                        <img class=\"searchImg w-25 p-3\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABZCAMAAACNFxOjAAAC/VBMVEVMaXEAAP8AAAAA//8Af38AAH8Af/8LVaMtP38ZP78oWpkqVZkkSJEfP58cVKkcVI0cOJQZTJkfRaIjRYsfRI8VVaofTJIgTJskSKMfT58bS58bSpYZTZwfRp0dSJkfSp8eR5ocSZkeSJQcSpweSZgYRpUeSZkdSJgcSZYaR5UaSZofSZodRpocR5gdS5gdR5gdSpocSJkeSZkbR5gcSZodSJsdS5odSJkbR5ccSJkcSJgdSJgcSJkcSZkcSJgcSJgdR5kdSpccSZkdR5geR5gcR5cdSZkbSJYdSpkdSZscR5ccSpocRpgdSJgbSZocSJkcSZcdSpgdSZocR5gcSZocSJgbRpcdSJkbSJccR5cdSpsdSJgcR5gcSZkcSJkbSJgcSJgdSZkcSJgcSJkcSJkdSZkcSJgcSZkcSZgcSJgdSZsdSZgdSZgcSZkcSJgdSZodSZkdR5kbSJgdSJgcSZkcSZkcR5cdSJgcSJkdR5gcSZocSZgcSJkcSZccR5ccSJgcSZkcSZkcSZkcSJgcSJgdSZgcSJkcSZkcSJgdSZodSZocSJkcSJkcSJkdSZkcSJkcSZkcSJgcSZodSpwcSJkdSZodSJkcSJgcSZgcSJkcSZocSJccSZgcSZkdSZkcSJkcSpocSZgcSZsdSJgdSJodSZkdR5gdSJgcSJkeSpwcSZocSJgcSZkdSJkcSJgdSZscSZgdSJkcSZscSZkcSJgcSZgdSZodSZgdSZocSZgcSZocSJkcSZocSZkdSZgdSZscSJgcSJgdSZkcSJocSZscSZocSZgcSJkdSZsdSpocSZkdSJgdSZscSJkdSpodSZodSJgdSpsdSJkdSZscSZgdSZkcSpodSpscSJkcSZkcSJgdSZscSZkdSpodSZgdSJgcSZkdS5wdSZocSJkdSZsdSZodSZkdSpweS5wdSZkeS50dSZodSpseS54dSpoeTJ8dSpweSpweTJ4eS5weSpsdS5weTKAdS50dS5seSp0eS58eTJ0eTaAdSpkfTJ/GVWPSAAAA6XRSTlMAAQEBAgICAwQEBQYHCAkJCQoLCwwMDQ4OEBESExUWGBkbHB8gICEjJCYmKCosLzEzNTc5Ojw9PkBBQ0ZISUtMTk9QUlNUVVVWV1lZWlxcXV5fYGFiZGVmZmdoaWpsbW9wcXN1eHl6e31/gIGChYaGiImLjI2Pj5CTlJWWmJmZmpyfoKGlqKmrrq6vsbO0tbe5u7y9vsDBwcPExcbHx8rMzM7Oz9DR0dPU1NXX2Nrd3d3e3uDh4eLj5Ofn6Onq6uvr7O3u7vDw8PDx8vLz8/T09fX29vf3+Pj5+fr6+/v7/Pz8/f39/v7+/vROoXAAAAgMSURBVHjarVkJVBVVGB5KRDFR1MIVtFxwN5dQRC0UUsul1BRFiSWURFOTRLEEhdQQlyJFc6mMKBWNFg1zxQ1MQQk1FDdwe3f2eSwu1enNnXfvzOPNgjw+zuFw7/zzzX//7f73QjwV6nfxnRG7fk/2+ZILf+z5fEnIYO9GRB3AO3zV7jIWcAxpMplIhgOsKXNNZA8HWdsGrMthWLPIKYPkWerUhjGetaf1CNpCAcrKastN8WB7aNva0TYYuo0BJm0ALj3wudrYNuEesFHWXu1H5MqeT83rt1uAtPrUdNbIp6N9LuoCMNUE/K35LZ+Ct0XsQ8ZUMzDUp61qzNsyyc66FGAr/7H8sICyM0dKTQOvSTxrq5TZzGVv+Pj9sOlhs+LW/saZzZQNM0ipmTVcYnjSRqPL6fMGeDV7Rnrq7tl39jcFrM2KhMQmNSF+V5lopPnmqoCm1SRchyYVKY3FlM9xNub1zeEUpuW3Dm2sIuTqk3q3XMF8aZghb/sMoEiukzObagVkyFGl4N7ORsQLBVmc3ueH55t6+42bNH5Y92ZOaGZQukIUJLgaGCJf9njFTpSwHUYm7L180zJV9veBxDFIuS4bZZ3J0qG6vM3W0LK+Gd7SZOvIbzmaImE9JikAdkW3lx68uFmWBtua6xG/VoqdzWX1glNOARmPbNMbVGWNlxbu/R1+Qt6dpMPr9CUWLM+THN1iTnGFXR5X3FrqAZ8OOEHhBW7SSROfYlwiqqKhl1ommim1CkF/5gXfCL2Dl3hbO+TqxT/By93RQuJ9rFE82XWtYCKuB/iV1ZrEnTN5pNHlEXBm3gPNokwvc4aLvIokqGMvahEHciR6ay3MtxHYl/agrk+Bq0wUsPuCtYiX0UjmHtwYPNP1qj33G9RwyDkGWefTeuq8jTMppE2mWK6eiazS3Z2ERTD0NyJ1QIaGLboWk+jbC6DCuy2BpqfyAZiDURRaZ+Er6sRj75EoP2GNGAUMttL7YaJY76tYn8nqxNFmpMrebuJ4ldF+KqwRLeb2K4NcvkCdOIlFL2xwtwxf+JU3IKayRVs4YwX4z1R5nT9HxOwKcdzvNGUyAPARBefT6EPpqsTN07B7PxDHo2+QhsSw8AQjhcj9qsTtdgD05XC495HGxFFQA0x8WpXYayewPjfNEMfvmU2GxPNhrcXdQokqsec3iJh8VxxH8MYazxUFh1eicZF6k41NUR4JTfevMXGEKDgOm+KY+r67CTmPjhHH/kWG/Rs9WhQMQ8RMlnocpyCBypVi29MjxzDcSvuI7y3G4bZNnTgeoBVubmMZNtxllCB8priruqTy6L1EdeIwBn35SG9x/JFRSrPxDUTfnEDvPY5SJx5SRqJPQ9v53NP3HnMNivndwtvDKI3u6iwmThLHz68TdInNO+FWvRTYLtQeLpvMKG5yYEsy8gpjnNBeuNmjv2pDqCMKpxAXAb+0itXjTX1BFJr4AAffJ4QGBuZjW2TA9r/HfrN2SBztC/f/7XiZN17VIm6N65vp9ntwZlTBQ61aXCq1VFMoPPNLM0ILMzksdbg7nJl2RT1Lyq9Fwucdf8JrevwhoYmXjmMakNwYdnPBZ2g1+14LawQ7+xU8VuXky4Q2FgnyMTzaSeqY0wFjdwL7wV+Sny77QFjRUIe418Fy/PZfE6xdcHROleJ0Z2mQz8RYe2//XNnChb6EHuY8kNuGU2Osk51m7zhDswDwALD0n+kLulnnhx2ukBVOMDjb7JUXx+cF4U5/UEhcctr2tJSlYX4euNU7ysvOPNid0Me4O6Ssc/F8D/mJm0cbD3d56B5VqDiQPQg3PPcvB8r+OtVHQ67fGuWpmk520+Fs7ir+7pBBK+MqJ7aLiminDw4pa2rFL111eHt/ESHpcoi3OfafXjK4le2lg+/C41Bd2Rl6B9M39ldmSyE+9hxnE7Vs4bbFo7u6u7rUc3F16xy4KO2sYBPZzN1gnXuw2JJHJrC1LRxMvkhVO8qAssLD36dt2LjzUGEZoG2fUlfCdcyQ+oQUfbCkPhwGF1RVTzaSoXiepyi79oi7HtpA84birYPAeoyIlGYCDtGmmgGc0j44tou5xeFlTZTm+n9tqRDGIIU92pnsvk5xEfbwrDWPPeOvGd9jmW+v1ouzt07yCpPlT0YZ+y2g9HdpYd/kerrZNr6gQuHki+FW6Q6zjlQBbW1BXoy3JmWnZ6UCkVuuYKaWeaLHc3cBoHppagY/x+lcP078car1j3xOWcc39kUSXaakXKUsBZORDWAZcle3hOrcILeLuyP8PV36e8I5pT1B3ttYqlG3oJXp2TfYSlYQBMvvm8d2JUf00LsP67OZJy0WtYZhUD6vcMv1QNvtu0/gjPdj45cvXzwndFR/L0IXQ36noUWLrFHwzmVZ5/tzVW8dXFwIYww8CKy+umTNiWkXkQfp9a2J2sJTvl7jCiSDOgeXcNLEH7W/2n92Hi1GEdLZ6qrpUGfyylgH/geRVaEsfHlvSsUo5DplMUScA//mCLLtfB8WWCtEyEUKbG1N1B4ruWqtWO7rks5hd0/2JxzAT9VrYsXZ0dKT8BDCERTZt6W5w4k6QInKRcyJAMJxHCFVmHNfIxzGZrUSzh/zd3KUOFr11PJfksP/qBuYz6hsuPt6Eo7CPZm23xWKRxCOw+eCnZXpRURdYOZ9pvq9bRuiLuAWY6ZsOr+tHYm6QdOoCzRWGpSufomoMwxaWyxQpNgCc19PbUjUIZr7ztueU3L+h4SRHYi6wf8C9CpKuUwYkwAAAABJRU5ErkJggg==\">\r\n                                    </div>\r\n                                    <div class=\"col-12\">\r\n                                        <input type=\"number\" name=\"TicketId\" placeholder=\"No. Ticket\" class=\"travexForm-control\">\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <button class=\"btn btn-primary\">Consultar</button>\r\n                        </form>\r\n                        <div id=\"ticketsContainer2\"></div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/equal}} {{#equal page 'perfilHelpDesk'}}\r\n<!--===================================\r\n=            PERFIL TICKETS           =\r\n====================================-->\r\n<div class=\"cardTravex h-100\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <div id=\"swiperTypeTicket\" class=\"swiper-container swiper-main\">\r\n            <div class=\"cardTravex-title cardTravex-title-border shadow-sm\">Perfil HelpDesk</div>\r\n            <div class=\"cardTravex-partial\">\r\n                <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n                    <div class=\"row\">\r\n                        <hr>\r\n                        <div class=\"col-12 text-center\">\r\n                            <h3 id=\"typeTicket\" class=\"text-primary font-weight-bold\">Help DESK</h3>\r\n                        </div>\r\n                    </div>\r\n                    <hr>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Nombre</div>\r\n                        <input type=\"text\" class=\"travexForm-control\" id=\"nameProfile\" value=\"\" name=\"nameProfile\">\r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Correo Notificación</div>\r\n                        <input id=\"notificationMail\" type=\"text\" class=\"travexForm-control\" value=\"\" \r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Celular</div>\r\n                        <input type=\"text\" class=\"travexForm-control\" id=\"cellProfile\" value=\"\" name=\"celProfile\">\r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <button type=\"submit\" class=\"btn-primary btnSiguiente col-12\" data-view=\"guardar\">Guardar Perfil</button>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    </section>\r\n\r\n</div>\r\n</div>\r\n{{/equal}}";
+	module.exports = "{{#equal page 'altaTicket'}}\r\n<!--===================================\r\n=              ALTA TICKETS           =\r\n====================================-->\r\n<div class=\"cardTravex-hgroup\">\r\n    <div class=\"swiper-container swiper-main\">\r\n        <div class=\"cardTravex-title cardTravex-title-border shadow-sm\"> Alta Tickets</div>\r\n        <div class=\"swiper-scrollbar\"></div>\r\n        <div class=\"swiper-wrapper\">\r\n            <section id=\"altaTicket1\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup noShadow\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Tipo de Ticket</div>\r\n                            {{{TiposTickets}}}\r\n                            <hr>\r\n                            <div id=\"classification-ticket\" class=\"travexForm-group\" hidden>\r\n                                <div class=\"travexForm-label\">Seleccionar Clasificación: </div>\r\n                                <select id=\"cbClassification\" class=\"travexForm-control\"></select>\r\n                                <hr>\r\n                            </div>\r\n                            {{{Agreements}}}\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"altaTicket2\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Descripción del Ticket</div>\r\n                            <hr>\r\n                            <div class=\"col-12 text-center\">\r\n                                <div class=\"travexForm-label\">Clasificación: </div>\r\n                                <h3 id=\"classificationTicket\" class=\"text-primary font-weight-bold\"></h3>\r\n                            </div>\r\n                            <hr>\r\n                            <div class=\"col-12 text-center\">\r\n                                <div class=\"travexForm-label\">SLA: </div>\r\n                                <div id=\"SLA\"></div>\r\n                            </div>\r\n                            <hr>\r\n                            <div id=\"noData\" hidden>\r\n                                <div id=\"noData\" class=\"card text-white bg-info m-3\" style=\"font-size: small;\">\r\n                                    <div class=\"card-body\">\r\n                                        <p class=\"card-text text-light\">No se encontró ningun formulario con la\r\n                                            clasificación correspondiente.</p>\r\n                                    </div>\r\n                                </div>\r\n                                <br>\r\n                            </div>\r\n\r\n                            <form id=\"frm-description\" class=\"travexForm frm-description noPadding\" data-id=\"sugerencia\"\r\n                                hidden>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Comentarios</div>\r\n                                    <textarea class=\"form-control\" rows=\"10\" name=\"Comentario\"\r\n                                        placeholder=\"Escriba un comentario...\"></textarea>\r\n                                </div>\r\n                                <div class=\"travexForm-group\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btnSiguiente col-12\"\r\n                                        data-view=\"guardar\">Siguiente</button>\r\n                                </div>\r\n                            </form>\r\n                            <form id=\"frm-description\" class=\"travexForm frm-description noPadding\" data-id=\"error\"\r\n                                hidden>\r\n                                <div class=\"frm-content\"></div>\r\n                                <div class=\"travexForm-group\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btnSiguiente col-12\"\r\n                                        data-view=\"guardar\">Siguiente</button>\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"altaTicket3\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup\">\r\n                        <div class=\"cardTravex-partial\">\r\n                            <div class=\"cardTravex-title\">Mandar Ticket</div>\r\n                            <form id=\"frm-ticket\" class=\"travexForm noPadding\">\r\n                                <input type=\"hidden\" name=\"status\" value=\"2\">\r\n                                <input type=\"hidden\" name=\"priority\" value=\"2\">\r\n                                <input type=\"hidden\" name=\"userassignid\" value=\"80\">\r\n                                <input type=\"hidden\" name=\"applicationid\" id=\"applicationid\" value=\"2\">\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-12 text-center\">\r\n                                        <hr>\r\n                                        <div class=\"travexForm-label\">Tipo: </div>\r\n                                        <h3 id=\"typeid\" class=\"text-primary font-weight-bold\"></h3>\r\n                                        <hr>\r\n                                        <div class=\"travexForm-label\">Clasificación: </div>\r\n                                        <h5 id=\"classificationid\" class=\"text-primary font-weight-bold\"></h5>\r\n                                    </div>\r\n                                </div>\r\n                                <hr>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Convenio</div>\r\n                                    <input type=\"text\" class=\"travexForm-control\" id=\"iAgreementName\" value=\"\" readonly>\r\n                                </div>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Archivo</div>\r\n                                    <input type=\"file\" class=\"travexForm-control\" id=\"files\" name=\"files\" multiple>\r\n                                </div>\r\n                                <!--<div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Subir Archivo</div>\r\n                                    <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                                        <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                                        <img src=\"" + __webpack_require__(37) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                                    </button>\r\n                                        <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                                        <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n                                    </button>\r\n                                        <div class=\"files64-prev\">\r\n                                            <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                                        </div>\r\n                                    </div>\r\n                                </div>-->\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-label\">Correo Notificación</div>\r\n                                    <input id=\"notificationMail\" type=\"text\" name=\"email\" class=\"travexForm-control\"\r\n                                        value=\"\" required>\r\n                                </div>\r\n                                <div class=\"travexForm-group\">\r\n                                    <div class=\"travexForm-group\">\r\n                                        <button type=\"submit\" id=\"btnAltaTicket\" class=\"btn btn-primary col-12\"\r\n                                            data-view=\"guardar\">Alta Ticket</button>\r\n                                    </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/equal}} {{#equal page 'verTickets'}}\r\n<!--===================================\r\n=              VER TICKETS            =\r\n====================================-->\r\n<div class=\"cardTravex-hgroup\">\r\n    <div class=\"swiper-container swiper-main\">\r\n        <div class=\"cardTravex-title cardTravex-title-border shadow-sm\">Ver Tickets</div>\r\n        <div class=\"swiper-scrollbar\"></div>\r\n        <div class=\"swiper-wrapper\">\r\n            <section id=\"verTickets1\" class=\"swiper-slide\">\r\n                <div class=\"cardTravex w-100\">\r\n                    <div class=\"cardTravex-hgroup noShadow\">\r\n                        <div class=\"cardTravex-partial formTravex\">\r\n                            <div class=\"cardTravex-title\">Buscar Ticket</div>\r\n                            <form id=\"frm-ticketsReport\" class=\"formTravex-filtros\" novalidate=\"novalidate\">\r\n                                <input id=\"UserId\" type=\"hidden\" name=\"UserId\" value=\"\">\r\n                                <input type=\"hidden\" name=\"applicationId\" value=\"2\">\r\n                                <div class=\"formTravex-group\">\r\n                                    <img src=\"" + __webpack_require__(35) + "\">\r\n                                    <div class=\"travexForm-label\">Inicio</div>\r\n                                    <input type=\"date\" name=\"DateStart\" id=\"StartDate\" class=\"travexForm-control\"\r\n                                        value=\"{{fecha}}\" required=\"\">\r\n                                </div>\r\n                                <div class=\"formTravex-group\">\r\n                                    <img src=\"" + __webpack_require__(35) + "\">\r\n                                    <div class=\"formTravex-label\">Fin</div>\r\n                                    <input type=\"date\" name=\"DateEnd\" id=\"EndDate\" class=\"travexForm-control\"\r\n                                        value=\"{{fecha}}\" required=\"\">\r\n                                </div>\r\n                                <br>\r\n                                <div class=\"formTravex-group text-cceenter\">\r\n                                    <div class=\"formTravex-label\">Seleccione Estatus</div>\r\n                                    <select id=\"cbStatus\" class=\"travexForm-control\"></select>\r\n                                </div>\r\n                                <input id=\"StatusId\" type=\"hidden\" name=\"StatusId\" value=\"\">\r\n                                <div class=\"formTravex-group m-4 text-center\">\r\n                                    <button type=\"submit\" class=\"btn btn-primary btn-block\">Buscar</button>\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </section>\r\n            <section id=\"verTickets2\" class=\"swiper-slide\">\r\n                <div id=\"ticketsContainer\" class=\"cardTravex  searchContainer\"></div>\r\n            </section>\r\n        </div>\r\n    </div>\r\n</div>\r\n{{/equal}} {{#equal page 'perfilHelpDesk'}}\r\n<!--===================================\r\n=            PERFIL TICKETS           =\r\n====================================-->\r\n<div class=\"cardTravex h-100\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <div id=\"swiperTypeTicket\" class=\"swiper-container swiper-main\">\r\n            <div class=\"cardTravex-title cardTravex-title-border shadow-sm\">Perfil HelpDesk</div>\r\n            <div class=\"cardTravex-partial\">\r\n                <form id=\"frm-updateProfile\" class=\"travexForm noPadding\" action=\"\">\r\n                    <input type=\"hidden\" class=\"form-control\" name=\"ApplicationId\" value=\"2\">\r\n                    <input type=\"hidden\" class=\"form-control\" name=\"RoleId\" value=\"68\">\r\n                    <input type=\"hidden\" class=\"form-control\" name=\"TypeId\" value=\"2\">\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Nombre</div>\r\n                        <input type=\"text\" class=\"travexForm-control\" id=\"nameProfile\" value=\"\" name=\"Names\" required>\r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Correo Notificación</div>\r\n                        <input id=\"notificationMail\" type=\"text\" class=\"travexForm-control\" value=\"\" name=\"Email\"\r\n                            required>\r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Celular</div>\r\n                        <input type=\"text\" class=\"travexForm-control\" id=\"cellProfile\" value=\"\" name=\"Cellphone\"\r\n                            required>\r\n                    </div>\r\n                    <div class=\"travexForm-group\">\r\n                        <button type=\"submit\" class=\"btn btn-primary btnSiguiente col-12\">Guardar Perfil</button>\r\n                    </div>\r\n                </form>\r\n                <form id=\"frm-verifyCode\" class=\"travexForm noPadding\" action=\"\" hidden>\r\n                    <hr>\r\n                    <div class=\"travexForm-group text-center\">\r\n                        <div class=\"travexForm-label\">Código Verificación</div>\r\n                        <h4 id=\"verifyCode\" class=\"text-primary\"></h4>\r\n                    </div>\r\n                    <hr>\r\n                    <div class=\"travexForm-group\">\r\n                        <div class=\"travexForm-label\">Confirma Código</div>\r\n                        <input type=\"number\" name=\"Code\" id=\"inputCode\" class=\"form-control\" required=\"\">\r\n                    </div>\r\n                    <button type=\"submit\" class=\"btn btn-primary\">Confirmar</button>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    </section>\r\n\r\n</div>\r\n</div>\r\n{{/equal}}";
 
 /***/ }),
 /* 378 */
@@ -81735,7 +82151,7 @@
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--===============================================\r\n=            POR FACTURAR - CLASIFICAR            =\r\n================================================-->\r\n<section id=\"clasificarContainer\">\r\n    <h3 class=\"text-muted text-center\">Clasificar</h3>\r\n    <form id=\"frm-setCatSubInvBalance\" class=\"travexForm\">\r\n        <input type=\"hidden\" name=\"RelationId\" value=\"{{RelationId}}\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Concepto</div>\r\n            <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" tabindex=\"1\">\r\n                {{> dropDownList Clasificar.Conceptos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Clasificacion</div>\r\n            <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" tabindex=\"2\">\r\n                <option selected disabled>Seleccione un concepto</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Centro de Costos</div>\r\n            <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\" tabindex=\"3\">\r\n                {{> dropDownList Clasificar.CentroCostos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Presupuesto</div>\r\n            <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\" tabindex=\"4\">\r\n                <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                {{#each Clasificar.Presupuestos}}\r\n                    <option value=\"{{Value}}\" {{Selected}}>{{Text}}</option>\r\n                    {{else}}\r\n                        <option value=\"\">N/A</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Subir Imagen</div>\r\n        </div>\r\n        <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(35) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <div class=\"files64-prev\">\r\n                <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"pretty p-default p-thick p-pulse\">\r\n                <input type=\"checkbox\" id=\"ck-asistente\" tabindex=\"6\">\r\n                <div class=\"state p-warning-o\">\r\n                    <label class=\"travexForm-label\">Copia a Asistente</label>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Comentarios</div>\r\n            <textarea name=\"Comments\" class=\"travexForm-control\" tabindex=\"5\"></textarea>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-secondary\" data-relation=\"{{RelationId}}\" data-type=\"regresar\">Regresar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-danger\" data-relation=\"{{RelationId}}\" data-type=\"cancelar\">Cancelar</button>\r\n    </form>\r\n</section>";
+	module.exports = "<!--===============================================\r\n=            POR FACTURAR - CLASIFICAR            =\r\n================================================-->\r\n<section id=\"clasificarContainer\">\r\n    <h3 class=\"text-muted text-center\">Clasificar</h3>\r\n    <form id=\"frm-setCatSubInvBalance\" class=\"travexForm\">\r\n        <input type=\"hidden\" name=\"RelationId\" value=\"{{RelationId}}\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Concepto</div>\r\n            <select class=\"travexForm-control\" id=\"cbConceptos\" name=\"CatalogId\" tabindex=\"1\">\r\n                {{> dropDownList Clasificar.Conceptos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Clasificacion</div>\r\n            <select class=\"travexForm-control\" id=\"cbClasificacion\" name=\"SubCatalogId\" tabindex=\"2\">\r\n                <option selected disabled>Seleccione un concepto</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Centro de Costos</div>\r\n            <select class=\"travexForm-control\" id=\"cbCentroCostos\" name=\"CostCenterId\" tabindex=\"3\">\r\n                {{> dropDownList Clasificar.CentroCostos}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Presupuesto</div>\r\n            <select class=\"travexForm-control\" id=\"cbPresupuestos\" name=\"BudgetId\" tabindex=\"4\">\r\n                <option value=\"\" selected disabled>Seleccione una opción</option>\r\n                {{#each Clasificar.Presupuestos}}\r\n                    <option value=\"{{Value}}\" {{Selected}}>{{Text}}</option>\r\n                    {{else}}\r\n                        <option value=\"\">N/A</option>\r\n                {{/each}}\r\n            </select>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Subir Imagen</div>\r\n        </div>\r\n        <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(37) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n            <div class=\"files64-prev\">\r\n                <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"pretty p-default p-thick p-pulse\">\r\n                <input type=\"checkbox\" id=\"ck-asistente\" tabindex=\"6\">\r\n                <div class=\"state p-warning-o\">\r\n                    <label class=\"travexForm-label\">Copia a Asistente</label>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Comentarios</div>\r\n            <textarea name=\"Comments\" class=\"travexForm-control\" tabindex=\"5\"></textarea>\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-block btn-primary\">Guardar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-secondary\" data-relation=\"{{RelationId}}\" data-type=\"regresar\">Regresar</button>\r\n        <button type=\"button\" class=\"btnCerrar btn btn-block btn-danger\" data-relation=\"{{RelationId}}\" data-type=\"cancelar\">Cancelar</button>\r\n    </form>\r\n</section>";
 
 /***/ }),
 /* 385 */
@@ -81765,7 +82181,7 @@
 /* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div id=\"CatalogField\">\r\n                <label class=\"travexForm-label\">Catálogo</label>\r\n                <select name=\"CatalogId\" id=\"cbCatalog\" class=\"travexForm-control\">            \r\n            </div>\r\n            </select>\r\n                <div class=\"travexForm-label\">Periodo</div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-label\">Información Adicional</div>\r\n            <textarea class=\"form-control\" rows=\"5\" id=\"aditionalInfo\" name=\"InformacionAdicional\" placeholder=\"Ingrese información adicional\"></textarea>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(35) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n    </form>\r\n    </div>\r\n    <div class=\"p-3\" style=\"background: #f1f1f1\">\r\n        <h3 class=\"text-muted\">Conceptos</h3>\r\n        <div id=\"Details-container\"></div>\r\n        <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n    </div>\r\n    <section id=\"resumen\" class=\"m-4\">\r\n        <div class=\"resumen\">\r\n            <div class=\"resumen-item\">\r\n                <label>Empleado</label>\r\n                <span>{{Employee.FullName}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Proyecto</label>\r\n                <span>{{Project.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Estado</label>\r\n                <span>{{State.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Municipio</label>\r\n                <span>{{Municipality.Name}}</span>\r\n            </div>\r\n            <div id=\"resumen-container\" class=\"text-right\"></div>\r\n        </div>\r\n    </section>\r\n    <div class=\"text-center\">\r\n        <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n    </div>\r\n</div>";
+	module.exports = "<!--==============================================\r\n=            PresupuestoAlta - RESUMEN            =\r\n===============================================-->\r\n<div class=\"cardTravex-partial\">\r\n    <form id=\"frm-budget\" class=\"travexForm noPadding\">\r\n        <div class=\"travexForm-group\">\r\n            <div class=\"travexForm-label\">Detalle</div>\r\n            <input id=\"iDescription\" type=\"text\" class=\"travexForm-control\" placeholder=\"Objetivo\" name=\"Description\" required>\r\n        </div>\r\n        <div class=\"travexForm-group\">\r\n            <div id=\"CatalogField\">\r\n                <label class=\"travexForm-label\">Catálogo</label>\r\n                <select name=\"CatalogId\" id=\"cbCatalog\" class=\"travexForm-control\">            \r\n            </div>\r\n            </select>\r\n                <div class=\"travexForm-label\">Periodo</div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Inicio\" name=\"StartDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <input type=\"date\" class=\"travexForm-control datepicker\" placeholder=\"Fin\" name=\"EndDate\" value=\"{{periodoDefault}}\" required>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"travexForm-label\">Información Adicional</div>\r\n            <textarea class=\"form-control\" rows=\"5\" id=\"aditionalInfo\" name=\"InformacionAdicional\" placeholder=\"Ingrese información adicional\"></textarea>\r\n            <div class=\"travexForm-group\">\r\n                <div class=\"travexForm-label\">Subir Imagen</div>\r\n            </div>\r\n            <div id=\"files64\" class=\"files64\" data-base=\"\">\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"PHOTOLIBRARY\">\r\n                <img src=\"" + __webpack_require__(37) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <button type=\"button\" class=\"files64-button\" data-source=\"CAMERA\">\r\n                <img src=\"" + __webpack_require__(36) + "\" alt=\"photo-camera\" class=\"files64-button-img\">\r\n            </button>\r\n                <div class=\"files64-prev\">\r\n                    <img src=\"" + __webpack_require__(34) + "\" class=\"files64-prev-img\">\r\n                </div>\r\n            </div>\r\n    </form>\r\n    </div>\r\n    <div class=\"p-3\" style=\"background: #f1f1f1\">\r\n        <h3 class=\"text-muted\">Conceptos</h3>\r\n        <div id=\"Details-container\"></div>\r\n        <button id=\"btnNuevoConcepto\" type=\"button\" class=\"btn btn-info\">✚ Agregar Concepto</button>\r\n    </div>\r\n    <section id=\"resumen\" class=\"m-4\">\r\n        <div class=\"resumen\">\r\n            <div class=\"resumen-item\">\r\n                <label>Empleado</label>\r\n                <span>{{Employee.FullName}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Proyecto</label>\r\n                <span>{{Project.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Estado</label>\r\n                <span>{{State.Name}}</span>\r\n            </div>\r\n            <div class=\"resumen-item\">\r\n                <label>Municipio</label>\r\n                <span>{{Municipality.Name}}</span>\r\n            </div>\r\n            <div id=\"resumen-container\" class=\"text-right\"></div>\r\n        </div>\r\n    </section>\r\n    <div class=\"text-center\">\r\n        <button type=\"button\" id=\"btnGuardarPrespuesto\" class=\"btn btn-primary\">Guardar Presupuesto</button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 390 */
