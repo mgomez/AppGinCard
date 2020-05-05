@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "09288dcc80976a1284bb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2d614a4ba5898d843a5e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -59561,7 +59561,7 @@
 	                    _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = true;
 	                    _tool2.default.scrollPageTo(0);
 	                    _this.swiper.slideNext();
-	                    _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
+	                    _this.swiper.allowSlideNext = false;
 	                  }
 	                }
 	              }
@@ -59670,9 +59670,9 @@
 	                          typeCard: 'noheader',
 	                          type: 'Ticket',
 	                          title: 'Tickets',
-	                          idField: 'Id',
+	                          idField: 'Folio',
 	                          alignment: 'hv',
-	                          fields: 'Id:iTicketId,Creación:#dt_dtCreated,Estado:vcSLATime'
+	                          fields: 'Folio:iTicketId,Creación:#dt_dtCreated,Estado:vcSLATime'
 	                        });
 
 	                      case 5:
@@ -59687,7 +59687,7 @@
 	                        break;
 
 	                      case 13:
-	                        _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = false;
+	                        _this.swiper.allowSlideNext = false;
 	                        _tool2.default.scrollPageTo(0);
 	                        if (validate) alert("No se encontró información.");
 
@@ -59959,7 +59959,7 @@
 	                      case 31:
 	                        if (_this.agreements.length <= 1) {
 	                          (0, _jquery2.default)("#classification-ticket").attr("hidden", "");
-	                          _this.swiper.allowSlideNext = true;
+	                          _this.swiper.allowSlideNext = _this.swiper.allowSlidePrev = true;
 	                          _tool2.default.scrollPageTo(0);
 	                          _this.swiper.slideNext();
 	                          _this.swiper.allowSlideNext = false;
@@ -60234,17 +60234,7 @@
 	}
 	function validFrmData(data) {
 	  var resp = false;
-	  if ((0, _jquery2.default)("#cbStatus").val() == "" || (0, _jquery2.default)("#cbStatus").val() == undefined) {
-	    alert("Seleccione un estatus");
-	  } else if (data.DateStart == "" || data.DateStart == undefined) {
-	    alert("Seleccione una Fecha inicial");
-	  } else if (data.DateEnd == "" || data.DateEnd == undefined) {
-	    alert("Seleccione una Fecha final");
-	  } else if ((0, _moment2.default)(data.StartDate) > (0, _moment2.default)(data.EndDate)) {
-	    alert("La fecha inicial debe ser menor o igual que la fecha final");
-	  } else {
-	    resp = true;
-	  }
+	  if (data.DateStart == "" || data.DateStart == undefined) alert("Seleccione una Fecha inicial");else if (data.DateEnd == "" || data.DateEnd == undefined) alert("Seleccione una Fecha final");else if ((0, _moment2.default)(data.DateStart) > (0, _moment2.default)(data.DateEnd)) alert("La fecha inicial debe ser menor o igual que la fecha final");else if ((0, _jquery2.default)("#cbStatus").val() == "" || (0, _jquery2.default)("#cbStatus").val() == undefined) alert("Seleccione un estatus");else resp = true;
 	  return resp;
 	}
 
