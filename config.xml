@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets" 
     xmlns:android="http://schemas.android.com/apk/res/android" 
-    xmlns:gap="http://phonegap.com/ns/1.0" id="com.oc.gincard" version="2.1.9">
+    xmlns:gap="http://phonegap.com/ns/1.0" id="com.oc.gincard" version="2.2.0">
     <name>GinCard</name>
     <description>GinCard App</description>
     <author email="00.13.zkr@gmail.com" href="https://gincard.onecardexternal.mx/App">
@@ -135,7 +135,7 @@
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
     <edit-config target="CFBundleShortVersionString" file="*-Info.plist" mode="overwrite">
-        <string>219</string>
+        <string>220</string>
     </edit-config>
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="overwrite">
         <string>GinCard Travex requiere permiso para acceder a tu camara.</string>

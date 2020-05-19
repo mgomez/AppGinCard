@@ -10933,7 +10933,7 @@ input:focus {
   position: relative;
 }
 .formTravex-filtros {
-  background: #eee;
+  background: none;
   padding: 25px 8px;
 }
 .formTravex-group {
