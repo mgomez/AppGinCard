@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e4ba245e9ffed1d34b83"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6e1183cc41af9ac32ab3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -64036,7 +64036,7 @@
 	                        (0, _jquery2.default)("#loadingSaldo-container").addClass('active');
 	                        updateReloj({
 	                            $span: (0, _jquery2.default)("#loadingSaldo-container span"),
-	                            time: result
+	                            time: Math.abs(result)
 	                        });
 	                    } else {
 	                        alert('Ha ocurrido un error favor de intentar mas tarde');
