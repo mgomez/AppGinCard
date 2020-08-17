@@ -12798,7 +12798,7 @@ input:checked + .slider:before {
   height: auto;
   margin-right: 10px;
 }
-.configuracion .formatoContra {
+.configuracion .formatoContraConf {
   display: inline-block;
   width: 40%;
   max-width: 300px;
