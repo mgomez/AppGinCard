@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9d9e8de609edf1239fd7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0c0a21ead80bffb11fe9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29433,7 +29433,7 @@
 		//SERVER_URL: 'http://10.0.200.72:53475',
 		//SERVER_URL: 'http://10.0.200.58:53475/ ',
 		//SERVER_URL: 'http://192.168.15.108:53475',
-		SERVER_URL: 'http://192.168.31.103/Extranet/Webapi_Travex/',
+		SERVER_URL: 'https://test.ocsi.mx/Extranet/WebApi_Travex/',
 		//SERVER_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_TravexApp',
 		HELPDESK_URL: 'https://www.ocsi.mx/Extranet/Services/WebApi_HelpDesk',
 		STATUS: {
