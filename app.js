@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0c0a21ead80bffb11fe9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "84626b1f67b6478f18b7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -25712,6 +25712,7 @@
 	    alignLeft: custom.alignLeft,
 	    alignRight: custom.alignRight,
 	    fieldAsButtons: custom.fieldAsButtons,
+	    formatButtonClass: custom.formatButtonClass,
 	    bgColorClass: custom.bgColorClass,
 	    classBtn: custom.classBtn,
 	    changeDetailByRow: custom.changeDetailByRow,
@@ -26418,6 +26419,7 @@
 	            };
 	            if (Array.isArray(config.fieldAsButtons)) {
 	                obj.isButton = config.fieldAsButtons.includes(obj.title);
+	                obj.formatButtonClass = config.formatButtonClass || '';
 	                if (obj.isButton) obj.classBtn = config.classBtn || 'btnDefault';
 	            }
 
@@ -58989,7 +58991,7 @@
 	                            });
 	                            detailPolicy = _UI2.default.ItemList(policy, {
 	                              alignment: "vh",
-	                              fields: "Monto:$Amount,Estado:State,Catálogo:Catalog,Clasificación:Subcatalog,Jerarquía:Hierarchy"
+	                              fields: "Nivel:Hierarchy,Estado:State,Catálogo:Catalog,Clasificación:Subcatalog,Monto Máximo:$Amount,Evento:Event,Descripción:Policy"
 	                            });
 
 	                            (0, _jquery2.default)("#detailPolicyContainer").html(detailPolicy);
@@ -60661,7 +60663,7 @@
 	          app.loading(false);
 	        }
 	      } catch (e) {
-	        alert("Por favor revisa tu correo y contraseña. Los campos son sensibles a mayúsculas y minúsculas.");
+	        alert("Por favor revisa tu usuario y contraseña. Los campos son sensibles a mayúsculas y minúsculas.");
 	        app.loading(false);
 	      }
 	    });
@@ -60933,7 +60935,7 @@
 				data: data
 			}).fail(function (err) {
 				if (err.status === 400) {
-					alert('Por favor revisa tu correo y contraseña. Los campos son sensibles a mayúsculas y minúsculas.');
+					alert('Por favor revisa tu usuario y contraseña. Los campos son sensibles a mayúsculas y minúsculas.');
 					app.loading(false);
 				}
 			});
@@ -63649,6 +63651,7 @@
 	                type: "Presupuesto",
 	                title: _this.Data.EmployeeName,
 	                fieldAsButtons: ["Rechazo"],
+	                formatButtonClass: "Travex-text",
 	                bgColorClass: "btn-danger",
 	                classBtn: "btnRechazo",
 	                onClick: function () {
@@ -82387,7 +82390,7 @@
 /* 356 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\n<div id=\"{{dropDownId}}\" data-name=\"\" class=\"accordionTravex row\">\n    {{#each options}}\n    <label class=\"accordionTravex-label\">{{Type}}</label>\n    <div id=\"select-{{Id}}\" class=\"col-12 accordionTravex-select mb-4 p-1\" data-name=\"{{Name}}\" data-value=\"\" {{required}}>\n        <div id=\"heading-{{Id}}\" class=\"text-dark  accordionTravex-select-header optionHeader container-fluid\" data-id=\"{{Id}}\" data-placeholder=\"{{Text}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{Id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{Id}}\">\n            <div class=\"row\">\n                <span class=\"{{Icon}} p-3 p-4 col-2\"></span>\n                <span class=\"font-weight-light col-8 text-center m-auto text-nowrap accordionTravex-select-content\">{{Text}}</span>\n                <span class=\"col-2 p-1 triangleIcon m-auto\"></span>\n            </div>\n        </div>\n        <div id=\"collapse-{{Id}}\" class=\"accordionTravex-collapse selectDetail collapse\" aria-labelledby=\"heading-{{Id}}\" data-id=\"{{Id}}\" data-header=\"#heading-{{Id}}\" data-container=\"{{container}}\" data-parent=\"#dropDownList\" smooth=\"{{smooth}}\">\n            <input type=\"search\" id=\"selectSearch-{{Id}}\" class=\"bg-white mb-2 selectSearch text-center\" placeholder=\"🔎 {{Placeholder}}\" spellcheck=\"false\" data-id=\"{{Id}}\" autocomplete=\"off\">\n            <div class=\"rounded mb-2 p-1 text-dark overflowTravex  bg-light accordionTravex-select-detail\">\n                <div id=\"selectContent-{{Id}}\" class=\"selectContent\">\n                    <div class=\"pagination-holder\"></div>\n                    <ul id=\"pagContainer-{{Id}}\">\n                        {{#each Data}}\n                        <li>\n                            <div class=\"option option-select p-2 {{../Class}}\" data-id=\"{{IdOption}}\" data-field-id=\"#id_{{IdOption}}\" data-header=\"#heading-{{../Id}}\" data-parent=\"#select-{{../Id}}\" data-collapse=\"#collapse-{{../Id}}\" data-search=\"#selectSearch-{{../Id}}\">\n                                <div class=\"row m-auto\">\n                                    {{#if ../withDetailIcons }} {{#if ../Icon }}\n                                    <div class=\"option-avatar {{../Icon}} col-3\">\n                                    </div>\n                                    <div class=\"option-data col-9 select-content\">\n                                        <div class=\"row\">\n                                            <div class=\"col-3\">\n                                                <div id=\"id_{{IdOption}}\" class=\"option-data-id font-weight-bold\">#{{IdOption}}</div>\n                                            </div>\n                                            <div class=\"col-9\">\n                                                <div id=\"description_{{IdOption}}\" class=\"Travex-text-overflow option-data-descripton\">{{Description}}</div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    {{/if}} {{else}}\n                                    <div class=\"option-data col-12 select-content\">\n                                        <div class=\"row\">\n                                            <div class=\"col-3 m-auto\">\n                                                <div class=\"option-data-id font-weight-bold\">#{{IdOption}}</div>\n                                            </div>\n                                            <div class=\"col-9 m-auto\">\n                                                <div class=\"Travex-text-overflow option-data-descripton\">{{Description}}</div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    {{/if}}\n\n                                </div>\n                            </div>\n                        </li>\n                        <hr> {{else}}\n                        <div class=\"card text-center\">\n                            <div class=\"card-body\">\n                                <div class=\"card-title \">{{../../MessageAlert}}</div>\n                            </div>\n                        </div>\n                        {{/each}}\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n    {{/each}}\n</div>\n{{/if}}";
+	module.exports = "{{#if this}}\n<div id=\"{{dropDownId}}\" data-name=\"\" class=\"accordionTravex row\">\n    {{#each options}}\n    <label class=\"accordionTravex-label\">{{Type}}</label>\n    <div id=\"select-{{Id}}\" class=\"col-12 accordionTravex-select mb-4 p-1\" data-name=\"{{Name}}\" data-value=\"\" {{required}}>\n        <div id=\"heading-{{Id}}\" class=\"text-dark  accordionTravex-select-header optionHeader container-fluid\" data-id=\"{{Id}}\" data-placeholder=\"{{Text}}\" data-toggle=\"collapse\" data-target=\"#collapse-{{Id}}\" aria-expanded=\"true\" aria-controls=\"collapse-{{Id}}\">\n            <div class=\"row\">\n                <span class=\"{{Icon}} p-3 p-4 col-2\"></span>\n                <span class=\"font-weight-light col-8 text-center m-auto text-nowrap accordionTravex-select-content\">{{Text}}</span>\n                <span class=\"col-2 p-1 triangleIcon m-auto\"></span>\n            </div>\n        </div>\n        <div id=\"collapse-{{Id}}\" class=\"accordionTravex-collapse selectDetail collapse\" aria-labelledby=\"heading-{{Id}}\" data-id=\"{{Id}}\" data-header=\"#heading-{{Id}}\" data-container=\"{{container}}\" data-parent=\"#dropDownList\" smooth=\"{{smooth}}\">\n            <input type=\"search\" id=\"selectSearch-{{Id}}\" class=\"bg-white mb-2 selectSearch text-center\" placeholder=\"🔎 {{Placeholder}}\" spellcheck=\"false\" data-id=\"{{Id}}\" autocomplete=\"off\">\n            <div class=\"rounded mb-2 p-1 text-dark overflowTravex  bg-light accordionTravex-select-detail\">\n                <div id=\"selectContent-{{Id}}\" class=\"selectContent\">\n                    <div class=\"pagination-holder\"></div>\n                    <ul id=\"pagContainer-{{Id}}\">\n                        {{#each Data}}\n                        <li>\n                            <div class=\"option option-select p-2 {{../Class}}\" data-id=\"{{IdOption}}\" data-field-id=\"#id_{{IdOption}}\" data-header=\"#heading-{{../Id}}\" data-parent=\"#select-{{../Id}}\" data-collapse=\"#collapse-{{../Id}}\" data-search=\"#selectSearch-{{../Id}}\">\n                                <div class=\"row m-auto\">\n                                    {{#if ../withDetailIcons }} {{#if ../Icon }}\n                                    <div class=\"option-avatar {{../Icon}} col-3\">\n                                    </div>\n                                    <div class=\"option-data col-9 select-content\">\n                                        <div class=\"row\">\n                                            <div class=\"col-3\">\n                                                <div id=\"id_{{IdOption}}\" class=\"option-data-id font-weight-bold\">#{{IdOption}}</div>\n                                            </div>\n                                            <div class=\"col-9\">\n                                                <div id=\"description_{{IdOption}}\" class=\"option-data-descripton\">{{Description}}</div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    {{/if}} {{else}}\n                                    <div class=\"option-data col-12 select-content\">\n                                        <div class=\"row\">\n                                            <div class=\"col-3 m-auto\">\n                                                <div class=\"option-data-id font-weight-bold\">#{{IdOption}}</div>\n                                            </div>\n                                            <div class=\"col-9 m-auto\">\n                                                <div class=\"option-data-descripton\">{{Description}}</div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    {{/if}}\n\n                                </div>\n                            </div>\n                        </li>\n                        <hr> {{else}}\n                        <div class=\"card text-center\">\n                            <div class=\"card-body\">\n                                <div class=\"card-title \">{{../../MessageAlert}}</div>\n                            </div>\n                        </div>\n                        {{/each}}\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n    {{/each}}\n</div>\n{{/if}}";
 
 /***/ }),
 /* 357 */
@@ -82405,7 +82408,7 @@
 /* 359 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto  w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3  m-auto\"></div>\r\n            {{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}}\"><b>{{title}}: </b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} font-weight-light\">{{content}}</div>\r\n            {{/equal}} \r\n            {{#equal desc false}} \r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} {{textSize}}\"> {{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
+	module.exports = "{{#if this}}\r\n<div class=\"row\">\r\n    {{#each this}}\r\n    <div class=\"{{align}} m-auto {{colorTextClass}} {{hidden}}\">\r\n        <div class=\"row p-1\">\r\n            {{#if isButton}}\r\n            <button type=\"button\" data-value='{{content}}' class=\"protip btn {{bgColorClass}} m-auto  w-50 {{classBtn}}\" {{disabled}}><b>{{title}}</b>: <span class=\"font-weight-light {{formatButtonClass}}\">{{content}}</span></button> {{else}} {{#equal desc true}}\r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3  m-auto\"></div>\r\n            {{/if}}\r\n            <div class=\"{{subalign}} {{textSize}} {{alignLeft}}\"><b>{{title}}: </b></div>\r\n            <div class=\"{{subalign}} {{textSize}} {{alignRight}} font-weight-light\">{{content}}</div>\r\n            {{/equal}} \r\n            {{#equal desc false}} \r\n            {{#if iconClass}}\r\n            <div class=\"icon-travex {{iconClass}} col-3\"></div>\r\n            <div class=\"col-9 {{textSize}}\">{{content}}</div>\r\n            {{else}}\r\n            <div class=\"{{subalign}} {{textSize}}\"> {{content}}</div>\r\n            {{/if}} {{/equal}} {{/if}}\r\n        </div>\r\n    </div>\r\n    {{/each}}\r\n</div>\r\n{{/if}}";
 
 /***/ }),
 /* 360 */

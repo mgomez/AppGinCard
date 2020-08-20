@@ -11331,9 +11331,11 @@ input:focus {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .Travex-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+  overflow: hidden;
 }
 .Travex-text-overflow {
   overflow: auto;
