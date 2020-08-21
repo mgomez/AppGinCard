@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f16498ec2352e5048b90"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f06053c8febfa1827815"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -18385,7 +18385,7 @@
 	      }
 	    }, _callee61, _this61);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetPolicy', function GetPolicy() {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetClasifications', function GetClasifications(data) {
 	  var _this62 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee62() {
@@ -18395,25 +18395,33 @@
 	        switch (_context62.prev = _context62.next) {
 	          case 0:
 	            _context62.next = 2;
-	            return _this62.GetUser();
+	            return _this62.GetUserHD();
 
 	          case 2:
 	            User = _context62.sent;
-	            return _context62.abrupt('return', _xhr2.default.ajax({
-	              path: "/api/Budgets/GetPolicy",
+
+	            app.loadingXHR(true);
+	            return _context62.abrupt('return', _jquery2.default.ajax({
+	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Classifications",
 	              type: "GET",
-	              data: "",
-	              access_token: User.access_token
+	              dataType: "json",
+	              headers: {
+	                Authorization: "Bearer " + User.access_token
+	              },
+	              data: data,
+	              complete: function complete(params) {
+	                app.loadingXHR(false);
+	              }
 	            }));
 
-	          case 4:
+	          case 5:
 	          case 'end':
 	            return _context62.stop();
 	        }
 	      }
 	    }, _callee62, _this62);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetClasifications', function GetClasifications(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetSLA', function GetSLA(data) {
 	  var _this63 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee63() {
@@ -18430,9 +18438,8 @@
 
 	            app.loadingXHR(true);
 	            return _context63.abrupt('return', _jquery2.default.ajax({
-	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Classifications",
+	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/SLA",
 	              type: "GET",
-	              dataType: "json",
 	              headers: {
 	                Authorization: "Bearer " + User.access_token
 	              },
@@ -18449,7 +18456,7 @@
 	      }
 	    }, _callee63, _this63);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetSLA', function GetSLA(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'SetTicket', function SetTicket(data) {
 	  var _this64 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee64() {
@@ -18466,41 +18473,6 @@
 
 	            app.loadingXHR(true);
 	            return _context64.abrupt('return', _jquery2.default.ajax({
-	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/SLA",
-	              type: "GET",
-	              headers: {
-	                Authorization: "Bearer " + User.access_token
-	              },
-	              data: data,
-	              complete: function complete(params) {
-	                app.loadingXHR(false);
-	              }
-	            }));
-
-	          case 5:
-	          case 'end':
-	            return _context64.stop();
-	        }
-	      }
-	    }, _callee64, _this64);
-	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'SetTicket', function SetTicket(data) {
-	  var _this65 = this;
-
-	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee65() {
-	    var User;
-	    return _regenerator2.default.wrap(function _callee65$(_context65) {
-	      while (1) {
-	        switch (_context65.prev = _context65.next) {
-	          case 0:
-	            _context65.next = 2;
-	            return _this65.GetUserHD();
-
-	          case 2:
-	            User = _context65.sent;
-
-	            app.loadingXHR(true);
-	            return _context65.abrupt('return', _jquery2.default.ajax({
 	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Create",
 	              type: "POST",
 	              dataType: "json",
@@ -18519,12 +18491,47 @@
 
 	          case 5:
 	          case 'end':
+	            return _context64.stop();
+	        }
+	      }
+	    }, _callee64, _this64);
+	  }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'ProfileHelpDesk', function ProfileHelpDesk(formData) {
+	  var _this65 = this;
+
+	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee65() {
+	    var User;
+	    return _regenerator2.default.wrap(function _callee65$(_context65) {
+	      while (1) {
+	        switch (_context65.prev = _context65.next) {
+	          case 0:
+	            _context65.next = 2;
+	            return _this65.GetUserHD();
+
+	          case 2:
+	            User = _context65.sent;
+
+	            app.loadingXHR(true);
+	            return _context65.abrupt('return', _jquery2.default.ajax({
+	              url: _constant2.default.HELPDESK_URL + "/api/Account/Profile",
+	              type: "POST",
+	              headers: {
+	                Authorization: "Bearer " + User.access_token
+	              },
+	              data: formData,
+	              complete: function complete() {
+	                app.loadingXHR(false);
+	              }
+	            }));
+
+	          case 5:
+	          case 'end':
 	            return _context65.stop();
 	        }
 	      }
 	    }, _callee65, _this65);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'ProfileHelpDesk', function ProfileHelpDesk(formData) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'VerifyCodeAPI', function VerifyCodeAPI(data) {
 	  var _this66 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee66() {
@@ -18541,12 +18548,13 @@
 
 	            app.loadingXHR(true);
 	            return _context66.abrupt('return', _jquery2.default.ajax({
-	              url: _constant2.default.HELPDESK_URL + "/api/Account/Profile",
+	              url: _constant2.default.HELPDESK_URL + "/api/Account/VerifyCode",
 	              type: "POST",
+	              dataType: "json",
 	              headers: {
 	                Authorization: "Bearer " + User.access_token
 	              },
-	              data: formData,
+	              data: data,
 	              complete: function complete() {
 	                app.loadingXHR(false);
 	              }
@@ -18574,28 +18582,28 @@
 	          case 2:
 	            User = _context67.sent;
 
+	            console.log(User);
 	            app.loadingXHR(true);
 	            return _context67.abrupt('return', _jquery2.default.ajax({
 	              url: _constant2.default.HELPDESK_URL + "/api/Account/VerifyCode",
 	              type: "POST",
-	              dataType: "json",
 	              headers: {
 	                Authorization: "Bearer " + User.access_token
 	              },
 	              data: data,
-	              complete: function complete() {
+	              complete: function complete(params) {
 	                app.loadingXHR(false);
 	              }
 	            }));
 
-	          case 5:
+	          case 6:
 	          case 'end':
 	            return _context67.stop();
 	        }
 	      }
 	    }, _callee67, _this67);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'VerifyCodeAPI', function VerifyCodeAPI(data) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetForms', function GetForms(ClasificationId) {
 	  var _this68 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee68() {
@@ -18610,28 +18618,28 @@
 	          case 2:
 	            User = _context68.sent;
 
-	            console.log(User);
 	            app.loadingXHR(true);
 	            return _context68.abrupt('return', _jquery2.default.ajax({
-	              url: _constant2.default.HELPDESK_URL + "/api/Account/VerifyCode",
-	              type: "POST",
+	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Forms",
+	              type: "GET",
+	              dataType: "json",
 	              headers: {
 	                Authorization: "Bearer " + User.access_token
 	              },
-	              data: data,
-	              complete: function complete(params) {
+	              data: { ClasificationId: ClasificationId },
+	              complete: function complete() {
 	                app.loadingXHR(false);
 	              }
 	            }));
 
-	          case 6:
+	          case 5:
 	          case 'end':
 	            return _context68.stop();
 	        }
 	      }
 	    }, _callee68, _this68);
 	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetForms', function GetForms(ClasificationId) {
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetProfileInfo', function GetProfileInfo(appId) {
 	  var _this69 = this;
 
 	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee69() {
@@ -18648,42 +18656,6 @@
 
 	            app.loadingXHR(true);
 	            return _context69.abrupt('return', _jquery2.default.ajax({
-	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Forms",
-	              type: "GET",
-	              dataType: "json",
-	              headers: {
-	                Authorization: "Bearer " + User.access_token
-	              },
-	              data: { ClasificationId: ClasificationId },
-	              complete: function complete() {
-	                app.loadingXHR(false);
-	              }
-	            }));
-
-	          case 5:
-	          case 'end':
-	            return _context69.stop();
-	        }
-	      }
-	    }, _callee69, _this69);
-	  }))();
-	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetProfileInfo', function GetProfileInfo(appId) {
-	  var _this70 = this;
-
-	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee70() {
-	    var User;
-	    return _regenerator2.default.wrap(function _callee70$(_context70) {
-	      while (1) {
-	        switch (_context70.prev = _context70.next) {
-	          case 0:
-	            _context70.next = 2;
-	            return _this70.GetUserHD();
-
-	          case 2:
-	            User = _context70.sent;
-
-	            app.loadingXHR(true);
-	            return _context70.abrupt('return', _jquery2.default.ajax({
 	              url: _constant2.default.HELPDESK_URL + "/api/Account/Profile?ApplicationId=" + appId,
 	              type: "GET",
 	              dataType: "json",
@@ -18701,28 +18673,28 @@
 
 	          case 5:
 	          case 'end':
-	            return _context70.stop();
+	            return _context69.stop();
 	        }
 	      }
-	    }, _callee70, _this70);
+	    }, _callee69, _this69);
 	  }))();
 	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'getUserId', function getUserId(appId) {
-	  var _this71 = this;
+	  var _this70 = this;
 
-	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee71() {
+	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee70() {
 	    var User, userId;
-	    return _regenerator2.default.wrap(function _callee71$(_context71) {
+	    return _regenerator2.default.wrap(function _callee70$(_context70) {
 	      while (1) {
-	        switch (_context71.prev = _context71.next) {
+	        switch (_context70.prev = _context70.next) {
 	          case 0:
-	            _context71.next = 2;
-	            return _this71.GetUserHD();
+	            _context70.next = 2;
+	            return _this70.GetUserHD();
 
 	          case 2:
-	            User = _context71.sent;
+	            User = _context70.sent;
 	            userId = _jquery2.default.Deferred();
 
-	            _this71.GetProfileInfo(appId).then(function (r) {
+	            _this70.GetProfileInfo(appId).then(function (r) {
 	              if (!r.Success) {
 	                console.log("error obteniendo UserId");
 	              } else {
@@ -18732,32 +18704,32 @@
 	                });
 	              }
 	            });
-	            return _context71.abrupt('return', userId.promise());
+	            return _context70.abrupt('return', userId.promise());
 
 	          case 6:
 	          case 'end':
-	            return _context71.stop();
+	            return _context70.stop();
 	        }
 	      }
-	    }, _callee71, _this71);
+	    }, _callee70, _this70);
 	  }))();
 	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'getStatus', function getStatus() {
-	  var _this72 = this;
+	  var _this71 = this;
 
-	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee72() {
+	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee71() {
 	    var User;
-	    return _regenerator2.default.wrap(function _callee72$(_context72) {
+	    return _regenerator2.default.wrap(function _callee71$(_context71) {
 	      while (1) {
-	        switch (_context72.prev = _context72.next) {
+	        switch (_context71.prev = _context71.next) {
 	          case 0:
-	            _context72.next = 2;
-	            return _this72.GetUserHD();
+	            _context71.next = 2;
+	            return _this71.GetUserHD();
 
 	          case 2:
-	            User = _context72.sent;
+	            User = _context71.sent;
 
 	            app.loadingXHR(true);
-	            return _context72.abrupt('return', _jquery2.default.ajax({
+	            return _context71.abrupt('return', _jquery2.default.ajax({
 	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/AllStatus",
 	              type: "GET",
 	              dataType: "json",
@@ -18775,28 +18747,28 @@
 
 	          case 5:
 	          case 'end':
-	            return _context72.stop();
+	            return _context71.stop();
 	        }
 	      }
-	    }, _callee72, _this72);
+	    }, _callee71, _this71);
 	  }))();
 	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'TicketsReport', function TicketsReport(data) {
-	  var _this73 = this;
+	  var _this72 = this;
 
-	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee73() {
+	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee72() {
 	    var User;
-	    return _regenerator2.default.wrap(function _callee73$(_context73) {
+	    return _regenerator2.default.wrap(function _callee72$(_context72) {
 	      while (1) {
-	        switch (_context73.prev = _context73.next) {
+	        switch (_context72.prev = _context72.next) {
 	          case 0:
-	            _context73.next = 2;
-	            return _this73.GetUserHD();
+	            _context72.next = 2;
+	            return _this72.GetUserHD();
 
 	          case 2:
-	            User = _context73.sent;
+	            User = _context72.sent;
 
 	            app.loadingXHR(true);
-	            return _context73.abrupt('return', _jquery2.default.ajax({
+	            return _context72.abrupt('return', _jquery2.default.ajax({
 	              url: _constant2.default.HELPDESK_URL + "/api/Tickets/Reports",
 	              type: "GET",
 	              dataType: "json",
@@ -18810,6 +18782,34 @@
 	            }));
 
 	          case 5:
+	          case 'end':
+	            return _context72.stop();
+	        }
+	      }
+	    }, _callee72, _this72);
+	  }))();
+	}), (0, _defineProperty3.default)(_GetUser$GetUserHD$Ge, 'GetPolicy', function GetPolicy() {
+	  var _this73 = this;
+
+	  return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee73() {
+	    var User;
+	    return _regenerator2.default.wrap(function _callee73$(_context73) {
+	      while (1) {
+	        switch (_context73.prev = _context73.next) {
+	          case 0:
+	            _context73.next = 2;
+	            return _this73.GetUser();
+
+	          case 2:
+	            User = _context73.sent;
+	            return _context73.abrupt('return', _xhr2.default.ajax({
+	              path: "/api/Budgets/GetPolicy",
+	              type: "GET",
+	              data: "",
+	              access_token: User.access_token
+	            }));
+
+	          case 4:
 	          case 'end':
 	            return _context73.stop();
 	        }
@@ -58662,13 +58662,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var swiper = ''; /**
-	                  *
-	                  * Configuracion
-	                  *
-	                  */
 	exports.default = {
-	  swiper: "",
 	  page: "",
 	  dataLayout: "",
 	  init: function init(page, dataLayout) {
@@ -58840,21 +58834,17 @@
 	        while (1) {
 	          switch (_context2.prev = _context2.next) {
 	            case 0:
-	              _tool2.default.scrollPageTo(1000, 0);
-	              _this3.swiper = _tool2.default.swiperFraction(".swiper-container1", {
-	                spaceBetween: 1000,
-	                navigation: true
-	              });
-	              _context2.next = 4;
+	              _tool2.default.scrollPageTo(200, 0);
+	              _context2.next = 3;
 	              return _store2.default.GetNotificationMail();
 
-	            case 4:
+	            case 3:
 	              currentMail = _context2.sent;
 
 	              (0, _jquery2.default)("#currentMail").html(currentMail.Data);
 	              _this3.handleEvents();
 
-	            case 7:
+	            case 6:
 	            case 'end':
 	              return _context2.stop();
 	          }
@@ -58862,8 +58852,11 @@
 	      }, _callee2, _this3);
 	    }))();
 	  }
-	};
-
+	}; /**
+	    *
+	    * Configuracion
+	    *
+	    */
 
 	function mailValid(data) {
 	  var resp = _tool2.default.mailValidation(data.MailNotif) && _tool2.default.mailValidation(data.ConfirmMailNotif);
@@ -60024,7 +60017,6 @@
 	              _this.Profile = _context2.sent;
 
 	              _this.Profile.hasProfile = false;
-
 	              if (_this.Profile.Data) _this.Profile.hasProfile = _this.Profile.Data.length > 0;else _this.Profile.Data = {};
 
 	              (0, _jquery2.default)("html").css({ "touch-action": "none;" });
@@ -60408,7 +60400,6 @@
 	    _this.Page.nameAction = "";
 	  }
 	}
-
 	//VALIDACIONES
 	function verifyCode(_this) {
 	  (0, _jquery2.default)("#frm-updateProfile input").prop("readonly", true).css("opacity", 0.8);
@@ -60549,7 +60540,7 @@
 
 
 	              (0, _jquery2.default)("#estadoHuella").html(estadoHuella);
-	              _tool2.default.scrollPageTo(1000, 0);
+	              _tool2.default.scrollPageTo(200, 0);
 	              //checkbox mensaje
 	              (0, _jquery2.default)("#ckMessage").on("change", function () {
 	                var deacuerdo = (0, _jquery2.default)(this).is(":checked");
@@ -82553,7 +82544,7 @@
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"cardTravex\" id=\"huellaDigital\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <h3 class=\"cardTravex-title\">Huella Digital</h3>\r\n    </div>\r\n    <div class=\"text-center\">\r\n        <img src=\"" + __webpack_require__(431) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"p-4\">\r\n                <div class=\"form-group\">\r\n                    <label>Ingresa tu contraseña de GinCard</label>\r\n                    <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n                </div>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n    <br>\r\n</section>\r\n<section class=\"row fixed-bottom\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n            <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                onclick=\"app.View('cambiarContra')\"></button>\r\n            <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                onclick=\"app.View('cambiarCorreo')\"></button>\r\n            <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                onclick=\"app.View('huellaDigital')\"></button>\r\n        </div>\r\n    </div>\r\n</section>";
+	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"cardTravex\" id=\"huellaDigital\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <h3 class=\"cardTravex-title\">Huella Digital</h3>\r\n    </div>\r\n    <div class=\"text-center\">\r\n        <img src=\"" + __webpack_require__(431) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"p-4\">\r\n                <div class=\"form-group\">\r\n                    <label>Ingresa tu contraseña de GinCard</label>\r\n                    <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n                </div>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n    <br>\r\n    <br>\r\n</section>\r\n<section class=\"row fixed-bottom\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n            <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                onclick=\"app.View('cambiarContra')\"></button>\r\n            <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                onclick=\"app.View('cambiarCorreo')\"></button>\r\n            <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                onclick=\"app.View('huellaDigital')\"></button>\r\n        </div>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 385 */
