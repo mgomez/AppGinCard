@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9c3b7ad2717947b4b73a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f16498ec2352e5048b90"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -58688,27 +58688,23 @@
 	            case 0:
 	              _this = _this2;
 	              _context.t0 = _this.page;
-	              _context.next = _context.t0 === "cambiarContra" ? 4 : _context.t0 === "cambiarCorreo" ? 7 : _context.t0 === "huellaDigital" ? 10 : 12;
+	              _context.next = _context.t0 === "cambiarContra" ? 4 : _context.t0 === "cambiarCorreo" ? 7 : 10;
 	              break;
 
 	            case 4:
 	              (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_cambiarContrasenaTpl2.default, _this.dataLayout));
 	              _this.initConfiguration();
-	              return _context.abrupt('break', 13);
+	              return _context.abrupt('break', 11);
 
 	            case 7:
 	              (0, _jquery2.default)("#renderBody").html(_tool2.default.renderTpl(_cambiarCorreoTpl2.default, _this.dataLayout));
 	              _this.initConfiguration();
-	              return _context.abrupt('break', 13);
+	              return _context.abrupt('break', 11);
 
 	            case 10:
-	              app.View(_this.page);
-	              return _context.abrupt('break', 13);
+	              return _context.abrupt('break', 11);
 
-	            case 12:
-	              return _context.abrupt('break', 13);
-
-	            case 13:
+	            case 11:
 	            case 'end':
 	              return _context.stop();
 	          }
@@ -58729,7 +58725,6 @@
 	      }
 	    });
 	    //seguridad de contraseña
-	    (0, _jquery2.default)();
 	    (0, _jquery2.default)("#inputPassword").on("keyup", function () {
 	      var val = (0, _jquery2.default)(this).val();
 	      var className = "formRegistro-passwordCheck ";
@@ -60523,7 +60518,6 @@
 	    });
 
 	    (0, _jquery2.default)("#renderBody").html(renderTpl);
-	    _tool2.default.scrollPageTo(1000, 0);
 	    this.handleEvents();
 	  },
 	  handleEvents: function handleEvents() {
@@ -60555,6 +60549,7 @@
 
 
 	              (0, _jquery2.default)("#estadoHuella").html(estadoHuella);
+	              _tool2.default.scrollPageTo(1000, 0);
 	              //checkbox mensaje
 	              (0, _jquery2.default)("#ckMessage").on("change", function () {
 	                var deacuerdo = (0, _jquery2.default)(this).is(":checked");
@@ -60641,7 +60636,7 @@
 	                app.View("huellaDigital");
 	              });
 
-	            case 14:
+	            case 15:
 	            case "end":
 	              return _context.stop();
 	          }
@@ -82516,7 +82511,7 @@
 /* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"cardTravex-hgroup\">\r\n    <section class=\"configuracion swiper-slide m-auto\">\r\n        <div class=\"cardTravex container\">\r\n            <div class=\"cardTravex-hgroup\">\r\n                <div class=\"cardTravex-title\">Cambiar contraseña</div>\r\n            </div>\r\n            <form id=\"frm-ChangePassword\" class=\"travexForm\">\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Contraseña Anterior</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"OldPassword\" id=\"inputOldPassword\" class=\"formRegistro-control\"\r\n                            required tabindex=\"1\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Nueva Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"NewPassword\" id=\"inputPassword\" class=\"formRegistro-control\" required\r\n                            tabindex=\"2\">\r\n                    </div>\r\n                    <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                        <span></span>\r\n                        <span></span>\r\n                        <span></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Confirmar Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\"\r\n                            required tabindex=\"3\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group text-center\">\r\n                    <div data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                        <div><b>Formato de contraseña</b></div>\r\n                        <img src=\"" + __webpack_require__(434) + "\" alt=\"loginPassword.svg\" class=\"formatoContraConf\">\r\n                    </div>\r\n                </div>\r\n                <button class=\"btn-contra\">\r\n                    <img src=\"" + __webpack_require__(221) + "\" alt=\"lock.svg\" width=\"18px\" class=\"align-middle\">\r\n                    <span class=\"align-middle\">Guardar</span>\r\n                </button>\r\n            </form>\r\n        </div>\r\n    </section>\r\n    <section class=\"row fixed-bottom\">\r\n        <div class=\"col-md-12\">\r\n            <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n                <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                    onclick=\"app.View('cambiarContra')\"></button>\r\n                <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                    onclick=\"app.View('cambiarCorreo')\"></button>\r\n                {{#if touchid}}\r\n                <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                    onclick=\"app.View('huellaDigital')\"></button>\r\n                {{/if}}\r\n            </div>\r\n        </div>\r\n    </section>\r\n</div>\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n    aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h3>Formato de Contraseña</h3>\r\n                <ul class=\"list-group list-group-flush\">\r\n                    <li class=\"list-group-item\">La contraseña debe ser mínimo de 6 dígitos</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un caracter especial</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un número</li>\r\n                    <li class=\"list-group-item\">Debe tener al menos una letra mayúscula y una minúscula</li>\r\n                    <li class=\"list-group-item\"><b>Ejemplo:</b> Onecard1!</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary m-auto d-inline w-100\"\r\n                    data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+	module.exports = "<div class=\"cardTravex-hgroup\">\r\n    <section class=\"configuracion swiper-slide m-auto\">\r\n        <div class=\"cardTravex\">\r\n            <div class=\"cardTravex-hgroup\">\r\n                <div class=\"cardTravex-title\">Cambiar contraseña</div>\r\n            </div>\r\n            <form id=\"frm-ChangePassword\" class=\"travexForm\">\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Contraseña Anterior</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"OldPassword\" id=\"inputOldPassword\" class=\"formRegistro-control\"\r\n                            required tabindex=\"1\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Nueva Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"NewPassword\" id=\"inputPassword\" class=\"formRegistro-control\" required\r\n                            tabindex=\"2\">\r\n                    </div>\r\n                    <div id=\"passwordCheck\" class=\"formRegistro-passwordCheck\">\r\n                        <span></span>\r\n                        <span></span>\r\n                        <span></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"formRegistro-group\">\r\n                    <label>Confirmar Contraseña</label>\r\n                    <div class=\"formRegistro-btnAddon\">\r\n                        <button type=\"button\" class=\"togglePassword\"></button>\r\n                        <input type=\"password\" name=\"ConfirmPassword\" id=\"inputConfirmPassword\" class=\"formRegistro-control\"\r\n                            required tabindex=\"3\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group text-center\">\r\n                    <div data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                        <div><b>Formato de contraseña</b></div>\r\n                        <img src=\"" + __webpack_require__(434) + "\" alt=\"loginPassword.svg\" class=\"formatoContraConf\">\r\n                    </div>\r\n                </div>\r\n                <button class=\"btn-contra\">\r\n                    <img src=\"" + __webpack_require__(221) + "\" alt=\"lock.svg\" width=\"18px\" class=\"align-middle\">\r\n                    <span class=\"align-middle\">Guardar</span>\r\n                </button>\r\n            </form>\r\n        </div>\r\n    </section>\r\n    <section class=\"row fixed-bottom\">\r\n        <div class=\"col-md-12\">\r\n            <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n                <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                    onclick=\"app.View('cambiarContra')\"></button>\r\n                <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                    onclick=\"app.View('cambiarCorreo')\"></button>\r\n                {{#if touchid}}\r\n                <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                    onclick=\"app.View('huellaDigital')\"></button>\r\n                {{/if}}\r\n            </div>\r\n        </div>\r\n    </section>\r\n</div>\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n    aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n                <h3>Formato de Contraseña</h3>\r\n                <ul class=\"list-group list-group-flush\">\r\n                    <li class=\"list-group-item\">La contraseña debe ser mínimo de 6 dígitos</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un caracter especial</li>\r\n                    <li class=\"list-group-item\">Debe contener al menos un número</li>\r\n                    <li class=\"list-group-item\">Debe tener al menos una letra mayúscula y una minúscula</li>\r\n                    <li class=\"list-group-item\"><b>Ejemplo:</b> Onecard1!</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary m-auto d-inline w-100\"\r\n                    data-dismiss=\"modal\">Cerrar</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 378 */
@@ -82558,7 +82553,7 @@
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"cardTravex\" id=\"huellaDigital\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <h3 class=\"cardTravex-title\">Huella Digital</h3>\r\n    </div>\r\n    <div class=\"text-center\">\r\n        <img src=\"" + __webpack_require__(431) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"p-4\">\r\n                <div class=\"form-group\">\r\n                    <label>Ingresa tu contraseña de GinCard</label>\r\n                    <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n                </div>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n</section>\r\n<section class=\"row fixed-bottom\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n            <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                onclick=\"app.View('cambiarContra')\"></button>\r\n            <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                onclick=\"app.View('cambiarCorreo')\"></button>\r\n            <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                onclick=\"app.View('huellaDigital')\"></button>\r\n        </div>\r\n    </div>\r\n</section>";
+	module.exports = "<!--====================================\r\n=            HUELLA DIGITAL            =\r\n=====================================-->\r\n<section class=\"cardTravex\" id=\"huellaDigital\">\r\n    <div class=\"cardTravex-hgroup\">\r\n        <h3 class=\"cardTravex-title\">Huella Digital</h3>\r\n    </div>\r\n    <div class=\"text-center\">\r\n        <img src=\"" + __webpack_require__(431) + "\" alt=\"huella\" class=\"huellaDigital-img btnEstadoHuella\">\r\n        <div class=\"huellaDigital-text\">\r\n            Si activaste la función \"Huella Digital\" en tu dispositivo y otorgaste acceso a la huella digital de otra persona, esta podrá ingresar a la aplicación GinCard.\r\n            {{#if showMessage}}\r\n                <div class=\"p-4\">\r\n                    <div class=\"form-check\">\r\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"ckMessage\">\r\n                        <label class=\"form-check-label\" for=\"defaultCheck1\">\r\n                            Estoy de acuerdo\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            {{/if}}\r\n        </div>\r\n        {{#if showMessage}}\r\n            <div class=\"p-4\">\r\n                <div class=\"form-group\">\r\n                    <label>Ingresa tu contraseña de GinCard</label>\r\n                    <input type=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword\" disabled>\r\n                </div>\r\n            </div>\r\n        {{/if}}\r\n        <button class=\"btn btn-info btnEstadoHuella\" id=\"btnEstadoHuella\" disabled>\r\n            <span id=\"estadoHuella\">Activa</span> tu huella para iniciar sesión\r\n        </button>\r\n    </div>\r\n    <br>\r\n</section>\r\n<section class=\"row fixed-bottom\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"btn-group btn-group-lg w-100\" role=\"group\" aria-label=\"\">\r\n            <button id=\"btnChangePassword\" type=\"button\" class=\"btn btn-secondary p-4 icon-password\"\r\n                onclick=\"app.View('cambiarContra')\"></button>\r\n            <button id=\"btnChangeMail\" type=\"button\" class=\"btn btn-secondary p-4 icon-mail\"\r\n                onclick=\"app.View('cambiarCorreo')\"></button>\r\n            <button id=\"btnFingerPrint\" type=\"button\" class=\"btn btn-secondary p-4  icon-fingerprint\"\r\n                onclick=\"app.View('huellaDigital')\"></button>\r\n        </div>\r\n    </div>\r\n</section>";
 
 /***/ }),
 /* 385 */
